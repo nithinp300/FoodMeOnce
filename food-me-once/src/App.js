@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const exampleVar = 4;
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Example Of a link if we want one!
+          Example Of a link if we want one! {exampleVar}
         </a>
       </header>
     </div>
