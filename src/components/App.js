@@ -18,34 +18,38 @@ function App() {
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/page2">Districts</Nav.Link>
-            <Nav.Link href="/page2">Representatives</Nav.Link>
-            <Nav.Link href="/page2">Legislation</Nav.Link>
-            </Nav> 
+            <Nav.Link href="/Districts">Districts</Nav.Link>
+            <Nav.Link href="/Representatives">Representatives</Nav.Link>
+            <Nav.Link href="/Legislations">Legislation</Nav.Link>
+            <Nav.Link href="/About Us">About Us</Nav.Link>
+            </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <BrowserRouter>
-        <Route 
-          exact path="/"
-          component={Page1}
-        />
-        <Route 
-          path="/Page2"
-          component={Page2}
-        />
-        <Route
-          path="/Page3"
-          component={Page3}
-        />
-        <Route
-          path="/Page4"
-          component={Page4}
-        />
-        <Route
-          path="/Page5"
-          component={Page5}
-        />
-      </BrowserRouter>
+
+
+    <BrowserRouter>
+      <Route
+        exact path="/"
+        component={Page1}
+      />
+
+      <Route
+        path="/Districts"
+        component={Page2}
+      />
+      <Route
+        path="/Representatives"
+        component={Page3}
+      />
+      <Route
+        path="/Legislations"
+        component={Page4}
+      />
+      <Route
+        path="/About Us"
+        component={Page5}
+      />
+    </BrowserRouter>
     </div>
   );
 }
