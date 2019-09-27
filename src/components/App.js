@@ -3,6 +3,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Page1 from './Page1';
 import Page2 from './Page2';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     <BrowserRouter>
