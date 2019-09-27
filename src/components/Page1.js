@@ -13,8 +13,9 @@ function Page1() {
             <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/page2">Districts</Nav.Link>
-            <Nav.Link href="/page2">Representatives</Nav.Link>
-            <Nav.Link href="/page2">Legislation</Nav.Link>
+            <Nav.Link href="/page3">Representatives</Nav.Link>
+            <Nav.Link href="/page4">Legislation</Nav.Link>
+            <Nav.Link href="/page5">About Us</Nav.Link>
             </Nav> 
         </Navbar.Collapse>
         </Navbar>
