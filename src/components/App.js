@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">FoodMeOnce</Navbar.Brand>
+        <Navbar.Brand href="/">FoodMeOnce</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
