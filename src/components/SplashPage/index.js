@@ -1,12 +1,10 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import background from "./cornField.jpg";
 
-function Page1() {
+function SplashPage() {
   return (
     <div>
       <img
-        src={background}
+        src={"/images/cornField.jpg"}
         class="img-fluid"
         alt="Corn Field"
         style={{ width: "100%" }}
@@ -15,4 +13,4 @@ function Page1() {
   );
 }
 
-export default Page1;
+export default SplashPage;
