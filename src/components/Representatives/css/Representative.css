@@ -1,0 +1,36 @@
+.representative {
+    width: 400px;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.representative:hover {
+    background-color: aliceBlue;
+    cursor: pointer;
+}
+
+.representative-image {
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+.representative-name {
+    margin: 0;
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 5px;
+}
+
+.representative ul {
+    margin: 0;
+    padding: 0;
+}
+.representative-desc {
+    margin: 0;
+}
+
+.representative-desc span {
+    font-weight: bold;
+}
