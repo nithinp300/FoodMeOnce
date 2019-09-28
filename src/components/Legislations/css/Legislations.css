@@ -1,0 +1,24 @@
+.sorting-container {
+    width: 100%;
+    padding: 10px;
+    background-color: aliceBlue;
+}
+
+.sorting-container h3 {
+    margin-left: 20px;
+}
+
+.legislations-container {
+    width: 100%;
+}
+
+.legislations-model hr {
+    margin-top: 0;
+}
+
+.sort {
+    max-width: 400px;
+}
+.filter {
+    max-width: 500px;
+}

@@ -1,0 +1,36 @@
+.legislation {
+    width: 400px;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.legislation:hover {
+    background-color: aliceBlue;
+    cursor: pointer;
+}
+
+.legislation-image {
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+.legislation-name {
+    margin: 0;
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 5px;
+}
+
+.legislation ul {
+    margin: 0;
+    padding: 0;
+}
+.legislation-desc {
+    margin: 0;
+}
+
+.legislation-desc span {
+    font-weight: bold;
+}
