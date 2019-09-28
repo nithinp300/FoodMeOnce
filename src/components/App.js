@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import District from "./Districts";
+import Districts from "./Districts";
 import Representatives from "./Representatives";
 import Legislation from "./Legislations";
 import SplashPage from "./SplashPage";
@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" variant="light" expand="lg">
         <Navbar.Brand href="/">FoodMeOnce</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -28,7 +28,7 @@ function App() {
 
       <BrowserRouter>
         <Route exact path="/" component={SplashPage} />
-        <Route path="/Districts" component={District} />
+        <Route path="/Districts" component={Districts} />
         <Route path="/Representatives" component={Representatives} />
         <Route path="/Legislations" component={Legislation} />
         <Route path="/About Us" component={AboutUs} />

@@ -5,7 +5,7 @@ function SplashPage() {
     <div>
       <img
         src={"/images/cornField.jpg"}
-        class="img-fluid"
+        className="img-fluid"
         alt="Corn Field"
         style={{ width: "100%" }}
       />
