@@ -20,6 +20,11 @@ class representativeSortFilter extends Component {
         this.setState({ filter });
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -37,38 +42,38 @@ class representativeSortFilter extends Component {
                     </div>
                     <div className="d-flex flex-column filter pr-5 flex-fill">
                         <h5>Filter By</h5>
-                        <form className="ml-3" action="/representatives/filter">
-                        <div className="input-group input-group-sm">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text" id="">Age</span>
+                        <form className="ml-3" action="/representatives/filter" onSubmit={this.handleSubmit}>
+                            <div className="input-group input-group-sm">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text" id="">Age</span>
+                                </div>
+                                <input type="text" className="form-control" name="ageMin" onChange={this.handleFilter} value={this.state.filter.ageMin} placeholder="Minimum" />
+                                <input type="text" className="form-control" name="ageMax" onChange={this.handleFilter} value={this.state.filter.ageMax} placeholder="Maximum" />
                             </div>
-                            <input type="text" className="form-control" name="ageMin" onChange={this.handleFilter} value={this.state.filter.ageMin} placeholder="Minimum" />
-                            <input type="text" className="form-control" name="ageMax" onChange={this.handleFilter} value={this.state.filter.ageMax} placeholder="Maximum" />
-                        </div>
-                        <div className="input-group input-group-sm">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text" id="">Years In Office</span>
+                            <div className="input-group input-group-sm">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text" id="">Years In Office</span>
+                                </div>
+                                <input type="text" className="form-control" name="yearsInOfficeMin" onChange={this.handleFilter} value={this.state.filter.yearsInOfficeMin} placeholder="Minimum" />
+                                <input type="text" className="form-control" name="yearsInOfficeMax" onChange={this.handleFilter} value={this.state.filter.yearsInOfficeMax} placeholder="Maximum" />
                             </div>
-                            <input type="text" className="form-control" name="yearsInOfficeMin" onChange={this.handleFilter} value={this.state.filter.yearsInOfficeMin} placeholder="Minimum" />
-                            <input type="text" className="form-control" name="yearsInOfficeMax" onChange={this.handleFilter} value={this.state.filter.yearsInOfficeMax} placeholder="Maximum" />
-                        </div>
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Party</label>
+                            <div className="input-group input-group-sm">
+                                <div className="input-group-prepend">
+                                    <label className="input-group-text">Party</label>
+                                </div>
+                                <select className="custom-select" name="party" onChange={this.handleFilter} value={this.state.filter.party}>
+                                    <option>Choose...</option>
+                                    <option value="democratic">Democratic</option>
+                                    <option value="republic">Republic</option>
+                                </select>
                             </div>
-                            <select class="custom-select" name="party" onChange="handleFilter">
-                                <option selected={this.state.filter.party === null}>Choose...</option>
-                                <option value="democratic" selected={this.state.filter.party === "democratic"}>Democratic</option>
-                                <option value="republic" selected={this.state.filter.party === "republic"}>Republic</option>
-                            </select>
-                        </div>
-                        <div className="input-group input-group-sm">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text" id="">State/District</span>
+                            <div className="input-group input-group-sm">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text" id="">State/District</span>
+                                </div>
+                                <input type="text" className="form-control" name="stateDistrict" onChange={this.handleFilter} value={this.state.filter.stateDistrict} placeholder="State/District" />
                             </div>
-                            <input type="text" className="form-control" name="stateDistrict" onChange={this.handleFilter} value={this.state.filter.stateDistrict} placeholder="State/District" />
-                        </div>
-                        <div className="d-flex mt-3 justify-content-end"><button className="btn btn-primary">Apply</button></div>
+                            <div className="d-flex mt-3 justify-content-end"><button className="btn btn-primary">Apply</button></div>
                         </form>
                     </div>
                 </div>

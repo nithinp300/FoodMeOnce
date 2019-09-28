@@ -46,12 +46,12 @@ class LegislationSortFilter extends Component {
                             <input type="text" className="form-control" name="yearMin" onChange={this.handleFilter} value={this.state.filter.yearMin} placeholder="Minimum" />
                             <input type="text" className="form-control" name="yearMax" onChange={this.handleFilter} value={this.state.filter.yearMax} placeholder="Maximum" />
                         </div>
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Status</label>
+                        <div className="input-group input-group-sm">
+                            <div className="input-group-prepend">
+                                <label className="input-group-text">Status</label>
                             </div>
-                            <select class="custom-select" id="inputGroupSelect01" onChange="handleFilter">
-                                <option selected>Choose...</option>
+                            <select className="custom-select" name="status" onChange={this.handleFilter} value={this.state.filter.status}>
+                                <option>Choose...</option>
                                 <option value="1">Pending</option>
                                 <option value="2">1</option>
                                 <option value="3">2</option>
