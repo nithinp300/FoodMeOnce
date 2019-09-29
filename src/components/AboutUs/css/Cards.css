@@ -1,0 +1,12 @@
+.cardRow {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
