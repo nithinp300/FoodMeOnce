@@ -13,13 +13,17 @@ class AboutUs extends React.Component{
     var Brian = [0,0,0]
     var Nithin = [0,0,0]
     var totalIssues = 0
+    var totalCommits = 0
+    var closedIssues = 0
     this.state = {
       Chris: Chris,
       Gyuwon: Gyuwon,
       Shubhendra: Shubhendra,
       Brian: Brian,
       Nithin: Nithin,
-      totalIssues
+      totalIssues: totalIssues,
+      totalCommits: totalCommits,
+      closedIssues: closedIssues
     };
 
   }
@@ -35,8 +39,10 @@ async grabIssues(){
     .then(res => res.json())
     .then(res => {
       res.forEach(issue => {
+        this.state.totalIssues +=1
         if(issue.closed_by != null){
-          switch (issue.closed_by){
+          this.state.closedIssues +=1
+          switch (issue.closed_by.name){
             case "Christopher Chasteen":
               this.state.Chris[1] +=1
               break;
@@ -55,10 +61,12 @@ async grabIssues(){
               this.state.Nithin[1]+=1
               break;
             default:
+              console.log(issue)
 
           }
         }
       });
+      this.setState(this.state)
     })
 }
 
@@ -67,6 +75,7 @@ async grabCommits(){
       .then(res => res.json())
       .then(res => {
         res.forEach(commit => {
+          this.state.totalCommits += 1
           switch (commit.committer_name){
             case "Christopher Chasteen":
               this.state.Chris[0] +=1
@@ -100,8 +109,12 @@ async grabCommits(){
       Gyuwon,
       Shubhendra,
       Brian,
-      Nithin
+      Nithin,
+      totalIssues,
+      totalCommits,
+      closedIssues
     } = this.state
+
 
     return (
       <div>
@@ -158,6 +171,13 @@ async grabCommits(){
               <p className="card-text">Unit Tests: {Nithin[2]}</p>
             </div>
           </div>
+        </div>
+        <h4 className="footer">Total Commits: {totalCommits} </h4>
+        <h4 className="footer">Issues Opened: {totalIssues} </h4>
+        <h4 className="footer">Issues Closed: {closedIssues} </h4>
+
+        <div className="contactCard">
+          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> FoodMeOnce GitLab Repository: </a></p>
         </div>
       </div>
     );

@@ -10,3 +10,16 @@
     padding-bottom: 3rem;
     padding-top: 3rem;
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding-top: .5rem;
+}
+
+.contactCard {
+    display: flex;
+    padding-top: 4rem;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
