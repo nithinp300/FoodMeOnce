@@ -141,7 +141,7 @@ async grabCommits(){
           </div>
 
           <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
-            <img src="/images/cornField.jpg" className="card-img-top" alt="Card Background"/>
+            <img src="/images/Shub.jpg" className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Shubhendra Trivedi</h5>
               <p className="card-text">Commits: {Shubhendra[0]}</p>
