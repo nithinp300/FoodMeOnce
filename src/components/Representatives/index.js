@@ -6,66 +6,20 @@ import Representative from './Representative';
 import './css/Representatives.css';
 
 class Representatives extends Component {
+  getAge = (birthDateString) => {
+    var todayDate = new Date();
+    var birthDate = new Date(birthDateString);
+    var age = todayDate.getFullYear() - birthDate.getFullYear();
+    var monthDiff = todayDate.getMonth() - birthDate.getMonth();
+    if(monthDiff < 0 || (monthDiff = 0 && todayDate.getDate() < birthDate.getDate()))
+    {
+      age--;
+    }
+    return age;
+  }
   state = {
     collapse: true,
-    representatives : [
-      // {
-      //   name: 'example name',
-      //   age: '35',
-      //   yearsInOffice: '5 years',
-      //   party: 'republic/democratic',
-      //   stateDistrict: 'state/district',
-      // },
-      // {
-      //   name: 'example name',
-      //   age: '35',
-      //   yearsInOffice: '5 years',
-      //   party: 'republic/democratic',
-      //   stateDistrict: 'state/district',
-      // },
-      // {
-      //   name: 'example name',
-      //   age: '35',
-      //   yearsInOffice: '5 years',
-      //   party: 'republic/democratic',
-      //   stateDistrict: 'state/district',
-      // },
-      // {
-      //   name: 'example name',
-      //   age: '35',
-      //   yearsInOffice: '5 years',
-      //   party: 'republic/democratic',
-      //   stateDistrict: 'state/district',
-      // },
-      // {
-      //   name: 'example name',
-      //   age: '35',
-      //   yearsInOffice: '5 years',
-      //   party: 'republic/democratic',
-      //   stateDistrict: 'state/district',
-      // },
-      // {
-      //   name: 'example name',
-      //   age: '35',
-      //   yearsInOffice: '5 years',
-      //   party: 'republic/democratic',
-      //   stateDistrict: 'state/district',
-      // },
-      // {
-      //   name: 'example name',
-      //   age: '35',
-      //   yearsInOffice: '5 years',
-      //   party: 'republic/democratic',
-      //   stateDistrict: 'state/district',
-      // },
-      // {
-      //   name: 'example name',
-      //   age: '35',
-      //   yearsInOffice: '5 years',
-      //   party: 'republic/democratic',
-      //   stateDistrict: 'state/district',
-      // },
-    ]
+    representatives : []
   }
 
   handleCollapse = () => {
@@ -93,7 +47,7 @@ class Representatives extends Component {
           <Representative
               key={i}
               name={representative.first_name + " " + representative.last_name}
-              age={representative.date_of_birth}
+              age={this.getAge(representative.date_of_birth)}
               yearsInOffice={representative.seniority}
               party={representative.party}
               stateDistrict={representative.state}
