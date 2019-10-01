@@ -9,70 +9,70 @@ class Legislations extends Component {
   state = {
     collapse: true,
     legislations : [
-      {
-        name: 'example legislation',
-        year: '2019',
-        status: 'pending',
-        houseOfRepresentative: 'republic/democratic',
-        billType: 'example',
-        sponsors: 'example',
-      },
-      {
-        name: 'example legislation',
-        year: '2019',
-        status: 'pending',
-        houseOfRepresentative: 'republic/democratic',
-        billType: 'example',
-        sponsors: 'example',
-      },
-      {
-        name: 'example legislation',
-        year: '2019',
-        status: 'pending',
-        houseOfRepresentative: 'republic/democratic',
-        billType: 'example',
-        sponsors: 'example',
-      },
-      {
-        name: 'example legislation',
-        year: '2019',
-        status: 'pending',
-        houseOfRepresentative: 'republic/democratic',
-        billType: 'example',
-        sponsors: 'example',
-      },
-      {
-        name: 'example legislation',
-        year: '2019',
-        status: 'pending',
-        houseOfRepresentative: 'republic/democratic',
-        billType: 'example',
-        sponsors: 'example',
-      },
-      {
-        name: 'example legislation',
-        year: '2019',
-        status: 'pending',
-        houseOfRepresentative: 'republic/democratic',
-        billType: 'example',
-        sponsors: 'example',
-      },
-      {
-        name: 'example legislation',
-        year: '2019',
-        status: 'pending',
-        houseOfRepresentative: 'republic/democratic',
-        billType: 'example',
-        sponsors: 'example',
-      },
-      {
-        name: 'example legislation',
-        year: '2019',
-        status: 'pending',
-        houseOfRepresentative: 'republic/democratic',
-        billType: 'example',
-        sponsors: 'example',
-      },
+      // {
+      //   name: 'example legislation',
+      //   year: '2019',
+      //   status: 'pending',
+      //   houseOfRepresentative: 'republic/democratic',
+      //   billType: 'example',
+      //   sponsors: 'example',
+      // },
+      // {
+      //   name: 'example legislation',
+      //   year: '2019',
+      //   status: 'pending',
+      //   houseOfRepresentative: 'republic/democratic',
+      //   billType: 'example',
+      //   sponsors: 'example',
+      // },
+      // {
+      //   name: 'example legislation',
+      //   year: '2019',
+      //   status: 'pending',
+      //   houseOfRepresentative: 'republic/democratic',
+      //   billType: 'example',
+      //   sponsors: 'example',
+      // },
+      // {
+      //   name: 'example legislation',
+      //   year: '2019',
+      //   status: 'pending',
+      //   houseOfRepresentative: 'republic/democratic',
+      //   billType: 'example',
+      //   sponsors: 'example',
+      // },
+      // {
+      //   name: 'example legislation',
+      //   year: '2019',
+      //   status: 'pending',
+      //   houseOfRepresentative: 'republic/democratic',
+      //   billType: 'example',
+      //   sponsors: 'example',
+      // },
+      // {
+      //   name: 'example legislation',
+      //   year: '2019',
+      //   status: 'pending',
+      //   houseOfRepresentative: 'republic/democratic',
+      //   billType: 'example',
+      //   sponsors: 'example',
+      // },
+      // {
+      //   name: 'example legislation',
+      //   year: '2019',
+      //   status: 'pending',
+      //   houseOfRepresentative: 'republic/democratic',
+      //   billType: 'example',
+      //   sponsors: 'example',
+      // },
+      // {
+      //   name: 'example legislation',
+      //   year: '2019',
+      //   status: 'pending',
+      //   houseOfRepresentative: 'republic/democratic',
+      //   billType: 'example',
+      //   sponsors: 'example',
+      // },
     ]
   }
 
@@ -82,17 +82,30 @@ class Legislations extends Component {
     }));
   }
 
+  componentDidMount() {
+    fetch('https://api.propublica.org/congress/v1/bills/search.json?query=%22food+access%22', {
+      method: 'GET',
+      headers: {
+        'X-API-Key': 'eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6'
+      }
+    })
+    .then(response => response.json())
+    .then((data) => {
+      this.setState({legislations: data.results[0].bills})
+    })
+    .catch(console.log)
+  }
   render() {
     const legislationsRendered = this.state.legislations.map((legislation, i) => {
       return (
-          <Legislation 
+          <Legislation
               key={i}
-              name={legislation.name}
-              year={legislation.year}
+              name={legislation.short_title}
+              year={legislation.introduced_date}
               status={legislation.status}
-              houseOfRepresentative={legislation.houseOfRepresentative}
-              billType={legislation.billType}
-              sponsors={legislation.sponsors}
+              houseOfRepresentative={legislation.sponsor_party}
+              billType={legislation.bill_type}
+              sponsors={legislation.sponsor_name}
           />
       );
     });
@@ -107,7 +120,7 @@ class Legislations extends Component {
           </div>
           { this.state.collapse && <LegislationSortFilter /> }
         </div>
-        <div 
+        <div
           className="legislations-container d-flex justify-content-center flex-wrap bd-highlight mb-3"
         >
             { legislationsRendered }
