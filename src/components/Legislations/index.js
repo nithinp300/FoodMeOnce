@@ -6,74 +6,15 @@ import Legislation from './Legislation';
 import './css/Legislations.css';
 
 class Legislations extends Component {
+  getStatus = (enacted) => {
+    if(enacted != null) {
+      return "Enacted";
+    }
+    return "Pending";
+  }
   state = {
     collapse: true,
-    legislations : [
-      // {
-      //   name: 'example legislation',
-      //   year: '2019',
-      //   status: 'pending',
-      //   houseOfRepresentative: 'republic/democratic',
-      //   billType: 'example',
-      //   sponsors: 'example',
-      // },
-      // {
-      //   name: 'example legislation',
-      //   year: '2019',
-      //   status: 'pending',
-      //   houseOfRepresentative: 'republic/democratic',
-      //   billType: 'example',
-      //   sponsors: 'example',
-      // },
-      // {
-      //   name: 'example legislation',
-      //   year: '2019',
-      //   status: 'pending',
-      //   houseOfRepresentative: 'republic/democratic',
-      //   billType: 'example',
-      //   sponsors: 'example',
-      // },
-      // {
-      //   name: 'example legislation',
-      //   year: '2019',
-      //   status: 'pending',
-      //   houseOfRepresentative: 'republic/democratic',
-      //   billType: 'example',
-      //   sponsors: 'example',
-      // },
-      // {
-      //   name: 'example legislation',
-      //   year: '2019',
-      //   status: 'pending',
-      //   houseOfRepresentative: 'republic/democratic',
-      //   billType: 'example',
-      //   sponsors: 'example',
-      // },
-      // {
-      //   name: 'example legislation',
-      //   year: '2019',
-      //   status: 'pending',
-      //   houseOfRepresentative: 'republic/democratic',
-      //   billType: 'example',
-      //   sponsors: 'example',
-      // },
-      // {
-      //   name: 'example legislation',
-      //   year: '2019',
-      //   status: 'pending',
-      //   houseOfRepresentative: 'republic/democratic',
-      //   billType: 'example',
-      //   sponsors: 'example',
-      // },
-      // {
-      //   name: 'example legislation',
-      //   year: '2019',
-      //   status: 'pending',
-      //   houseOfRepresentative: 'republic/democratic',
-      //   billType: 'example',
-      //   sponsors: 'example',
-      // },
-    ]
+    legislations : []
   }
 
   handleCollapse = () => {
@@ -102,7 +43,7 @@ class Legislations extends Component {
               key={i}
               name={legislation.short_title}
               year={legislation.introduced_date}
-              status={legislation.status}
+              status={this.getStatus(legislation.enacted)}
               houseOfRepresentative={legislation.sponsor_party}
               billType={legislation.bill_type}
               sponsors={legislation.sponsor_name}
