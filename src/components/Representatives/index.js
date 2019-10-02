@@ -44,7 +44,7 @@ class Representatives extends Component {
   render() {
     const representativesRendered = this.state.representatives.map((representative, i) => {
       return (
-        <Link to={{ pathname:`/Representatives/instance/${representative.first_name}`, state: representative }}>
+        <Link to={{ pathname:`/Representatives/instance/${representative.first_name}${representative.last_name}`, state: representative }}>
           <Representative
               key={i}
               name={representative.first_name + " " + representative.last_name}
