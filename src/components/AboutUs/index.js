@@ -187,10 +187,10 @@ async grabCommits(){
         <h4 className="footer">Issues Closed: {closedIssues} </h4>
 
         <div className="contactCard">
-          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> FoodMeOnce GitLab Repository: </a></p>
+          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> FoodMeOnce GitLab Repository</a></p>
         </div>
         <div className="contactCard2">
-          <p> <a href="https://documenter.getpostman.com/view/7777503/SVtPXWHE?version=latest"> FoodMeOnce Postman Page: </a></p>
+          <p> <a href="https://documenter.getpostman.com/view/7777503/SVtPXWHE?version=latest"> FoodMeOnce API Documentation</a></p>
         </div>
       </div>
     );
