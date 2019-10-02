@@ -36,7 +36,7 @@ class AboutUs extends React.Component{
 }
 
 async grabIssues(){
-  fetch("https://gitlab.com/api/v4/projects/14463226/issues?per_page=100&page=1")
+  fetch("https://gitlab.com/api/v4/projects/14463226/issues?per_page=1000&page=1") 
     .then(res => res.json())
     .then(res => {
       res.forEach(issue => {
@@ -73,7 +73,10 @@ async grabIssues(){
 }
 
 async grabCommits(){
-  fetch("https://gitlab.com/api/v4/projects/14463226/repository/commits")
+  var curr = 0
+  var last = 0
+  do{
+  fetch("https://gitlab.com/api/v4/projects/14463226/repository/commits?per_page=1000&page=1")
       .then(res => res.json())
       .then(res => {
         res.forEach(commit => {
@@ -101,6 +104,7 @@ async grabCommits(){
         });
         this.setState(this.state)
       })
+    } while(curr != last)
 
 }
 
