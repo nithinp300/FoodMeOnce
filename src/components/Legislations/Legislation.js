@@ -18,7 +18,7 @@ function Legislation(props) {
                     <span>Status</span>: {props.status}
                 </li>
                 <li className="legislation-desc">
-                    <span>Representative</span>: {props.houseOfRepresentative}
+                    <span>Party</span>: {props.houseOfRepresentative}
                 </li>
                 <li className="legislation-desc">
                     <span>Bill Type</span>: {props.billType}
