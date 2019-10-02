@@ -1,4 +1,4 @@
- import React from "react";
+import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Districts from "./Districts";
 import Representatives from "./Representatives";
@@ -28,6 +28,7 @@ function App() {
 
       <BrowserRouter>
         <Route exact path="/" component={SplashPage} />
+        {/* <Route path="/Districts/instance/:name" component={DistrictInstance} /> */}
         <Route path="/Districts" component={Districts} />
         <Route path="/Representatives" component={Representatives} />
         <Route path="/Legislations" component={Legislation} />
