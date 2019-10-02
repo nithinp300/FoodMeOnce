@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import LegislationSortFilter from './LegislationSortFilter';
 import Legislation from './Legislation';
 
@@ -39,6 +39,7 @@ class Legislations extends Component {
   render() {
     const legislationsRendered = this.state.legislations.map((legislation, i) => {
       return (
+        <Link to={{ pathname:`/Legislations/instance/${legislation.short_title}`, state: legislation }}>
           <Legislation
               key={i}
               name={legislation.short_title}
@@ -48,6 +49,7 @@ class Legislations extends Component {
               billType={legislation.bill_type}
               sponsors={legislation.sponsor_name}
           />
+        </Link>
       );
     });
     return (
