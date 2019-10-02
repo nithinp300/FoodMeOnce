@@ -20,6 +20,12 @@ class RepresentativeInstance extends React.Component{
     }
     return age;
   }
+    getParty = (sponsor_party) => {
+    if(sponsor_party == "D") {
+        return "Democrat";
+    }
+    return "Republican";
+    }
 
     render(){
     var rep_data = this.props.location.state
@@ -40,7 +46,7 @@ class RepresentativeInstance extends React.Component{
                     <span>Years In Office</span>: {rep_data.seniority}
                 </li>
                 <li className="representative-desc">
-                    <span>Party</span>: {rep_data.party}
+                    <span>Party</span>: {this.getParty(rep_data.party)}
                 </li>
                 <li className="representative-desc">
                     <span>State/District</span>: {rep_data.state}

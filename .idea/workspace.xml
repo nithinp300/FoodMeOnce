@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="050d60ad-845b-4167-87cb-fa455a6ad8cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Districts/District.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Districts/District.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Districts/css/District.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Districts/css/District.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Districts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Districts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InstancePages/DistrictInstance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InstancePages/DistrictInstance.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/InstancePages/LegislationInstance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InstancePages/LegislationInstance.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/InstancePages/RepresentativeInstance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InstancePages/RepresentativeInstance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InstancePages/css/District.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InstancePages/css/DistrictInstance.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InstancePages/css/Instance.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InstancePages/css/Legislation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InstancePages/css/LegislationInstance.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InstancePages/css/Representative.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InstancePages/css/RepresentativeInstance.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Legislations/Legislation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Legislations/Legislation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Legislations/css/Legislation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Legislations/css/Legislation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Legislations/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Legislations/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Representatives/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Representatives/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Districts/css/District.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            <state relative-caret-position="408">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -47,7 +37,25 @@
         <entry file="file://$PROJECT_DIR$/src/components/InstancePages/DistrictInstance.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Legislations/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1173">
+              <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Legislations/Legislation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -55,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/InstancePages/LegislationInstance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            <state relative-caret-position="493">
+              <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="44" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -64,8 +72,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/InstancePages/RepresentativeInstance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+            <state relative-caret-position="51">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Representatives/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1224">
+              <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -82,9 +99,7 @@
         <option value="$PROJECT_DIR$/src/components/App.js" />
         <option value="$PROJECT_DIR$/src/components/InstancePages/css/Instance.css" />
         <option value="$PROJECT_DIR$/src/components/AboutUs/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Representatives/index.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/Legislations/Legislation.js" />
         <option value="$PROJECT_DIR$/src/components/Legislations/index.js" />
         <option value="$PROJECT_DIR$/src/components/Districts/District.js" />
         <option value="$PROJECT_DIR$/src/components/Districts/index.js" />
@@ -94,9 +109,11 @@
         <option value="$PROJECT_DIR$/src/components/Legislations/css/Legislations.css" />
         <option value="$PROJECT_DIR$/src/components/Legislations/css/Legislation.css" />
         <option value="$PROJECT_DIR$/src/components/Districts/css/District.css" />
+        <option value="$PROJECT_DIR$/src/components/InstancePages/RepresentativeInstance.js" />
+        <option value="$PROJECT_DIR$/src/components/Representatives/index.js" />
         <option value="$PROJECT_DIR$/src/components/InstancePages/DistrictInstance.js" />
         <option value="$PROJECT_DIR$/src/components/InstancePages/LegislationInstance.js" />
-        <option value="$PROJECT_DIR$/src/components/InstancePages/RepresentativeInstance.js" />
+        <option value="$PROJECT_DIR$/src/components/Legislations/Legislation.js" />
       </list>
     </option>
   </component>
@@ -155,6 +172,13 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Districts" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="foodmeonce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="foodmeonce" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="InstancePages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="foodmeonce" type="b2602c69:ProjectViewProjectNode" />
@@ -300,13 +324,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/InstancePages/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InstancePages/index.js" />
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -327,13 +345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Representatives/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -348,13 +359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Legislations/Legislation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Districts/District.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -362,13 +366,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/InstancePages/css/Instance.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InstancePages/css/Instance.css" />
     <entry file="file://$PROJECT_DIR$/src/components/InstancePages/css/RepresentativeInstance.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -404,13 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Legislations/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Districts/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -418,31 +409,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/InstancePages/DistrictInstance.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Districts/css/District.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/InstancePages/LegislationInstance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/InstancePages/RepresentativeInstance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Representatives/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InstancePages/DistrictInstance.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Districts/css/District.css">
+    <entry file="file://$PROJECT_DIR$/src/components/Legislations/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="1173">
+          <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InstancePages/LegislationInstance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Legislations/Legislation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>

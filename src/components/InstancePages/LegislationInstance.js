@@ -1,6 +1,8 @@
 import React from "react";
 import Legislation_img from '../../images/us.png';
 import './css/LegislationInstance.css';
+import us_hor from '../../images/us_hor.png';
+import us_sen from '../../images/us_sen.png';
 
 class LegislationInstance extends React.Component{
 
@@ -35,6 +37,13 @@ class LegislationInstance extends React.Component{
     return "Republican";
    }
 
+   getImage = (billType) => {
+   if(billType == 'hr'){
+        return us_hor;
+        }
+    return us_sen;
+    }
+
     render(){
     var legislation_data = this.props.location.state
 //    console.log(this.props.location.state)
@@ -45,7 +54,7 @@ class LegislationInstance extends React.Component{
             className="legislation d-flex border border-secondary
                 justify-content-center flex-column align-items-center"
         >
-            <img className="legislation-image" src={Legislation_img} alt="us flag" />
+            <img className="legislation-image" src={this.getImage(legislation_data.billType)} alt="government" />
             <p className="legislation-name">{legislation_data.short_title}</p>
             <ul>
                 <li className="legislation-desc">

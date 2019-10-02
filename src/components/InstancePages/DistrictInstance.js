@@ -21,10 +21,10 @@ class DistrictInstance extends React.Component{
             <p className="district-name">{district_data.name}</p>
             <ul>
                 <li className="district-desc">
-                    <span>Average Income</span>: ${district_data.avgIncome}
+                    <span>Population</span>: {district_data.population}
                 </li>
                 <li className="district-desc">
-                    <span>Average Education Level</span>: {district_data.avgEducation}
+                    <span>Average Income</span>: ${district_data.medianIncome}
                 </li>
                 <li className="district-desc">
                     <span>Average Age</span>: {district_data.avgAge}

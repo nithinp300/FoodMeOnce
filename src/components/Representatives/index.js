@@ -30,6 +30,13 @@ class Representatives extends Component {
         }
     return "Senate";
     }
+
+    getParty = (sponsor_party) => {
+    if(sponsor_party == "D") {
+        return "Democrat";
+    }
+    return "Republican";
+    }
   state = {
     collapse: true,
     representatives : []
@@ -63,7 +70,7 @@ class Representatives extends Component {
               name={representative.first_name + " " + representative.last_name}
               age={this.getAge(representative.date_of_birth)}
               yearsInOffice={representative.seniority}
-              party={representative.party}
+              party={this.getParty(representative.party)}
               stateDistrict={representative.state}
           />
         </Link>
