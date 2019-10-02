@@ -29,8 +29,8 @@ function App() {
 
       <BrowserRouter>
         <Route exact path="/" component={SplashPage} />
-        <Route path="/Districts" component={Districts} />
-        <Route path="/DistrictInstance" component={DistrictInstance} />
+        <Route path="/Districts/Instance" component={DistrictInstance} />
+        <Route exact path="/Districts" component={Districts} />
         <Route path="/Representatives" component={Representatives} />
         <Route path="/Legislations" component={Legislation} />
         <Route path="/About Us" component={AboutUs} />
