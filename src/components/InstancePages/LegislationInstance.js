@@ -20,19 +20,19 @@ class LegislationInstance extends React.Component{
             <p className="legislation-name">{legislation_data.short_title}</p>
             <ul>
                 <li className="legislation-desc">
-                    <span>Year</span>: {legislation_data.introduced_date}
+                    <span>Introduced</span>: {legislation_data.introduced_date}
                 </li>
                 <li className="legislation-desc">
-                    <span>Status</span>: {legislation_data.status}
+                    <span>Enacted</span>: {legislation_data.enacted}
                 </li>
                 <li className="legislation-desc">
-                    <span>Representative</span>: {legislation_data.sponsor_party}
+                    <span>Party</span>: {legislation_data.sponsor_party}
                 </li>
                 <li className="legislation-desc">
-                    <span>Bill Type</span>: {legislation_data.billType}
+                    <span>Bill Type</span>: {legislation_data.bill_type}
                 </li>
                 <li className="legislation-desc">
-                    <span>Sponsor/s</span>: {legislation_data.sponsors}
+                    <span>Sponsor/s</span>: {legislation_data.sponsor_name}
                 </li>
             </ul>
         </div>
