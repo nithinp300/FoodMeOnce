@@ -5,6 +5,7 @@ import Representatives from "./Representatives";
 import Legislation from "./Legislations";
 import SplashPage from "./SplashPage";
 import AboutUs from "./AboutUs";
+import DistrictInstance from "./InstancePages/DistrictInstance"
 import { Navbar, Nav } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -28,8 +29,8 @@ function App() {
 
       <BrowserRouter>
         <Route exact path="/" component={SplashPage} />
-        {/* <Route path="/Districts/instance/:name" component={DistrictInstance} /> */}
         <Route path="/Districts" component={Districts} />
+        <Route path="/DistrictInstance" component={DistrictInstance} />
         <Route path="/Representatives" component={Representatives} />
         <Route path="/Legislations" component={Legislation} />
         <Route path="/About Us" component={AboutUs} />

@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-function InstanceOfDistrict() {
+
+function DistrictInstance() {
   return (
     <div>
       <img
@@ -13,4 +13,4 @@ function InstanceOfDistrict() {
   );
 }
 
-export default InstanceOfDistrict;
+export default DistrictInstance;
