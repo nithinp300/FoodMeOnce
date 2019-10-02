@@ -24,7 +24,7 @@ class LegislationInstance extends React.Component{
     }
 
     getBillType = (billType) => {
-    if(billType == 'hr'){
+    if(billType == "hr"){
         return "House of Representatives";
         }
     return "Senate";
@@ -62,7 +62,7 @@ console.log(legislation_data)
                 justify-content-center flex-column align-items-center"
         >
             <img className="legislation-instance-image" src={this.getImage(legislation_data.billType)} alt="government" />
-            <p className="legislation-name"><a href={legislation_data.bill_uri}>{legislation_data.short_title}</a></p>
+            <p className="legislation-name"><a href={legislation_data.congressdotgov_url}>{legislation_data.short_title}</a></p>
             <ul>
                 <li className="legislation-instance-desc">
                     <span>Introduced</span>: {legislation_data.introduced_date}
@@ -83,7 +83,13 @@ console.log(legislation_data)
                     <span>Sponsor(s)</span>: {this.getSponsorTitle(legislation_data.sponsor_title)} {legislation_data.sponsor_name}
                 </li>
                 <li className="legislation-instance-desc">
+                    <span>Cosponsors</span>: {legislation_data.cosponsors}
+                </li>
+                <li className="legislation-instance-desc">
                     <span>Committee(s)</span>: {legislation_data.committees}
+                </li>
+                <li className="legislation-instance-desc">
+                    <span>Latest Action</span>: {legislation_data.latest_major_action}
                 </li>
                 <li className="legislation-instance-desc">
                     <span>Summary</span>: {legislation_data.summary_short}

@@ -1,12 +1,11 @@
 .legislation-instance {
-    width: 1000px;
-    margin: auto;
+    width: 1200px;
     padding-top: 30px;
     padding-bottom: 10px;
     padding-right: 10px;
-    margin-top: 75px;
+    padding-left: 20px;
+    margin-top: 20px;
     background-color: aliceBlue;
-    padding-left: 10px;
 }
 
 .legislation-instance:hover {
