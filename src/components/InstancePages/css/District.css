@@ -1,0 +1,36 @@
+.district {
+    width: 400px;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.district:hover {
+    background-color: aliceBlue;
+    cursor: pointer;
+}
+
+.district-image {
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+.district-name {
+    margin: 0;
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 5px;
+}
+
+.district ul {
+    margin: 0;
+    padding: 0;
+}
+.district-desc {
+    margin: 0;
+}
+
+.district-desc span {
+    font-weight: bold;
+}
