@@ -51,6 +51,21 @@ class RepresentativeInstance extends React.Component{
                 <li className="representative-instance-desc">
                     <span>State/District</span>: {rep_data.state}
                 </li>
+                <li className="representative-instance-desc">
+                    <span>Twitter</span>: @{rep_data.twitter_account}
+                </li>
+                <li className="representative-instance-desc">
+                    <span>Facebook</span>: {rep_data.facebook_account}
+                </li>
+                <li className="representative-instance-desc">
+                    <span>Website</span>: {rep_data.url}
+                </li>
+                <li className="representative-instance-desc">
+                    <span>Office</span>: {rep_data.office}
+                </li>
+                <li className="representative-instance-desc">
+                    <span>Phone</span>: {rep_data.phone}
+                </li>
             </ul>
         </div>
     );
