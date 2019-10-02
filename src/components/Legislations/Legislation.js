@@ -5,16 +5,16 @@ import us_hor from '../../images/us_hor.png';
 import us_sen from '../../images/us_sen.png';
 
 function getImage(billType) {
-   if(billType == 'hr'){
+   if(billType === "House of Representatives"){
         return us_hor;
-        }
+      }
    return us_sen;
     };
 
 function Legislation(props) {
     return (
-        <div 
-            className="legislation d-flex border border-secondary 
+        <div
+            className="legislation d-flex border border-secondary
                 justify-content-center flex-column align-items-center"
         >
             <img className="legislation-image" src={getImage(props.billType)} alt="government" />
