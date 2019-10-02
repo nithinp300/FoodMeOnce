@@ -24,31 +24,32 @@ class LegislationInstance extends React.Component{
     }
 
     getBillType = (billType) => {
-    if(billType == "hr"){
+    if(billType === "hr"){
         return "House of Representatives";
         }
     return "Senate";
     }
 
     getParty = (sponsor_party) => {
-    if(sponsor_party == "D") {
+    if(sponsor_party === "D") {
         return "Democratic";
     }
     return "Republican";
    }
 
    getImage = (billType) => {
-   if(billType == 'hr'){
+   if(billType === "hr"){
         return us_hor;
         }
    return us_sen;
    }
 
    getSponsorTitle = (sponsor_title) => {
-   if(sponsor_title == 'Sen.'){
-    return "Senator"
+   if(sponsor_title === 'Sen.'){
+    return "Senator";
     }
-    return "Representative"}
+    return "Representative";
+   }
 
     render(){
     var legislation_data = this.props.location.state
@@ -61,7 +62,7 @@ console.log(legislation_data)
             className="legislation-instance d-flex p-2 border border-secondary
                 justify-content-center flex-column align-items-center"
         >
-            <img className="legislation-instance-image" src={this.getImage(legislation_data.billType)} alt="government" />
+            <img className="legislation-instance-image" src={this.getImage(legislation_data.bill_type)} alt="government" />
             <p className="legislation-name"><a href={legislation_data.congressdotgov_url}>{legislation_data.short_title}</a></p>
             <ul>
                 <li className="legislation-instance-desc">
@@ -77,7 +78,7 @@ console.log(legislation_data)
                     <span>Party</span>: {this.getParty(legislation_data.sponsor_party)}
                 </li>
                 <li className="legislation-instance-desc">
-                    <span>Bill Type</span>: {this.getBillType(legislation_data.bill_Type)}
+                    <span>Bill Type</span>: {this.getBillType(legislation_data.bill_type)}
                 </li>
                 <li className="legislation-instance-desc">
                     <span>Sponsor(s)</span>: {this.getSponsorTitle(legislation_data.sponsor_title)} {legislation_data.sponsor_name}
@@ -87,6 +88,9 @@ console.log(legislation_data)
                 </li>
                 <li className="legislation-instance-desc">
                     <span>Committee(s)</span>: {legislation_data.committees}
+                </li>
+                <li className="legislation-instance-desc">
+                    <span>Latest Action Date</span>: {legislation_data.latest_major_action_date}
                 </li>
                 <li className="legislation-instance-desc">
                     <span>Latest Action</span>: {legislation_data.latest_major_action}

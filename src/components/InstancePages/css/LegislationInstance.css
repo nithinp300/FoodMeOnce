@@ -1,10 +1,11 @@
 .legislation-instance {
     width: 1200px;
+    margin: auto;
     padding-top: 30px;
     padding-bottom: 10px;
     padding-right: 10px;
     padding-left: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: aliceBlue;
 }
 
