@@ -1,5 +1,10 @@
 import React from "react";
 import './css/Cards.css';
+import Chris_img from '../../images/Chris_profile.jpg';
+import Gyuwon_img from '../../images/Gyuwon_profile.jpg';
+import Shub_img from '../../images/Shub_profile.jpg';
+import Brian_img from '../../images/brian_profile.png';
+import Nithin_img from '../../images/cornField.jpg';
 
 
 
@@ -126,7 +131,7 @@ async grabCommits(){
         <h1 className="title">About Us page</h1>
         <div className="cardRow">
           <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
-            <img src="/images/Chris_profile.jpg" className="card-img-top" alt="Card Background"/>
+            <img src={Chris_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Christopher Chasteen</h5>
               <p className="card-text">Commits: {Chris[0]}</p>
@@ -136,7 +141,7 @@ async grabCommits(){
           </div>
 
           <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
-            <img src="/images/Gyuwon_profile.jpg" className="card-img-top" alt="Card Background"/>
+            <img src={Gyuwon_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Gyuwon Kim</h5>
               <p className="card-text">Commits: {Gyuwon[0]}</p>
@@ -146,7 +151,7 @@ async grabCommits(){
           </div>
 
           <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
-            <img src="/images/Shub_profile.jpg" className="card-img-top" alt="Card Background"/>
+            <img src={Shub_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Shubhendra Trivedi</h5>
               <p className="card-text">Commits: {Shubhendra[0]}</p>
@@ -158,7 +163,7 @@ async grabCommits(){
 
         <div className="cardRow">
         <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
-            <img src="/images/brian_profile.png" className="card-img-top" alt="Card Background"/>
+            <img src={Brian_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Brian Dyck</h5>
               <p className="card-text">Commits: {Brian[0]}</p>
@@ -168,7 +173,7 @@ async grabCommits(){
           </div>
 
           <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
-            <img src="/images/cornField.jpg" className="card-img-top" alt="Card Background"/>
+            <img src={Nithin_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Nithin Pingili</h5>
               <p className="card-text">Commits: {Nithin[0]}</p>

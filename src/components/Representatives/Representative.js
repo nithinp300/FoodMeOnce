@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Representative_img from '../../images/us.png';
 import './css/Representative.css';
 
 function Representative(props) {
@@ -8,7 +8,7 @@ function Representative(props) {
             className="representative d-flex border border-secondary
                 justify-content-center flex-column align-items-center"
         >
-            <img className="representative-image" src="/images/us.png" alt="us flag" />
+            <img className="representative-image" src={Representative_img} alt="us flag" />
             <p className="representative-name">{props.name}</p>
             <ul>
                 <li className="representative-desc">

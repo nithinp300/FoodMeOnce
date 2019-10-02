@@ -1,5 +1,5 @@
 import React from 'react';
-
+import District_img from '../../images/us.png';
 import './css/District.css';
 
 function District(props) {
@@ -9,7 +9,7 @@ function District(props) {
             className="district d-flex border border-secondary 
                 justify-content-center flex-column align-items-center"
         >
-            <img className="district-image" src="/images/us.png" alt="us flag" />
+            <img className="district-image" src={District_img} alt="us flag" />
             <p className="district-name">{props.name}</p>
             <ul>
                 <li className="district-desc">

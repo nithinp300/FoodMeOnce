@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Legislation_img from '../../images/us.png';
 import './css/Legislation.css';
 
 function Legislation(props) {
@@ -8,7 +8,7 @@ function Legislation(props) {
             className="legislation d-flex border border-secondary 
                 justify-content-center flex-column align-items-center"
         >
-            <img className="legislation-image" src="/images/us.png" alt="us flag" />
+            <img className="legislation-image" src={Legislation_img} alt="us flag" />
             <p className="legislation-name">{props.name}</p>
             <ul>
                 <li className="legislation-desc">
