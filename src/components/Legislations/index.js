@@ -12,6 +12,28 @@ class Legislations extends Component {
     }
     return "Pending";
   }
+
+  getEnacted = (enacted) => {
+    if(enacted != null) {
+        return enacted;
+    }
+    return "N/A";
+  }
+
+  getBillType = (billType) => {
+    if(billType == 'hr'){
+        return "House of Representatives";
+        }
+    return "Senate";
+  }
+
+  getParty = (sponsor_party) => {
+    if(sponsor_party == "D") {
+        return "Democratic";
+    }
+    return "Republican";
+   }
+
   state = {
     collapse: true,
     legislations : []
@@ -45,8 +67,8 @@ class Legislations extends Component {
               name={legislation.short_title}
               year={legislation.introduced_date}
               status={this.getStatus(legislation.enacted)}
-              houseOfRepresentative={legislation.sponsor_party}
-              billType={legislation.bill_type}
+              houseOfRepresentative={this.getParty(legislation.sponsor_party)}
+              billType={this.getBillType(legislation.bill_type)}
               sponsors={legislation.sponsor_name}
           />
         </Link>

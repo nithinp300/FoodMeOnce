@@ -1,14 +1,10 @@
 .legislation {
     width: 400px;
-    margin: 10px;
+    margin: auto;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
-}
-
-.legislation:hover {
-    background-color: aliceBlue;
-    cursor: pointer;
+    margin-top: 75px;
 }
 
 .legislation-image {

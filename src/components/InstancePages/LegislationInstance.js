@@ -23,17 +23,23 @@ class LegislationInstance extends React.Component{
 
     getBillType = (billType) => {
     if(billType == 'hr'){
-        return "House of Represenatives";
+        return "House of Representatives";
         }
     return "Senate";
     }
 
+    getParty = (sponsor_party) => {
+    if(sponsor_party == "D") {
+        return "Democratic";
+    }
+    return "Republican";
+   }
+
     render(){
     var legislation_data = this.props.location.state
-    console.log(this.props.location.state)
-    var status = this.getStatus(legislation_data.enacted)
-    var enacted = this.getEnacted(legislation_data.enacted)
-    var billType = this.getBillType(legislation_data.bill_type)
+//    console.log(this.props.location.state)
+//    var status = this.getStatus(legislation_data.enacted)
+//    var billType = this.getBillType(legislation_data.bill_type)
     return(
         <div
             className="legislation d-flex border border-secondary
@@ -46,16 +52,16 @@ class LegislationInstance extends React.Component{
                     <span>Introduced</span>: {legislation_data.introduced_date}
                 </li>
                 <li className="legislation-desc">
-                    <span>Status</span>: {status}
+                    <span>Status</span>: {this.getStatus(legislation_data.enacted)}
                 </li>
                 <li className="legislation-desc">
-                    <span>Enacted</span>: {enacted}
+                    <span>Enacted</span>: {this.getEnacted(legislation_data.enacted)}
                 </li>
                 <li className="legislation-desc">
-                    <span>Party</span>: {legislation_data.sponsor_party}
+                    <span>Party</span>: {this.getParty(legislation_data.sponsor_party)}
                 </li>
                 <li className="legislation-desc">
-                    <span>Bill Type</span>: {billType}
+                    <span>Bill Type</span>: {this.getBillType(legislation_data.bill_Type)}
                 </li>
                 <li className="legislation-desc">
                     <span>Sponsor/s</span>: {legislation_data.sponsor_name}

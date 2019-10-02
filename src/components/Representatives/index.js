@@ -17,6 +17,19 @@ class Representatives extends Component {
     }
     return age;
   }
+  getEnacted = (enacted) => {
+    if(enacted != null) {
+        return enacted;
+    }
+    return "N/A";
+    }
+
+    getBillType = (billType) => {
+    if(billType == 'hr'){
+        return "House of Representatives";
+        }
+    return "Senate";
+    }
   state = {
     collapse: true,
     representatives : []
