@@ -1,4 +1,4 @@
-.representative {
+.representative-instance {
     width: 400px;
     margin: auto;
     padding-top: 20px;
@@ -9,31 +9,31 @@
     background-color: aliceBlue;
 }
 
-.representative:hover {
+.representative-instance:hover {
     background-color: aliceBlue;
     cursor: default;
 }
 
-.representative-image {
+.representative-instance-image {
     width: 60%;
     margin-bottom: 10px;
 }
 
-.representative-name {
+.representative-instance-name {
     margin: auto;
     font-weight: bold;
     font-size: 120%;
     margin-bottom: 5px;
 }
 
-.representative ul {
+.representative-instance ul {
     margin: 0;
     padding: 0;
 }
-.representative-desc {
+.representative-instance-desc {
     margin: 0;
 }
 
-.representative-desc span {
+.representative-instance-desc span {
     font-weight: bold;
 }

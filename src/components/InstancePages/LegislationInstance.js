@@ -41,39 +41,52 @@ class LegislationInstance extends React.Component{
    if(billType == 'hr'){
         return us_hor;
         }
-    return us_sen;
+   return us_sen;
+   }
+
+   getSponsorTitle = (sponsor_title) => {
+   if(sponsor_title == 'Sen.'){
+    return "Senator"
     }
+    return "Representative"}
 
     render(){
     var legislation_data = this.props.location.state
 //    console.log(this.props.location.state)
 //    var status = this.getStatus(legislation_data.enacted)
 //    var billType = this.getBillType(legislation_data.bill_type)
+console.log(legislation_data)
     return(
         <div
-            className="legislation d-flex border border-secondary
+            className="legislation-instance d-flex p-2 border border-secondary
                 justify-content-center flex-column align-items-center"
         >
-            <img className="legislation-image" src={this.getImage(legislation_data.billType)} alt="government" />
-            <p className="legislation-name">{legislation_data.short_title}</p>
+            <img className="legislation-instance-image" src={this.getImage(legislation_data.billType)} alt="government" />
+            <p className="legislation-name"><a href={legislation_data.bill_uri}>{legislation_data.short_title}</a></p>
             <ul>
-                <li className="legislation-desc">
+                <li className="legislation-instance-desc">
                     <span>Introduced</span>: {legislation_data.introduced_date}
                 </li>
-                <li className="legislation-desc">
+                <li className="legislation-instance-desc">
                     <span>Status</span>: {this.getStatus(legislation_data.enacted)}
                 </li>
-                <li className="legislation-desc">
+                <li className="legislation-instance-desc">
                     <span>Enacted</span>: {this.getEnacted(legislation_data.enacted)}
                 </li>
-                <li className="legislation-desc">
+                <li className="legislation-instance-desc">
                     <span>Party</span>: {this.getParty(legislation_data.sponsor_party)}
                 </li>
-                <li className="legislation-desc">
+                <li className="legislation-instance-desc">
                     <span>Bill Type</span>: {this.getBillType(legislation_data.bill_Type)}
                 </li>
-                <li className="legislation-desc">
-                    <span>Sponsor/s</span>: {legislation_data.sponsor_name}
+                <li className="legislation-instance-desc">
+                    <span>Sponsor(s)</span>: {this.getSponsorTitle(legislation_data.sponsor_title)} {legislation_data.sponsor_name}
+                </li>
+                <li className="legislation-instance-desc">
+                    <span>Committee(s)</span>: {legislation_data.committees}
+                </li>
+                <li className="legislation-instance-desc">
+                    <span>Summary</span>: {legislation_data.summary_short}
                 </li>
             </ul>
         </div>

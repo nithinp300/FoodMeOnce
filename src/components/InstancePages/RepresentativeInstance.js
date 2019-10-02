@@ -33,22 +33,22 @@ class RepresentativeInstance extends React.Component{
     console.log(this.props.location.state)
     return(
         <div
-            className="representative d-flex border border-secondary
+            className="representative-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center"
         >
-            <img className="representative-image" src={Representative_img} alt="us flag" />
-            <p className="representative-name">{rep_data.first_name} {rep_data.last_name}</p>
+            <img className="representative-instance-image" src={Representative_img} alt="us flag" />
+            <p className="representative-instance-name">{rep_data.first_name} {rep_data.last_name}</p>
             <ul>
-                <li className="representative-desc">
+                <li className="representative-instance-desc">
                     <span>Age</span>: {age}
                 </li>
-                <li className="representative-desc">
+                <li className="representative-instance-desc">
                     <span>Years In Office</span>: {rep_data.seniority}
                 </li>
-                <li className="representative-desc">
+                <li className="representative-instance-desc">
                     <span>Party</span>: {this.getParty(rep_data.party)}
                 </li>
-                <li className="representative-desc">
+                <li className="representative-instance-desc">
                     <span>State/District</span>: {rep_data.state}
                 </li>
             </ul>

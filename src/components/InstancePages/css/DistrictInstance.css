@@ -1,4 +1,4 @@
-.district {
+.district-instance {
     width: 400px;
     margin: auto;
     padding-top: 20px;
@@ -9,31 +9,31 @@
     background-color: aliceBlue;
 }
 
-.district:hover {
+.district-instance:hover {
     background-color: aliceBlue;
     cursor: default;
 }
 
-.district-image {
+.district-instance-image {
     width: 60%;
     margin-bottom: 10px;
 }
 
-.district-name {
+.district-instance-name {
     margin: 0;
     font-weight: bold;
     font-size: 120%;
     margin-bottom: 5px;
 }
 
-.district ul {
+.district-instance ul {
     margin: 0;
     padding: 0;
 }
-.district-desc {
+.district-instance-desc {
     margin: 0;
 }
 
-.district-desc span {
+.district-instance-desc span {
     font-weight: bold;
 }

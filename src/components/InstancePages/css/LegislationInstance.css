@@ -1,7 +1,7 @@
-.legislation {
-    width: 400px;
+.legislation-instance {
+    width: 1000px;
     margin: auto;
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 10px;
     padding-right: 10px;
     margin-top: 75px;
@@ -9,16 +9,16 @@
     padding-left: 10px;
 }
 
-.legislation:hover {
+.legislation-instance:hover {
     background-color: aliceBlue;
     cursor: default;
 }
-.legislation-image {
-    width: 60%;
+.legislation-instance-image {
+    width: 20%;
     margin-bottom: 10px;
 }
 
-.legislation-name {
+.legislation-instance-name {
     margin: 0;
     text-align: center;
     font-weight: bold;
@@ -26,14 +26,15 @@
     margin-bottom: 5px;
 }
 
-.legislation ul {
+.legislation-instance ul {
     margin: 0;
     padding: 0;
 }
-.legislation-desc {
+.legislation-instance-desc {
+    text_align: center;
     margin: 0;
 }
 
-.legislation-desc span {
+.legislation-instance-desc span {
     font-weight: bold;
 }

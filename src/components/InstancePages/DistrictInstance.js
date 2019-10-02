@@ -14,25 +14,25 @@ class DistrictInstance extends React.Component{
     console.log(this.props.location.state)
     return (
     <div
-            className="district d-flex border border-secondary
+            className="district-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center"
         >
-            <img className="district-image" src={District_img} alt="us flag" />
-            <p className="district-name">{district_data.name}</p>
+            <img className="district-instance-image" src={District_img} alt="us flag" />
+            <p className="district-instance-name">{district_data.name}</p>
             <ul>
-                <li className="district-desc">
+                <li className="district-instance-desc">
                     <span>Population</span>: {district_data.population}
                 </li>
-                <li className="district-desc">
+                <li className="district-instance-desc">
                     <span>Average Income</span>: ${district_data.medianIncome}
                 </li>
-                <li className="district-desc">
+                <li className="district-instance-desc">
                     <span>Average Age</span>: {district_data.avgAge}
                 </li>
-                <li className="district-desc">
+                <li className="district-instance-desc">
                     <span>Gender Ratio</span>: {district_data.genderRatio}
                 </li>
-                <li className="district-desc">
+                <li className="district-instance-desc">
 
                     <span>Representative</span>: {district_data.representative}
                 </li>
