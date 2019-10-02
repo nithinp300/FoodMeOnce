@@ -12,7 +12,7 @@ function Legislation(props) {
             <p className="legislation-name">{props.name}</p>
             <ul>
                 <li className="legislation-desc">
-                    <span>Year</span>: {props.year}
+                    <span>Introduced</span>: {props.year}
                 </li>
                 <li className="legislation-desc">
                     <span>Status</span>: {props.status}
