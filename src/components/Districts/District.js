@@ -3,7 +3,7 @@ import District_img from '../../images/us.png';
 import './css/District.css';
 
 function District(props) {
-    let avgIncome = props.avgIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    let medianIncome = props.medianIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return (
         <div 
             className="district d-flex border border-secondary 
@@ -13,10 +13,10 @@ function District(props) {
             <p className="district-name">{props.name}</p>
             <ul>
                 <li className="district-desc">
-                    <span>Average Income</span>: ${avgIncome}
+                    <span>Population</span>: {props.population}
                 </li>
                 <li className="district-desc">
-                    <span>Average Education Level</span>: {props.avgEducation}
+                    <span>Median Income</span>: ${props.medianIncome}
                 </li>
                 <li className="district-desc">
                     <span>Average Age</span>: {props.avgAge}
@@ -25,7 +25,7 @@ function District(props) {
                     <span>Gender Ratio</span>: {props.genderRatio}
                 </li>
                 <li className="district-desc">
-                    <span>Distance to food supply</span>: {props.distToSupply}
+                    <span>Representative</span>: {props.representative}
                 </li>
             </ul>
         </div>

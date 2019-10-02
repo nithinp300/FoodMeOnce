@@ -1,6 +1,6 @@
 import React from "react";
 import Representative_img from '../../images/us.png';
-import "./css/Representative.css";
+import "./css/RepresentativeInstance.css";
 
 
 class RepresentativeInstance extends React.Component{

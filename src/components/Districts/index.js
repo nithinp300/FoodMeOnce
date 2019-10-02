@@ -11,69 +11,29 @@ class Districts extends Component {
     collapse: true,
     districts: [
       {
-        name: "Texas District1",
-        avgIncome: "10000",
-        avgEducation: "Bachelor's",
-        avgAge: "35",
-        genderRatio: "1.5 : 1",
-        distToSupply: "3 miles"
+        name: "Texas 21st Congressional District",
+        population: "818,281",
+        medianIncome: "71,486",
+        avgAge: "37.9",
+        genderRatio: "0.97",
+        representative: "Chip Roy"
       },
       {
-        name: "Texas District2",
-        avgIncome: "20000",
-        avgEducation: "Bachelor's",
-        avgAge: "35",
-        genderRatio: "1.5 : 1",
-        distToSupply: "3 miles"
+        name: "Texas 10th Congressional District",
+        population: "896,798",
+        medianIncome: "75,517",
+        avgAge: "35.9",
+        genderRatio: "0.99",
+        representative: "Michael T. McCaul"
       },
       {
-        name: "Texas District3",
-        avgIncome: "30000",
-        avgEducation: "Bachelor's",
-        avgAge: "35",
-        genderRatio: "1.5 : 1",
-        distToSupply: "3 miles"
+        name: "Texas 31st Congressional District",
+        population: "883,347",
+        medianIncome: "70,346",
+        avgAge: "35.2",
+        genderRatio: "0.97",
+        representative: "Bill Flores"
       },
-      {
-        name: "Texas District4",
-        avgIncome: "40000",
-        avgEducation: "Bachelor's",
-        avgAge: "35",
-        genderRatio: "1.5 : 1",
-        distToSupply: "3 miles"
-      },
-      {
-        name: "Texas District5",
-        avgIncome: "50000",
-        avgEducation: "Bachelor's",
-        avgAge: "35",
-        genderRatio: "1.5 : 1",
-        distToSupply: "3 miles"
-      },
-      {
-        name: "Texas District6",
-        avgIncome: "60000",
-        avgEducation: "Bachelor's",
-        avgAge: "35",
-        genderRatio: "1.5 : 1",
-        distToSupply: "3 miles"
-      },
-      {
-        name: "Texas District7",
-        avgIncome: "70000",
-        avgEducation: "Bachelor's",
-        avgAge: "35",
-        genderRatio: "1.5 : 1",
-        distToSupply: "3 miles"
-      },
-      {
-        name: "Texas District8",
-        avgIncome: "80000",
-        avgEducation: "Bachelor's",
-        avgAge: "35",
-        genderRatio: "1.5 : 1",
-        distToSupply: "3 miles"
-      }
     ]
   };
 
@@ -90,11 +50,11 @@ class Districts extends Component {
           <District
             key={i}
             name={district.name}
-            avgIncome={district.avgIncome}
-            avgEducation={district.avgEducation}
+            population={district.population}
+            medianIncome={district.medianIncome}
             avgAge={district.avgAge}
             genderRatio={district.genderRatio}
-            distToSupply={district.distToSupply}
+            representative={district.representative}
           />
         </Link>
       );

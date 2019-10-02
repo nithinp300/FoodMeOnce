@@ -1,6 +1,6 @@
 import React from "react";
 import District_img from '../../images/us.png';
-import "./css/District.css";
+import "./css/DistrictInstance.css";
 
 class DistrictInstance extends React.Component{
 
@@ -33,7 +33,8 @@ class DistrictInstance extends React.Component{
                     <span>Gender Ratio</span>: {district_data.genderRatio}
                 </li>
                 <li className="district-desc">
-                    <span>Distance to food supply</span>: {district_data.distToSupply}
+
+                    <span>Representative</span>: {district_data.representative}
                 </li>
             </ul>
         </div>

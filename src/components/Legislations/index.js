@@ -67,6 +67,7 @@ class Legislations extends Component {
               name={legislation.short_title}
               year={legislation.introduced_date}
               status={this.getStatus(legislation.enacted)}
+              enacted_Year={this.getEnacted(legislation.enacted)}
               houseOfRepresentative={this.getParty(legislation.sponsor_party)}
               billType={this.getBillType(legislation.bill_type)}
               sponsors={legislation.sponsor_name}

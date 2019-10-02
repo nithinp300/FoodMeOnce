@@ -1,37 +1,39 @@
-.representative {
+.district {
     width: 400px;
     margin: auto;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
     padding-right: 10px;
+    padding-left: 10px;
     margin-top: 75px;
-}
-
-.representative:hover {
     background-color: aliceBlue;
-    cursor: pointer;
 }
 
-.representative-image {
+.district:hover {
+    background-color: aliceBlue;
+    cursor: default;
+}
+
+.district-image {
     width: 60%;
     margin-bottom: 10px;
 }
 
-.representative-name {
+.district-name {
     margin: 0;
     font-weight: bold;
     font-size: 120%;
     margin-bottom: 5px;
 }
 
-.representative ul {
+.district ul {
     margin: 0;
     padding: 0;
 }
-.representative-desc {
+.district-desc {
     margin: 0;
 }
 
-.representative-desc span {
+.district-desc span {
     font-weight: bold;
 }

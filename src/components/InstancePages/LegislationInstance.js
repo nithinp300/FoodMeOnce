@@ -1,6 +1,6 @@
 import React from "react";
 import Legislation_img from '../../images/us.png';
-import './css/Legislation.css';
+import './css/LegislationInstance.css';
 
 class LegislationInstance extends React.Component{
 
