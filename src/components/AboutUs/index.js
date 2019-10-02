@@ -29,6 +29,7 @@ class AboutUs extends React.Component{
   }
 
   componentDidMount() {
+  
     this.grabCommits();
     this.grabIssues();
 
@@ -51,6 +52,7 @@ async grabIssues(){
               this.state.Shubhendra[1]+=1
               break;
 
+            case "Gyuwon":
             case "Gyuwon Kim":
                 this.state.Gyuwon[1]+=1
                 break;
@@ -84,7 +86,7 @@ async grabCommits(){
             case "Shubhendra Trivedi":
               this.state.Shubhendra[0]+=1
               break;
-
+            case "Gyuwon":
             case "Gyuwon Kim":
                 this.state.Gyuwon[0]+=1
                 break;
@@ -114,10 +116,9 @@ async grabCommits(){
       totalCommits,
       closedIssues
     } = this.state
-
-
     return (
       <div>
+
         <h1 className="title">About Us page</h1>
         <div className="cardRow">
           <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
