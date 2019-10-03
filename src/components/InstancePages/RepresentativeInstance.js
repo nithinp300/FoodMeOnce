@@ -35,8 +35,7 @@ class RepresentativeInstance extends React.Component{
     return(
         <div
             className="representative-instance d-flex border border-secondary
-                justify-content-center flex-column align-items-center"
-        >
+                justify-content-center flex-column align-items-center">
             <img className="representative-instance-image" src={rep_image} alt="us flag" />
             <p className="representative-instance-name">{rep_data.first_name} {rep_data.last_name}</p>
             <ul>

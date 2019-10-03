@@ -32,8 +32,7 @@ class DistrictInstance extends React.Component{
     return (
     <div
             className="district-instance d-flex border border-secondary
-                justify-content-center flex-column align-items-center"
-        >
+                justify-content-center flex-column align-items-center">
             <img className="district-instance-image" src={this.getImage(district_data.name)} alt="us flag" />
             <p className="district-instance-name">{district_data.name}</p>
             <ul>
