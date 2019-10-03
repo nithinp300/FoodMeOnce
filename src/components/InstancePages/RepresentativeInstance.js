@@ -30,6 +30,8 @@ class RepresentativeInstance extends React.Component{
     render(){
     var rep_data = this.props.location.state
     var age = this.getAge(rep_data.date_of_birth)
+    var twitter = "https://twitter.com/" + rep_data.twitter_account;
+    var facebook = "https://facebook.com/" + rep_data.facebook_account;
     console.log(this.props.location.state)
     return(
         <div
@@ -52,19 +54,19 @@ class RepresentativeInstance extends React.Component{
                     <span>State/District</span>: {rep_data.state}
                 </li>
                 <li className="representative-instance-desc">
-                    <span>Twitter</span>: @{rep_data.twitter_account}
-                </li>
-                <li className="representative-instance-desc">
-                    <span>Facebook</span>: {rep_data.facebook_account}
-                </li>
-                <li className="representative-instance-desc">
-                    <span>Website</span>: {rep_data.url}
-                </li>
-                <li className="representative-instance-desc">
                     <span>Office</span>: {rep_data.office}
                 </li>
                 <li className="representative-instance-desc">
                     <span>Phone</span>: {rep_data.phone}
+                </li>
+                <li className="representative-instance-desc">
+                    <a href={twitter}>Twitter</a>
+                </li>
+                <li className="representative-instance-desc">
+                    <a href={facebook}>Facebook</a>
+                </li>
+                <li className="representative-instance-desc">
+                    <a href={rep_data.url}> Website </a>
                 </li>
             </ul>
         </div>
