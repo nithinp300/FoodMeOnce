@@ -50,6 +50,11 @@ function App() {
           <Redirect to="/error" />
         </Switch>
       </BrowserRouter>
+
+      <hr />
+      <div className="text-center text-secondary">
+        <p>Copyright © 2019 FoodMeOnce ALL RIGHT RESERVED.</p>
+      </div>
     </div>
   );
 }
