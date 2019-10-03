@@ -1,12 +1,8 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import District_img from '../../images/us.png';
 import "./css/DistrictInstance.css";
 import snap_data from '../../Files/snap_data.json';
 import cancer_data from '../../Files/cancer_data.json';
-import tx_11 from '../../images/tx_11.png';
-import va_11 from '../../images/va_11.png';
-import ia_2 from '../../images/ia_2.png';
 
 class DistrictInstance extends React.Component{
     state = {
@@ -97,8 +93,7 @@ class DistrictInstance extends React.Component{
     <div
             className="district-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center">
-            <iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-src={map_url}></iframe>
+            <iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src={map_url}></iframe>
             <p className="district-instance-name">{district_data.name}</p>
             <ul>
                 <li className="district-instance-desc">
