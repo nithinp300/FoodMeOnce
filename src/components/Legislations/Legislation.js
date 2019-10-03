@@ -1,46 +1,41 @@
-import React from 'react';
-import Legislation_img from '../../images/us.png';
-import './css/Legislation.css';
-import us_hor from '../../images/us_hor.png';
-import us_sen from '../../images/us_sen.png';
+import React from "react";
+import "./css/Legislation.css";
+import us_hor from "../../images/us_hor.png";
+import us_sen from "../../images/us_sen.png";
 
 function getImage(billType) {
-   if(billType === "House of Representatives"){
-        return us_hor;
-      }
-   return us_sen;
-    };
+  if (billType === "House of Representatives") {
+    return us_hor;
+  }
+  return us_sen;
+}
 
 function Legislation(props) {
+  if (props.header) {
     return (
-        <div
-            className="legislation d-flex border border-secondary
-                justify-content-center flex-column align-items-center"
-        >
-            <img className="legislation-image" src={getImage(props.billType)} alt="government" />
-            <p className="legislation-name">{props.name}</p>
-            <ul>
-                <li className="legislation-desc">
-                    <span>Introduced</span>: {props.year}
-                </li>
-                <li className="legislation-desc">
-                    <span>Status</span>: {props.status}
-                </li>
-                <li className="legislation-desc">
-                    <span>Enacted</span>: {props.enacted_Year}
-                </li>
-                <li className="legislation-desc">
-                    <span>Party</span>: {props.houseOfRepresentative}
-                </li>
-                <li className="legislation-desc">
-                    <span>Bill Type</span>: {props.billType}
-                </li>
-                <li className="legislation-desc">
-                    <span>Sponsor/s</span>: {props.sponsors}
-                </li>
-            </ul>
-        </div>
+      <div className="legislation d-flex flex-row font-weight-bold text-center">
+        <div className="legislation-desc">Name</div>
+        <div className="legislation-desc">Introduced</div>
+        <div className="legislation-desc">Status</div>
+        <div className="legislation-desc">Enacted</div>
+        <div className="legislation-desc">Party</div>
+        <div className="legislation-desc">Bill Type</div>
+        <div className="legislation-desc">Sponsor/s</div>
+      </div>
     );
+  }
+
+  return (
+    <div className="legislation d-flex flex-row text-center">
+      <div className="legislation-desc">{props.name}</div>
+      <div className="legislation-desc">{props.year}</div>
+      <div className="legislation-desc">{props.status}</div>
+      <div className="legislation-desc">{props.enacted_Year}</div>
+      <div className="legislation-desc">{props.houseOfRepresentative}</div>
+      <div className="legislation-desc">{props.billType}</div>
+      <div className="legislation-desc">{props.sponsors}</div>
+    </div>
+  );
 }
 
 export default Legislation;

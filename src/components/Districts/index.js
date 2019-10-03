@@ -45,7 +45,7 @@ class Districts extends Component {
         peoplePerSquareMile: "396.3",
         povertyRate: "8.9%",
         numHouseholds: "288,768"
-      },
+      }
     ]
   };
 
@@ -58,7 +58,13 @@ class Districts extends Component {
   render() {
     const districtsRendered = this.state.districts.map((district, i) => {
       return (
-        <Link to={{ pathname:`/Districts/instance/${district.name}`, state: district }}>
+        <Link
+          to={{
+            pathname: `/Districts/instance/${district.name}`,
+            state: district
+          }}
+          className="district_link"
+        >
           <District
             key={i}
             name={district.name}
@@ -89,7 +95,8 @@ class Districts extends Component {
           </div>
           {this.state.collapse && <DistrictSortFilter />}
         </div>
-        <div className="districts-container d-flex justify-content-center flex-wrap bd-highlight mb-3">
+        <div className="districts-container d-flex justify-content-center flex-column bd-highlight mb-3">
+          <District header />
           {districtsRendered}
         </div>
       </div>
