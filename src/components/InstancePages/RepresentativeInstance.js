@@ -3,7 +3,17 @@ import "./css/RepresentativeInstance.css";
 
 class RepresentativeInstance extends React.Component{
     state = {
-        representative: {}
+        representative: {},
+        districts: {
+            Conaway: "Texas 11th Congressional District",
+            Loebsack: "Virginia 11th Congressional District",
+            Connolly: "Iowa 2nd Congressional District",
+        },
+        legislations: {
+            Conaway: "Agriculture Improvement Act of 2018",
+            Loebsack: "Agriculture Reform, Food, and Jobs Act of 2013",
+            Connolly: "Global Partnerships Act of 2013",
+        }
     };
 
     componentDidMount() {
@@ -45,6 +55,8 @@ class RepresentativeInstance extends React.Component{
     }
 
     render(){
+    var district = this.state.districts[this.props.match.params.last_name];
+    var legislation = this.state.legislations[this.props.match.params.last_name];
     var rep_data = this.state.representative;
     var age = this.getAge(rep_data.date_of_birth)
     var twitter = "https://twitter.com/" + rep_data.twitter_account;
@@ -70,13 +82,17 @@ class RepresentativeInstance extends React.Component{
                     <span>Party</span>: {this.getParty(rep_data.party)}
                 </li>
                 <li className="representative-instance-desc">
-                    <span>State/District</span>: {rep_data.state}
+                    <span>State/District</span>: <a href={`/Districts/instance/${district}`}>{rep_data.state}</a>
                 </li>
                 <li className="representative-instance-desc">
                     <span>Office</span>: {rep_data.office}
                 </li>
                 <li className="representative-instance-desc">
                     <span>Phone</span>: {rep_data.phone}
+                </li>
+                <li className="representative-instance-desc">
+                    <span>Legislation by Representative</span>:
+                    <br/><a href={`/Legislations/instance/${legislation}`}>{legislation}</a>
                 </li>
                 <li className="representative-instance-desc">
                     <a href={twitter}>Twitter</a>
