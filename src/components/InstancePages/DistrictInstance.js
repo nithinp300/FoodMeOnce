@@ -23,7 +23,9 @@ class DistrictInstance extends React.Component{
               povertyRate: "8.7%",
               numHouseholds: "279,550",
               id: "C001062",
-              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district"
+              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district",
+              state: "tx",
+              number: "11"
             },
             {
               name: "Virginia 11th Congressional District",
@@ -37,7 +39,9 @@ class DistrictInstance extends React.Component{
               povertyRate: "4.5%",
               numHouseholds: "268,471",
               id: "C001078",
-              wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
+              wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district",
+              state: "va",
+              number: "11"
             },
             {
               name: "Iowa 2nd Congressional District",
@@ -51,7 +55,9 @@ class DistrictInstance extends React.Component{
               povertyRate: "8.7%",
               numHouseholds: "313,626",
               id: "L000565",
-              wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
+              wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district",
+              state: "ia",
+              number: "2"
             },
           ],
         legislations: {
@@ -59,19 +65,6 @@ class DistrictInstance extends React.Component{
             Loebsack: "Agriculture Reform, Food, and Jobs Act of 2013",
             Connolly: "Global Partnerships Act of 2013",
         }
-    }
-
-    getImage = (district_name) => {
-        if(district_name === "Texas 11th Congressional District"){
-           return tx_11;
-         }
-        if(district_name === "Virginia 11th Congressional District"){
-          return va_11;
-        }
-        if(district_name === "Iowa 2nd Congressional District"){
-          return ia_2;
-        }
-        return District_img;
     }
 
     getDistrict = (district_name) => {
@@ -85,6 +78,7 @@ class DistrictInstance extends React.Component{
 
     render(){
     var district_data = this.getDistrict(this.props.match.params.name);
+    var map_url = "https://www.govtrack.us/congress/members/embed/mapframe?state="+district_data.state+"&district="+district_data.number;
     if (district_data.name == null) {
         return <Redirect to="/error" />
     }
@@ -103,7 +97,8 @@ class DistrictInstance extends React.Component{
     <div
             className="district-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center">
-            <img className="district-instance-image" src={this.getImage(district_data.name)} alt="us flag" />
+            <iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+src={map_url}></iframe>
             <p className="district-instance-name">{district_data.name}</p>
             <ul>
                 <li className="district-instance-desc">
