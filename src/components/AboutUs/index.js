@@ -4,7 +4,7 @@ import Chris_img from '../../images/Chris_profile.jpg';
 import Gyuwon_img from '../../images/Gyuwon_profile.jpg';
 import Shub_img from '../../images/Shub_profile.jpg';
 import Brian_img from '../../images/brian_profile.png';
-import Nithin_img from '../../images/cornField.jpg';
+import Nithin_img from '../../images/Nithin_profile.jpg';
 
 
 
@@ -34,14 +34,14 @@ class AboutUs extends React.Component{
   }
 
   componentDidMount() {
-  
+
     this.grabCommits();
     this.grabIssues();
 
 }
 
 async grabIssues(){
-  fetch("https://gitlab.com/api/v4/projects/14463226/issues?per_page=1000&page=1") 
+  fetch("https://gitlab.com/api/v4/projects/14463226/issues?per_page=1000&page=1")
     .then(res => res.json())
     .then(res => {
       res.forEach(issue => {
@@ -52,7 +52,7 @@ async grabIssues(){
             case "Christopher Chasteen":
               this.state.Chris[1] +=1
               break;
-              
+
             case "Shubhendra Trivedi":
               this.state.Shubhendra[1]+=1
               break;
@@ -90,7 +90,7 @@ async grabCommits(){
             case "Christopher Chasteen":
               this.state.Chris[0] +=1
               break;
-              
+
             case "Shubhendra Trivedi":
               this.state.Shubhendra[0]+=1
               break;
