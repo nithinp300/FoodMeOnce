@@ -7,7 +7,7 @@ class RepresentativeInstance extends React.Component{
     };
 
     componentDidMount() {
-        fetch("https://api.propublica.org/congress/v1/116/senate/members.json", {
+        fetch("https://api.propublica.org/congress/v1/116/house/members.json", {
           method: "GET",
           headers: {
             "X-API-Key": "eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6"

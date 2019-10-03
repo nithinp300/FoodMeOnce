@@ -51,7 +51,7 @@ class Representatives extends Component {
   };
 
   componentDidMount() {
-    fetch("https://api.propublica.org/congress/v1/116/senate/members.json", {
+    fetch("https://api.propublica.org/congress/v1/116/house/members.json", {
       method: "GET",
       headers: {
         "X-API-Key": "eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6"
@@ -59,7 +59,14 @@ class Representatives extends Component {
     })
       .then(response => response.json())
       .then(data => {
-        this.setState({ representatives: data.results[0].members });
+        let representatives = [];
+        const data_set = data.results[0].members;
+        for (let i = 0; i < data_set.length; ++i) {
+          if (data_set[i].last_name === "Conaway" || data_set[i].last_name === "Connolly" || data_set[i].last_name === "Loebsack") {
+            representatives.push(data_set[i]);
+          }
+        }
+        this.setState({ representatives });
       })
       .catch(console.log);
   }
