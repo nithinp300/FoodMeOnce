@@ -5,7 +5,12 @@ import us_sen from '../../images/us_sen.png';
 
 class LegislationInstance extends Component{
     state = {
-        legislation: {}
+        legislation: {},
+        districts: {
+            Conaway: "Texas 11th Congressional District",
+            Connolly: "Virginia 11th Congressional District",
+            Loebsack: "Iowa 2nd Congressional District",
+        },
     }
     componentDidMount() {
         fetch(
@@ -78,6 +83,10 @@ class LegislationInstance extends Component{
     if (legislation_data.sponsor_id != null) {
         sponsor_image = "https://theunitedstates.io/images/congress/225x275/"+ legislation_data.sponsor_id+".jpg";
     }
+    const name = legislation_data.sponsor_name == null 
+        ? "" : legislation_data.sponsor_name.split(" ");
+    const firstName = name[0];
+    const lastName = name[name.length - 1];
     return(
         <div
             className="legislation-instance d-flex p-2 border border-secondary
@@ -102,7 +111,10 @@ class LegislationInstance extends Component{
                     <span>Bill Type</span>: {this.getBillType(legislation_data.bill_type)}
                 </li>
                 <li className="legislation-instance-desc">
-                    <span>Sponsor(s)</span>: {this.getSponsorTitle(legislation_data.sponsor_title)} {legislation_data.sponsor_name}
+                    <span>Sponsor(s)</span>: {this.getSponsorTitle(legislation_data.sponsor_title)} <a href={`/Representatives/instance/${firstName}/${lastName}`}>{legislation_data.sponsor_name}</a>
+                </li>
+                <li className="legislation-instance-desc">
+                    <span>Sponsor District</span>: <a href={`/Districts/instance/${this.state.districts[lastName]}`}>{this.state.districts[lastName]}</a>
                 </li>
                 <li className="legislation-instance-desc">
                     <span>Cosponsors</span>: {legislation_data.cosponsors}
