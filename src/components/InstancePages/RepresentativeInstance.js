@@ -2,40 +2,11 @@ import React from "react";
 import "./css/RepresentativeInstance.css";
 
 class RepresentativeInstance extends React.Component{
-    state = {
-        representative: {},
-        districts: {
-            Conaway: "Texas 11th Congressional District",
-            Loebsack: "Virginia 11th Congressional District",
-            Connolly: "Iowa 2nd Congressional District",
-        },
-        legislations: {
-            Conaway: "Agriculture Improvement Act of 2018",
-            Loebsack: "Agriculture Reform, Food, and Jobs Act of 2013",
-            Connolly: "Global Partnerships Act of 2013",
-        }
+
+    constructor(props){
+        super(props)
     };
 
-    componentDidMount() {
-        fetch("https://api.propublica.org/congress/v1/116/house/members.json", {
-          method: "GET",
-          headers: {
-            "X-API-Key": "eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6"
-          }
-        })
-        .then(response => response.json())
-        .then(data => {
-            const representatives = data.results[0].members;
-            for (let i = 0; i < representatives.length; ++i) {
-                const representative = representatives[i];
-                if (representative.first_name === this.props.match.params.first_name
-                    && representative.last_name === this.props.match.params.last_name) {
-                    this.setState({ representative });
-                }
-            }
-        })
-        .catch(console.log);
-    }
     getAge = (birthDateString) => {
     var todayDate = new Date();
     var birthDate = new Date(birthDateString);
@@ -48,23 +19,19 @@ class RepresentativeInstance extends React.Component{
     return age;
   }
     getParty = (sponsor_party) => {
-    if(sponsor_party === "D") {
+    if(sponsor_party == "D") {
         return "Democrat";
     }
     return "Republican";
     }
 
     render(){
-    var district = this.state.districts[this.props.match.params.last_name];
-    var legislation = this.state.legislations[this.props.match.params.last_name];
-    var rep_data = this.state.representative;
+    var rep_data = this.props.location.state
     var age = this.getAge(rep_data.date_of_birth)
     var twitter = "https://twitter.com/" + rep_data.twitter_account;
     var facebook = "https://facebook.com/" + rep_data.facebook_account;
-    var rep_image = "";
-    if (this.state.representative.first_name != null) {
-        rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
-    }
+    var rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
+    console.log(this.props.location.state)
     return(
         <div
             className="representative-instance d-flex border border-secondary
@@ -82,17 +49,13 @@ class RepresentativeInstance extends React.Component{
                     <span>Party</span>: {this.getParty(rep_data.party)}
                 </li>
                 <li className="representative-instance-desc">
-                    <span>State/District</span>: <a href={`/Districts/instance/${district}`}>{rep_data.state}</a>
+                    <span>State/District</span>: {rep_data.state}
                 </li>
                 <li className="representative-instance-desc">
                     <span>Office</span>: {rep_data.office}
                 </li>
                 <li className="representative-instance-desc">
                     <span>Phone</span>: {rep_data.phone}
-                </li>
-                <li className="representative-instance-desc">
-                    <span>Legislation by Representative</span>:
-                    <br/><a href={`/Legislations/instance/${legislation}`}>{legislation}</a>
                 </li>
                 <li className="representative-instance-desc">
                     <a href={twitter}>Twitter</a>

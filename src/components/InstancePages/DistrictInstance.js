@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import District_img from '../../images/us.png';
 import "./css/DistrictInstance.css";
+import snap_data from '../../Files/snap_data.json';
 import tx_21 from '../../images/tx_21.jpg';
 import tx_10 from '../../images/tx_10.jpg';
 import tx_31 from '../../images/tx_31.png';
@@ -87,6 +88,10 @@ class DistrictInstance extends React.Component{
         return <Redirect to="/error" />
     }
 
+    let temp_state = district_data.name.substring(0, district_data.name.indexOf(' '))
+    let selected_district_info = snap_data.find( item => item.State === temp_state && 
+        item["Congressional District"].replace(/\D/g, "") === district_data.name.replace(/\D/g, "") )
+
     var name = district_data.representative.split(" ");
     var firstName = name[0];
     var lastName = name[name.length - 1];
@@ -117,6 +122,10 @@ class DistrictInstance extends React.Component{
                 <li className="district-instance-desc">
 
                     <span>Poverty Rate</span>: {district_data.povertyRate}
+                </li>
+                <li className="district-instance-desc">
+
+                    <span>Households using SNAP</span>: {selected_district_info["Percent of Households with SNAP"] * 100}%
                 </li>
                 <li className="district-instance-desc">
 
