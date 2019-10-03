@@ -2,6 +2,30 @@ import React from "react";
 import "./css/RepresentativeInstance.css";
 
 class RepresentativeInstance extends React.Component{
+    state = {
+        representative: {}
+    };
+
+    componentDidMount() {
+        fetch("https://api.propublica.org/congress/v1/116/senate/members.json", {
+          method: "GET",
+          headers: {
+            "X-API-Key": "eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6"
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const representatives = data.results[0].members;
+            for (let i = 0; i < representatives.length; ++i) {
+                const representative = representatives[i];
+                if (representative.first_name === this.props.match.params.first_name
+                    && representative.last_name === this.props.match.params.last_name) {
+                    this.setState({ representative });
+                }
+            }
+        })
+        .catch(console.log);
+    }
     getAge = (birthDateString) => {
     var todayDate = new Date();
     var birthDate = new Date(birthDateString);
@@ -21,11 +45,14 @@ class RepresentativeInstance extends React.Component{
     }
 
     render(){
-    var rep_data = this.props.location.state
+    var rep_data = this.state.representative;
     var age = this.getAge(rep_data.date_of_birth)
     var twitter = "https://twitter.com/" + rep_data.twitter_account;
     var facebook = "https://facebook.com/" + rep_data.facebook_account;
-    var rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
+    var rep_image = "";
+    if (this.state.representative.first_name != null) {
+        rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
+    }
     return(
         <div
             className="representative-instance d-flex border border-secondary

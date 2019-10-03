@@ -69,14 +69,13 @@ class Representatives extends Component {
         if (i >= 3) return null;
         return (
           <Link
+            key={i}
             to={{
-              pathname: `/Representatives/instance/${representative.first_name}${representative.last_name}`,
-              state: representative
+              pathname: `/Representatives/instance/${representative.first_name}/${representative.last_name}`
             }}
             className="representative_link"
           >
             <Representative
-              key={i}
               name={representative.first_name + " " + representative.last_name}
               age={this.getAge(representative.date_of_birth)}
               yearsInOffice={representative.seniority}
