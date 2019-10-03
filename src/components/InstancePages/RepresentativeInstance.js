@@ -1,7 +1,5 @@
 import React from "react";
-import Representative_img from '../../images/us.png';
 import "./css/RepresentativeInstance.css";
-
 
 class RepresentativeInstance extends React.Component{
 
@@ -32,13 +30,14 @@ class RepresentativeInstance extends React.Component{
     var age = this.getAge(rep_data.date_of_birth)
     var twitter = "https://twitter.com/" + rep_data.twitter_account;
     var facebook = "https://facebook.com/" + rep_data.facebook_account;
+    var rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
     console.log(this.props.location.state)
     return(
         <div
             className="representative-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center"
         >
-            <img className="representative-instance-image" src={Representative_img} alt="us flag" />
+            <img className="representative-instance-image" src={rep_image} alt="us flag" />
             <p className="representative-instance-name">{rep_data.first_name} {rep_data.last_name}</p>
             <ul>
                 <li className="representative-instance-desc">
