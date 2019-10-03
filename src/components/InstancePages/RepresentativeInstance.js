@@ -31,7 +31,6 @@ class RepresentativeInstance extends React.Component{
     var twitter = "https://twitter.com/" + rep_data.twitter_account;
     var facebook = "https://facebook.com/" + rep_data.facebook_account;
     var rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
-    console.log(this.props.location.state)
     return(
         <div
             className="representative-instance d-flex border border-secondary
