@@ -1,14 +1,15 @@
 import React from "react";
-import cornField from "../../images/cornField.jpg";
+//import cornField from "../../images/cornField.jpg";
+import welcome_banner from "../../images/welcome_banner.png"; 
 
 function SplashPage() {
   return (
     <div>
       <img
-        src={cornField}
+        src={welcome_banner}
         className="img-fluid"
-        alt="Corn Field"
-        style={{ width: "100%" }}
+        alt="Welcome Page"
+        style={{width: "100%"}}
       />
     </div>
   );
