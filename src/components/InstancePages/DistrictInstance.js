@@ -143,10 +143,10 @@ class DistrictInstance extends React.Component{
                     <span>People per square mile</span>: {district_data.peoplePerSquareMile}
                 </li>
                 <li className="district-instance-desc">
-                    <a href={district_data.wikipedia}>Wikipedia</a>: <a href={`/Representatives/instance/${firstName}/${lastName}`}>{district_data.representative}</a>
+                    <a href={district_data.wikipedia}>Wikipedia</a> 
                 </li>
                 <li className="district-instance-desc">
-                    <span>Representative</span>: {district_data.representative}
+                    <span>Representative</span>: <a href={`/Representatives/instance/${firstName}/${lastName}`}>{district_data.representative}</a>
                 </li>
                 <li className="district-instance-desc">
                     <span>Legislation by Representative</span>:<br/><a href={`/Legislations/instance/${this.state.legislations[lastName]}`}>{this.state.legislations[lastName]}</a>
