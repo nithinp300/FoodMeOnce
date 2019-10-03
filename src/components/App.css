@@ -20,3 +20,10 @@
 .App-link {
   color: #09d3ac;
 }
+
+.para {
+  font-size: calc(8px + 2vmin); 
+  text-align: center; 
+  font: outline;
+  margin-top: 1%; 
+}
