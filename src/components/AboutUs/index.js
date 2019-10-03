@@ -48,8 +48,8 @@ async grabIssues(){
         this.state.totalIssues +=1
         if(issue.closed_by != null){
           this.state.closedIssues +=1
-          if(issue.assignee != null){
-            switch (issue.assignee.name){
+          issue.assignees.forEach(assignee => {
+            switch (assignee.name){
               case "Christopher Chasteen":
                 this.state.Chris[1] +=1
                 break;
@@ -72,7 +72,7 @@ async grabIssues(){
               default:
                 console.log(issue)
             }
-          }
+          })
         }
       });
       this.setState(this.state)
@@ -136,6 +136,7 @@ async grabCommits(){
             <img src={Chris_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Christopher Chasteen</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Chris[0]}</p>
               <p className="card-text">Issues Closed: {Chris[1]}</p>
               <p className="card-text">Unit Tests: {Chris[2]}</p>
@@ -146,6 +147,7 @@ async grabCommits(){
             <img src={Gyuwon_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Gyuwon Kim</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Gyuwon[0]}</p>
               <p className="card-text">Issues Closed: {Gyuwon[1]}</p>
               <p className="card-text">Unit Tests: {Gyuwon[2]}</p>
@@ -156,6 +158,7 @@ async grabCommits(){
             <img src={Shub_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Shubhendra Trivedi</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Shubhendra[0]}</p>
               <p className="card-text">Issues Closed: {Shubhendra[1]}</p>
               <p className="card-text">Unit Tests: {Shubhendra[2]}</p>
@@ -168,6 +171,7 @@ async grabCommits(){
             <img src={Brian_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Brian Dyck</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Brian[0]}</p>
               <p className="card-text">Issues Closed: {Brian[1]}</p>
               <p className="card-text">Unit Tests: {Brian[2]}</p>
@@ -178,6 +182,7 @@ async grabCommits(){
             <img src={Nithin_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Nithin Pingili</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Nithin[0]}</p>
               <p className="card-text">Issues Closed: {Nithin[1]}</p>
               <p className="card-text">Unit Tests: {Nithin[2]}</p>
