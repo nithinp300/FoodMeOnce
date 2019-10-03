@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="050d60ad-845b-4167-87cb-fa455a6ad8cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Districts/DistrictSortFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Districts/DistrictSortFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Legislations/LegislationSortFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Legislations/LegislationSortFilter.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,15 +12,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Legislations/Legislation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/InstancePages/LegislationInstance.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,11 +39,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Districts/DistrictSortFilter.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="291">
               <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Legislations/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="69" column="17" lean-forward="true" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Legislations/LegislationSortFilter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="33" column="180" selection-start-line="33" selection-start-column="180" selection-end-line="33" selection-end-column="180" />
             </state>
           </provider>
         </entry>
@@ -94,15 +102,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Legislations/css/Legislation.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -134,6 +133,7 @@
         <option value="$PROJECT_DIR$/src/components/InstancePages/css/DistrictInstance.css" />
         <option value="$PROJECT_DIR$/src/components/InstancePages/DistrictInstance.js" />
         <option value="$PROJECT_DIR$/src/components/Districts/DistrictSortFilter.js" />
+        <option value="$PROJECT_DIR$/src/components/Legislations/LegislationSortFilter.js" />
       </list>
     </option>
   </component>
@@ -390,13 +390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Legislations/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="63" selection-start-line="69" selection-start-column="63" selection-end-line="69" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Districts/District.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -485,6 +478,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Legislations/LegislationSortFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="33" column="180" selection-start-line="33" selection-start-column="180" selection-end-line="33" selection-end-column="180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Legislations/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="69" column="17" lean-forward="true" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
         </state>
       </provider>
     </entry>

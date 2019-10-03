@@ -28,11 +28,12 @@ class LegislationSortFilter extends Component {
                     <div className="d-flex flex-column sort pr-5 flex-fill">
                         <h5 className="ml-2">Sort By</h5>
                         <form className="ml-3 mb-3" action="/legislations/sort">
-                        <div><input type="radio" name="year" checked={this.state.sort.name === 'year'} onChange={this.handleSort} /> Year</div>
+                        <div><input type="radio" name="year" checked={this.state.sort.name === 'year'} onChange={this.handleSort} /> Introduced Year</div>
                         <div><input type="radio" name="status" checked={this.state.sort.name === 'status'} onChange={this.handleSort} /> Status</div>
-                        <div><input type="radio" name="houseOfRepresentative" checked={this.state.sort.name === 'houseOfRepresentative'} onChange={this.handleSort} /> Representative</div>
+                        <div><input type="radio" name="enacted_Year" checked={this.state.sort.name === 'year'} onChange={this.handleSort} /> Enacted Year</div>
+                        <div><input type="radio" name="houseOfRepresentative" checked={this.state.sort.name === 'houseOfRepresentative'} onChange={this.handleSort} /> Party</div>
                         <div><input type="radio" name="billType" checked={this.state.sort.name === 'billType'} onChange={this.handleSort} /> Bill Type</div>
-                        <div><input type="radio" name="sponsors" checked={this.state.sort.name === 'sponsors'} onChange={this.handleSort} /> Sponsor/s</div>
+                        <div><input type="radio" name="sponsors" checked={this.state.sort.name === 'sponsors'} onChange={this.handleSort} /> Sponsor(s)</div>
                         <div className="d-flex justify-content-end"><button className="btn btn-primary">Apply</button></div>
                         </form>
                     </div>
@@ -41,7 +42,7 @@ class LegislationSortFilter extends Component {
                         <form className="ml-3" action="/legislations/filter">
                         <div className="input-group input-group-sm">
                             <div className="input-group-prepend">
-                                <span className="input-group-text" id="">Year</span>
+                                <span className="input-group-text" id="">Introduced Year</span>
                             </div>
                             <input type="text" className="form-control" name="yearMin" onChange={this.handleFilter} value={this.state.filter.yearMin} placeholder="Minimum" />
                             <input type="text" className="form-control" name="yearMax" onChange={this.handleFilter} value={this.state.filter.yearMax} placeholder="Maximum" />
@@ -59,7 +60,14 @@ class LegislationSortFilter extends Component {
                         </div>
                         <div className="input-group input-group-sm">
                             <div className="input-group-prepend">
-                                <span className="input-group-text" id="">Representative</span>
+                                <span className="input-group-text" id="">Enacted Year</span>
+                            </div>
+                            <input type="text" className="form-control" name="enacted_YearMin" onChange={this.handleFilter} value={this.state.filter.enacted_YearMin} placeholder="Minimum" />
+                            <input type="text" className="form-control" name="enacted_YearMax" onChange={this.handleFilter} value={this.state.filter.enacted_YearMax} placeholder="Maximum" />
+                        </div>
+                        <div className="input-group input-group-sm">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="">Party</span>
                             </div>
                             <input type="text" className="form-control" name="houseOfRepresentativeMin" onChange={this.handleFilter} value={this.state.filter.houseOfRepresentativeMin} placeholder="Representative" />
                         </div>
@@ -71,7 +79,7 @@ class LegislationSortFilter extends Component {
                         </div>
                         <div className="input-group input-group-sm">
                             <div className="input-group-prepend">
-                                <span className="input-group-text" id="">Sponsor/s</span>
+                                <span className="input-group-text" id="">Sponsor(s)</span>
                             </div>
                             <input type="text" className="form-control" name="sponsorsMin" onChange={this.handleFilter} value={this.state.filter.sponsorsMin} placeholder="Sponsor(s)" />
                         </div>
