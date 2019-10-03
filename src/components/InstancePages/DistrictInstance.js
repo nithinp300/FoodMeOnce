@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import District_img from '../../images/us.png';
 import "./css/DistrictInstance.css";
 import tx_21 from '../../images/tx_21.jpg';
@@ -6,26 +7,91 @@ import tx_10 from '../../images/tx_10.jpg';
 import tx_31 from '../../images/tx_31.png';
 
 class DistrictInstance extends React.Component{
-
-    constructor(props){
-        super(props)
-    };
+    state = {
+        districts: [
+            {
+              name: "Texas 21st Congressional District",
+              population: "818,281",
+              medianIncome: "71,486",
+              avgAge: "37.9",
+              genderRatio: "0.97",
+              representative: "Chip Roy",
+              senators: "John Cornyn, Ted Cruz",
+              peoplePerSquareMile: "136.7",
+              povertyRate: "10.3%",
+              numHouseholds: "315,100",
+              id: "S000583",
+              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_21st_congressional_district"
+            },
+            {
+              name: "Texas 10th Congressional District",
+              population: "896,798",
+              medianIncome: "75,517",
+              avgAge: "35.9",
+              genderRatio: "0.99",
+              representative: "Michael T. McCaul",
+              senators: "John Cornyn, Ted Cruz",
+              peoplePerSquareMile: "166.9",
+              povertyRate: "7.9%",
+              numHouseholds: "290,104",
+              id: "M001157",
+              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_10th_congressional_district"
+            },
+            {
+              name: "Texas 31st Congressional District",
+              population: "883,347",
+              medianIncome: "70,346",
+              avgAge: "35.2",
+              genderRatio: "0.97",
+              representative: "Bill Flores",
+              senators: "John Cornyn, Ted Cruz",
+              peoplePerSquareMile: "396.3",
+              povertyRate: "8.9%",
+              numHouseholds: "288,768",
+              id: "F000461",
+              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_31st_congressional_district"
+            },
+          ]
+    }
 
     getImage = (district_name) => {
-      if(district_name === "Texas 21st Congressional District"){
+        if(district_name === "Texas 21st Congressional District"){
            return tx_21;
          }
-      if(district_name === "Texas 10th Congressional District"){
+        if(district_name === "Texas 10th Congressional District"){
           return tx_10;
         }
-      if(district_name === "Texas 31st Congressional District"){
+        if(district_name === "Texas 31st Congressional District"){
           return tx_31;
         }
-    return District_img;
+        return District_img;
+    }
+
+    getUrlToSenater = (district_name) => {
+        if (district_name === "Texas 21st Congressional District") {
+
+        } else if (district_name === "Texas 10th Congressional District") {
+
+        } else if (district_name === "Texas 31st Congressional District") {
+
+        }
+    }
+
+    getDistrict = (district_name) => {
+        for (let i = 0; i < this.state.districts.length; ++i) {
+            let district = this.state.districts[i];
+            if (district.name === district_name)
+                return district;
+        }
+        return {};
     }
 
     render(){
-    var district_data = this.props.location.state
+    var district_data = this.getDistrict(this.props.match.params.name);
+    if (district_data.name == null) {
+        return <Redirect to="/error" />
+    }
+    
     var rep_image = "https://theunitedstates.io/images/congress/225x275/"+district_data.id+".jpg";
     console.log(district_data.id);
     console.log(this.props.location.state)

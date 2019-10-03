@@ -65,6 +65,7 @@ class Districts extends Component {
     const districtsRendered = this.state.districts.map((district, i) => {
       return (
         <Link
+          key={i}
           to={{
             pathname: `/Districts/instance/${district.name}`,
             state: district
@@ -72,7 +73,6 @@ class Districts extends Component {
           className="district_link"
         >
           <District
-            key={i}
             name={district.name}
             population={district.population}
             medianIncome={district.medianIncome}
