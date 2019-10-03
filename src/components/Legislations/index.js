@@ -28,7 +28,7 @@ class Legislations extends Component {
   };
 
   getParty = sponsor_party => {
-    if (sponsor_party == "D") {
+    if (sponsor_party === "D") {
       return "Democratic";
     }
     return "Republican";
@@ -57,7 +57,14 @@ class Legislations extends Component {
     )
       .then(response => response.json())
       .then(data => {
-        this.setState({ legislations: data.results[0].bills });
+        let legislations = [];
+        for (let i = 0; i < data.results[0].bills.length; ++i) {
+          const name = data.results[0].bills[i].sponsor_name;
+          if (name === "K. Michael Conaway" || name === "Gerald E. Connolly" || name === "Dave Loebsack") {
+            legislations.push(data.results[0].bills[i]);
+          }
+        }
+        this.setState({ legislations });
       })
       .catch(console.log);
   }
@@ -67,14 +74,13 @@ class Legislations extends Component {
         if (i >= 3) return null;
         return (
           <Link
+            key={i}
             to={{
-              pathname: `/Legislations/instance/${legislation.short_title}`,
-              state: legislation
+              pathname: `/Legislations/instance/${legislation.short_title}`
             }}
             className="legislation_link"
           >
             <Legislation
-              key={i}
               name={legislation.short_title}
               year={legislation.introduced_date}
               status={this.getStatus(legislation.enacted)}

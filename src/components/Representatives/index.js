@@ -27,14 +27,14 @@ class Representatives extends Component {
   };
 
   getBillType = billType => {
-    if (billType == "hr") {
+    if (billType === "hr") {
       return "House of Representatives";
     }
     return "Senate";
   };
 
   getParty = sponsor_party => {
-    if (sponsor_party == "D") {
+    if (sponsor_party === "D") {
       return "Democrat";
     }
     return "Republican";
@@ -51,7 +51,7 @@ class Representatives extends Component {
   };
 
   componentDidMount() {
-    fetch("https://api.propublica.org/congress/v1/116/senate/members.json", {
+    fetch("https://api.propublica.org/congress/v1/116/house/members.json", {
       method: "GET",
       headers: {
         "X-API-Key": "eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6"
@@ -59,7 +59,14 @@ class Representatives extends Component {
     })
       .then(response => response.json())
       .then(data => {
-        this.setState({ representatives: data.results[0].members });
+        let representatives = [];
+        const data_set = data.results[0].members;
+        for (let i = 0; i < data_set.length; ++i) {
+          if (data_set[i].last_name === "Conaway" || data_set[i].last_name === "Connolly" || data_set[i].last_name === "Loebsack") {
+            representatives.push(data_set[i]);
+          }
+        }
+        this.setState({ representatives });
       })
       .catch(console.log);
   }
@@ -69,14 +76,13 @@ class Representatives extends Component {
         if (i >= 3) return null;
         return (
           <Link
+            key={i}
             to={{
-              pathname: `/Representatives/instance/${representative.first_name}${representative.last_name}`,
-              state: representative
+              pathname: `/Representatives/instance/${representative.first_name}/${representative.last_name}`
             }}
             className="representative_link"
           >
             <Representative
-              key={i}
               name={representative.first_name + " " + representative.last_name}
               age={this.getAge(representative.date_of_birth)}
               yearsInOffice={representative.seniority}

@@ -33,15 +33,15 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={SplashPage} />
-          <Route path="/Districts/Instance" component={DistrictInstance} />
+          <Route path="/Districts/Instance/:name" component={DistrictInstance} />
           <Route exact path="/Districts" component={Districts} />
           <Route
-            path="/Representatives/Instance"
+            path="/Representatives/Instance/:first_name/:last_name"
             component={RepresentativeInstance}
           />
           <Route exact path="/Representatives" component={Representatives} />
           <Route
-            path="/Legislations/Instance"
+            path="/Legislations/Instance/:short_title"
             component={LegislationInstance}
           />
           <Route exact path="/Legislations" component={Legislation} />

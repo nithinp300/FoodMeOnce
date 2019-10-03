@@ -1,9 +1,8 @@
 import React from "react";
-import District_img from "../../images/us.png";
 import "./css/District.css";
 
 function District(props) {
-  let medianIncome =
+  const medianIncome =
     props.medianIncome != null
       ? props.medianIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       : 0;

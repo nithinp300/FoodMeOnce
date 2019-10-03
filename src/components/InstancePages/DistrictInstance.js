@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import District_img from '../../images/us.png';
 import "./css/DistrictInstance.css";
 import tx_21 from '../../images/tx_21.jpg';
@@ -6,29 +7,90 @@ import tx_10 from '../../images/tx_10.jpg';
 import tx_31 from '../../images/tx_31.png';
 
 class DistrictInstance extends React.Component{
-
-    constructor(props){
-        super(props)
-    };
+    state = {
+        districts: [
+            {
+              name: "Texas 11th Congressional District",
+              population: "818,281",
+              medianIncome: "71,486",
+              avgAge: "37.9",
+              genderRatio: "0.97",
+              representative: "K. Michael Conaway",
+              senators: "John Cornyn, Ted Cruz",
+              peoplePerSquareMile: "136.7",
+              povertyRate: "10.3%",
+              numHouseholds: "315,100",
+              id: "C001062",
+              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district"
+            },
+            {
+              name: "Virginia 11th Congressional District",
+              population: "896,798",
+              medianIncome: "75,517",
+              avgAge: "35.9",
+              genderRatio: "0.99",
+              representative: "Gerald E. Connolly",
+              senators: "John Cornyn, Ted Cruz",
+              peoplePerSquareMile: "166.9",
+              povertyRate: "7.9%",
+              numHouseholds: "290,104",
+              id: "C001078",
+              wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
+            },
+            {
+              name: "Iowa 2nd Congressional District",
+              population: "883,347",
+              medianIncome: "70,346",
+              avgAge: "35.2",
+              genderRatio: "0.97",
+              representative: "Dave Loebsack",
+              senators: "John Cornyn, Ted Cruz",
+              peoplePerSquareMile: "396.3",
+              povertyRate: "8.9%",
+              numHouseholds: "288,768",
+              id: "L000565",
+              wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
+            },
+          ],
+        legislations: {
+            Conaway: "Agriculture Improvement Act of 2018",
+            Loebsack: "Agriculture Reform, Food, and Jobs Act of 2013",
+            Connolly: "Global Partnerships Act of 2013",
+        }
+    }
 
     getImage = (district_name) => {
-      if(district_name === "Texas 21st Congressional District"){
+        if(district_name === "Texas 11th Congressional District"){
            return tx_21;
          }
-      if(district_name === "Texas 10th Congressional District"){
+        if(district_name === "Virginia 11th Congressional District"){
           return tx_10;
         }
-      if(district_name === "Texas 31st Congressional District"){
+        if(district_name === "Iowa 2nd Congressional District"){
           return tx_31;
         }
-    return District_img;
+        return District_img;
+    }
+
+    getDistrict = (district_name) => {
+        for (let i = 0; i < this.state.districts.length; ++i) {
+            let district = this.state.districts[i];
+            if (district.name === district_name)
+                return district;
+        }
+        return {};
     }
 
     render(){
-    var district_data = this.props.location.state
+    var district_data = this.getDistrict(this.props.match.params.name);
+    if (district_data.name == null) {
+        return <Redirect to="/error" />
+    }
+
+    var name = district_data.representative.split(" ");
+    var firstName = name[0];
+    var lastName = name[name.length - 1];
     var rep_image = "https://theunitedstates.io/images/congress/225x275/"+district_data.id+".jpg";
-    console.log(district_data.id);
-    console.log(this.props.location.state)
     return (
     <div
             className="district-instance d-flex border border-secondary
@@ -65,14 +127,16 @@ class DistrictInstance extends React.Component{
                     <span>People per square mile</span>: {district_data.peoplePerSquareMile}
                 </li>
                 <li className="district-instance-desc">
-                    <a href={district_data.wikipedia}>Wikipedia</a>: {district_data.representative}
+                    <a href={district_data.wikipedia}>Wikipedia</a>: <a href={`/Representatives/instance/${firstName}/${lastName}`}>{district_data.representative}</a>
                 </li>
                 <li className="district-instance-desc">
                     <span>Representative</span>: {district_data.representative}
                 </li>
+                <li className="district-instance-desc">
+                    <span>Legislation by Representative</span>:<br/><a href={`/Legislations/instance/${this.state.legislations[lastName]}`}>{this.state.legislations[lastName]}</a>
+                </li>
             </ul>
             <img className="rep-image" src={rep_image} alt="us flag"/>
-            {console.log(rep_image)}
         </div>
         );
       }
