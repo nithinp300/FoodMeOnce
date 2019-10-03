@@ -24,6 +24,8 @@
 .para {
   font-size: calc(8px + 2vmin); 
   text-align: center; 
-  font: outline;
-  margin-top: 1%; 
+  font: optima;
+  margin-top: 2%; 
+  margin-right: 9%; 
+  margin-left: 9%; 
 }
