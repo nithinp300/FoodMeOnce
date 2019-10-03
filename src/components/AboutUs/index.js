@@ -80,12 +80,13 @@ async grabIssues(){
 }
 
 async grabCommits(){
-  var curr = 0
-  var last = 0
-  do{
-  fetch("https://gitlab.com/api/v4/projects/14463226/repository/commits?per_page=1000&page=1")
+  var page = 0
+  while(page < 4){
+  page+=1
+  fetch("https://gitlab.com/api/v4/projects/14463226/repository/commits?per_page=100&page=" + page)
       .then(res => res.json())
       .then(res => {
+        
         res.forEach(commit => {
           this.state.totalCommits += 1
           switch (commit.committer_name){
@@ -109,10 +110,9 @@ async grabCommits(){
             default:
           }
         });
-        this.setState(this.state)
       })
-    } while(curr !== last)
-
+    }
+    this.setState(this.state)
 }
 
   render(){

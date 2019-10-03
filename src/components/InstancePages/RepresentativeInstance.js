@@ -66,7 +66,6 @@ class RepresentativeInstance extends React.Component{
     if (this.state.representative.first_name != null) {
         rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
     }
-    console.log(district)
     return(
         <div
             className="representative-instance d-flex border border-secondary
