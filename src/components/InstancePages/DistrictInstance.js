@@ -128,7 +128,7 @@ class DistrictInstance extends React.Component{
                 </li>
                 <li className="district-instance-desc">
 
-                    <span>Households using SNAP</span>: {selected_district_info["Percent of Households with SNAP"] * 100}%
+                    <span>Households using SNAP</span>: {selected_district_info["Percent of Households with SNAP"].toFixed(3) * 100}%
                 </li>
                 <li className="district-instance-desc">
 
@@ -152,7 +152,7 @@ class DistrictInstance extends React.Component{
                     <span>Legislation by Representative</span>:<br/><a href={`/Legislations/instance/${this.state.legislations[lastName]}`}>{this.state.legislations[lastName]}</a>
                 </li>
             </ul>
-            <img className="rep-image" src={rep_image} alt="us flag"/>
+            <img className="district-instance-rep-image" src={rep_image} alt="us flag"/>
         </div>
         );
       }
