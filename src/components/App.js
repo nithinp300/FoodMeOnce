@@ -41,7 +41,7 @@ function App() {
           />
           <Route exact path="/Representatives" component={Representatives} />
           <Route
-            path="/Legislations/Instance"
+            path="/Legislations/Instance/:short_title"
             component={LegislationInstance}
           />
           <Route exact path="/Legislations" component={Legislation} />

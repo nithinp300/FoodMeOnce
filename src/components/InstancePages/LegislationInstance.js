@@ -1,9 +1,35 @@
-import React from "react";
+import React, { Component } from "react";
 import './css/LegislationInstance.css';
 import us_hor from '../../images/us_hor.png';
 import us_sen from '../../images/us_sen.png';
 
-class LegislationInstance extends React.Component{
+class LegislationInstance extends Component{
+    state = {
+        legislation: {}
+    }
+    componentDidMount() {
+        fetch(
+            "https://api.propublica.org/congress/v1/bills/search.json?query=%22food+access%22",
+            {
+            method: "GET",
+            headers: {
+                "X-API-Key": "eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6"
+            }
+            }
+        )
+        .then(response => response.json())
+        .then(data => {
+            const legislations = data.results[0].bills;
+            for (let i = 0; i < legislations.length; ++i) {
+                let legislation = legislations[i];
+                if (legislation.short_title === this.props.match.params.short_title) {
+                    this.setState({ legislation });
+                }
+            }
+        })
+        .catch(console.log);
+    }
+
     getStatus = (enacted) => {
     if(enacted != null) {
       return "Enacted";
@@ -47,8 +73,11 @@ class LegislationInstance extends React.Component{
    }
 
     render(){
-    var legislation_data = this.props.location.state
-    var sponsor_image = "https://theunitedstates.io/images/congress/225x275/"+ legislation_data.sponsor_id+".jpg";
+    let legislation_data = this.state.legislation;
+    let sponsor_image = "";
+    if (legislation_data.sponsor_id != null) {
+        sponsor_image = "https://theunitedstates.io/images/congress/225x275/"+ legislation_data.sponsor_id+".jpg";
+    }
     return(
         <div
             className="legislation-instance d-flex p-2 border border-secondary

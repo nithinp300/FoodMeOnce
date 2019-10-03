@@ -67,14 +67,13 @@ class Legislations extends Component {
         if (i >= 3) return null;
         return (
           <Link
+            key={i}
             to={{
-              pathname: `/Legislations/instance/${legislation.short_title}`,
-              state: legislation
+              pathname: `/Legislations/instance/${legislation.short_title}`
             }}
             className="legislation_link"
           >
             <Legislation
-              key={i}
               name={legislation.short_title}
               year={legislation.introduced_date}
               status={this.getStatus(legislation.enacted)}
