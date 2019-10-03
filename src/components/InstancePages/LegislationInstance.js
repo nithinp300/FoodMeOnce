@@ -53,6 +53,7 @@ class LegislationInstance extends React.Component{
 
     render(){
     var legislation_data = this.props.location.state
+    var sponsor_image = "https://theunitedstates.io/images/congress/225x275/"+ legislation_data.sponsor_id+".jpg";
 //    console.log(this.props.location.state)
 //    var status = this.getStatus(legislation_data.enacted)
 //    var billType = this.getBillType(legislation_data.bill_type)
@@ -99,6 +100,9 @@ console.log(legislation_data)
                     <span>Summary</span>: {legislation_data.summary_short}
                 </li>
             </ul>
+            <div className="sponsor" align="left">
+              <img className="sponsor-image" src={sponsor_image} alt="us flag" />
+            </div>
         </div>
     );
     }
