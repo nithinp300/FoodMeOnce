@@ -6,8 +6,8 @@ class RepresentativeInstance extends React.Component{
         representative: {},
         districts: {
             Conaway: "Texas 11th Congressional District",
-            Loebsack: "Virginia 11th Congressional District",
-            Connolly: "Iowa 2nd Congressional District",
+            Loebsack: "Iowa 2nd Congressional District",
+            Connolly: "Virginia 11th Congressional District"
         },
         legislations: {
             Conaway: "Agriculture Improvement Act of 2018",
@@ -65,6 +65,7 @@ class RepresentativeInstance extends React.Component{
     if (this.state.representative.first_name != null) {
         rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
     }
+    console.log(district)
     return(
         <div
             className="representative-instance d-flex border border-secondary
@@ -82,7 +83,7 @@ class RepresentativeInstance extends React.Component{
                     <span>Party</span>: {this.getParty(rep_data.party)}
                 </li>
                 <li className="representative-instance-desc">
-                    <span>State/District</span>: <a href={`/Districts/instance/${district}`}>{rep_data.state}</a>
+                    <span>State/District</span>: <a href={`/Districts/instance/${district}`}>{rep_data.state} {rep_data.district}</a>
                 </li>
                 <li className="representative-instance-desc">
                     <span>Office</span>: {rep_data.office}

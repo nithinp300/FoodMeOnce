@@ -36,7 +36,7 @@ class DistrictInstance extends React.Component{
               peoplePerSquareMile: "166.9",
               povertyRate: "4.5%",
               numHouseholds: "268,471",
-              id: "L000565",
+              id: "C001078",
               wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
             },
             {
@@ -50,7 +50,7 @@ class DistrictInstance extends React.Component{
               peoplePerSquareMile: "396.3",
               povertyRate: "8.7%",
               numHouseholds: "313,626",
-              id: "C001078",
+              id: "L000565",
               wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
             },
           ],
@@ -143,7 +143,7 @@ class DistrictInstance extends React.Component{
                     <span>People per square mile</span>: {district_data.peoplePerSquareMile}
                 </li>
                 <li className="district-instance-desc">
-                    <a href={district_data.wikipedia}>Wikipedia</a> 
+                    <a href={district_data.wikipedia}>Wikipedia</a>
                 </li>
                 <li className="district-instance-desc">
                     <span>Representative</span>: <a href={`/Representatives/instance/${firstName}/${lastName}`}>{district_data.representative}</a>
