@@ -1,14 +1,9 @@
 import React from "react";
-import Legislation_img from '../../images/us.png';
 import './css/LegislationInstance.css';
 import us_hor from '../../images/us_hor.png';
 import us_sen from '../../images/us_sen.png';
 
 class LegislationInstance extends React.Component{
-
-    constructor(props){
-        super(props)
-    };
     getStatus = (enacted) => {
     if(enacted != null) {
       return "Enacted";
@@ -54,10 +49,6 @@ class LegislationInstance extends React.Component{
     render(){
     var legislation_data = this.props.location.state
     var sponsor_image = "https://theunitedstates.io/images/congress/225x275/"+ legislation_data.sponsor_id+".jpg";
-//    console.log(this.props.location.state)
-//    var status = this.getStatus(legislation_data.enacted)
-//    var billType = this.getBillType(legislation_data.bill_type)
-console.log(legislation_data)
     return(
         <div
             className="legislation-instance d-flex p-2 border border-secondary

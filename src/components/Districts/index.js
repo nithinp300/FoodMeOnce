@@ -68,7 +68,6 @@ class Districts extends Component {
           key={i}
           to={{
             pathname: `/Districts/instance/${district.name}`,
-            state: district
           }}
           className="district_link"
         >

@@ -109,7 +109,7 @@ async grabCommits(){
         });
         this.setState(this.state)
       })
-    } while(curr != last)
+    } while(curr !== last)
 
 }
 

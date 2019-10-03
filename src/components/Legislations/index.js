@@ -28,7 +28,7 @@ class Legislations extends Component {
   };
 
   getParty = sponsor_party => {
-    if (sponsor_party == "D") {
+    if (sponsor_party === "D") {
       return "Democratic";
     }
     return "Republican";

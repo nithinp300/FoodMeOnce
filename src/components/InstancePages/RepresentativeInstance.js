@@ -2,11 +2,6 @@ import React from "react";
 import "./css/RepresentativeInstance.css";
 
 class RepresentativeInstance extends React.Component{
-
-    constructor(props){
-        super(props)
-    };
-
     getAge = (birthDateString) => {
     var todayDate = new Date();
     var birthDate = new Date(birthDateString);
@@ -19,7 +14,7 @@ class RepresentativeInstance extends React.Component{
     return age;
   }
     getParty = (sponsor_party) => {
-    if(sponsor_party == "D") {
+    if(sponsor_party === "D") {
         return "Democrat";
     }
     return "Republican";
@@ -31,7 +26,6 @@ class RepresentativeInstance extends React.Component{
     var twitter = "https://twitter.com/" + rep_data.twitter_account;
     var facebook = "https://facebook.com/" + rep_data.facebook_account;
     var rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
-    console.log(this.props.location.state)
     return(
         <div
             className="representative-instance d-flex border border-secondary

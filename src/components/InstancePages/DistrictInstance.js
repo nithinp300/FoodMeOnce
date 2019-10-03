@@ -91,10 +91,8 @@ class DistrictInstance extends React.Component{
     if (district_data.name == null) {
         return <Redirect to="/error" />
     }
-    
+
     var rep_image = "https://theunitedstates.io/images/congress/225x275/"+district_data.id+".jpg";
-    console.log(district_data.id);
-    console.log(this.props.location.state)
     return (
     <div
             className="district-instance d-flex border border-secondary
@@ -138,7 +136,6 @@ class DistrictInstance extends React.Component{
                 </li>
             </ul>
             <img className="rep-image" src={rep_image} alt="us flag"/>
-            {console.log(rep_image)}
         </div>
         );
       }

@@ -27,14 +27,14 @@ class Representatives extends Component {
   };
 
   getBillType = billType => {
-    if (billType == "hr") {
+    if (billType === "hr") {
       return "House of Representatives";
     }
     return "Senate";
   };
 
   getParty = sponsor_party => {
-    if (sponsor_party == "D") {
+    if (sponsor_party === "D") {
       return "Democrat";
     }
     return "Republican";
