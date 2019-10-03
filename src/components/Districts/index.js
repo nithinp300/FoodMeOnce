@@ -20,7 +20,9 @@ class Districts extends Component {
         senators: "John Cornyn, Ted Cruz",
         peoplePerSquareMile: "136.7",
         povertyRate: "10.3%",
-        numHouseholds: "315,100"
+        numHouseholds: "315,100",
+        id: "S000583",
+        wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_21st_congressional_district"
       },
       {
         name: "Texas 10th Congressional District",
@@ -32,7 +34,9 @@ class Districts extends Component {
         senators: "John Cornyn, Ted Cruz",
         peoplePerSquareMile: "166.9",
         povertyRate: "7.9%",
-        numHouseholds: "290,104"
+        numHouseholds: "290,104",
+        id: "M001157",
+        wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_10th_congressional_district"
       },
       {
         name: "Texas 31st Congressional District",
@@ -44,7 +48,9 @@ class Districts extends Component {
         senators: "John Cornyn, Ted Cruz",
         peoplePerSquareMile: "396.3",
         povertyRate: "8.9%",
-        numHouseholds: "288,768"
+        numHouseholds: "288,768",
+        id: "F000461",
+        wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_31st_congressional_district"
       },
     ]
   };
@@ -71,6 +77,8 @@ class Districts extends Component {
             peoplePerSquareMile={district.peoplePerSquareMile}
             povertyRate={district.povertyRate}
             numHouseholds={district.numHouseholds}
+            id={district.id}
+            wikipedia={district.wikipedia}
           />
         </Link>
       );

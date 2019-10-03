@@ -26,7 +26,8 @@ class DistrictInstance extends React.Component{
 
     render(){
     var district_data = this.props.location.state
-
+    var rep_image = "https://theunitedstates.io/images/congress/225x275/"+district_data.id+".jpg";
+    console.log(district_data.id);
     console.log(this.props.location.state)
     return (
     <div
@@ -50,10 +51,6 @@ class DistrictInstance extends React.Component{
                 </li>
                 <li className="district-instance-desc">
 
-                    <span>Representative</span>: {district_data.representative}
-                </li>
-                <li className="district-instance-desc">
-
                     <span>Senators</span>: {district_data.senators}
                 </li>
                 <li className="district-instance-desc">
@@ -68,7 +65,15 @@ class DistrictInstance extends React.Component{
 
                     <span>People per square mile</span>: {district_data.peoplePerSquareMile}
                 </li>
+                <li className="district-instance-desc">
+                    <a href={district_data.wikipedia}>Wikipedia</a>: {district_data.representative}
+                </li>
+                <li className="district-instance-desc">
+                    <span>Representative</span>: {district_data.representative}
+                </li>
             </ul>
+            <img className="rep-image" src={rep_image} alt="us flag"/>
+            {console.log(rep_image)}
         </div>
         );
       }
