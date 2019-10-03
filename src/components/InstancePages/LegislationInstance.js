@@ -45,11 +45,18 @@ class LegislationInstance extends React.Component{
    }
 
    getSponsorTitle = (sponsor_title) => {
+<<<<<<< Updated upstream
    if(sponsor_title === 'Sen.'){
     return "Senator";
     }
     return "Representative";
    }
+=======
+   if(sponsor_title == 'Sen.'){
+    return "Senator"
+    }
+    return "Representative"}
+>>>>>>> Stashed changes
 
     render(){
     var legislation_data = this.props.location.state
@@ -63,8 +70,13 @@ console.log(legislation_data)
             className="legislation-instance d-flex p-2 border border-secondary
                 justify-content-center flex-column align-items-center"
         >
+<<<<<<< Updated upstream
             <img className="legislation-instance-image" src={this.getImage(legislation_data.bill_type)} alt="government" />
             <p className="legislation-name"><a href={legislation_data.congressdotgov_url}>{legislation_data.short_title}</a></p>
+=======
+            <img className="legislation-instance-image" src={this.getImage(legislation_data.billType)} alt="government" />
+            <p className="legislation-name"><a href={legislation_data.bill_uri}>{legislation_data.short_title}</a></p>
+>>>>>>> Stashed changes
             <ul>
                 <li className="legislation-instance-desc">
                     <span>Introduced</span>: {legislation_data.introduced_date}
@@ -79,6 +91,7 @@ console.log(legislation_data)
                     <span>Party</span>: {this.getParty(legislation_data.sponsor_party)}
                 </li>
                 <li className="legislation-instance-desc">
+<<<<<<< Updated upstream
                     <span>Bill Type</span>: {this.getBillType(legislation_data.bill_type)}
                 </li>
                 <li className="legislation-instance-desc">
@@ -97,6 +110,17 @@ console.log(legislation_data)
                     <span>Latest Action</span>: {legislation_data.latest_major_action}
                 </li>
                 <li className="legislation-instance-desc">
+=======
+                    <span>Bill Type</span>: {this.getBillType(legislation_data.bill_Type)}
+                </li>
+                <li className="legislation-instance-desc">
+                    <span>Sponsor(s)</span>: {this.getSponsorTitle(legislation_data.sponsor_title)} {legislation_data.sponsor_name}
+                </li>
+                <li className="legislation-instance-desc">
+                    <span>Committee(s)</span>: {legislation_data.committees}
+                </li>
+                <li className="legislation-instance-desc">
+>>>>>>> Stashed changes
                     <span>Summary</span>: {legislation_data.summary_short}
                 </li>
             </ul>

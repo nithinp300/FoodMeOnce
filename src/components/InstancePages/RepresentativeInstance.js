@@ -37,7 +37,11 @@ class RepresentativeInstance extends React.Component{
             className="representative-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center"
         >
+<<<<<<< Updated upstream
             <img className="representative-instance-image" src={rep_image} alt="us flag" />
+=======
+            <img className="representative-instance-image" src={Representative_img} alt="us flag" />
+>>>>>>> Stashed changes
             <p className="representative-instance-name">{rep_data.first_name} {rep_data.last_name}</p>
             <ul>
                 <li className="representative-instance-desc">

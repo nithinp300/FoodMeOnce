@@ -33,7 +33,11 @@ class DistrictInstance extends React.Component{
             className="district-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center"
         >
+<<<<<<< Updated upstream
             <img className="district-instance-image" src={this.getImage(district_data.name)} alt="us flag" />
+=======
+            <img className="district-instance-image" src={District_img} alt="us flag" />
+>>>>>>> Stashed changes
             <p className="district-instance-name">{district_data.name}</p>
             <ul>
                 <li className="district-instance-desc">
