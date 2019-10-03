@@ -48,28 +48,30 @@ async grabIssues(){
         this.state.totalIssues +=1
         if(issue.closed_by != null){
           this.state.closedIssues +=1
-          switch (issue.closed_by.name){
-            case "Christopher Chasteen":
-              this.state.Chris[1] +=1
-              break;
-
-            case "Shubhendra Trivedi":
-              this.state.Shubhendra[1]+=1
-              break;
-
-            case "Gyuwon":
-            case "Gyuwon Kim":
-                this.state.Gyuwon[1]+=1
+          if(issue.assignee != null){
+            switch (issue.assignee.name){
+              case "Christopher Chasteen":
+                this.state.Chris[1] +=1
                 break;
-            case "Brian Dyck":
-                this.state.Brian[1]+=1
-                break;
-            case "Nithin Pingili":
-              this.state.Nithin[1]+=1
-              break;
-            default:
-              console.log(issue)
 
+              case "Shubhendra Trivedi":
+                this.state.Shubhendra[1]+=1
+                break;
+
+              case "Gyuwon":
+              case "Gyuwon Kim":
+                  this.state.Gyuwon[1]+=1
+                  break;
+              case "BrianDyck":
+              case "Brian Dyck":
+                  this.state.Brian[1]+=1
+                  break;
+              case "Nithin Pingili":
+                this.state.Nithin[1]+=1
+                break;
+              default:
+                console.log(issue)
+            }
           }
         }
       });
