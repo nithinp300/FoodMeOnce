@@ -21,7 +21,7 @@ class Districts extends Component {
         peoplePerSquareMile: "136.7",
         povertyRate: "10.3%",
         numHouseholds: "315,100",
-        id: "S000583",
+        id: "C001062",
         wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district"
       },
       {
@@ -35,7 +35,7 @@ class Districts extends Component {
         peoplePerSquareMile: "166.9",
         povertyRate: "7.9%",
         numHouseholds: "290,104",
-        id: "M001157",
+        id: "L000565",
         wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
       },
       {
@@ -49,7 +49,7 @@ class Districts extends Component {
         peoplePerSquareMile: "396.3",
         povertyRate: "8.9%",
         numHouseholds: "288,768",
-        id: "F000461",
+        id: "C001078",
         wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
       },
     ]

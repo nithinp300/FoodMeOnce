@@ -20,7 +20,7 @@ class DistrictInstance extends React.Component{
               peoplePerSquareMile: "136.7",
               povertyRate: "10.3%",
               numHouseholds: "315,100",
-              id: "S000583",
+              id: "C001062",
               wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district"
             },
             {
@@ -34,7 +34,7 @@ class DistrictInstance extends React.Component{
               peoplePerSquareMile: "166.9",
               povertyRate: "7.9%",
               numHouseholds: "290,104",
-              id: "M001157",
+              id: "C001078",
               wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
             },
             {
@@ -48,10 +48,15 @@ class DistrictInstance extends React.Component{
               peoplePerSquareMile: "396.3",
               povertyRate: "8.9%",
               numHouseholds: "288,768",
-              id: "F000461",
+              id: "L000565",
               wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
             },
-          ]
+          ],
+        legislations: {
+            Conaway: "Agriculture Improvement Act of 2018",
+            Loebsack: "Agriculture Reform, Food, and Jobs Act of 2013",
+            Connolly: "Global Partnerships Act of 2013",
+        }
     }
 
     getImage = (district_name) => {
@@ -82,6 +87,9 @@ class DistrictInstance extends React.Component{
         return <Redirect to="/error" />
     }
 
+    var name = district_data.representative.split(" ");
+    var firstName = name[0];
+    var lastName = name[name.length - 1];
     var rep_image = "https://theunitedstates.io/images/congress/225x275/"+district_data.id+".jpg";
     return (
     <div
@@ -119,10 +127,13 @@ class DistrictInstance extends React.Component{
                     <span>People per square mile</span>: {district_data.peoplePerSquareMile}
                 </li>
                 <li className="district-instance-desc">
-                    <a href={district_data.wikipedia}>Wikipedia</a>: {district_data.representative}
+                    <a href={district_data.wikipedia}>Wikipedia</a>: <a href={`/Representatives/instance/${firstName}/${lastName}`}>{district_data.representative}</a>
                 </li>
                 <li className="district-instance-desc">
                     <span>Representative</span>: {district_data.representative}
+                </li>
+                <li className="district-instance-desc">
+                    <span>Legislation by Representative</span>:<br/><a href={`/Legislations/instance/${this.state.legislations[lastName]}`}>{this.state.legislations[lastName]}</a>
                 </li>
             </ul>
             <img className="rep-image" src={rep_image} alt="us flag"/>
