@@ -10,71 +10,61 @@ class DistrictInstance extends React.Component{
     state = {
         districts: [
             {
-              name: "Texas 21st Congressional District",
+              name: "Texas 11th Congressional District",
               population: "818,281",
               medianIncome: "71,486",
               avgAge: "37.9",
               genderRatio: "0.97",
-              representative: "Chip Roy",
+              representative: "K. Michael Conaway",
               senators: "John Cornyn, Ted Cruz",
               peoplePerSquareMile: "136.7",
               povertyRate: "10.3%",
               numHouseholds: "315,100",
               id: "S000583",
-              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_21st_congressional_district"
+              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district"
             },
             {
-              name: "Texas 10th Congressional District",
+              name: "Virginia 11th Congressional District",
               population: "896,798",
               medianIncome: "75,517",
               avgAge: "35.9",
               genderRatio: "0.99",
-              representative: "Michael T. McCaul",
+              representative: "Gerald E. Connolly",
               senators: "John Cornyn, Ted Cruz",
               peoplePerSquareMile: "166.9",
               povertyRate: "7.9%",
               numHouseholds: "290,104",
               id: "M001157",
-              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_10th_congressional_district"
+              wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
             },
             {
-              name: "Texas 31st Congressional District",
+              name: "Iowa 2nd Congressional District",
               population: "883,347",
               medianIncome: "70,346",
               avgAge: "35.2",
               genderRatio: "0.97",
-              representative: "Bill Flores",
+              representative: "Dave Loebsack",
               senators: "John Cornyn, Ted Cruz",
               peoplePerSquareMile: "396.3",
               povertyRate: "8.9%",
               numHouseholds: "288,768",
               id: "F000461",
-              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_31st_congressional_district"
+              wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
             },
           ]
     }
 
     getImage = (district_name) => {
-        if(district_name === "Texas 21st Congressional District"){
+        if(district_name === "Texas 11th Congressional District"){
            return tx_21;
          }
-        if(district_name === "Texas 10th Congressional District"){
+        if(district_name === "Virginia 11th Congressional District"){
           return tx_10;
         }
-        if(district_name === "Texas 31st Congressional District"){
+        if(district_name === "Iowa 2nd Congressional District"){
           return tx_31;
         }
         return District_img;
-    }
-
-    getUrlToSenater = (district_name) => {
-        if (district_name === "Texas 21st Congressional District") {
-
-        } else if (district_name === "Texas 10th Congressional District") {
-
-        } else if (district_name === "Texas 31st Congressional District") {
-
-        }
     }
 
     getDistrict = (district_name) => {
