@@ -61,11 +61,11 @@ class Legislations extends Component {
         let sets = {};
         for (let i = 0; i < data.results[0].bills.length; ++i) {
           const name = data.results[0].bills[i].sponsor_name;
-          if (name === "K. Michael Conaway" || name === "Tim Ryan" || name === "Dave Loebsack") {
+          if (name === "K. Michael Conaway" || name === "Gerald E. Connolly" || name === "Dave Loebsack") {
             if (sets[name] == null) {
               sets[name] = name;
               legislations.push(data.results[0].bills[i]);
-            }
+            } 
           }
         }
         this.setState({ legislations });
