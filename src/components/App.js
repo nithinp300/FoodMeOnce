@@ -1,13 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Districts from "./Districts";
 import Representatives from "./Representatives";
 import Legislation from "./Legislations";
 import SplashPage from "./SplashPage";
 import AboutUs from "./AboutUs";
-import DistrictInstance from "./InstancePages/DistrictInstance"
-import RepresentativeInstance from "./InstancePages/RepresentativeInstance"
-import LegislationInstance from "./InstancePages/LegislationInstance"
+import DistrictInstance from "./InstancePages/DistrictInstance";
+import RepresentativeInstance from "./InstancePages/RepresentativeInstance";
+import LegislationInstance from "./InstancePages/LegislationInstance";
+import ErrorPage from "./Error";
 import { Navbar, Nav } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -30,14 +31,24 @@ function App() {
       </Navbar>
 
       <BrowserRouter>
-        <Route exact path="/" component={SplashPage} />
-        <Route path="/Districts/Instance" component={DistrictInstance} />
-        <Route exact path="/Districts" component={Districts} />
-        <Route path="/Representatives/Instance" component={RepresentativeInstance} />
-        <Route exact path="/Representatives" component={Representatives} />
-        <Route path="/Legislations/Instance" component={LegislationInstance} />
-        <Route exact path="/Legislations" component={Legislation} />
-        <Route path="/About Us" component={AboutUs} />
+        <Switch>
+          <Route exact path="/" component={SplashPage} />
+          <Route path="/Districts/Instance" component={DistrictInstance} />
+          <Route exact path="/Districts" component={Districts} />
+          <Route
+            path="/Representatives/Instance"
+            component={RepresentativeInstance}
+          />
+          <Route exact path="/Representatives" component={Representatives} />
+          <Route
+            path="/Legislations/Instance"
+            component={LegislationInstance}
+          />
+          <Route exact path="/Legislations" component={Legislation} />
+          <Route path="/About Us" component={AboutUs} />
+          <Route path="/error" component={ErrorPage} />
+          <Redirect to="/error" />
+        </Switch>
       </BrowserRouter>
     </div>
   );
