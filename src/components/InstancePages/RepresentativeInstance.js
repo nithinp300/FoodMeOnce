@@ -1,5 +1,9 @@
 import React from "react";
 import "./css/RepresentativeInstance.css";
+import District_img from '../../images/us.png';
+import tx_11 from '../../images/tx_11.png';
+import va_11 from '../../images/va_11.png';
+import ia_2 from '../../images/ia_2.png';
 
 class RepresentativeInstance extends React.Component{
     state = {
@@ -53,7 +57,18 @@ class RepresentativeInstance extends React.Component{
     }
     return "Republican";
     }
-
+    getImage = (rep_last_name) => {
+        if(rep_last_name === "Conaway"){
+           return tx_11;
+         }
+        if(rep_last_name === "Connolly"){
+          return va_11;
+        }
+        if(rep_last_name === "Loebsack"){
+          return ia_2;
+        }
+        return District_img;
+      }
     render(){
     var district = this.state.districts[this.props.match.params.last_name];
     var legislation = this.state.legislations[this.props.match.params.last_name];
@@ -105,10 +120,10 @@ class RepresentativeInstance extends React.Component{
                     <a href={rep_data.url}> Website </a>
                 </li>
             </ul>
+            <img className="district-instance-image" src={this.getImage(rep_data.last_name)} alt="us flag" />
         </div>
     );
     }
 }
 
 export default RepresentativeInstance;
-
