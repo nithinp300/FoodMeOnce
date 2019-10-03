@@ -4,9 +4,9 @@ import District_img from '../../images/us.png';
 import "./css/DistrictInstance.css";
 import snap_data from '../../Files/snap_data.json';
 import cancer_data from '../../Files/cancer_data.json';
-import tx_21 from '../../images/tx_21.jpg';
-import tx_10 from '../../images/tx_10.jpg';
-import tx_31 from '../../images/tx_31.png';
+import tx_11 from '../../images/tx_11.png';
+import va_11 from '../../images/va_11.png';
+import ia_2 from '../../images/ia_2.png';
 
 class DistrictInstance extends React.Component{
     state = {
@@ -63,13 +63,13 @@ class DistrictInstance extends React.Component{
 
     getImage = (district_name) => {
         if(district_name === "Texas 11th Congressional District"){
-           return tx_21;
+           return tx_11;
          }
         if(district_name === "Virginia 11th Congressional District"){
-          return tx_10;
+          return va_11;
         }
         if(district_name === "Iowa 2nd Congressional District"){
-          return tx_31;
+          return ia_2;
         }
         return District_img;
     }
@@ -90,9 +90,9 @@ class DistrictInstance extends React.Component{
     }
 
     let temp_state = district_data.name.substring(0, district_data.name.indexOf(' '))
-    let selected_district_info = snap_data.find( item => item.State === temp_state && 
+    let selected_district_info = snap_data.find( item => item.State === temp_state &&
         item["Congressional District"].replace(/\D/g, "") === district_data.name.replace(/\D/g, "") )
-    let district_cancer = cancer_data.find( item => item.State.replace(/['"]+/g, '') === temp_state && 
+    let district_cancer = cancer_data.find( item => item.State.replace(/['"]+/g, '') === temp_state &&
         item.District.replace(/\D/g, "") === district_data.name.replace(/\D/g, "") )
 
     var name = district_data.representative.split(" ");
@@ -117,10 +117,6 @@ class DistrictInstance extends React.Component{
                 </li>
                 <li className="district-instance-desc">
                     <span>Gender Ratio</span>: {district_data.genderRatio}
-                </li>
-                <li className="district-instance-desc">
-
-                    <span>Senators</span>: {district_data.senators}
                 </li>
                 <li className="district-instance-desc">
 
