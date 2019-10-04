@@ -1,0 +1,2618 @@
+[
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 15",
+    "Percent of Households with SNAP": 0.484065532684326,
+    "Percent Margin of Error (±)": 0.0148184606805444
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.311466842889786,
+    "Percent Margin of Error (±)": 0.0165068674832582
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.305911839008331,
+    "Percent Margin of Error (±)": 0.0131638087332249
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 24",
+    "Percent of Households with SNAP": 0.286130845546722,
+    "Percent Margin of Error (±)": 0.0168669763952494
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 15",
+    "Percent of Households with SNAP": 0.257438451051712,
+    "Percent Margin of Error (±)": 0.0172820724546909
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.256934225559235,
+    "Percent Margin of Error (±)": 0.0146429110318422
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 25",
+    "Percent of Households with SNAP": 0.252119183540344,
+    "Percent Margin of Error (±)": 0.013722182251513
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.250951141119003,
+    "Percent Margin of Error (±)": 0.0100536001846194
+  },
+  {
+    "State": "Kentucky",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.246909365057945,
+    "Percent Margin of Error (±)": 0.0128093315288424
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 16",
+    "Percent of Households with SNAP": 0.244172424077988,
+    "Percent Margin of Error (±)": 0.0139540554955602
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.241229221224785,
+    "Percent Margin of Error (±)": 0.0131911728531122
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.231841340661049,
+    "Percent Margin of Error (±)": 0.0134996753185987
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.231588765978813,
+    "Percent Margin of Error (±)": 0.0150487534701824
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 28",
+    "Percent of Households with SNAP": 0.231431692838669,
+    "Percent Margin of Error (±)": 0.0150961689651012
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 26",
+    "Percent of Households with SNAP": 0.230526685714722,
+    "Percent Margin of Error (±)": 0.0131731508299708
+  },
+  {
+    "State": "Louisiana",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.228672221302986,
+    "Percent Margin of Error (±)": 0.0129919862374663
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.225092813372612,
+    "Percent Margin of Error (±)": 0.0124065326526761
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 34",
+    "Percent of Households with SNAP": 0.224383071064949,
+    "Percent Margin of Error (±)": 0.0164145287126303
+  },
+  {
+    "State": "Arizona",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.221490934491158,
+    "Percent Margin of Error (±)": 0.0129305170848966
+  },
+  {
+    "State": "Mississippi",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.219775184988976,
+    "Percent Margin of Error (±)": 0.0138718308880925
+  },
+  {
+    "State": "Alabama",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.219097465276718,
+    "Percent Margin of Error (±)": 0.0129693131893873
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.218652278184891,
+    "Percent Margin of Error (±)": 0.0154682397842407
+  },
+  {
+    "State": "Tennessee",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.218309611082077,
+    "Percent Margin of Error (±)": 0.0115832211449742
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 27",
+    "Percent of Households with SNAP": 0.217665314674377,
+    "Percent Margin of Error (±)": 0.0127942329272628
+  },
+  {
+    "State": "Wisconsin",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.217574805021286,
+    "Percent Margin of Error (±)": 0.0112198581919074
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 14",
+    "Percent of Households with SNAP": 0.217098891735077,
+    "Percent Margin of Error (±)": 0.0111149586737156
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.216303497552872,
+    "Percent Margin of Error (±)": 0.0117142032831907
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 20",
+    "Percent of Households with SNAP": 0.216098755598068,
+    "Percent Margin of Error (±)": 0.0109298098832369
+  },
+  {
+    "State": "West Virginia",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.215630263090134,
+    "Percent Margin of Error (±)": 0.0131827378645539
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 21",
+    "Percent of Households with SNAP": 0.21526525914669,
+    "Percent Margin of Error (±)": 0.0177783295512199
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 18",
+    "Percent of Households with SNAP": 0.212333932518959,
+    "Percent Margin of Error (±)": 0.0142528023570776
+  },
+  {
+    "State": "New Mexico",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.212235301733017,
+    "Percent Margin of Error (±)": 0.0130511419847608
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 29",
+    "Percent of Households with SNAP": 0.211991429328918,
+    "Percent Margin of Error (±)": 0.0161590781062841
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.211982697248459,
+    "Percent Margin of Error (±)": 0.0112423384562135
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.208678215742111,
+    "Percent Margin of Error (±)": 0.00966124981641769
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.208349868655205,
+    "Percent Margin of Error (±)": 0.0109656853601336
+  },
+  {
+    "State": "Nevada",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.20468744635582,
+    "Percent Margin of Error (±)": 0.0141255650669336
+  },
+  {
+    "State": "Massachusetts",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.20406948029995,
+    "Percent Margin of Error (±)": 0.0127505883574486
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.203169137239456,
+    "Percent Margin of Error (±)": 0.0132124563679099
+  },
+  {
+    "State": "Arizona",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.201860725879669,
+    "Percent Margin of Error (±)": 0.0147175258025527
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.19466832280159,
+    "Percent Margin of Error (±)": 0.0134678445756435
+  },
+  {
+    "State": "South Carolina",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.194457918405533,
+    "Percent Margin of Error (±)": 0.014303395524621
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 26",
+    "Percent of Households with SNAP": 0.192545875906944,
+    "Percent Margin of Error (±)": 0.0107043832540512
+  },
+  {
+    "State": "Maryland",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.19218447804451,
+    "Percent Margin of Error (±)": 0.0121406139805913
+  },
+  {
+    "State": "Louisiana",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.190850898623466,
+    "Percent Margin of Error (±)": 0.0127558978274465
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.189142301678658,
+    "Percent Margin of Error (±)": 0.0104163428768516
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.188876539468765,
+    "Percent Margin of Error (±)": 0.0133301727473736
+  },
+  {
+    "State": "Missouri",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.188446789979935,
+    "Percent Margin of Error (±)": 0.0124106584116817
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 51",
+    "Percent of Households with SNAP": 0.185902401804924,
+    "Percent Margin of Error (±)": 0.0165912602096796
+  },
+  {
+    "State": "Oregon",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.185121700167656,
+    "Percent Margin of Error (±)": 0.0110423415899277
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 30",
+    "Percent of Households with SNAP": 0.184634625911713,
+    "Percent Margin of Error (±)": 0.013262796215713
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.184502080082893,
+    "Percent Margin of Error (±)": 0.0141092101112008
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 33",
+    "Percent of Households with SNAP": 0.182877868413925,
+    "Percent Margin of Error (±)": 0.0142871299758554
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 14",
+    "Percent of Households with SNAP": 0.182499527931213,
+    "Percent Margin of Error (±)": 0.0127750542014837
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 16",
+    "Percent of Households with SNAP": 0.181842938065529,
+    "Percent Margin of Error (±)": 0.0149724269285798
+  },
+  {
+    "State": "Massachusetts",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.181557297706604,
+    "Percent Margin of Error (±)": 0.0113906050100923
+  },
+  {
+    "State": "Missouri",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.181551054120064,
+    "Percent Margin of Error (±)": 0.0106474235653877
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.181167080998421,
+    "Percent Margin of Error (±)": 0.0116748297587037
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 40",
+    "Percent of Households with SNAP": 0.180390626192093,
+    "Percent Margin of Error (±)": 0.0128949694335461
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.180186361074448,
+    "Percent Margin of Error (±)": 0.0142598086968064
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 17",
+    "Percent of Households with SNAP": 0.178696691989899,
+    "Percent Margin of Error (±)": 0.0104315103963017
+  },
+  {
+    "State": "Rhode Island",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.178100734949112,
+    "Percent Margin of Error (±)": 0.013551720418036
+  },
+  {
+    "State": "Louisiana",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.176845207810402,
+    "Percent Margin of Error (±)": 0.0119606386870146
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 22",
+    "Percent of Households with SNAP": 0.175638198852539,
+    "Percent Margin of Error (±)": 0.0132577260956168
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.174965664744377,
+    "Percent Margin of Error (±)": 0.0109951701015234
+  },
+  {
+    "State": "Oregon",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.174373656511307,
+    "Percent Margin of Error (±)": 0.0120650231838226
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.172755241394043,
+    "Percent Margin of Error (±)": 0.0118028922006488
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.170178130269051,
+    "Percent Margin of Error (±)": 0.0136952307075262
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.170090034604073,
+    "Percent Margin of Error (±)": 0.0118681518360972
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.170070916414261,
+    "Percent Margin of Error (±)": 0.0160243343561888
+  },
+  {
+    "State": "Oklahoma",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.169748738408089,
+    "Percent Margin of Error (±)": 0.00790375098586082
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.169577613472939,
+    "Percent Margin of Error (±)": 0.0138177489861846
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.168268814682961,
+    "Percent Margin of Error (±)": 0.0132589126005769
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.166679307818413,
+    "Percent Margin of Error (±)": 0.00916657689958811
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.165463373064995,
+    "Percent Margin of Error (±)": 0.0112778516486287
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.165378138422966,
+    "Percent Margin of Error (±)": 0.0117997154593468
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.163580924272537,
+    "Percent Margin of Error (±)": 0.0110226878896356
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 17",
+    "Percent of Households with SNAP": 0.163437962532043,
+    "Percent Margin of Error (±)": 0.0115308677777648
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 44",
+    "Percent of Households with SNAP": 0.163192138075829,
+    "Percent Margin of Error (±)": 0.0124461418017745
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 25",
+    "Percent of Households with SNAP": 0.16277477145195,
+    "Percent Margin of Error (±)": 0.00909246131777763
+  },
+  {
+    "State": "New Mexico",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.16123166680336,
+    "Percent Margin of Error (±)": 0.0108946533873677
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 23",
+    "Percent of Households with SNAP": 0.160638555884361,
+    "Percent Margin of Error (±)": 0.0156440194696188
+  },
+  {
+    "State": "Maine",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.16051883995533,
+    "Percent Margin of Error (±)": 0.00955045409500599
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 27",
+    "Percent of Households with SNAP": 0.159287020564079,
+    "Percent Margin of Error (±)": 0.0120656415820122
+  },
+  {
+    "State": "South Carolina",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.158195421099663,
+    "Percent Margin of Error (±)": 0.0130276437848806
+  },
+  {
+    "State": "Alabama",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.158136293292046,
+    "Percent Margin of Error (±)": 0.010844754986465
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.157387673854828,
+    "Percent Margin of Error (±)": 0.0100589515641332
+  },
+  {
+    "State": "Louisiana",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.157233417034149,
+    "Percent Margin of Error (±)": 0.0133925275877118
+  },
+  {
+    "State": "Tennessee",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.156749606132507,
+    "Percent Margin of Error (±)": 0.011817054823041
+  },
+  {
+    "State": "Oregon",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.15595018863678,
+    "Percent Margin of Error (±)": 0.0104624899104238
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 14",
+    "Percent of Households with SNAP": 0.154903948307037,
+    "Percent Margin of Error (±)": 0.0137028088793159
+  },
+  {
+    "State": "Connecticut",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.153790682554245,
+    "Percent Margin of Error (±)": 0.0123644331470132
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 22",
+    "Percent of Households with SNAP": 0.153429388999939,
+    "Percent Margin of Error (±)": 0.0106838122010231
+  },
+  {
+    "State": "West Virginia",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.153072878718376,
+    "Percent Margin of Error (±)": 0.0109734497964382
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.152626141905785,
+    "Percent Margin of Error (±)": 0.0111210979521275
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.152291566133499,
+    "Percent Margin of Error (±)": 0.0114531582221389
+  },
+  {
+    "State": "New Mexico",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.150934398174286,
+    "Percent Margin of Error (±)": 0.0157203078269958
+  },
+  {
+    "State": "Arkansas",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.150851562619209,
+    "Percent Margin of Error (±)": 0.010391085408628
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.150610819458961,
+    "Percent Margin of Error (±)": 0.0103491703048348
+  },
+  {
+    "State": "Mississippi",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.150470927357674,
+    "Percent Margin of Error (±)": 0.0144425528123975
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 14",
+    "Percent of Households with SNAP": 0.150014951825142,
+    "Percent Margin of Error (±)": 0.010873943567276
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 35",
+    "Percent of Households with SNAP": 0.149840280413628,
+    "Percent Margin of Error (±)": 0.0107598751783371
+  },
+  {
+    "State": "Arkansas",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.148235335946083,
+    "Percent Margin of Error (±)": 0.00985078606754541
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.148003846406937,
+    "Percent Margin of Error (±)": 0.00949335750192404
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 31",
+    "Percent of Households with SNAP": 0.147975564002991,
+    "Percent Margin of Error (±)": 0.0114405862987041
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.147640198469162,
+    "Percent Margin of Error (±)": 0.0150010418146849
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.147376179695129,
+    "Percent Margin of Error (±)": 0.010716094635427
+  },
+  {
+    "State": "Oregon",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.146938979625702,
+    "Percent Margin of Error (±)": 0.0103234704583883
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.14650896191597,
+    "Percent Margin of Error (±)": 0.0118786096572876
+  },
+  {
+    "State": "Tennessee",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.146240636706352,
+    "Percent Margin of Error (±)": 0.0108983414247632
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 15",
+    "Percent of Households with SNAP": 0.146033525466919,
+    "Percent Margin of Error (±)": 0.0106669086962938
+  },
+  {
+    "State": "Indiana",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.14433816075325,
+    "Percent Margin of Error (±)": 0.013303704559803
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 14",
+    "Percent of Households with SNAP": 0.144225046038628,
+    "Percent Margin of Error (±)": 0.0125183658674359
+  },
+  {
+    "State": "Connecticut",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.143982023000717,
+    "Percent Margin of Error (±)": 0.0118297254666686
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.143363460898399,
+    "Percent Margin of Error (±)": 0.0123741244897246
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.142799153923988,
+    "Percent Margin of Error (±)": 0.0102987317368388
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 24",
+    "Percent of Households with SNAP": 0.142540380358696,
+    "Percent Margin of Error (±)": 0.00989703740924597
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 35",
+    "Percent of Households with SNAP": 0.141584828495979,
+    "Percent Margin of Error (±)": 0.0127259688451886
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.141262575984001,
+    "Percent Margin of Error (±)": 0.00890004727989435
+  },
+  {
+    "State": "Alabama",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.140104055404663,
+    "Percent Margin of Error (±)": 0.0128253437578678
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.139937490224838,
+    "Percent Margin of Error (±)": 0.0119053656235337
+  },
+  {
+    "State": "Alabama",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.139572784304619,
+    "Percent Margin of Error (±)": 0.010310391895473
+  },
+  {
+    "State": "Massachusetts",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.138017565011978,
+    "Percent Margin of Error (±)": 0.00993498973548412
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.137922540307045,
+    "Percent Margin of Error (±)": 0.0132689420133829
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.137880086898804,
+    "Percent Margin of Error (±)": 0.0126550551503897
+  },
+  {
+    "State": "Arizona",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.137364119291306,
+    "Percent Margin of Error (±)": 0.00911627616733313
+  },
+  {
+    "State": "Nevada",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.137102425098419,
+    "Percent Margin of Error (±)": 0.0113163236528635
+  },
+  {
+    "State": "Kentucky",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.13703890144825,
+    "Percent Margin of Error (±)": 0.00944504048675299
+  },
+  {
+    "State": "Tennessee",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.136784538626671,
+    "Percent Margin of Error (±)": 0.011474309489131
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 23",
+    "Percent of Households with SNAP": 0.136781588196754,
+    "Percent Margin of Error (±)": 0.00856105424463749
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.136281907558441,
+    "Percent Margin of Error (±)": 0.00986278615891933
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.135199651122093,
+    "Percent Margin of Error (±)": 0.0142121501266956
+  },
+  {
+    "State": "Alabama",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.135149747133255,
+    "Percent Margin of Error (±)": 0.0120342448353767
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.134605601429939,
+    "Percent Margin of Error (±)": 0.0101222917437553
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.134526520967484,
+    "Percent Margin of Error (±)": 0.0115676764398813
+  },
+  {
+    "State": "Oklahoma",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.134306132793427,
+    "Percent Margin of Error (±)": 0.00889920257031918
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.134244620800018,
+    "Percent Margin of Error (±)": 0.0100700920447707
+  },
+  {
+    "State": "West Virginia",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.134042233228683,
+    "Percent Margin of Error (±)": 0.00938849244266748
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.133893370628357,
+    "Percent Margin of Error (±)": 0.00987155362963676
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.13368147611618,
+    "Percent Margin of Error (±)": 0.0133240446448326
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.133389562368393,
+    "Percent Margin of Error (±)": 0.00922404415905476
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.13323949277401,
+    "Percent Margin of Error (±)": 0.0103173516690731
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 15",
+    "Percent of Households with SNAP": 0.132876813411713,
+    "Percent Margin of Error (±)": 0.0118982261046767
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.132743328809738,
+    "Percent Margin of Error (±)": 0.00938570685684681
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 16",
+    "Percent of Households with SNAP": 0.132545948028564,
+    "Percent Margin of Error (±)": 0.00962666422128677
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 20",
+    "Percent of Households with SNAP": 0.131999358534813,
+    "Percent Margin of Error (±)": 0.0115507021546364
+  },
+  {
+    "State": "Maryland",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.13194964826107,
+    "Percent Margin of Error (±)": 0.00934320129454136
+  },
+  {
+    "State": "District of Columbia",
+    "Congressional District": "Delegate District (at Large)",
+    "Percent of Households with SNAP": 0.131858959794044,
+    "Percent Margin of Error (±)": 0.00970789417624474
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 21",
+    "Percent of Households with SNAP": 0.131559416651726,
+    "Percent Margin of Error (±)": 0.0092368246987462
+  },
+  {
+    "State": "South Carolina",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.131364107131958,
+    "Percent Margin of Error (±)": 0.0113033205270767
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 36",
+    "Percent of Households with SNAP": 0.130509048700333,
+    "Percent Margin of Error (±)": 0.0137992985546589
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 19",
+    "Percent of Households with SNAP": 0.130466818809509,
+    "Percent Margin of Error (±)": 0.0127676632255316
+  },
+  {
+    "State": "Rhode Island",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.129949063062668,
+    "Percent Margin of Error (±)": 0.0139443492516875
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.129382491111755,
+    "Percent Margin of Error (±)": 0.0116827832534909
+  },
+  {
+    "State": "Kentucky",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.129105776548386,
+    "Percent Margin of Error (±)": 0.00905635673552752
+  },
+  {
+    "State": "Louisiana",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.128912746906281,
+    "Percent Margin of Error (±)": 0.0121772792190313
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.128144413232803,
+    "Percent Margin of Error (±)": 0.00977020990103483
+  },
+  {
+    "State": "Mississippi",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.127958074212074,
+    "Percent Margin of Error (±)": 0.00895167980343103
+  },
+  {
+    "State": "Connecticut",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.127886772155762,
+    "Percent Margin of Error (±)": 0.0111873019486666
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.127338573336601,
+    "Percent Margin of Error (±)": 0.0105341952294111
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.127191483974457,
+    "Percent Margin of Error (±)": 0.0115210842341185
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.127090469002724,
+    "Percent Margin of Error (±)": 0.0113006606698036
+  },
+  {
+    "State": "Hawaii",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.127084195613861,
+    "Percent Margin of Error (±)": 0.0103232292458415
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 46",
+    "Percent of Households with SNAP": 0.126868322491646,
+    "Percent Margin of Error (±)": 0.0114109581336379
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 23",
+    "Percent of Households with SNAP": 0.126629933714867,
+    "Percent Margin of Error (±)": 0.0127412676811218
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.126004844903946,
+    "Percent Margin of Error (±)": 0.0109940180554986
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.125995427370071,
+    "Percent Margin of Error (±)": 0.0128161581233144
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 16",
+    "Percent of Households with SNAP": 0.124920092523098,
+    "Percent Margin of Error (±)": 0.0107353245839477
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 34",
+    "Percent of Households with SNAP": 0.124902367591858,
+    "Percent Margin of Error (±)": 0.00934656336903572
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.124834716320038,
+    "Percent Margin of Error (±)": 0.0103189153596759
+  },
+  {
+    "State": "Kentucky",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.124771267175674,
+    "Percent Margin of Error (±)": 0.00959721207618713
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.124607801437378,
+    "Percent Margin of Error (±)": 0.00914153922349215
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.124282345175743,
+    "Percent Margin of Error (±)": 0.00768717052415013
+  },
+  {
+    "State": "Alabama",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.123657785356045,
+    "Percent Margin of Error (±)": 0.0102786980569363
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.123090296983719,
+    "Percent Margin of Error (±)": 0.0111478520557284
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.122455038130283,
+    "Percent Margin of Error (±)": 0.00881784595549107
+  },
+  {
+    "State": "South Carolina",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.122101604938507,
+    "Percent Margin of Error (±)": 0.0101372795179486
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.121644750237465,
+    "Percent Margin of Error (±)": 0.010764891281724
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 17",
+    "Percent of Households with SNAP": 0.121171936392784,
+    "Percent Margin of Error (±)": 0.0111765218898654
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.120805263519287,
+    "Percent Margin of Error (±)": 0.0114566432312131
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.120757251977921,
+    "Percent Margin of Error (±)": 0.00899126008152962
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.120629020035267,
+    "Percent Margin of Error (±)": 0.0114828143268824
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 41",
+    "Percent of Households with SNAP": 0.120483867824078,
+    "Percent Margin of Error (±)": 0.0116532929241657
+  },
+  {
+    "State": "Oklahoma",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.120009057223797,
+    "Percent Margin of Error (±)": 0.00683174841105938
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.119465902447701,
+    "Percent Margin of Error (±)": 0.0105368718504906
+  },
+  {
+    "State": "Tennessee",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.119413442909718,
+    "Percent Margin of Error (±)": 0.0104749267920852
+  },
+  {
+    "State": "Oklahoma",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.119355276226997,
+    "Percent Margin of Error (±)": 0.00744001846760511
+  },
+  {
+    "State": "Mississippi",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.119194895029068,
+    "Percent Margin of Error (±)": 0.00974273588508368
+  },
+  {
+    "State": "Arizona",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.118860401213169,
+    "Percent Margin of Error (±)": 0.00991955492645502
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.118631847202778,
+    "Percent Margin of Error (±)": 0.00979257933795452
+  },
+  {
+    "State": "Missouri",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.118497520685196,
+    "Percent Margin of Error (±)": 0.0105431880801916
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 14",
+    "Percent of Households with SNAP": 0.118368655443192,
+    "Percent Margin of Error (±)": 0.01237478479743
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.118263572454453,
+    "Percent Margin of Error (±)": 0.00901422556489706
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.118034645915031,
+    "Percent Margin of Error (±)": 0.0120628932490945
+  },
+  {
+    "State": "Tennessee",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.11771933734417,
+    "Percent Margin of Error (±)": 0.00978664588183165
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.117176212370396,
+    "Percent Margin of Error (±)": 0.0100861620157957
+  },
+  {
+    "State": "Oklahoma",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.117091588675976,
+    "Percent Margin of Error (±)": 0.0101750809699297
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.117043286561966,
+    "Percent Margin of Error (±)": 0.00847987737506628
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.116965726017952,
+    "Percent Margin of Error (±)": 0.00966843869537115
+  },
+  {
+    "State": "Minnesota",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.116765268146992,
+    "Percent Margin of Error (±)": 0.0094240615144372
+  },
+  {
+    "State": "Colorado",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.11575398594141,
+    "Percent Margin of Error (±)": 0.00917592737823725
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.115588031709194,
+    "Percent Margin of Error (±)": 0.00923351384699345
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.115537829697132,
+    "Percent Margin of Error (±)": 0.00973467715084553
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.115530379116535,
+    "Percent Margin of Error (±)": 0.00974022690206766
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.115048408508301,
+    "Percent Margin of Error (±)": 0.0108076501637697
+  },
+  {
+    "State": "Vermont",
+    "Congressional District": "Congressional District (at Large)",
+    "Percent of Households with SNAP": 0.114975310862064,
+    "Percent Margin of Error (±)": 0.0095653785392642
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.114891655743122,
+    "Percent Margin of Error (±)": 0.0112240286543965
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.114872433245182,
+    "Percent Margin of Error (±)": 0.00994047243148088
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 20",
+    "Percent of Households with SNAP": 0.114763058722019,
+    "Percent Margin of Error (±)": 0.0097212390974164
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.114447385072708,
+    "Percent Margin of Error (±)": 0.00912453606724739
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.114174917340279,
+    "Percent Margin of Error (±)": 0.0100308246910572
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 16",
+    "Percent of Households with SNAP": 0.113871105015278,
+    "Percent Margin of Error (±)": 0.00892820861190557
+  },
+  {
+    "State": "Tennessee",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.113243333995342,
+    "Percent Margin of Error (±)": 0.00924163591116667
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.113230735063553,
+    "Percent Margin of Error (±)": 0.00858224090188742
+  },
+  {
+    "State": "Tennessee",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.112819492816925,
+    "Percent Margin of Error (±)": 0.0101201049983501
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.1115867421031,
+    "Percent Margin of Error (±)": 0.0100806811824441
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.110941126942635,
+    "Percent Margin of Error (±)": 0.0112338718026876
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 15",
+    "Percent of Households with SNAP": 0.110791303217411,
+    "Percent Margin of Error (±)": 0.00919085554778576
+  },
+  {
+    "State": "Indiana",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.110680386424065,
+    "Percent Margin of Error (±)": 0.00998278986662626
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 29",
+    "Percent of Households with SNAP": 0.110626079142094,
+    "Percent Margin of Error (±)": 0.010033699683845
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.110588930547237,
+    "Percent Margin of Error (±)": 0.0109622161835432
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.110550820827484,
+    "Percent Margin of Error (±)": 0.00711287697777152
+  },
+  {
+    "State": "Kentucky",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.110245771706104,
+    "Percent Margin of Error (±)": 0.00920594483613968
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.110059447586536,
+    "Percent Margin of Error (±)": 0.00884614419192076
+  },
+  {
+    "State": "Missouri",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.109690614044666,
+    "Percent Margin of Error (±)": 0.00901002064347267
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.109682194888592,
+    "Percent Margin of Error (±)": 0.00984207261353731
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.10962538421154,
+    "Percent Margin of Error (±)": 0.00820182822644711
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 15",
+    "Percent of Households with SNAP": 0.109164759516716,
+    "Percent Margin of Error (±)": 0.00885351747274399
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.109134778380394,
+    "Percent Margin of Error (±)": 0.00983406975865364
+  },
+  {
+    "State": "Louisiana",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.108940303325653,
+    "Percent Margin of Error (±)": 0.0104553168639541
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.108890205621719,
+    "Percent Margin of Error (±)": 0.00905038416385651
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.108765922486782,
+    "Percent Margin of Error (±)": 0.00889181904494762
+  },
+  {
+    "State": "Wisconsin",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.108583547174931,
+    "Percent Margin of Error (±)": 0.0100177945569158
+  },
+  {
+    "State": "Massachusetts",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.108393490314484,
+    "Percent Margin of Error (±)": 0.0088889030739665
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 17",
+    "Percent of Households with SNAP": 0.108346283435822,
+    "Percent Margin of Error (±)": 0.00946461968123913
+  },
+  {
+    "State": "Wisconsin",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.108295172452927,
+    "Percent Margin of Error (±)": 0.00569179933518171
+  },
+  {
+    "State": "Alaska",
+    "Congressional District": "Congressional District (at Large)",
+    "Percent of Households with SNAP": 0.108039766550064,
+    "Percent Margin of Error (±)": 0.00949967559427023
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 19",
+    "Percent of Households with SNAP": 0.107261054217815,
+    "Percent Margin of Error (±)": 0.0090489462018013
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.107072927057743,
+    "Percent Margin of Error (±)": 0.00972558930516243
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.106800891458988,
+    "Percent Margin of Error (±)": 0.00869043730199337
+  },
+  {
+    "State": "Kansas",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.106454648077488,
+    "Percent Margin of Error (±)": 0.00994634628295898
+  },
+  {
+    "State": "Oregon",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.105979830026627,
+    "Percent Margin of Error (±)": 0.00960316974669695
+  },
+  {
+    "State": "South Carolina",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.105716615915298,
+    "Percent Margin of Error (±)": 0.0103770447894931
+  },
+  {
+    "State": "Kentucky",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.105605728924274,
+    "Percent Margin of Error (±)": 0.00896785128861666
+  },
+  {
+    "State": "Maryland",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.105471573770046,
+    "Percent Margin of Error (±)": 0.0100725842639804
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.105435483157635,
+    "Percent Margin of Error (±)": 0.00713656237348914
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.104986391961575,
+    "Percent Margin of Error (±)": 0.00925193354487419
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 43",
+    "Percent of Households with SNAP": 0.104681596159935,
+    "Percent Margin of Error (±)": 0.0108572989702225
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.104553051292896,
+    "Percent Margin of Error (±)": 0.00797111913561821
+  },
+  {
+    "State": "Delaware",
+    "Congressional District": "Congressional District (at Large)",
+    "Percent of Households with SNAP": 0.103828325867653,
+    "Percent Margin of Error (±)": 0.00790231209248304
+  },
+  {
+    "State": "Missouri",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.103392615914345,
+    "Percent Margin of Error (±)": 0.00864333100616932
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.102998703718185,
+    "Percent Margin of Error (±)": 0.0099503006786108
+  },
+  {
+    "State": "Maryland",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.102775409817696,
+    "Percent Margin of Error (±)": 0.00976549834012985
+  },
+  {
+    "State": "Massachusetts",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.102364577353001,
+    "Percent Margin of Error (±)": 0.00910470262169838
+  },
+  {
+    "State": "Tennessee",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.102183490991592,
+    "Percent Margin of Error (±)": 0.00890455860644579
+  },
+  {
+    "State": "Minnesota",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.101966083049774,
+    "Percent Margin of Error (±)": 0.00892836600542068
+  },
+  {
+    "State": "Arizona",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.101854771375656,
+    "Percent Margin of Error (±)": 0.0108565837144852
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.100363038480282,
+    "Percent Margin of Error (±)": 0.00749994209036231
+  },
+  {
+    "State": "Iowa",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.100287370383739,
+    "Percent Margin of Error (±)": 0.00702300947159529
+  },
+  {
+    "State": "South Carolina",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.100149005651474,
+    "Percent Margin of Error (±)": 0.00904031004756689
+  },
+  {
+    "State": "Iowa",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0997694581747055,
+    "Percent Margin of Error (±)": 0.00904510542750359
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0993782505393028,
+    "Percent Margin of Error (±)": 0.00906102918088436
+  },
+  {
+    "State": "Wisconsin",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0988024920225143,
+    "Percent Margin of Error (±)": 0.00724973483011127
+  },
+  {
+    "State": "Indiana",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0985970422625542,
+    "Percent Margin of Error (±)": 0.00921003147959709
+  },
+  {
+    "State": "Idaho",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0981217846274376,
+    "Percent Margin of Error (±)": 0.00908524822443724
+  },
+  {
+    "State": "Maine",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0979402363300323,
+    "Percent Margin of Error (±)": 0.00877773109823465
+  },
+  {
+    "State": "Massachusetts",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0972086191177368,
+    "Percent Margin of Error (±)": 0.0101690758019686
+  },
+  {
+    "State": "Minnesota",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0969393476843834,
+    "Percent Margin of Error (±)": 0.00738008273765445
+  },
+  {
+    "State": "Idaho",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0968061238527298,
+    "Percent Margin of Error (±)": 0.00905540306121111
+  },
+  {
+    "State": "Indiana",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0965661555528641,
+    "Percent Margin of Error (±)": 0.00898203812539577
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0964116677641869,
+    "Percent Margin of Error (±)": 0.0112551208585501
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0959219634532928,
+    "Percent Margin of Error (±)": 0.00973173417150974
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 21",
+    "Percent of Households with SNAP": 0.0956923887133598,
+    "Percent Margin of Error (±)": 0.00781178846955299
+  },
+  {
+    "State": "Wisconsin",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0953501611948013,
+    "Percent Margin of Error (±)": 0.00667818868532777
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.094957523047924,
+    "Percent Margin of Error (±)": 0.0116206211969256
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.0947842448949814,
+    "Percent Margin of Error (±)": 0.00849869288504124
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0945693328976631,
+    "Percent Margin of Error (±)": 0.0107753509655595
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.0942994505167007,
+    "Percent Margin of Error (±)": 0.0103000560775399
+  },
+  {
+    "State": "Montana",
+    "Congressional District": "Congressional District (at Large)",
+    "Percent of Households with SNAP": 0.0938545167446136,
+    "Percent Margin of Error (±)": 0.00796861760318279
+  },
+  {
+    "State": "Colorado",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0935355722904205,
+    "Percent Margin of Error (±)": 0.00762667553499341
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.0935126021504402,
+    "Percent Margin of Error (±)": 0.00741898687556386
+  },
+  {
+    "State": "Nevada",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0934795066714287,
+    "Percent Margin of Error (±)": 0.00930602662265301
+  },
+  {
+    "State": "Iowa",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0928705409169197,
+    "Percent Margin of Error (±)": 0.00798807945102453
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0927307233214378,
+    "Percent Margin of Error (±)": 0.0104030976071954
+  },
+  {
+    "State": "Nebraska",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0917975157499313,
+    "Percent Margin of Error (±)": 0.00748678483068943
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 36",
+    "Percent of Households with SNAP": 0.0912833362817764,
+    "Percent Margin of Error (±)": 0.008192403241992
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 47",
+    "Percent of Households with SNAP": 0.0912673771381378,
+    "Percent Margin of Error (±)": 0.00865155272185802
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 18",
+    "Percent of Households with SNAP": 0.0911472886800766,
+    "Percent Margin of Error (±)": 0.00845692120492458
+  },
+  {
+    "State": "Indiana",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0905429571866989,
+    "Percent Margin of Error (±)": 0.00898177642375231
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 27",
+    "Percent of Households with SNAP": 0.0904874503612518,
+    "Percent Margin of Error (±)": 0.00798369385302067
+  },
+  {
+    "State": "Iowa",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0903921276330948,
+    "Percent Margin of Error (±)": 0.00654716230928898
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0901013538241386,
+    "Percent Margin of Error (±)": 0.00942316837608814
+  },
+  {
+    "State": "Arkansas",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0899603739380836,
+    "Percent Margin of Error (±)": 0.00784325879067183
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 18",
+    "Percent of Households with SNAP": 0.0898775905370712,
+    "Percent Margin of Error (±)": 0.00806363485753536
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0893886238336563,
+    "Percent Margin of Error (±)": 0.00968464370816946
+  },
+  {
+    "State": "Arkansas",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0888432636857033,
+    "Percent Margin of Error (±)": 0.00935673341155052
+  },
+  {
+    "State": "South Dakota",
+    "Congressional District": "Congressional District (at Large)",
+    "Percent of Households with SNAP": 0.0887788310647011,
+    "Percent Margin of Error (±)": 0.00747948326170444
+  },
+  {
+    "State": "Connecticut",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.088615320622921,
+    "Percent Margin of Error (±)": 0.00888562481850386
+  },
+  {
+    "State": "Massachusetts",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0878290385007858,
+    "Percent Margin of Error (±)": 0.00763885118067265
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 16",
+    "Percent of Households with SNAP": 0.0876541584730148,
+    "Percent Margin of Error (±)": 0.00813974719494581
+  },
+  {
+    "State": "Hawaii",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0875517576932907,
+    "Percent Margin of Error (±)": 0.0102230319753289
+  },
+  {
+    "State": "Indiana",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0874705016613007,
+    "Percent Margin of Error (±)": 0.00867190398275852
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 23",
+    "Percent of Households with SNAP": 0.0874425992369652,
+    "Percent Margin of Error (±)": 0.0114269880577922
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.0873808935284615,
+    "Percent Margin of Error (±)": 0.00864028185606003
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.0863706991076469,
+    "Percent Margin of Error (±)": 0.0086610522121191
+  },
+  {
+    "State": "Connecticut",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0861842110753059,
+    "Percent Margin of Error (±)": 0.0097053088247776
+  },
+  {
+    "State": "Kansas",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.086168460547924,
+    "Percent Margin of Error (±)": 0.00834608543664217
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0861136391758919,
+    "Percent Margin of Error (±)": 0.00750127248466015
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.0860718786716461,
+    "Percent Margin of Error (±)": 0.00895356945693493
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 18",
+    "Percent of Households with SNAP": 0.0855774879455566,
+    "Percent Margin of Error (±)": 0.00893386267125607
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 37",
+    "Percent of Households with SNAP": 0.0842917039990425,
+    "Percent Margin of Error (±)": 0.0101344576105475
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.0840844213962555,
+    "Percent Margin of Error (±)": 0.00902317557483912
+  },
+  {
+    "State": "Maryland",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0839367881417274,
+    "Percent Margin of Error (±)": 0.00893410108983517
+  },
+  {
+    "State": "Utah",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0830063074827194,
+    "Percent Margin of Error (±)": 0.00981838069856167
+  },
+  {
+    "State": "Wisconsin",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0822111293673515,
+    "Percent Margin of Error (±)": 0.00710549345239997
+  },
+  {
+    "State": "Nebraska",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0819156095385551,
+    "Percent Margin of Error (±)": 0.00809665210545063
+  },
+  {
+    "State": "Wisconsin",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0815269723534584,
+    "Percent Margin of Error (±)": 0.00636920798569918
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0808467194437981,
+    "Percent Margin of Error (±)": 0.0100472727790475
+  },
+  {
+    "State": "Arizona",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.0800336897373199,
+    "Percent Margin of Error (±)": 0.0088591305539012
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 20",
+    "Percent of Households with SNAP": 0.0800101682543755,
+    "Percent Margin of Error (±)": 0.00879113934934139
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 17",
+    "Percent of Households with SNAP": 0.0794993415474892,
+    "Percent Margin of Error (±)": 0.00914077926427126
+  },
+  {
+    "State": "Maryland",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0786989256739616,
+    "Percent Margin of Error (±)": 0.00989536382257938
+  },
+  {
+    "State": "Indiana",
+    "Congressional District": "Congressional District 9",
+    "Percent of Households with SNAP": 0.0785330310463905,
+    "Percent Margin of Error (±)": 0.00684104859828949
+  },
+  {
+    "State": "Minnesota",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.0782117620110512,
+    "Percent Margin of Error (±)": 0.00654621282592416
+  },
+  {
+    "State": "Colorado",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0777124539017677,
+    "Percent Margin of Error (±)": 0.0079135075211525
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 53",
+    "Percent of Households with SNAP": 0.0773454681038857,
+    "Percent Margin of Error (±)": 0.00888326391577721
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 19",
+    "Percent of Households with SNAP": 0.0771844312548637,
+    "Percent Margin of Error (±)": 0.00864903163164854
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0771684944629669,
+    "Percent Margin of Error (±)": 0.00962248258292675
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 26",
+    "Percent of Households with SNAP": 0.0771644040942192,
+    "Percent Margin of Error (±)": 0.00900495704263449
+  },
+  {
+    "State": "Missouri",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.077072337269783,
+    "Percent Margin of Error (±)": 0.0089004673063755
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 14",
+    "Percent of Households with SNAP": 0.0770256295800209,
+    "Percent Margin of Error (±)": 0.00813853181898594
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.0768379643559456,
+    "Percent Margin of Error (±)": 0.0114702917635441
+  },
+  {
+    "State": "Nebraska",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0761961415410042,
+    "Percent Margin of Error (±)": 0.00819569919258356
+  },
+  {
+    "State": "Minnesota",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0760110095143318,
+    "Percent Margin of Error (±)": 0.00661419332027435
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 13",
+    "Percent of Households with SNAP": 0.0758560225367546,
+    "Percent Margin of Error (±)": 0.00787653680890799
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0756715312600136,
+    "Percent Margin of Error (±)": 0.00974975619465113
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 31",
+    "Percent of Households with SNAP": 0.0755312219262123,
+    "Percent Margin of Error (±)": 0.00873541459441185
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 32",
+    "Percent of Households with SNAP": 0.0754716023802757,
+    "Percent Margin of Error (±)": 0.00702936062589288
+  },
+  {
+    "State": "Colorado",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0753737241029739,
+    "Percent Margin of Error (±)": 0.00752399489283562
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 19",
+    "Percent of Households with SNAP": 0.074694849550724,
+    "Percent Margin of Error (±)": 0.00895143207162619
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.0746803656220436,
+    "Percent Margin of Error (±)": 0.0123443389311433
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0746770352125168,
+    "Percent Margin of Error (±)": 0.00802536588162184
+  },
+  {
+    "State": "Utah",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0745320469141006,
+    "Percent Margin of Error (±)": 0.0066639487631619
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 32",
+    "Percent of Households with SNAP": 0.074422299861908,
+    "Percent Margin of Error (±)": 0.00906079821288586
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0742462128400803,
+    "Percent Margin of Error (±)": 0.00956873968243599
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 25",
+    "Percent of Households with SNAP": 0.0739519670605659,
+    "Percent Margin of Error (±)": 0.00754597131162882
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.0738468915224075,
+    "Percent Margin of Error (±)": 0.00716850394383073
+  },
+  {
+    "State": "Missouri",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0737223997712135,
+    "Percent Margin of Error (±)": 0.00715206284075975
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0726997032761574,
+    "Percent Margin of Error (±)": 0.00813709944486618
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 22",
+    "Percent of Households with SNAP": 0.0722443982958794,
+    "Percent Margin of Error (±)": 0.00821152422577143
+  },
+  {
+    "State": "Florida",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0718436762690544,
+    "Percent Margin of Error (±)": 0.00825133174657822
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0718034729361534,
+    "Percent Margin of Error (±)": 0.00798714812844992
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 18",
+    "Percent of Households with SNAP": 0.0707814395427704,
+    "Percent Margin of Error (±)": 0.00856160838156939
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 50",
+    "Percent of Households with SNAP": 0.0704925060272217,
+    "Percent Margin of Error (±)": 0.00979652069509029
+  },
+  {
+    "State": "New Hampshire",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0702284425497055,
+    "Percent Margin of Error (±)": 0.00694347359240055
+  },
+  {
+    "State": "Indiana",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0701429098844528,
+    "Percent Margin of Error (±)": 0.00698179099708796
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.0698607340455055,
+    "Percent Margin of Error (±)": 0.010275418870151
+  },
+  {
+    "State": "North Carolina",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0697732046246529,
+    "Percent Margin of Error (±)": 0.00820288620889187
+  },
+  {
+    "State": "Maryland",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0695766657590866,
+    "Percent Margin of Error (±)": 0.00922024343162775
+  },
+  {
+    "State": "Massachusetts",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.069350503385067,
+    "Percent Margin of Error (±)": 0.00903922971338034
+  },
+  {
+    "State": "Alabama",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0692881345748901,
+    "Percent Margin of Error (±)": 0.00935536716133356
+  },
+  {
+    "State": "New Hampshire",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0688503608107567,
+    "Percent Margin of Error (±)": 0.00824790075421333
+  },
+  {
+    "State": "Washington",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.0686541423201561,
+    "Percent Margin of Error (±)": 0.00708136614412069
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 42",
+    "Percent of Households with SNAP": 0.0680736526846886,
+    "Percent Margin of Error (±)": 0.00834291148930788
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 25",
+    "Percent of Households with SNAP": 0.0671080201864243,
+    "Percent Margin of Error (±)": 0.00807819236069918
+  },
+  {
+    "State": "Kansas",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0652654469013214,
+    "Percent Margin of Error (±)": 0.00742864701896906
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0651261806488037,
+    "Percent Margin of Error (±)": 0.00654389522969723
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 38",
+    "Percent of Households with SNAP": 0.0647547915577888,
+    "Percent Margin of Error (±)": 0.00711040198802948
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.0647446811199188,
+    "Percent Margin of Error (±)": 0.00784972123801708
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0644412487745285,
+    "Percent Margin of Error (±)": 0.00785543583333492
+  },
+  {
+    "State": "Massachusetts",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0638473704457283,
+    "Percent Margin of Error (±)": 0.009507623501122
+  },
+  {
+    "State": "Colorado",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.0635157898068428,
+    "Percent Margin of Error (±)": 0.00756479147821665
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0634933412075043,
+    "Percent Margin of Error (±)": 0.00822680257260799
+  },
+  {
+    "State": "Wyoming",
+    "Congressional District": "Congressional District (at Large)",
+    "Percent of Households with SNAP": 0.0630657747387886,
+    "Percent Margin of Error (±)": 0.0087165180593729
+  },
+  {
+    "State": "North Dakota",
+    "Congressional District": "Congressional District (at Large)",
+    "Percent of Households with SNAP": 0.0627462044358253,
+    "Percent Margin of Error (±)": 0.00632397597655654
+  },
+  {
+    "State": "Nevada",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0626614168286324,
+    "Percent Margin of Error (±)": 0.00807424448430538
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.0626338049769402,
+    "Percent Margin of Error (±)": 0.00974944420158863
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 24",
+    "Percent of Households with SNAP": 0.0626290813088417,
+    "Percent Margin of Error (±)": 0.00799461361020803
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0619125626981258,
+    "Percent Margin of Error (±)": 0.00593341048806906
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 22",
+    "Percent of Households with SNAP": 0.0618969723582268,
+    "Percent Margin of Error (±)": 0.0099734291434288
+  },
+  {
+    "State": "Wisconsin",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0612829402089119,
+    "Percent Margin of Error (±)": 0.00648248568177223
+  },
+  {
+    "State": "Indiana",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0608322061598301,
+    "Percent Margin of Error (±)": 0.00687757227569818
+  },
+  {
+    "State": "Colorado",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0606413520872593,
+    "Percent Margin of Error (±)": 0.00748528866097331
+  },
+  {
+    "State": "Utah",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0603086724877357,
+    "Percent Margin of Error (±)": 0.00899639260023832
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 39",
+    "Percent of Households with SNAP": 0.0601860657334328,
+    "Percent Margin of Error (±)": 0.00925675127655268
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 28",
+    "Percent of Households with SNAP": 0.060181338340044,
+    "Percent Margin of Error (±)": 0.00777408666908741
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 14",
+    "Percent of Households with SNAP": 0.0596961714327335,
+    "Percent Margin of Error (±)": 0.00984864681959152
+  },
+  {
+    "State": "South Carolina",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0592574253678322,
+    "Percent Margin of Error (±)": 0.00762580893933773
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0591622516512871,
+    "Percent Margin of Error (±)": 0.00801388919353485
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0588166415691376,
+    "Percent Margin of Error (±)": 0.0089658759534359
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.0574325732886791,
+    "Percent Margin of Error (±)": 0.00782977044582367
+  },
+  {
+    "State": "Maryland",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0573035217821598,
+    "Percent Margin of Error (±)": 0.00676522264257073
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 1",
+    "Percent of Households with SNAP": 0.0569289401173592,
+    "Percent Margin of Error (±)": 0.00855250470340252
+  },
+  {
+    "State": "Ohio",
+    "Congressional District": "Congressional District 16",
+    "Percent of Households with SNAP": 0.0566883012652397,
+    "Percent Margin of Error (±)": 0.00666387425735593
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.0555466413497925,
+    "Percent Margin of Error (±)": 0.00807453691959381
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0554730817675591,
+    "Percent Margin of Error (±)": 0.00780519004911184
+  },
+  {
+    "State": "Utah",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0545063577592373,
+    "Percent Margin of Error (±)": 0.00665165344253182
+  },
+  {
+    "State": "Arizona",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0544352494180202,
+    "Percent Margin of Error (±)": 0.00597813772037625
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 48",
+    "Percent of Households with SNAP": 0.0541426427662373,
+    "Percent Margin of Error (±)": 0.00844976678490639
+  },
+  {
+    "State": "Minnesota",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0531719475984573,
+    "Percent Margin of Error (±)": 0.00725854886695743
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0529988594353199,
+    "Percent Margin of Error (±)": 0.00793841760605574
+  },
+  {
+    "State": "Arizona",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0524678267538548,
+    "Percent Margin of Error (±)": 0.00562222627922893
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 4",
+    "Percent of Households with SNAP": 0.0521998219192028,
+    "Percent Margin of Error (±)": 0.00662191491574049
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.0511344783008099,
+    "Percent Margin of Error (±)": 0.00641759904101491
+  },
+  {
+    "State": "Minnesota",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0507697351276875,
+    "Percent Margin of Error (±)": 0.00663986429572105
+  },
+  {
+    "State": "Kansas",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0500698424875736,
+    "Percent Margin of Error (±)": 0.00571970362216234
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 24",
+    "Percent of Households with SNAP": 0.049388725310564,
+    "Percent Margin of Error (±)": 0.00721760932356119
+  },
+  {
+    "State": "Arizona",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0493193902075291,
+    "Percent Margin of Error (±)": 0.00644315360113978
+  },
+  {
+    "State": "Pennsylvania",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0485981367528439,
+    "Percent Margin of Error (±)": 0.00630694022402167
+  },
+  {
+    "State": "Colorado",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0474809408187866,
+    "Percent Margin of Error (±)": 0.00611456343904138
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 12",
+    "Percent of Households with SNAP": 0.0467026345431805,
+    "Percent Margin of Error (±)": 0.00635450519621372
+  },
+  {
+    "State": "Michigan",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.0463701076805592,
+    "Percent Margin of Error (±)": 0.00637224409729242
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 15",
+    "Percent of Households with SNAP": 0.0448544844985008,
+    "Percent Margin of Error (±)": 0.00811121799051762
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 21",
+    "Percent of Households with SNAP": 0.0446747057139874,
+    "Percent Margin of Error (±)": 0.00718890316784382
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 49",
+    "Percent of Households with SNAP": 0.0432280823588371,
+    "Percent Margin of Error (±)": 0.00627743266522884
+  },
+  {
+    "State": "Minnesota",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0428349711000919,
+    "Percent Margin of Error (±)": 0.0072217951528728
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 26",
+    "Percent of Households with SNAP": 0.0428158305585384,
+    "Percent Margin of Error (±)": 0.00559963658452034
+  },
+  {
+    "State": "Illinois",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.042739249765873,
+    "Percent Margin of Error (±)": 0.00535186659544706
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.0424675978720188,
+    "Percent Margin of Error (±)": 0.00642231805250049
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 30",
+    "Percent of Households with SNAP": 0.0424543917179108,
+    "Percent Margin of Error (±)": 0.00641085626557469
+  },
+  {
+    "State": "New York",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0416208542883396,
+    "Percent Margin of Error (±)": 0.00603773770853877
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 8",
+    "Percent of Households with SNAP": 0.0406043082475662,
+    "Percent Margin of Error (±)": 0.00620683562010527
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 5",
+    "Percent of Households with SNAP": 0.0395235419273376,
+    "Percent Margin of Error (±)": 0.00491083320230246
+  },
+  {
+    "State": "Georgia",
+    "Congressional District": "Congressional District 6",
+    "Percent of Households with SNAP": 0.0385021716356277,
+    "Percent Margin of Error (±)": 0.00618828553706408
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 17",
+    "Percent of Households with SNAP": 0.0377303473651409,
+    "Percent Margin of Error (±)": 0.00710835121572018
+  },
+  {
+    "State": "Virginia",
+    "Congressional District": "Congressional District 10",
+    "Percent of Households with SNAP": 0.0364335030317307,
+    "Percent Margin of Error (±)": 0.00579940201714635
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 7",
+    "Percent of Households with SNAP": 0.0347476974129677,
+    "Percent Margin of Error (±)": 0.00681279320269823
+  },
+  {
+    "State": "Missouri",
+    "Congressional District": "Congressional District 2",
+    "Percent of Households with SNAP": 0.0323762930929661,
+    "Percent Margin of Error (±)": 0.0063076252117753
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 27",
+    "Percent of Households with SNAP": 0.0321025885641575,
+    "Percent Margin of Error (±)": 0.00538441259413958
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 52",
+    "Percent of Households with SNAP": 0.0305555649101734,
+    "Percent Margin of Error (±)": 0.00665104854851961
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 45",
+    "Percent of Households with SNAP": 0.0305382832884789,
+    "Percent Margin of Error (±)": 0.00596324726939201
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 14",
+    "Percent of Households with SNAP": 0.0292087104171515,
+    "Percent Margin of Error (±)": 0.00495109055191278
+  },
+  {
+    "State": "New Jersey",
+    "Congressional District": "Congressional District 11",
+    "Percent of Households with SNAP": 0.027946138754487,
+    "Percent Margin of Error (±)": 0.00564006296917796
+  },
+  {
+    "State": "Texas",
+    "Congressional District": "Congressional District 3",
+    "Percent of Households with SNAP": 0.0250105448067188,
+    "Percent Margin of Error (±)": 0.00547715462744236
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 18",
+    "Percent of Households with SNAP": 0.0237013846635818,
+    "Percent Margin of Error (±)": 0.00533227249979973
+  },
+  {
+    "State": "California",
+    "Congressional District": "Congressional District 33",
+    "Percent of Households with SNAP": 0.017794169485569,
+    "Percent Margin of Error (±)": 0.0042983740568161
+  }
+]

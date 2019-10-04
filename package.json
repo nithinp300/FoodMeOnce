@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.6.2",
     "bootstrap": "^4.3.1",
     "gitlab": "^11.1.2",
     "react": "^16.9.0",
@@ -18,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-		"deploy": "aws s3 sync build/ s3://foodmeonce"
+    "deploy": "aws s3 sync build/ s3://foodmeonce"
   },
   "eslintConfig": {
     "extends": "react-app"

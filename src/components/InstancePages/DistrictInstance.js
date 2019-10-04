@@ -1,10 +1,8 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import District_img from '../../images/us.png';
 import "./css/DistrictInstance.css";
-import tx_21 from '../../images/tx_21.jpg';
-import tx_10 from '../../images/tx_10.jpg';
-import tx_31 from '../../images/tx_31.png';
+import snap_data from '../../Files/snap_data.json';
+import cancer_data from '../../Files/cancer_data.json';
 
 class DistrictInstance extends React.Component{
     state = {
@@ -21,7 +19,9 @@ class DistrictInstance extends React.Component{
               povertyRate: "8.7%",
               numHouseholds: "279,550",
               id: "C001062",
-              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district"
+              wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district",
+              state: "tx",
+              number: "11"
             },
             {
               name: "Virginia 11th Congressional District",
@@ -34,8 +34,10 @@ class DistrictInstance extends React.Component{
               peoplePerSquareMile: "166.9",
               povertyRate: "4.5%",
               numHouseholds: "268,471",
-              id: "L000565",
-              wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
+              id: "C001078",
+              wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district",
+              state: "va",
+              number: "11"
             },
             {
               name: "Iowa 2nd Congressional District",
@@ -48,8 +50,10 @@ class DistrictInstance extends React.Component{
               peoplePerSquareMile: "396.3",
               povertyRate: "8.7%",
               numHouseholds: "313,626",
-              id: "C001078",
-              wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
+              id: "L000565",
+              wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district",
+              state: "ia",
+              number: "2"
             },
           ],
         legislations: {
@@ -57,19 +61,6 @@ class DistrictInstance extends React.Component{
             Loebsack: "Agriculture Reform, Food, and Jobs Act of 2013",
             Connolly: "Global Partnerships Act of 2013",
         }
-    }
-
-    getImage = (district_name) => {
-        if(district_name === "Texas 11th Congressional District"){
-           return tx_21;
-         }
-        if(district_name === "Virginia 11th Congressional District"){
-          return tx_10;
-        }
-        if(district_name === "Iowa 2nd Congressional District"){
-          return tx_31;
-        }
-        return District_img;
     }
 
     getDistrict = (district_name) => {
@@ -83,9 +74,16 @@ class DistrictInstance extends React.Component{
 
     render(){
     var district_data = this.getDistrict(this.props.match.params.name);
+    var map_url = "https://www.govtrack.us/congress/members/embed/mapframe?state="+district_data.state+"&district="+district_data.number;
     if (district_data.name == null) {
         return <Redirect to="/error" />
     }
+
+    let temp_state = district_data.name.substring(0, district_data.name.indexOf(' '))
+    let selected_district_info = snap_data.find( item => item.State === temp_state &&
+        item["Congressional District"].replace(/\D/g, "") === district_data.name.replace(/\D/g, "") )
+    let district_cancer = cancer_data.find( item => item.State.replace(/['"]+/g, '') === temp_state &&
+        item.District.replace(/\D/g, "") === district_data.name.replace(/\D/g, "") )
 
     var name = district_data.representative.split(" ");
     var firstName = name[0];
@@ -95,7 +93,7 @@ class DistrictInstance extends React.Component{
     <div
             className="district-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center">
-            <img className="district-instance-image" src={this.getImage(district_data.name)} alt="us flag" />
+            <iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src={map_url}></iframe>
             <p className="district-instance-name">{district_data.name}</p>
             <ul>
                 <li className="district-instance-desc">
@@ -112,11 +110,15 @@ class DistrictInstance extends React.Component{
                 </li>
                 <li className="district-instance-desc">
 
-                    <span>Senators</span>: {district_data.senators}
+                    <span>Poverty Rate</span>: {district_data.povertyRate}
                 </li>
                 <li className="district-instance-desc">
 
-                    <span>Poverty Rate</span>: {district_data.povertyRate}
+                    <span>Households using SNAP</span>: {selected_district_info["Percent of Households with SNAP"].toFixed(3) * 100}%
+                </li>
+                <li className="district-instance-desc">
+
+                    <span>Cancer Rate per 100,000</span>: {district_cancer.Rate.replace(/['"]+/g, '')}
                 </li>
                 <li className="district-instance-desc">
 
@@ -127,16 +129,16 @@ class DistrictInstance extends React.Component{
                     <span>People per square mile</span>: {district_data.peoplePerSquareMile}
                 </li>
                 <li className="district-instance-desc">
-                    <a href={district_data.wikipedia}>Wikipedia</a>: <a href={`/Representatives/instance/${firstName}/${lastName}`}>{district_data.representative}</a>
+                    <a href={district_data.wikipedia}>Wikipedia</a>
                 </li>
                 <li className="district-instance-desc">
-                    <span>Representative</span>: {district_data.representative}
+                    <span>Representative</span>: <a href={`/Representatives/instance/${firstName}/${lastName}`}>{district_data.representative}</a>
                 </li>
                 <li className="district-instance-desc">
                     <span>Legislation by Representative</span>:<br/><a href={`/Legislations/instance/${this.state.legislations[lastName]}`}>{this.state.legislations[lastName]}</a>
                 </li>
             </ul>
-            <img className="rep-image" src={rep_image} alt="us flag"/>
+            <img className="district-instance-rep-image" src={rep_image} alt="us flag"/>
         </div>
         );
       }

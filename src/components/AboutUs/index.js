@@ -4,7 +4,7 @@ import Chris_img from '../../images/Chris_profile.jpg';
 import Gyuwon_img from '../../images/Gyuwon_profile.jpg';
 import Shub_img from '../../images/Shub_profile.jpg';
 import Brian_img from '../../images/brian_profile.png';
-import Nithin_img from '../../images/cornField.jpg';
+import Nithin_img from '../../images/Nithin_profile.jpg';
 
 
 
@@ -34,43 +34,45 @@ class AboutUs extends React.Component{
   }
 
   componentDidMount() {
-  
+
     this.grabCommits();
     this.grabIssues();
 
 }
 
 async grabIssues(){
-  fetch("https://gitlab.com/api/v4/projects/14463226/issues?per_page=1000&page=1") 
+  fetch("https://gitlab.com/api/v4/projects/14463226/issues?per_page=1000&page=1")
     .then(res => res.json())
     .then(res => {
       res.forEach(issue => {
         this.state.totalIssues +=1
         if(issue.closed_by != null){
           this.state.closedIssues +=1
-          switch (issue.closed_by.name){
-            case "Christopher Chasteen":
-              this.state.Chris[1] +=1
-              break;
-              
-            case "Shubhendra Trivedi":
-              this.state.Shubhendra[1]+=1
-              break;
-
-            case "Gyuwon":
-            case "Gyuwon Kim":
-                this.state.Gyuwon[1]+=1
+          issue.assignees.forEach(assignee => {
+            switch (assignee.name){
+              case "Christopher Chasteen":
+                this.state.Chris[1] +=1
                 break;
-            case "Brian Dyck":
-                this.state.Brian[1]+=1
-                break;
-            case "Nithin Pingili":
-              this.state.Nithin[1]+=1
-              break;
-            default:
-              console.log(issue)
 
-          }
+              case "Shubhendra Trivedi":
+                this.state.Shubhendra[1]+=1
+                break;
+
+              case "Gyuwon":
+              case "Gyuwon Kim":
+                  this.state.Gyuwon[1]+=1
+                  break;
+              case "BrianDyck":
+              case "Brian Dyck":
+                  this.state.Brian[1]+=1
+                  break;
+              case "Nithin Pingili":
+                this.state.Nithin[1]+=1
+                break;
+              default:
+                console.log(issue)
+            }
+          })
         }
       });
       this.setState(this.state)
@@ -78,19 +80,20 @@ async grabIssues(){
 }
 
 async grabCommits(){
-  var curr = 0
-  var last = 0
-  do{
-  fetch("https://gitlab.com/api/v4/projects/14463226/repository/commits?per_page=1000&page=1")
+  var page = 0
+  while(page < 4){
+  page+=1
+  fetch("https://gitlab.com/api/v4/projects/14463226/repository/commits?per_page=100&page=" + page)
       .then(res => res.json())
       .then(res => {
+        
         res.forEach(commit => {
           this.state.totalCommits += 1
           switch (commit.committer_name){
             case "Christopher Chasteen":
               this.state.Chris[0] +=1
               break;
-              
+
             case "Shubhendra Trivedi":
               this.state.Shubhendra[0]+=1
               break;
@@ -107,10 +110,9 @@ async grabCommits(){
             default:
           }
         });
-        this.setState(this.state)
       })
-    } while(curr !== last)
-
+    }
+    this.setState(this.state)
 }
 
   render(){
@@ -134,6 +136,7 @@ async grabCommits(){
             <img src={Chris_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Christopher Chasteen</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Chris[0]}</p>
               <p className="card-text">Issues Closed: {Chris[1]}</p>
               <p className="card-text">Unit Tests: {Chris[2]}</p>
@@ -144,6 +147,7 @@ async grabCommits(){
             <img src={Gyuwon_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Gyuwon Kim</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Gyuwon[0]}</p>
               <p className="card-text">Issues Closed: {Gyuwon[1]}</p>
               <p className="card-text">Unit Tests: {Gyuwon[2]}</p>
@@ -154,6 +158,7 @@ async grabCommits(){
             <img src={Shub_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Shubhendra Trivedi</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Shubhendra[0]}</p>
               <p className="card-text">Issues Closed: {Shubhendra[1]}</p>
               <p className="card-text">Unit Tests: {Shubhendra[2]}</p>
@@ -166,6 +171,7 @@ async grabCommits(){
             <img src={Brian_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Brian Dyck</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Brian[0]}</p>
               <p className="card-text">Issues Closed: {Brian[1]}</p>
               <p className="card-text">Unit Tests: {Brian[2]}</p>
@@ -176,6 +182,7 @@ async grabCommits(){
             <img src={Nithin_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Nithin Pingili</h5>
+              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
               <p className="card-text">Commits: {Nithin[0]}</p>
               <p className="card-text">Issues Closed: {Nithin[1]}</p>
               <p className="card-text">Unit Tests: {Nithin[2]}</p>

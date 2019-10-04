@@ -6,8 +6,8 @@ class RepresentativeInstance extends React.Component{
         representative: {},
         districts: {
             Conaway: "Texas 11th Congressional District",
-            Loebsack: "Virginia 11th Congressional District",
-            Connolly: "Iowa 2nd Congressional District",
+            Loebsack: "Iowa 2nd Congressional District",
+            Connolly: "Virginia 11th Congressional District"
         },
         legislations: {
             Conaway: "Agriculture Improvement Act of 2018",
@@ -61,6 +61,7 @@ class RepresentativeInstance extends React.Component{
     var age = this.getAge(rep_data.date_of_birth)
     var twitter = "https://twitter.com/" + rep_data.twitter_account;
     var facebook = "https://facebook.com/" + rep_data.facebook_account;
+    var map_url = "https://www.govtrack.us/congress/members/embed/mapframe?state="+rep_data.state+"&district="+rep_data.district;
     var rep_image = "";
     if (this.state.representative.first_name != null) {
         rep_image = "https://theunitedstates.io/images/congress/original/"+ rep_data.id+".jpg";
@@ -82,7 +83,7 @@ class RepresentativeInstance extends React.Component{
                     <span>Party</span>: {this.getParty(rep_data.party)}
                 </li>
                 <li className="representative-instance-desc">
-                    <span>State/District</span>: <a href={`/Districts/instance/${district}`}>{rep_data.state}</a>
+                    <span>State/District</span>: <a href={`/Districts/instance/${district}`}>{rep_data.state} {rep_data.district}</a>
                 </li>
                 <li className="representative-instance-desc">
                     <span>Office</span>: {rep_data.office}
@@ -104,6 +105,7 @@ class RepresentativeInstance extends React.Component{
                     <a href={rep_data.url}> Website </a>
                 </li>
             </ul>
+            <iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src={map_url}></iframe>
         </div>
     );
     }
