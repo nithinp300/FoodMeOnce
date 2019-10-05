@@ -41,7 +41,7 @@ class RepresentativeInstance extends React.Component{
     var birthDate = new Date(birthDateString);
     var age = todayDate.getFullYear() - birthDate.getFullYear();
     var monthDiff = todayDate.getMonth() - birthDate.getMonth();
-    if(monthDiff < 0 || (monthDiff = 0 && todayDate.getDate() < birthDate.getDate()))
+    if(monthDiff < 0 || (monthDiff == 0 && todayDate.getDate() < birthDate.getDate()))
     {
       age--;
     }
