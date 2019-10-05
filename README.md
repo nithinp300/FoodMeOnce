@@ -5,7 +5,7 @@
 |--------------------|:------:|:-------------:|
 |     Gyuwon Kim     | gk4893 |    wonkgo1    |
 |     Brian Dyck     |        |   BrianDyck   |
-|   Crhis Chasteen   |cc59579 |  cchasteen99  |
+|   Chris Chasteen   |cc59579 |  cchasteen99  |
 |   Nithin Pingili   |        | nithinpingili |
 | Shubhendra Trivedi |        |     shub95    |
 
