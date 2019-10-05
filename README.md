@@ -1,11 +1,13 @@
 # Food Me Once
 
 ## Team Memebers
-### Gyuwon Kim, gk4893, wonkgo1
-### Brian Dyck, , BrianDyck
-### Crhis Chasteen, cc59579, cchasteen99
-### Nithin Pingili, , nithinpingili
-### Shubhendra Trivedi, , shub95
+|        Name        | UT eid |   GitLab ID   |
+|--------------------|:------:|:-------------:|
+|     Gyuwon Kim     | gk4893 |    wonkgo1    |
+|     Brian Dyck     |        |   BrianDyck   |
+|   Crhis Chasteen   |cc59579 |  cchasteen99  |
+|   Nithin Pingili   |        | nithinpingili |
+| Shubhendra Trivedi |        |     shub95    |
 
 
 ## Git SHA
