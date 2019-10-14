@@ -3,7 +3,6 @@ import urllib.request, json
 def getJsonFromUrl(url):
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())
-        print(data)
         return data
 
 if __name__ == "__main__":
