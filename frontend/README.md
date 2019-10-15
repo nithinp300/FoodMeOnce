@@ -7,7 +7,7 @@
 |     Brian Dyck     |        |   BrianDyck   |
 |   Chris Chasteen   |cc59579 |  cchasteen99  |
 |   Nithin Pingili   | np9663 | nithinpingili |
-| Shubhendra Trivedi |        |     shub95    |
+| Shubhendra Trivedi | sst565 |     shub95    |
 
 
 ## Git SHA
