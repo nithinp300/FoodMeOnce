@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
-"""FoodMeOnce
-Name: Shubhendra Trivedi
-UTEID: sst565"""
+"""
+FoodMeOnce
+Purpose: Load data from API sources into staging schema of PostGres DB
+Author: Shubhendra Trivedi
+UTEID: sst565
+Last Updated: 10/15/2019
+"""
 # -------------
 # driver.py
 # -------------
@@ -10,9 +14,11 @@ UTEID: sst565"""
 # pylint: disable = invalid-name
 # pylint: disable = missing-docstring
 # pylint: disable = too-many-lines
+# pylint: disable = import-error
 
 
-import requests, json
+import requests
+import api_uris as apis
 import db_creds as creds
 import API_creds
 from pandas.io.json import json_normalize
@@ -24,19 +30,18 @@ from sqlalchemy.orm import sessionmaker
 import psycopg2
 
 def pgadminconnect():
-    # conn = psycopg2.connect(host="foodmeonce.csja89mbwp6s.us-west-1.rds.amazonaws.com", user="postgres", password="ShameOnYou!")
-    # print(conn)
     db_name = creds.PGDATABASE
     db_pwd = creds.PGPASSWORD
     db_user = creds.PGUSER
     db_host = creds.PGHOST
     db_port = creds.PGPORT
-    db_uri = "postgres+psycopg2://"+ str(db_user) + ":" + str(db_pwd) + '@' + str(db_host) + ':' + str(db_port) + '/' + str(db_name)
+    db_uri = "postgres+psycopg2://"+ str(db_user) + ":" + str(db_pwd) + '@' + str(db_host) + \
+             ':' + str(db_port) + '/' + str(db_name)
     engine = sqlalchemy.create_engine(db_uri)
     con = engine.connect()
     print(con)
     return [con,engine]
-    # return con
+
 
 def db_session(engine):
     session = sessionmaker(bind=engine)
@@ -58,7 +63,7 @@ def extract_json(data_json, api_number):
         return df
 
 
-def API_one_response(api_uri, api_number):
+def API_response(api_uri, api_number):
     param = {'X-API-KEY': API_creds.propublica()}
     res = requests.get(url = api_uri, headers = param)
     if res:
@@ -71,7 +76,6 @@ def API_one_response(api_uri, api_number):
             js = res.json()
             print("\nStatus: " + js['status'] + '\n')
             # print(js['results'])
-
             data_json = js['results']
             data_df = extract_json(data_json, api_number)
             # data_df = json_normalize(members_json, 'members')
@@ -94,13 +98,10 @@ def API_one_response(api_uri, api_number):
                 data.append({c.tag:c.text for c in list(row)})
             data_df = pd.DataFrame(data)
             return data_df
-
-            # xmlData = XML2DataFrame.XML2DataFrame(res.text)
-            # xml_df = xmlData.process_data()
-            # return xml_df
     else:
         print('Connection Failed')
         print(res.status_code)
+
 
 def max_column_lengths(df):
     measurer = np.vectorize(len)
@@ -119,12 +120,11 @@ def load_data(schema, table, conn, data, engine):
 
 
 if __name__ == "__main__":
-    apis = ['https://api.propublica.org/congress/v1/116/house/members', 'https://api.propublica.org/congress/v1/bills/search.json?query=%22food+access%22','https://api.propublica.org/congress/v1/bills/search.json?query=%22food+security%22','https://api.propublica.org/congress/v1/bills/search.json?query=%22food+desert%22']
+    apis = apis.apis
     table_names = ['congress_members', 'legislations']
-    # api_counter = 0
     db_objects = pgadminconnect()
     for api_counter in range(0,len(apis)):
-        df = API_one_response(apis[api_counter], api_counter)
+        df = API_response(apis[api_counter], api_counter)
         print(df.head(3))
         # if api_counter == 0:
         #     load_data('staging', table_names[0], db_objects[0], df, db_objects[1])
