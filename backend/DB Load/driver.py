@@ -1,28 +1,42 @@
+#!/usr/bin/env python3
+"""FoodMeOnce
+Name: Shubhendra Trivedi
+UTEID: sst565"""
+# -------------
+# driver.py
+# -------------
+
+# pylint: disable = bad-whitespace
+# pylint: disable = invalid-name
+# pylint: disable = missing-docstring
+# pylint: disable = too-many-lines
+
+
 import requests, json
 import db_creds as creds
 import API_creds
-import XML2DataFrame
-from bs4 import BeautifulSoup
 from pandas.io.json import json_normalize
-import re
-import sqlite3
 import numpy as np
 import pandas as pd
 import sqlalchemy
 import xml.etree.ElementTree as et
 from sqlalchemy.orm import sessionmaker
 import psycopg2
-URLS = ['https://api.propublica.org/congress/v1/116/house/members', 'https://api.propublica.org/congress/v1/bills/search.json?query=%22food+access%22']
-# URL = 'https://api.propublica.org/congress/v1/114/bills/hr4498'
+
 PARAMS = {'X-API-KEY': 'eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6'}
-PARAMS_TEST = {'X-API-KEY': 'eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6', 'User-Agent': 'Mozilla/5.0'}
 
 def pgadminconnect():
     # conn = psycopg2.connect(host="foodmeonce.csja89mbwp6s.us-west-1.rds.amazonaws.com", user="postgres", password="ShameOnYou!")
     # print(conn)
-    db_uri = "postgres+psycopg2://postgres:ShameOnYou!@foodmeonce.csja89mbwp6s.us-west-1.rds.amazonaws.com:5432/foodmeonce"
+    db_name = creds.PGDATABASE
+    db_pwd = creds.PGPASSWORD
+    db_user = creds.PGUSER
+    db_host = creds.PGHOST
+    db_port = creds.PGPORT
+    db_uri = "postgres+psycopg2://"+ str(db_user) + ":" + str(db_pwd) + '@' + str(db_host) + ':' + str(db_port) + '/' + str(db_name)
     engine = sqlalchemy.create_engine(db_uri)
     con = engine.connect()
+    print(con)
     return [con,engine]
     # return con
 
@@ -185,10 +199,10 @@ def main():
     for api_counter in range(0,len(apis)):
         df = API_one_response(apis[api_counter], api_counter)
         print(df.head(3))
-        if api_counter == 0:
-            load_data('staging', table_names[0], db_objects[0], df, db_objects[1])
-        else:
-            load_data('staging', table_names[1], db_objects[0], df, db_objects[1])
+        # if api_counter == 0:
+        #     load_data('staging', table_names[0], db_objects[0], df, db_objects[1])
+        # else:
+        #     load_data('staging', table_names[1], db_objects[0], df, db_objects[1])
     # legislation_df = API_two_response()
     # print(members_df)
     # df = API_two_response()
