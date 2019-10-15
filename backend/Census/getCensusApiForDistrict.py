@@ -15,6 +15,7 @@ class District:
         result += "\n    " + "gender ratio : " + self.genderRatio
         result += "\n    " + "mean income : " + self.meanIncome
         result += "\n    " + "poverty rate : " + self.povertyRate
+        result += "\n    " + "number of households : " + self.numHouseholds
         result += "\n    " + "wiki page : " + self.wikiPage
         return result
 
@@ -27,6 +28,7 @@ class District:
         print("%.2f" % float(self.genderRatio), end="', '")
         print(self.meanIncome, end="', '")
         print("%.2f" % float(self.povertyRate), end="', '")
+        print(self.numHouseholds, end="', '")
         print(self.wikiPage, end="'),\n")
     
     def __lt__(self, rhs):
@@ -50,6 +52,12 @@ class District:
     
     def setPovertyRate(self, povertyPopulation):
         self.povertyRate = str(int(povertyPopulation) / int(self.population) * 100)
+
+    def setNumHouseholds(self, numHouseholds):
+        self.numHouseholds = numHouseholds
+    
+    def generateNumHouseholdsColumn(self, num):
+        return "UPDATE staging.district SET num_households = " + self.numHouseholds + " WHERE id = " + str(num) + ";"
 
     def setWikiPage(self, state, district):
         if district == "01":
@@ -118,7 +126,7 @@ def getStateNumbers():
 
 def getData(states, stateNumbers):
     for key in stateNumbers:
-        url = "https://api.census.gov/data/2018/acs/acs1?get=NAME,B01001_001E,B01001_002E,B01002_001E,B19081_001E,B19081_002E,B19081_003E,B19081_004E,B19081_005E,B17001_002E&for=congressional+district:*&in=state:"+stateNumbers[key]
+        url = "https://api.census.gov/data/2018/acs/acs1?get=NAME,B01001_001E,B01001_002E,B01002_001E,B19081_001E,B19081_002E,B19081_003E,B19081_004E,B19081_005E,B17001_002E,B25002_002E&for=congressional+district:*&in=state:"+stateNumbers[key]
         resp = getJsonFromUrl(url)
         state = State(resp[1][len(resp[1]) - 2], key)
         districts = state.getDistricts()
@@ -134,6 +142,7 @@ def getData(states, stateNumbers):
                 resp[cd][8]
             ]
             povertyPopulation = resp[cd][9]
+            numHouseholds = resp[cd][10]
             congressionalDistrict = resp[cd][len(resp[cd]) - 1]
             district = District(key, congressionalDistrict)
             district.setPopulation(population)
@@ -141,6 +150,7 @@ def getData(states, stateNumbers):
             district.setMedianAge(medianAge)
             district.setMeanIncome(meanIncome)
             district.setPovertyRate(povertyPopulation)
+            district.setNumHouseholds(numHouseholds)
             district.setWikiPage(key, congressionalDistrict)
             districts.append(district)
         states[key] = state
@@ -157,7 +167,10 @@ if __name__ == "__main__":
     stateList.sort()
     # for index in range(len(stateList)):
     #     print(stateList[index])
+    num = 1
     for state in range(len(stateList)):
         districts = stateList[state].getDistricts()
         for i in range(len(districts)):
-            districts[i].generateDBInsert()
+            # districts[i].generateDBInsert()
+            print(districts[i].generateNumHouseholdsColumn(num))
+            num += 1
