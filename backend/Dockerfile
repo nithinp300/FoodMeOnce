@@ -18,4 +18,5 @@ RUN pip install flask
 RUN pip install Flask-Restless
 RUN pip install SQLAlchemy
 
-CMD bash
+EXPOSE 80
+CMD ["python3", "main.py"]
