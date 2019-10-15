@@ -17,6 +17,6 @@ RUN pip install pylint
 RUN pip install flask
 RUN pip install Flask-Restless
 RUN pip install SQLAlchemy
+RUN pip install pyopenssl
 
-EXPOSE 80
-CMD ["python3", "main.py"]
+CMD bash
