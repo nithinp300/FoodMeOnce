@@ -38,10 +38,17 @@
 
 .contactCard {
     display: flex;
-    padding-top: 4rem;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
     justify-content: center;
 }
 
+.dataSources {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .contactCard2 {
     display: flex;

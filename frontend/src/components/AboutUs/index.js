@@ -12,6 +12,8 @@ import Selenium_image from '../../images/seleniumCard.jpg';
 import Postgres_image from '../../images/postgresCard.png';
 import AWS_image from '../../images/awsCard.png';
 import Postman_image from '../../images/postmanCard.png';
+import Python_image from '../../images/mochaCard.png';
+import Mocha_image from '../../images/pythonCard.png';
 class AboutUs extends React.Component{
 
   constructor(props){
@@ -254,19 +256,27 @@ async grabCommits(){
         </div>
         <div className="toolsContainer">
         <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={AWS_image} className="card-img-top" alt="Card Background"/>
+              <img src={Mocha_image} className="card-img-top" alt="Card Background"/>
               <div className="card-body">
                 <h3 className="toolName">Mocha</h3>
               </div>
           </div>
           <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={Postman_image} className="card-img-top" alt="Card Background"/>
+              <img src={Python_image} className="card-img-top" alt="Card Background"/>
               <div className="card-body">
                 <h3 className="toolName">Python</h3>
               </div>
           </div>
         </div>
+        <div className="dataSources">
+          <h4 style={{paddingBottom: "1rem"}}> Data Sources</h4>
+          <h6> API's</h6>
+          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> Congressional Districts</a></p>
+          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> Congressional Representatives</a></p>
+          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> Legislation</a></p>
+        </div>
         <div className="contactCard">
+          <h6> Project Links</h6>
           <p> <a href="https://gitlab.com/shub95/foodmeonce/"> FoodMeOnce GitLab Repository</a></p>
         </div>
         <div className="contactCard2">
