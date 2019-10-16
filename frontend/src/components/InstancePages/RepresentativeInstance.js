@@ -91,15 +91,13 @@ class RepresentativeInstance extends React.Component{
                 <li className="representative-instance-desc">
                     <span>Phone</span>: {rep_data.phone}
                 </li>
-                <li className="representative-instance-desc">
+                <li className="representative-instance-list">
                     <span>Legislation by Representative</span>:
                     <br/><a href={`/Legislations/instance/${legislation}`}>{legislation}</a>
                 </li>
-                <li className="representative-instance-desc">
+                <li className="representative-instance-list">
                     <span>Social Media</span>:
-                    <br/><a href={twitter}>Twitter</a>
-                    <br/><a href={facebook}>Facebook</a>
-                    <br/><a href={rep_data.url}> .gov site </a>
+                    <br/><a href={twitter}>Twitter   </a><a href={facebook}>Facebook   </a><a href={rep_data.url}> .gov site </a>
                 </li>
             </ul>
             <div className="district-map">

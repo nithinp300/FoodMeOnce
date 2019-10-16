@@ -28,11 +28,17 @@
     margin-top: 10px;
 }
 
+.district-instance-head {
+    padding-bottom: 7px;
+}
 .district-instance-name {
     margin: 0;
     font-weight: bold;
     font-size: 120%;
-    margin-bottom: 5px;
+}
+
+.district-instance-wiki {
+    align-content: center;
 }
 
 .district-instance ul {

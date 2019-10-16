@@ -41,6 +41,18 @@
     font-weight: bold;
 }
 
+.representative-instance-list {
+    margin: 0;
+    text_align: center;
+}
+
+.representative-instance-list span {
+    font-weight: bold;
+}
+
+.representative-instance-list a {
+}
+
 .district-map {
     margin-top: 10px;
 }
