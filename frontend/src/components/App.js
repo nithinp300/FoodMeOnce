@@ -21,7 +21,6 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/Districts">Districts</Nav.Link>
             <Nav.Link href="/Representatives">Representatives</Nav.Link>
             <Nav.Link href="/Legislations">Legislation</Nav.Link>
@@ -53,7 +52,7 @@ function App() {
 
       <hr />
       <div className="text-center text-secondary">
-        <p>Copyright © 2019 FoodMeOnce ALL RIGHT RESERVED.</p>
+        <p>Copyright © 2019 FoodMeOnce ALL RIGHTS RESERVED.</p>
       </div>
     </div>
   );

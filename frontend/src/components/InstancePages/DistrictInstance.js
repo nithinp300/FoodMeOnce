@@ -93,8 +93,13 @@ class DistrictInstance extends React.Component{
     <div
             className="district-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center">
+        <div className="district-instance-map">
             <iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src={map_url}></iframe>
+        </div>
+        <div className="district-instance-head">
             <p className="district-instance-name">{district_data.name}</p>
+            <a className="district-instance-wiki" href={district_data.wikipedia} target="_blank">Wikipedia</a>
+        </div>
             <ul>
                 <li className="district-instance-desc">
                     <span>Population</span>: {district_data.population}
@@ -127,9 +132,6 @@ class DistrictInstance extends React.Component{
                 <li className="district-instance-desc">
 
                     <span>People per square mile</span>: {district_data.peoplePerSquareMile}
-                </li>
-                <li className="district-instance-desc">
-                    <a href={district_data.wikipedia}>Wikipedia</a>
                 </li>
                 <li className="district-instance-desc">
                     <span>Representative</span>: <a href={`/Representatives/instance/${firstName}/${lastName}`}>{district_data.representative}</a>

@@ -16,18 +16,17 @@ Last Updated: 10/15/2019
 # pylint: disable = too-many-lines
 # pylint: disable = import-error
 
-
+import psycopg2
+import numpy as np
+import pandas as pd
+from pandas.io.json import json_normalize
+import xml.etree.ElementTree as et
 import requests
 import api_uris as apis
 import db_creds as creds
 import API_creds
-from pandas.io.json import json_normalize
-import numpy as np
-import pandas as pd
 import sqlalchemy
-import xml.etree.ElementTree as et
 from sqlalchemy.orm import sessionmaker
-import psycopg2
 
 def pgadminconnect():
     db_name = creds.PGDATABASE

@@ -5,9 +5,15 @@ import Gyuwon_img from '../../images/Gyuwon_profile.jpg';
 import Shub_img from '../../images/Shub_profile.jpg';
 import Brian_img from '../../images/brian_profile.png';
 import Nithin_img from '../../images/Nithin_profile.jpg';
-
-
-
+import React_img from '../../images/reactCard.png';
+import Bootstrap_img from '../../images/bootstrapCard.jpg';
+import Flask_image from '../../images/flaskCard.png';
+import Selenium_image from '../../images/seleniumCard.jpg';
+import Postgres_image from '../../images/postgresCard.png';
+import AWS_image from '../../images/awsCard.png';
+import Postman_image from '../../images/postmanCard.png';
+import Python_image from '../../images/mochaCard.png';
+import Mocha_image from '../../images/pythonCard.png';
 class AboutUs extends React.Component{
 
   constructor(props){
@@ -129,8 +135,14 @@ async grabCommits(){
     } = this.state
     return (
       <div>
-
-        <h1 className="title">About Us page</h1>
+        <h2 className="descriptionHeader"> What is Food Me Once? </h2>
+        <div className="description">
+        <h5> 
+          Food Me Once is a website designed to look into the issue of food security in the United States. Our goal is to see how geographic location, congressional representation, 
+          and legislation effect the food security of individuals in this country.
+        </h5>
+        </div>
+        <h2 className="descriptionHeader2"> Who Are We? </h2>
         <div className="cardRow">
           <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Chris_img} className="card-img-top" alt="Card Background"/>
@@ -193,7 +205,78 @@ async grabCommits(){
         <h4 className="footer">Issues Opened: {totalIssues} </h4>
         <h4 className="footer">Issues Closed: {closedIssues} </h4>
 
+        <div className="toolsHeader"> 
+          <h4> Tools</h4>
+        </div>
+        <div className="toolsContainer">
+          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
+              <img src={React_img} className="card-img-top" alt="Card Background"/>
+              <div className="card-body">
+                <h3 className="toolName">React</h3>
+              </div>
+          </div>
+          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
+              <img src={Bootstrap_img} className="card-img-top" alt="Card Background"/>
+              <div className="card-body">
+                <h3 className="toolName">Bootstrap</h3>
+              </div>
+          </div>
+          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
+              <img src={Flask_image} className="card-img-top" alt="Card Background"/>
+              <div className="card-body">
+                <h3 className="toolName">Flask</h3>
+              </div>
+          </div>
+        </div>
+        <div className="toolsContainer">
+          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
+              <img src={Selenium_image} className="card-img-top" alt="Card Background"/>
+              <div className="card-body">
+                <h3 className="toolName">Selenium</h3>
+              </div>
+          </div>
+          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
+              <img src={Postgres_image} className="card-img-top" alt="Card Background"/>
+              <div className="card-body">
+                <h3 className="toolName">PostgreSQL</h3>
+              </div>
+          </div>
+          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
+              <img src={AWS_image} className="card-img-top" alt="Card Background"/>
+              <div className="card-body">
+                <h3 className="toolName">AWS</h3>
+              </div>
+          </div>
+          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
+              <img src={Postman_image} className="card-img-top" alt="Card Background"/>
+              <div className="card-body">
+                <h3 className="toolName">POSTMAN</h3>
+              </div>
+          </div>
+        </div>
+        <div className="toolsContainer">
+        <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
+              <img src={Mocha_image} className="card-img-top" alt="Card Background"/>
+              <div className="card-body">
+                <h3 className="toolName">Mocha</h3>
+              </div>
+          </div>
+          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
+              <img src={Python_image} className="card-img-top" alt="Card Background"/>
+              <div className="card-body">
+                <h3 className="toolName">Python</h3>
+              </div>
+          </div>
+        </div>
+        <div className="dataSources">
+          <h4 style={{paddingBottom: "1rem"}}> Data Sources</h4>
+          <h6> API's</h6>
+          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> Congressional Districts</a></p>
+          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> Congressional Representatives</a></p>
+          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> Legislation</a></p>
+        </div>
         <div className="contactCard">
+          <h6> Project Links</h6>
           <p> <a href="https://gitlab.com/shub95/foodmeonce/"> FoodMeOnce GitLab Repository</a></p>
         </div>
         <div className="contactCard2">

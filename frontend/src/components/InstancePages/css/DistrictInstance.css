@@ -19,22 +19,32 @@
     margin-bottom: 10px;
 }
 
+.district-instance-map {
+    margin-bottom: 7px;
+}
 .district-instance-rep-image {
     width: 60%;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
+.district-instance-head {
+    padding-bottom: 7px;
+}
 .district-instance-name {
     margin: 0;
     font-weight: bold;
     font-size: 120%;
-    margin-bottom: 5px;
+}
+
+.district-instance-wiki {
+    align-content: center;
 }
 
 .district-instance ul {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 .district-instance-desc {
     margin: 0;

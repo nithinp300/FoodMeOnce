@@ -1,0 +1,643 @@
+{
+  "id": "6a6f24c1-5c1e-4c88-b746-b35a0d1b0b94",
+  "version": "2.0",
+  "name": "foodmeonce",
+  "url": "https://foodmeonce.me",
+  "tests": [{
+    "id": "f0a44d1f-3f0d-4a77-aee3-32e4daed8e93",
+    "name": "NavBar Test",
+    "commands": [{
+      "id": "9fde985f-e7f7-4907-8a9f-de6a9222f773",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd9f6d43-eaea-441e-9eeb-77a9ad7bdf36",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Districts",
+      "targets": [
+        ["linkText=Districts", "linkText"],
+        ["css=.nav-link:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Districts')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Districts')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Districts')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1455650b-473f-4bc1-8c6c-540c107629fb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ml-1",
+      "targets": [
+        ["css=.ml-1", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Districts')]", "xpath:innerText"]
+      ],
+      "value": "Districts"
+    }, {
+      "id": "f6922488-5b60-4977-93db-88b50a7c81fe",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Representatives",
+      "targets": [
+        ["linkText=Representatives", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Representatives')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Representatives')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Representatives')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f244bd53-a6c8-40ed-8f7a-aec653c290d3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ml-1",
+      "targets": [
+        ["css=.ml-1", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Representatives')]", "xpath:innerText"]
+      ],
+      "value": "Representatives"
+    }, {
+      "id": "95df0464-85a6-48ed-8274-76a30738024b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Legislation",
+      "targets": [
+        ["linkText=Legislation", "linkText"],
+        ["css=.nav-link:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Legislation')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[4]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Legislations')]", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Legislation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5562fe0-f8c5-465d-97b9-a4a7c2c374d4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ml-1",
+      "targets": [],
+      "value": "Legislations"
+    }, {
+      "id": "65638543-fcd5-4e2f-aafb-627ea826dfe4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=About Us",
+      "targets": [
+        ["linkText=About Us", "linkText"],
+        ["css=.nav-link:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'About Us')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/About Us')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'About Us')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "36cc9386-3f8b-47b5-a4c9-eb548ba884a6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.descriptionHeader",
+      "targets": [
+        ["css=.descriptionHeader", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'What is Food Me Once?')]", "xpath:innerText"]
+      ],
+      "value": "What is Food Me Once?"
+    }, {
+      "id": "af33c0e9-4a93-4453-9d55-ceb42e9c8bb6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=FoodMeOnce",
+      "targets": [
+        ["linkText=FoodMeOnce", "linkText"],
+        ["css=.navbar-brand", "css:finder"],
+        ["xpath=//a[contains(text(),'FoodMeOnce')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/nav/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'FoodMeOnce')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "df99a2d2-36c6-45a8-8b17-c8704f71c5b5",
+    "name": "Representative Instance",
+    "commands": [{
+      "id": "5b209990-9e66-4e0d-98d7-71a5c9db3919",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ff4819c5-f128-4f31-b752-adf17a8ea509",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Representatives",
+      "targets": [
+        ["linkText=Representatives", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Representatives')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Representatives')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Representatives')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd2b87f5-a3ed-4329-a105-a49defc145ca",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.representative_link:nth-child(2) > .representative",
+      "targets": [
+        ["css=.representative_link:nth-child(2) > .representative", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d7fe6533-b948-47e3-b909-db3958e85240",
+      "comment": "",
+      "command": "click",
+      "target": "css=.representative_link:nth-child(2) > .representative",
+      "targets": [
+        ["css=.representative_link:nth-child(2) > .representative", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e332647-407e-47c1-bf6a-fae9192edd75",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.representative-instance-image",
+      "targets": [
+        ["css=.representative-instance-image", "css:finder"],
+        ["xpath=//img[@alt='us flag']", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/img", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/img", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "b953982f-b10e-424e-8e2e-412b7a12e090",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Food Me Once",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3aeaef8c-f509-463e-9114-7f8317172d10",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.representative-instance",
+      "targets": [
+        ["css=.representative-instance", "css:finder"],
+        ["xpath=//div[@id='root']/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c79bf8d-5896-4c2f-a292-53487659f954",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Representatives",
+      "targets": [
+        ["linkText=Representatives", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Representatives')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Representatives')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Representatives')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "48de7474-6867-4d85-b1e8-a034a63c7268",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.representative_link:nth-child(3) > .representative",
+      "targets": [
+        ["css=.representative_link:nth-child(3) > .representative", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a[2]/div", "xpath:idRelative"],
+        ["xpath=//a[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "a6027e62-0727-492a-8512-b16443e93272",
+      "comment": "",
+      "command": "click",
+      "target": "css=.representative_link:nth-child(3) > .representative",
+      "targets": [
+        ["css=.representative_link:nth-child(3) > .representative", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a[2]/div", "xpath:idRelative"],
+        ["xpath=//a[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25010e2e-f9b5-4f77-8ed5-436f66f5e158",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.representative-instance-desc:nth-child(3)",
+      "targets": [
+        ["css=.representative-instance-desc:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'Party: Democrat')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "fe53c266-b6e8-4c7f-a3bf-2a4e9236ef99",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.representative-instance-desc:nth-child(3)",
+      "targets": [
+        ["css=.representative-instance-desc:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'Party: Democrat')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1c92a20e-311f-47b8-b594-9e41c7df09e4",
+    "name": "Legislation Instance",
+    "commands": [{
+      "id": "c1e9b244-7072-488d-9ff0-4600fda26347",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "69b0b737-08ab-47c6-a3a9-b0a2517cd301",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Legislation",
+      "targets": [
+        ["linkText=Legislation", "linkText"],
+        ["css=.nav-link:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Legislation')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[4]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Legislations')]", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Legislation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "66abd632-4037-49e7-a958-9f3c615de697",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.legislation_link:nth-child(2) > .legislation",
+      "targets": [
+        ["css=.legislation_link:nth-child(2) > .legislation", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "89b90693-d6ac-4009-b639-5de077025174",
+      "comment": "",
+      "command": "click",
+      "target": "css=.legislation_link:nth-child(2) > .legislation",
+      "targets": [
+        ["css=.legislation_link:nth-child(2) > .legislation", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2131b82e-8cc2-4189-9b57-b7c787207c74",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.legislation-instance-desc:nth-child(6)",
+      "targets": [
+        ["css=.legislation-instance-desc:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/ul/li[6]", "xpath:idRelative"],
+        ["xpath=//li[6]", "xpath:position"],
+        ["xpath=//li[contains(.,'Sponsor(s): Representative K. Michael Conaway')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7f9b11d-f726-415d-838c-16720a54481b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Legislation",
+      "targets": [
+        ["linkText=Legislation", "linkText"],
+        ["css=.nav-link:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Legislation')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[4]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Legislations')]", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Legislation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "48fe9093-1290-4aa4-b206-62187eab645b",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.legislation_link:nth-child(2) > .legislation",
+      "targets": [
+        ["css=.legislation_link:nth-child(2) > .legislation", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e4a78971-6004-4ba0-8425-160c5f7e9b13",
+      "comment": "",
+      "command": "click",
+      "target": "css=.legislation_link:nth-child(3) > .legislation",
+      "targets": [
+        ["css=.legislation_link:nth-child(3) > .legislation", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a[2]/div", "xpath:idRelative"],
+        ["xpath=//a[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38df4b9c-ec67-4bc6-8d6e-5eaeadbe043a",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.legislation-instance-image",
+      "targets": [
+        ["css=.legislation-instance-image", "css:finder"],
+        ["xpath=//img[@alt='government']", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/img", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/img", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "270f9dab-6b44-472a-b0bd-9972477fc79d",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.legislation-instance",
+      "targets": [
+        ["css=.legislation-instance", "css:finder"],
+        ["xpath=//div[@id='root']/div/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "19ee514f-7782-4822-be7e-7a7cc8bc9366",
+    "name": "About Us Page",
+    "commands": [{
+      "id": "89a3e472-78a9-4b2b-a8c2-43e8b22a98bc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "707ff0f1-7844-4a92-9ce4-e7a364e2b20d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=About Us",
+      "targets": [
+        ["linkText=About Us", "linkText"],
+        ["css=.nav-link:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'About Us')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/About Us')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'About Us')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "91d18f6a-586f-4d12-8616-86937b217a15",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.cardRow:nth-child(4) > .card:nth-child(1) .card-title:nth-child(1)",
+      "targets": [
+        ["css=.cardRow:nth-child(4) > .card:nth-child(1) .card-title:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/h5", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Christopher Chasteen')]", "xpath:innerText"]
+      ],
+      "value": "Christopher Chasteen"
+    }, {
+      "id": "59a02e73-0a22-45c2-aa65-bed4125fb7c9",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "linkText=FoodMeOnce GitLab Repository@href",
+      "targets": [],
+      "value": "URL1"
+    }, {
+      "id": "d0c67b6a-bd49-47a3-b329-fa3a164be44b",
+      "comment": "",
+      "command": "echo",
+      "target": "${URL1}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3c00a94-7768-4c21-ac0b-67430dbf011a",
+      "comment": "",
+      "command": "store",
+      "target": "https://gitlab.com/shub95/foodmeonce/",
+      "targets": [],
+      "value": "correctURL1"
+    }, {
+      "id": "7e2762ba-a1c1-47af-954b-536e0cbed477",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1d68a5ea-77b3-4c08-b2cb-e94e2df6dfdf",
+    "name": "Instance Connections",
+    "commands": [{
+      "id": "f82affd3-9bf0-4d7e-a613-7585e57a3930",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d495d9b-5e04-4cc4-9f8e-9f6b1b632e32",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Representatives",
+      "targets": [
+        ["linkText=Representatives", "linkText"],
+        ["css=.nav-link:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Representatives')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Representatives')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Representatives')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "becf493f-d531-416c-823f-b43fbfe33fc4",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.representative_link:nth-child(2) .representative-desc:nth-child(1)",
+      "targets": [
+        ["css=.representative_link:nth-child(2) .representative-desc:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a/div/div", "xpath:idRelative"],
+        ["xpath=//a/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "6aa3c152-2448-4b71-9165-fb06744187a3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.representative_link:nth-child(2) .representative-desc:nth-child(2)",
+      "targets": [
+        ["css=.representative_link:nth-child(2) .representative-desc:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a/div/div[2]", "xpath:idRelative"],
+        ["xpath=//a/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d0b53af-da51-4dc2-87fb-e7f563220b37",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "linkText=TX 11",
+      "targets": [
+        ["linkText=TX 11", "linkText"],
+        ["css=.representative-instance-desc > a", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Districts/instance/Texas 11th Congressional District')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'TX 11')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c792b646-2b83-4515-bd31-5fd19a250c01",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=TX 11",
+      "targets": [
+        ["linkText=TX 11", "linkText"],
+        ["css=.representative-instance-desc > a", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Districts/instance/Texas 11th Congressional District')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'TX 11')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7719a7bc-eba5-46d7-a852-4928d86f15c2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.district-instance-name",
+      "targets": [
+        ["css=.district-instance-name", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Texas 11th Congressional District')]", "xpath:innerText"]
+      ],
+      "value": "Texas 11th Congressional District"
+    }, {
+      "id": "406a8ecd-950b-45a7-93d2-61ed595d9161",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=K. Michael Conaway",
+      "targets": [
+        ["linkText=K. Michael Conaway", "linkText"],
+        ["css=.district-instance-desc:nth-child(10) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'K. Michael Conaway')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Representatives/instance/K./Conaway')]", "xpath:href"],
+        ["xpath=//li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'K. Michael Conaway')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc4a8351-2842-402d-8730-3080b900619e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.representative-instance-desc:nth-child(1) > span",
+      "targets": [
+        ["css=.representative-instance-desc:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/ul/li/span", "xpath:idRelative"],
+        ["xpath=//li/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Age')]", "xpath:innerText"]
+      ],
+      "value": "Age"
+    }, {
+      "id": "1a5bfb8e-2efa-4a58-a91e-d4df53c918de",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Agriculture Improvement Act of 2018",
+      "targets": [
+        ["linkText=Agriculture Improvement Act of 2018", "linkText"],
+        ["css=.representative-instance-list:nth-child(7) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Agriculture Improvement Act of 2018')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/ul/li[7]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Legislations/instance/Agriculture Improvement Act of 2018')]", "xpath:href"],
+        ["xpath=//li[7]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Agriculture Improvement Act of 2018')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "00f791cc-c8cf-43ac-a21c-de0bf6149ea2",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Agriculture Improvement Act of 2018",
+      "targets": [
+        ["linkText=Agriculture Improvement Act of 2018", "linkText"],
+        ["css=.legislation-instance-name > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Agriculture Improvement Act of 2018')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.congress.gov/bill/115th-congress/house-bill/2')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Agriculture Improvement Act of 2018')]", "xpath:innerText"]
+      ],
+      "value": "Agriculture Improvement Act of 2018"
+    }, {
+      "id": "32523d4f-e1d3-4169-8c5b-494653b9a57a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Texas 11th Congressional District",
+      "targets": [
+        ["linkText=Texas 11th Congressional District", "linkText"],
+        ["css=.legislation-instance-desc:nth-child(7) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Texas 11th Congressional District')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/ul/li[7]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Districts/instance/Texas 11th Congressional District')]", "xpath:href"],
+        ["xpath=//li[7]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Texas 11th Congressional District')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8fbcba3e-d636-4f0a-ad57-bbf2e72c5401",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.district-instance-name",
+      "targets": [
+        ["css=.district-instance-name", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Texas 11th Congressional District')]", "xpath:innerText"]
+      ],
+      "value": "Texas 11th Congressional District"
+    }]
+  }],
+  "suites": [{
+    "id": "e62e9f53-646b-48e2-a5ba-2295454f4f11",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f0a44d1f-3f0d-4a77-aee3-32e4daed8e93"]
+  }],
+  "urls": ["https://foodmeonce.me/"],
+  "plugins": []
+}

@@ -21,9 +21,18 @@
   color: #09d3ac;
 }
 
+.header-text {
+  font-size: calc(20px + 2vmin);
+  text-align: left;
+  font-weight: bold;
+  margin-top: 2%;
+  margin-right: 9%;
+  margin-left: 9%;
+}
+
 .para {
   font-size: calc(8px + 2vmin); 
-  text-align: center; 
+  text-align: left;
   font: optima;
   margin-top: 2%; 
   margin-right: 9%; 

@@ -14,8 +14,9 @@
     cursor: default;
 }
 .legislation-instance-image {
-    width: 20%;
+    width: 25%;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .legislation-instance-name {
@@ -34,8 +35,20 @@
 .legislation-instance-desc {
     text_align: center;
     margin: 0;
+    padding-left: 10px;
 }
 
 .legislation-instance-desc span {
     font-weight: bold;
+}
+
+.legislation-instance-rep {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.legislation-instance-rep:hover {
+    background-color: aliceBlue;
+    cursor: default;
 }

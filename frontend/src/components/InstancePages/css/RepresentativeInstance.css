@@ -15,12 +15,13 @@
 }
 
 .representative-instance-image {
-    width: 60%;
+    width: 55%;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .representative-instance-name {
-    margin: auto;
+    margin: 0;
     font-weight: bold;
     font-size: 120%;
     margin-bottom: 5px;
@@ -29,11 +30,29 @@
 .representative-instance ul {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 .representative-instance-desc {
     margin: 0;
+    text_align: center;
 }
 
 .representative-instance-desc span {
     font-weight: bold;
+}
+
+.representative-instance-list {
+    margin: 0;
+    text_align: center;
+}
+
+.representative-instance-list span {
+    font-weight: bold;
+}
+
+.representative-instance-list a {
+}
+
+.district-map {
+    margin-top: 10px;
 }
