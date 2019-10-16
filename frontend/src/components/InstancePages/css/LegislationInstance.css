@@ -14,8 +14,9 @@
     cursor: default;
 }
 .legislation-instance-image {
-    width: 20%;
+    width: 25%;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .legislation-instance-name {
@@ -38,4 +39,10 @@
 
 .legislation-instance-desc span {
     font-weight: bold;
+}
+
+.legislation-instance-rep {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

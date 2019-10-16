@@ -133,7 +133,7 @@ class LegislationInstance extends Component{
                 </li>
             </ul>
             <div className="sponsor" align="left">
-              <img className="sponsor-image" src={sponsor_image} alt="us flag" />
+              <img className="legislation-instance-rep" src={sponsor_image} alt={legislation_data.sponsor_name} />
             </div>
         </div>
     );

@@ -15,8 +15,9 @@
 }
 
 .representative-instance-image {
-    width: 60%;
+    width: 55%;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .representative-instance-name {
@@ -36,4 +37,8 @@
 
 .representative-instance-desc span {
     font-weight: bold;
+}
+
+.district-map {
+    margin-top: 10px;
 }

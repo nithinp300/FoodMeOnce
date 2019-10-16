@@ -70,7 +70,7 @@ class RepresentativeInstance extends React.Component{
         <div
             className="representative-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center">
-            <img className="representative-instance-image" src={rep_image} alt="us flag" />
+            <img className="representative-instance-image" src={rep_image} alt={rep_data.first_name} />
             <p className="representative-instance-name">{rep_data.first_name} {rep_data.last_name}</p>
             <ul>
                 <li className="representative-instance-desc">
@@ -96,16 +96,15 @@ class RepresentativeInstance extends React.Component{
                     <br/><a href={`/Legislations/instance/${legislation}`}>{legislation}</a>
                 </li>
                 <li className="representative-instance-desc">
-                    <a href={twitter}>Twitter</a>
-                </li>
-                <li className="representative-instance-desc">
-                    <a href={facebook}>Facebook</a>
-                </li>
-                <li className="representative-instance-desc">
-                    <a href={rep_data.url}> Website </a>
+                    <span>Social Media</span>:
+                    <br/><a href={twitter}>Twitter</a>
+                    <br/><a href={facebook}>Facebook</a>
+                    <br/><a href={rep_data.url}> .gov site </a>
                 </li>
             </ul>
-            <iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src={map_url}></iframe>
+            <div className="district-map">
+                <iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src={map_url}></iframe>
+            </div>
         </div>
     );
     }
