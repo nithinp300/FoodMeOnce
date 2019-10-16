@@ -28,7 +28,6 @@ import API_creds
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
 
-
 def pgadminconnect():
     db_name = creds.PGDATABASE
     db_pwd = creds.PGPASSWORD
