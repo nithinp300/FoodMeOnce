@@ -6,4 +6,4 @@ stages:
 pages:
   stage: backend
   script:
-    ./backend/DB Load/testDBloader.py
+    ./backend/DB_Load/testDBloader.py
