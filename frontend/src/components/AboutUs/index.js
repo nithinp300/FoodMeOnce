@@ -130,7 +130,7 @@ async grabCommits(){
     return (
       <div>
 
-        <h1 className="title">About Us page</h1>
+        <h1 className="title">Meet the Team</h1>
         <div className="cardRow">
           <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Chris_img} className="card-img-top" alt="Card Background"/>
