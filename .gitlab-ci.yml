@@ -1,9 +1,9 @@
-image: node:alpine
-
-stages:
-  - backend
-
-pages:
-  stage: backend
-  script:
-    ./backend/DB_Load/testDBloader.py
+#image: node:alpine
+#
+#stages:
+#  - backend
+#
+#pages:
+#  stage: backend
+#  script:
+#    ./backend/DB_Load/testDBloader.py
