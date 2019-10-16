@@ -1,0 +1,13 @@
+image: node:alpine
+
+cache:
+  paths:
+    -node_modules
+
+stages:
+  - backend
+
+pages:
+  stage: backend
+  script:
+    ./backend/DB Load/testDBloader.py
