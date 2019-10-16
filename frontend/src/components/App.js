@@ -52,7 +52,7 @@ function App() {
 
       <hr />
       <div className="text-center text-secondary">
-        <p>Copyright © 2019 FoodMeOnce ALL RIGHT RESERVED.</p>
+        <p>Copyright © 2019 FoodMeOnce ALL RIGHTS RESERVED.</p>
       </div>
     </div>
   );
