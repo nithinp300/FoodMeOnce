@@ -47,3 +47,8 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.legislation-instance-rep:hover {
+    background-color: aliceBlue;
+    cursor: default;
+}

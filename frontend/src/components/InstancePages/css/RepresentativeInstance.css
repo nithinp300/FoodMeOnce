@@ -21,7 +21,7 @@
 }
 
 .representative-instance-name {
-    margin: auto;
+    margin: 0;
     font-weight: bold;
     font-size: 120%;
     margin-bottom: 5px;

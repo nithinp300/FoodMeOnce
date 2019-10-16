@@ -93,7 +93,9 @@ class DistrictInstance extends React.Component{
     <div
             className="district-instance d-flex border border-secondary
                 justify-content-center flex-column align-items-center">
+        <div className="district-instance-map">
             <iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src={map_url}></iframe>
+        </div>
             <p className="district-instance-name">{district_data.name}</p>
             <ul>
                 <li className="district-instance-desc">
