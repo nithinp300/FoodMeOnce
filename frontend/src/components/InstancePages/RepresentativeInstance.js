@@ -68,7 +68,7 @@ class RepresentativeInstance extends React.Component{
     }
     return(
         <div
-            className="representative-instance d-flex border border-secondary
+            className="representative-instance d-flex p-2 border border-secondary
                 justify-content-center flex-column align-items-center">
             <img className="representative-instance-image" src={rep_image} alt={rep_data.first_name} />
             <p className="representative-instance-name">{rep_data.first_name} {rep_data.last_name}</p>

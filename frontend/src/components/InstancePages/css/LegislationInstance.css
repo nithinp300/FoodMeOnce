@@ -35,6 +35,7 @@
 .legislation-instance-desc {
     text_align: center;
     margin: 0;
+    padding-left: 10px;
 }
 
 .legislation-instance-desc span {

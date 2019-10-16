@@ -30,9 +30,11 @@
 .representative-instance ul {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 .representative-instance-desc {
     margin: 0;
+    text_align: center;
 }
 
 .representative-instance-desc span {
