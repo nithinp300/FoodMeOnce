@@ -50,14 +50,14 @@ def db_session(engine):
 
 def extract_json(data_json, api_number):
     print('extract_json\n')
-    if api_number==0:
+    if api_number==0 or api_number==4:
         return json_normalize(data_json, 'members')
     else:
         df = json_normalize(data_json, 'bills')
         df_2 = df["cosponsors_by_party"].apply(pd.Series)
         df["cosponsors_by_party_R"] = df_2["R"]
         df["cosponsors_by_party_D"] = df_2["D"]
-        print(df[["cosponsors_by_party_D", "cosponsors_by_party_R"]])
+        # print(df[["cosponsors_by_party_D", "cosponsors_by_party_R"]])
         df = df.drop("cosponsors_by_party", axis=1)
         return df
 
@@ -120,12 +120,23 @@ def load_data(schema, table, conn, data, engine):
 
 if __name__ == "__main__":
     apis = apis.apis
-    table_names = ['congress_members', 'legislations']
+    table_names = ['house_representatives', 'legislations', 'senators']
     db_objects = pgadminconnect()
     for api_counter in range(0,len(apis)):
         df = API_response(apis[api_counter], api_counter)
-        print(df.head(3))
-        # if api_counter == 0:
-        #     load_data('staging', table_names[0], db_objects[0], df, db_objects[1])
-        # else:
-        #     load_data('staging', table_names[1], db_objects[0], df, db_objects[1])
+        # print(df.head(3))
+        if api_counter == 0:
+            load_data('staging', table_names[0], db_objects[0], df, db_objects[1])
+            # print('staging', table_names[0], db_objects[0], df.shape, db_objects[1])
+        elif api_counter == len(apis)-1:
+            load_data('staging', table_names[2], db_objects[0], df, db_objects[1])
+            # print('staging', table_names[2], db_objects[0], df.shape, db_objects[1])
+        else:
+            load_data('staging', table_names[1], db_objects[0], df, db_objects[1])
+            # print('staging', table_names[1], db_objects[0], df.shape, db_objects[1])
+    # df = API_response('https://api.propublica.org/congress/v1/116/senate/members', 0)
+    # print(df.head(3))
+    # # print('Columns of Senate: ', list(df))
+    # df2 = API_response('https://api.propublica.org/congress/v1/116/house/members', 0)
+    # print('Columns of Senate: ', list(df))
+    # print('Columns of House: ', list(df2))
