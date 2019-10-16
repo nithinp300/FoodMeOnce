@@ -11,7 +11,7 @@
 
 
 ## Git SHA
-e052f7632497263241288cb2004eb7558253e8d2
+Phase 1: e052f7632497263241288cb2004eb7558253e8d2
 
 ## Link to the Website
 ### https://foodmeonce.me
