@@ -93,7 +93,7 @@ class LegislationInstance extends Component{
                 justify-content-center flex-column align-items-center"
         >
             <img className="legislation-instance-image" src={this.getImage(legislation_data.bill_type)} alt="government" />
-            <p className="legislation-instance-name"><a href={legislation_data.congressdotgov_url}>{legislation_data.short_title}</a></p>
+            <p className="legislation-instance-name"><a href={legislation_data.congressdotgov_url} target="_blank">{legislation_data.short_title}</a></p>
             <ul>
                 <li className="legislation-instance-desc">
                     <span>Introduced</span>: {legislation_data.introduced_date}

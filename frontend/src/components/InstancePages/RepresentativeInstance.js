@@ -97,7 +97,7 @@ class RepresentativeInstance extends React.Component{
                 </li>
                 <li className="representative-instance-list">
                     <span>Social Media</span>:
-                    <br/><a href={twitter}>Twitter   </a><a href={facebook}>Facebook   </a><a href={rep_data.url}> .gov site </a>
+                    <br/><a href={twitter} target="_blank">Twitter   </a><a href={facebook} target="_blank">Facebook   </a><a href={rep_data.url} target="_blank"> .gov site </a>
                 </li>
             </ul>
             <div className="district-map">

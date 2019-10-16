@@ -98,7 +98,7 @@ class DistrictInstance extends React.Component{
         </div>
         <div className="district-instance-head">
             <p className="district-instance-name">{district_data.name}</p>
-            <a className="district-instance-wiki" href={district_data.wikipedia}>Wikipedia</a>
+            <a className="district-instance-wiki" href={district_data.wikipedia} target="_blank">Wikipedia</a>
         </div>
             <ul>
                 <li className="district-instance-desc">
