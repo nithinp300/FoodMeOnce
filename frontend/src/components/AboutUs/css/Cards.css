@@ -11,6 +11,25 @@
     padding-top: 3rem;
 }
 
+.descriptionHeader {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+.descriptionHeader2 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+.description {
+    display: flex;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-content: center;
+    padding-bottom: 3rem;
+}
 .footer {
     display: flex;
     justify-content: center;
@@ -23,9 +42,28 @@
     justify-content: center;
 }
 
+
 .contactCard2 {
     display: flex;
     padding-top: 1rem;
     justify-content: center;
     padding-bottom: 2rem;
+}
+
+.toolsHeader {
+    display: flex;
+    padding-top: 3rem;
+    justify-content: center;
+}
+
+.toolsContainer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.toolName {
+    display: flex;
+    justify-content: center;
+
 }
