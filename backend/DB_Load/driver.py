@@ -16,11 +16,11 @@ Last Updated: 10/15/2019
 # pylint: disable = too-many-lines
 # pylint: disable = import-error
 
-import psycopg2
+# import psycopg2
+import xml.etree.ElementTree as et
 import numpy as np
 import pandas as pd
 from pandas.io.json import json_normalize
-import xml.etree.ElementTree as et
 import requests
 import api_uris as apis
 import db_creds as creds
@@ -50,16 +50,15 @@ def db_session(engine):
 
 def extract_json(data_json, api_number):
     print('extract_json\n')
-    if api_number==0 or api_number==4:
+    if api_number in (0,4):
         return json_normalize(data_json, 'members')
-    else:
-        df = json_normalize(data_json, 'bills')
-        df_2 = df["cosponsors_by_party"].apply(pd.Series)
-        df["cosponsors_by_party_R"] = df_2["R"]
-        df["cosponsors_by_party_D"] = df_2["D"]
-        # print(df[["cosponsors_by_party_D", "cosponsors_by_party_R"]])
-        df = df.drop("cosponsors_by_party", axis=1)
-        return df
+    df = json_normalize(data_json, 'bills')
+    df_2 = df["cosponsors_by_party"].apply(pd.Series)
+    df["cosponsors_by_party_R"] = df_2["R"]
+    df["cosponsors_by_party_D"] = df_2["D"]
+    # print(df[["cosponsors_by_party_D", "cosponsors_by_party_R"]])
+    df = df.drop("cosponsors_by_party", axis=1)
+    return df
 
 
 def API_response(api_uri, api_number):
@@ -110,8 +109,8 @@ def max_column_lengths(df):
 def load_data(schema, table, conn, data, engine):
     print("Loading data into " + str(schema) + '.' + str(table))
     try:
-        sql_command = "select * from  {}.{};".format(str(schema), str(table))
-        table_name = schema + '.' + table
+        # sql_command = "select * from  {}.{};".format(str(schema), str(table))
+        # table_name = schema + '.' + table
         data.to_sql(table, engine, if_exists='append', schema=schema)
     except Exception as e:
         print(e)
@@ -134,9 +133,3 @@ if __name__ == "__main__":
         else:
             load_data('staging', table_names[1], db_objects[0], df, db_objects[1])
             # print('staging', table_names[1], db_objects[0], df.shape, db_objects[1])
-    # df = API_response('https://api.propublica.org/congress/v1/116/senate/members', 0)
-    # print(df.head(3))
-    # # print('Columns of Senate: ', list(df))
-    # df2 = API_response('https://api.propublica.org/congress/v1/116/house/members', 0)
-    # print('Columns of Senate: ', list(df))
-    # print('Columns of House: ', list(df2))
