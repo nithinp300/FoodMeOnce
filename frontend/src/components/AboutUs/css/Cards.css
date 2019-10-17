@@ -14,7 +14,7 @@
 .descriptionHeader {
     display: flex;
     justify-content: center;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
     padding-top: 3rem;
 }
 .descriptionHeader2 {
@@ -22,14 +22,7 @@
     justify-content: center;
     padding-bottom: 3rem;
 }
-.description {
-    display: flex;
-    justify-content: center;
-    padding-left: 10%;
-    padding-right: 10%;
-    align-content: center;
-    padding-bottom: 3rem;
-}
+
 .footer {
     display: flex;
     justify-content: center;
@@ -44,10 +37,23 @@
     justify-content: center;
 }
 
+.descriptionBody {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2rem;
+}
+
 .dataSources {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.titleCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .contactCard2 {
