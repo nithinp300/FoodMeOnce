@@ -4,7 +4,7 @@
 |        Name        | UT eid |   GitLab ID   |
 |--------------------|:------:|:-------------:|
 |     Gyuwon Kim     | gk4893 |    wonkgo1    |
-|     Brian Dyck     |        |   BrianDyck   |
+|     Brian Dyck     |bjd2448 |   BrianDyck   |
 |   Chris Chasteen   |cc59579 |  cchasteen99  |
 |   Nithin Pingili   | np9663 | nithinpingili |
 | Shubhendra Trivedi | sst565 |     shub95    |
