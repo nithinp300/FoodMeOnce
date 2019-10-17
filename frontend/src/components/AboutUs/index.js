@@ -12,8 +12,8 @@ import Selenium_image from '../../images/seleniumCard.jpg';
 import Postgres_image from '../../images/postgresCard.png';
 import AWS_image from '../../images/awsCard.png';
 import Postman_image from '../../images/postmanCard.png';
-import Python_image from '../../images/mochaCard.png';
-import Mocha_image from '../../images/pythonCard.png';
+import Mocha_image from '../../images/mochaCard.png';
+import Python_image from '../../images/pythonCard.png';
 class AboutUs extends React.Component{
 
   constructor(props){
@@ -135,16 +135,16 @@ async grabCommits(){
     } = this.state
     return (
       <div>
+        <div className="titleCard">
         <h2 className="descriptionHeader"> What is Food Me Once? </h2>
-        <div className="description">
-        <h5> 
-          Food Me Once is a website designed to look into the issue of food security in the United States. Our goal is to see how geographic location, congressional representation, 
-          and legislation effect the food security of individuals in this country.
-        </h5>
+          <h5 class="descriptionBody"> 
+            Food Me Once is a website designed to look into the issue of food security in the United States. Our goal is to see how geographic location, congressional representation, 
+            and legislation effect the food security of individuals in this country.
+          </h5>
         </div>
         <h2 className="descriptionHeader2"> Who Are We? </h2>
         <div className="cardRow">
-          <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
+          <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Chris_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Christopher Chasteen</h5>
@@ -155,7 +155,7 @@ async grabCommits(){
             </div>
           </div>
 
-          <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
+          <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Gyuwon_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Gyuwon Kim</h5>
@@ -166,7 +166,7 @@ async grabCommits(){
             </div>
           </div>
 
-          <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
+          <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Shub_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Shubhendra Trivedi</h5>
@@ -179,7 +179,7 @@ async grabCommits(){
         </div>
 
         <div className="cardRow">
-        <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
+        <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Brian_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Brian Dyck</h5>
@@ -190,7 +190,7 @@ async grabCommits(){
             </div>
           </div>
 
-          <div className="card" style={{width: "18rem", marginRight: ".5rem"}}>
+          <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Nithin_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Nithin Pingili</h5>
@@ -209,71 +209,80 @@ async grabCommits(){
           <h4> Tools</h4>
         </div>
         <div className="toolsContainer">
-          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={React_img} className="card-img-top" alt="Card Background"/>
+          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={React_img} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">React</h3>
+                <p> Used in front end development for creating dynamic components</p>
               </div>
           </div>
-          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={Bootstrap_img} className="card-img-top" alt="Card Background"/>
+          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={Bootstrap_img} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Bootstrap</h3>
+                <p> Utilized various css frameworks for user design</p>
               </div>
           </div>
-          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={Flask_image} className="card-img-top" alt="Card Background"/>
+          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={Flask_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Flask</h3>
+                <p> Used Flask for Python Frameworks for API's</p>
               </div>
           </div>
         </div>
         <div className="toolsContainer">
-          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={Selenium_image} className="card-img-top" alt="Card Background"/>
+          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={Selenium_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Selenium</h3>
+                <p> Used to test GUI of the website through automation</p>
               </div>
           </div>
-          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={Postgres_image} className="card-img-top" alt="Card Background"/>
+          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={Postgres_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">PostgreSQL</h3>
+                <p> Figure somethiong out for postgres</p>
               </div>
           </div>
-          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={AWS_image} className="card-img-top" alt="Card Background"/>
+          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={AWS_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">AWS</h3>
+                <p> Used to host the website for public access</p>
               </div>
           </div>
-          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={Postman_image} className="card-img-top" alt="Card Background"/>
+          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={Postman_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">POSTMAN</h3>
+                <p> Used to help create API to fill through scraping of data sources</p>
               </div>
           </div>
         </div>
         <div className="toolsContainer">
-        <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={Mocha_image} className="card-img-top" alt="Card Background"/>
+        <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={Mocha_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Mocha</h3>
+                <p> Used to write Unit Tests for front end javascript code</p>
               </div>
           </div>
-          <div className="card" style={{width: "10rem", marginRight: ".5rem"}}>
-              <img src={Python_image} className="card-img-top" alt="Card Background"/>
+          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={Python_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Python</h3>
+                <p> Used to write scripts to scrape data from data sources</p>
               </div>
           </div>
         </div>
         <div className="dataSources">
           <h4 style={{paddingBottom: "1rem"}}> Data Sources</h4>
           <h6> API's</h6>
-          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> Congressional Districts</a></p>
-          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> Congressional Representatives</a></p>
-          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> Legislation</a></p>
+          <p> <a href="https://hudgis-hud.opendata.arcgis.com/datasets/acs-5yr-socioeconomic-estimate-data-by-tract"> Socioeconomic data API</a></p>
+          <p> <a href="https://projects.propublica.org/api-docs/congress-api/"> Congressional Data API</a></p>
+          <p> <a href="https://www.census.gov/data/developers/guidance/api-user-guide.Query_Components.html"> Census Data API</a></p>
         </div>
         <div className="contactCard">
           <h6> Project Links</h6>
