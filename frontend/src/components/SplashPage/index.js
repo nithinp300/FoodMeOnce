@@ -1,17 +1,63 @@
 import React from "react";
+import Carousel from 'react-bootstrap/Carousel'
 //import cornField from "../../images/cornField.jpg";
 import welcome_banner from "../../images/welcome_banner.png"; 
 import "../App.css"; 
 
 function SplashPage() {
   return (
-    <div>
+    <div style={{ margin: '0em 5em 2em 5em' }}>
+        <Carousel id="carousel">
+          <Carousel.Item>
+            <img
+              id="slide-img"
+              src={welcome_banner}
+              alt="First Slide"
+              style={{width: "100%"}}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              id="slide-img"
+              src={welcome_banner}
+              alt="Second Slide"
+              style={{width: "100%"}}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              id="slide-img"
+              src={welcome_banner}
+              alt="Third Slide"
+              style={{width: "100%"}}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              id="slide-img"
+              src={welcome_banner}
+              alt="Fourth Slide"
+              style={{width: "100%"}}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              id="slide-img"
+              src={welcome_banner}
+              alt="Fifth Slide"
+              style={{width: "100%"}}
+            />
+          </Carousel.Item>
+        </Carousel>
+      
+
+    {/* <div>
       <img
         src={welcome_banner}
         className="img-fluid"
         alt="Welcome Page"
         style={{width: "100%"}}
-      />
+      /> */}
     <div className="splash-page-content">
         <h1 className="header-text">Purpose</h1>
       <p className='para'>Food Me Once is being developed to provide a platform for users to gather information on
@@ -24,6 +70,7 @@ website will generate statistics/visualizations across various dimensions (popul
 representation, race, etc.).</p>
     </div>
     </div>
+    //</div>
   );
 }
 
