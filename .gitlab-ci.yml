@@ -8,5 +8,4 @@ stages:
 
 backend:
   stage: backend unittest
-  script:
-  backend/DB_load/testDBloader.py
+  script: backend/DB_load/testDBloader.py
