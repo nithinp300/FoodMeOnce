@@ -6,6 +6,7 @@ before_script:
 stages:
   - backend unittest
 
-stage: backend unittest
-script:
+backend:
+  stage: backend unittest
+  script:
   backend/DB_load/testDBloader.py
