@@ -4,8 +4,9 @@ before_script:
   - python --version
 
 stages:
-  - backend unittest
+  - backend_testing
 
 backend:
-  stage: backend unittest
-  script: backend/DB_load/testDBloader.py
+  stage: backend_testing
+  script:
+    -python backend/DB_load/testDBloader.py
