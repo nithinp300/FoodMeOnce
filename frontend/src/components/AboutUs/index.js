@@ -13,6 +13,7 @@ import Postgres_image from '../../images/postgresCard.png';
 import AWS_image from '../../images/awsCard.png';
 import Postman_image from '../../images/postmanCard.png';
 import Mocha_image from '../../images/mochaCard.png';
+import Alchemy_image from '../../images/SQLAlchemyCard.png';
 import Python_image from '../../images/pythonCard.png';
 class AboutUs extends React.Component{
 
@@ -137,10 +138,10 @@ async grabCommits(){
       <div>
         <div className="titleCard">
         <h2 className="descriptionHeader"> What is Food Me Once? </h2>
-          <h5 class="descriptionBody"> 
+          <p class="descriptionBody"> 
             Food Me Once is a website designed to look into the issue of food security in the United States. Our goal is to see how geographic location, congressional representation, 
             and legislation effect the food security of individuals in this country.
-          </h5>
+          </p>
         </div>
         <h2 className="descriptionHeader2"> Who Are We? </h2>
         <div className="cardRow">
@@ -274,6 +275,13 @@ async grabCommits(){
               <div className="card-body">
                 <h3 className="toolName">Python</h3>
                 <p> Used to write scripts to scrape data from data sources</p>
+              </div>
+          </div>
+          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+              <img src={Alchemy_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
+              <div className="card-body">
+                <h3 className="toolName">Python</h3>
+                <p> Insert SQLAlchemy Tool Desc Here</p>
               </div>
           </div>
         </div>
