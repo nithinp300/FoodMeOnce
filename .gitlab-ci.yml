@@ -8,4 +8,6 @@ stages:
 
 backend:
   stage: backend_testing
-  script: python backend/DB_Load/testDBloader.py
+  script:
+  - pip install -r backend/DB_Load/requirements.txt
+  - python backend/DB_Load/testDBloader.py

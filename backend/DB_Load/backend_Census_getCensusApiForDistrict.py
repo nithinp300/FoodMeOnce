@@ -1,7 +1,7 @@
 from json import JSONDecodeError
 import sys
 sys.path.append('../')
-from Scrapper import getJsonFromUrl
+from backend_Scrapper import getJsonFromUrl
 
 class District:
     def __init__(self, state, district):
