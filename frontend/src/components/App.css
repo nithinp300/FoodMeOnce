@@ -6,6 +6,11 @@
   height: 40vmin;
 }
 
+.slideBanner {
+  display: flex;
+  justify-content: center;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

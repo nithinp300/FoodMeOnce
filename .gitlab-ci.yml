@@ -1,0 +1,11 @@
+image: "python:3.7"
+
+before_script:
+  - python --version
+
+stages:
+  - backend_testing
+
+backend:
+  stage: backend_testing
+  script: python backend/DB_Load/testDBloader.py
