@@ -4,11 +4,6 @@ pandas
 xml.etree.ElementTree
 pandas.io.json.json_normalize
 requests
-backend/DB_Load/api_uris.py
-backend/DB_Load/db_creds.py
-backend/DB_Load/backend_Census_getCensusApiForDistrict.py
-backend/DB_Load/backend_Scrapper.py
-backend/DB_Load/API_creds.py
 urllib.request
 json
 sys
