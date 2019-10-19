@@ -23,10 +23,10 @@ class TestDBloader(TestCase):
     def test_api_response(self):
         i = 1
         assert i == 1
-        # range_obj = range(0,len(apis))
-        # range_iterator = iter(range_obj)
-        # for api_uri in apis:
-        #     assert type(API_response(api_uri, next(range_iterator)) is pandas.DataFrame)
+        range_obj = range(0,len(apis))
+        range_iterator = iter(range_obj)
+        for api_uri in apis:
+            assert type(API_response(api_uri, next(range_iterator)) is pandas.DataFrame)
         #
 
 
