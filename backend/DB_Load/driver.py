@@ -73,7 +73,7 @@ def API_response(api_uri, api_number):
             # print(res.headers)
             js = res.json()
             print("\nStatus: " + js['status'] + '\n')
-            # print(js['results'])
+            print(js['results'])
             data_json = js['results']
             data_df = extract_json(data_json, api_number)
             # data_df = json_normalize(members_json, 'members')
@@ -123,13 +123,13 @@ if __name__ == "__main__":
     db_objects = pgadminconnect()
     for api_counter in range(0,len(apis)):
         df = API_response(apis[api_counter], api_counter)
-        # print(df.head(3))
-        if api_counter == 0:
-            load_data('staging', table_names[0], db_objects[0], df, db_objects[1])
-            # print('staging', table_names[0], db_objects[0], df.shape, db_objects[1])
-        elif api_counter == len(apis)-1:
-            load_data('staging', table_names[2], db_objects[0], df, db_objects[1])
-            # print('staging', table_names[2], db_objects[0], df.shape, db_objects[1])
-        else:
-            load_data('staging', table_names[1], db_objects[0], df, db_objects[1])
-            # print('staging', table_names[1], db_objects[0], df.shape, db_objects[1])
+        print(df.head(3))
+        # if api_counter == 0:
+        #     load_data('staging', table_names[0], db_objects[0], df, db_objects[1])
+        #     # print('staging', table_names[0], db_objects[0], df.shape, db_objects[1])
+        # elif api_counter == len(apis)-1:
+        #     load_data('staging', table_names[2], db_objects[0], df, db_objects[1])
+        #     # print('staging', table_names[2], db_objects[0], df.shape, db_objects[1])
+        # else:
+        #     load_data('staging', table_names[1], db_objects[0], df, db_objects[1])
+        #     # print('staging', table_names[1], db_objects[0], df.shape, db_objects[1])
