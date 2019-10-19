@@ -23,6 +23,15 @@ function SplashPage() {
             />
           </Carousel.Item>
           <Carousel.Item>
+            <h3 className="slideBanner"> The People Matter</h3>
+            <img
+              id="slide-img"
+              src={citySlide}
+              alt="Fourth Slide"
+              style={{width: "100%", height: "35rem"}}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
             <h3 className="slideBanner"> Responsible Representation Matters</h3>
             <img
               id="slide-img"
@@ -40,15 +49,7 @@ function SplashPage() {
               style={{width: "100%", height: "35rem"}}
             />
           </Carousel.Item>
-          <Carousel.Item>
-            <h3 className="slideBanner"> The People Matter</h3>
-            <img
-              id="slide-img"
-              src={citySlide}
-              alt="Fourth Slide"
-              style={{width: "100%", height: "35rem"}}
-            />
-          </Carousel.Item>
+          
           <Carousel.Item>
             <h3 className="slideBanner"> Fight For Food Security </h3>
             <img
