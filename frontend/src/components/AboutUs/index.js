@@ -280,7 +280,7 @@ async grabCommits(){
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={Alchemy_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
-                <h3 className="toolName">Python</h3>
+                <h3 className="toolName">SQLAlchemy</h3>
                 <p> Insert SQLAlchemy Tool Desc Here</p>
               </div>
           </div>
