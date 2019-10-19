@@ -3,3 +3,4 @@ sqlalchemy
 numpy
 pandas
 requests
+psycopg2
