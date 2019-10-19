@@ -9,5 +9,5 @@ stages:
 backend:
   stage: backend_testing
   script:
-  - pip install sqlalchemy
+  - pip install -r requirements.txt
   - python backend/DB_Load/testDBloader.py
