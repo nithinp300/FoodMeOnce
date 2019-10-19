@@ -2,8 +2,8 @@ image: continuumio/miniconda3:latest
 
 before_script:
   - export PIP_CACHE_DIR="/cache/pip"
-  - conda env create -f environment.yml
-  - source activate koopa
+  - conda create --name test_env --file backend/DB_Load/requirements.txt
+  - source activate test_env
 
 stages:
   - backend_testing
