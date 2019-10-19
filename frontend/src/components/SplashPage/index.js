@@ -1,7 +1,13 @@
 import React from "react";
+import '../App.css';
 import Carousel from 'react-bootstrap/Carousel'
 //import cornField from "../../images/cornField.jpg";
 import welcome_banner from "../../images/welcome_banner.png"; 
+import congressSlide from "../../images/congressSlide.jpg"
+import librarySlide from '../../images/librarySlide.jpg';
+import fightSlide from '../../images/fightSlide.jpg';
+import citySlide from '../../images/citySlide.jpg';
+
 import "../App.css"; 
 
 function SplashPage() {
@@ -17,35 +23,39 @@ function SplashPage() {
             />
           </Carousel.Item>
           <Carousel.Item>
+            <h3 className="slideBanner"> Responsible Representation Matters</h3>
             <img
               id="slide-img"
-              src={welcome_banner}
+              src={congressSlide}
               alt="Second Slide"
-              style={{width: "100%"}}
+              style={{width: "100%", height: "35rem"}}
             />
           </Carousel.Item>
           <Carousel.Item>
+            <h3 className="slideBanner"> Supportive Legislation Matters</h3>
             <img
               id="slide-img"
-              src={welcome_banner}
+              src={librarySlide}
               alt="Third Slide"
-              style={{width: "100%"}}
+              style={{width: "100%", height: "35rem"}}
             />
           </Carousel.Item>
           <Carousel.Item>
+            <h3 className="slideBanner"> Everyone Matters</h3>
             <img
               id="slide-img"
-              src={welcome_banner}
+              src={citySlide}
               alt="Fourth Slide"
-              style={{width: "100%"}}
+              style={{width: "100%", height: "35rem"}}
             />
           </Carousel.Item>
           <Carousel.Item>
+            <h3 className="slideBanner"> Fight For Food Security </h3>
             <img
               id="slide-img"
-              src={welcome_banner}
+              src={fightSlide}
               alt="Fifth Slide"
-              style={{width: "100%"}}
+              style={{width: "100%", height: "35rem"}}
             />
           </Carousel.Item>
         </Carousel>
