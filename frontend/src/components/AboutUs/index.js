@@ -244,7 +244,7 @@ async grabCommits(){
               <img src={Postgres_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">PostgreSQL</h3>
-                <p> Figure somethiong out for postgres</p>
+                <p> Cloud PostGreSQL database used to host data driving website</p>
               </div>
           </div>
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
@@ -258,7 +258,7 @@ async grabCommits(){
               <img src={Postman_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">POSTMAN</h3>
-                <p> Used to help create API to fill through scraping of data sources</p>
+                <p> Used to design and implement RESTful API for database</p>
               </div>
           </div>
         </div>
@@ -281,7 +281,7 @@ async grabCommits(){
               <img src={Alchemy_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">SQLAlchemy</h3>
-                <p> Insert SQLAlchemy Tool Desc Here</p>
+                <p> Used to speak with and load data into database</p>
               </div>
           </div>
         </div>
