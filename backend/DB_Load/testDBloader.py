@@ -27,7 +27,6 @@ class TestDBloader(TestCase):
         range_iterator = iter(range_obj)
         for api_uri in apis:
             assert type(API_response(api_uri, next(range_iterator)) is pandas.DataFrame)
-        #
 
 
 

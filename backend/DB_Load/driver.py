@@ -73,7 +73,7 @@ def API_response(api_uri, api_number):
             # print(res.headers)
             js = res.json()
             print("\nStatus: " + js['status'] + '\n')
-            print(js['results'])
+            # print(js['results'])
             data_json = js['results']
             data_df = extract_json(data_json, api_number)
             # data_df = json_normalize(members_json, 'members')
