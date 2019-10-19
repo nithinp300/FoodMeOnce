@@ -41,7 +41,7 @@ function SplashPage() {
             />
           </Carousel.Item>
           <Carousel.Item>
-            <h3 className="slideBanner"> Everyone Matters</h3>
+            <h3 className="slideBanner"> The People Matter</h3>
             <img
               id="slide-img"
               src={citySlide}
