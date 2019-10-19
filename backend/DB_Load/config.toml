@@ -1,0 +1,6 @@
+[runners.docker]
+  tls_verify = false
+  image = "continuumio/miniconda3:latest"
+  privileged = false
+  disable_cache = false
+  volumes = ["/cache", "/cache/conda/pkgs:/conda/pkgs:rw", "/cache/pip:/cache/pip:rw"]
