@@ -14,10 +14,10 @@ class TestDBloader(TestCase):
     def test_pgadminconnect(self):
         i = 1
         assert i == 1
-        # db_objects = pgadminconnect()
-        # assert(type(db_objects) is list)
-        # assert(type(db_objects[0]) is sqlalchemy.engine.base.Connection)
-        # assert(type(db_objects[1]) is sqlalchemy.engine.base.Engine)
+        db_objects = pgadminconnect()
+        assert(type(db_objects) is list)
+        assert(type(db_objects[0]) is sqlalchemy.engine.base.Connection)
+        assert(type(db_objects[1]) is sqlalchemy.engine.base.Engine)
 
     # test api connections:
     def test_api_response(self):
