@@ -2,6 +2,9 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel'
 //import cornField from "../../images/cornField.jpg";
 import welcome_banner from "../../images/welcome_banner.png"; 
+import congress from "../../images/congress.png"; 
+import healthy_food from "../../images/healthy_food.png"; 
+import unhealthy_food from "../../images/unhealthy_food.png"; 
 import "../App.css"; 
 
 function SplashPage() {
@@ -19,7 +22,7 @@ function SplashPage() {
           <Carousel.Item>
             <img
               id="slide-img"
-              src={welcome_banner}
+              src={healthy_food}
               alt="Second Slide"
               style={{width: "100%"}}
             />
@@ -27,7 +30,7 @@ function SplashPage() {
           <Carousel.Item>
             <img
               id="slide-img"
-              src={welcome_banner}
+              src={unhealthy_food}
               alt="Third Slide"
               style={{width: "100%"}}
             />
@@ -35,16 +38,8 @@ function SplashPage() {
           <Carousel.Item>
             <img
               id="slide-img"
-              src={welcome_banner}
+              src={congress}
               alt="Fourth Slide"
-              style={{width: "100%"}}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              id="slide-img"
-              src={welcome_banner}
-              alt="Fifth Slide"
               style={{width: "100%"}}
             />
           </Carousel.Item>
