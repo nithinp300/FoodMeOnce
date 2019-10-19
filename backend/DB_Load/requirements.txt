@@ -1,2 +1,14 @@
 sqlalchemy
 numpy
+pandas
+xml.etree.ElementTree
+pandas.io.json.json_normalize
+requests
+backend/DB_Load/api_uris
+backend/DB_Load/db_creds
+backend/DB_Load/backend_Census_getCensusApiForDistrict
+backend/DB_Load/backend_Scrapper
+backend/DB_Load/API_creds
+urllib.request
+json
+sys
