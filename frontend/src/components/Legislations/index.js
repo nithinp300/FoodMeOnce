@@ -46,23 +46,13 @@ class Legislations extends Component {
   };
 
   componentDidMount() {
-    fetch(
-      "https://api.propublica.org/congress/v1/bills/search.json?query=%22food+access%22",
-      {
-        method: "GET",
-        headers: {
-          "X-API-Key": "eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6"
-        }
-      }
-    )
+    fetch("https://api.foodmeonce.me/Legislations")
       .then(response => response.json())
       .then(data => {
         let legislations = [];
-        for (let i = 0; i < data.results[0].bills.length; ++i) {
-          const name = data.results[0].bills[i].sponsor_name;
-          if (name === "K. Michael Conaway" || name === "Gerald E. Connolly" || name === "Dave Loebsack") {
-            legislations.push(data.results[0].bills[i]);
-          }
+        for (let i = 0; i < data.length; i++) {
+          const name = data[i].sponsor_name;
+          legislations.push(data[i]);
         }
         this.setState({ legislations });
       })
@@ -71,7 +61,6 @@ class Legislations extends Component {
   render() {
     const legislationsRendered = this.state.legislations.map(
       (legislation, i) => {
-        if (i >= 3) return null;
         return (
           <Link
             key={i}
