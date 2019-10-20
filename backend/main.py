@@ -45,19 +45,19 @@ def legislations():
     return jsonify([dict(r) for r in data])
 
 # instance page apis
-@app.route("/Districts/instance/<id>")
+@app.route("/Districts/<id>")
 def district(id = ""):
     data = con.execute("SELECT * FROM staging.district WHERE id = " + id)
     return jsonify([dict(r) for r in data])
 
-@app.route("/Representatives/instance/<crp_id>")
-def representative(crp_id = ""):
-    data = con.execute("SELECT * FROM staging.house_representatives WHERE crp_id = '" + crp_id + "'")
+@app.route("/Representatives/<id>")
+def representative(id = ""):
+    data = con.execute("SELECT * FROM staging.house_representatives WHERE id = '" + id + "'")
     return jsonify([dict(r) for r in data])
 
-@app.route("/Legislations/instance/<index>")
-def legislation(index = ""):
-    data = con.execute("SELECT * FROM staging.legislations WHERE index = " + index)
+@app.route("/Legislations/<id>")
+def legislation(id = ""):
+    data = con.execute("SELECT * FROM staging.legislations WHERE index = " + id)
     return jsonify([dict(r) for r in data])
 
 # for later use
