@@ -10,8 +10,8 @@ RUN pip install --upgrade pip
 RUN pip --version
 
 RUN pip install flask
-RUN pip install Flask-Restless
-RUN pip install SQLAlchemy
+RUN pip install sqlalchemy
+RUN pip install psycopg2
 RUN pip install freeze
 
 CMD bash

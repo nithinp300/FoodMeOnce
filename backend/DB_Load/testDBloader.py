@@ -12,39 +12,42 @@ class TestDBloader(TestCase):
 
     # test database connection and engine
     def test_pgadminconnect(self):
-        i = 1
-        assert i == 1
         db_objects = pgadminconnect()
         assert(type(db_objects) is list)
         assert(type(db_objects[0]) is sqlalchemy.engine.base.Connection)
         assert(type(db_objects[1]) is sqlalchemy.engine.base.Engine)
 
     # test api connections:
-    def test_api_response(self):
-        i = 1
-        assert i == 1
-        range_obj = range(0,len(apis))
-        range_iterator = iter(range_obj)
-        print(len(apis))
-        for api_counter in range(0, len(apis)):
-            # df = API_response(apis[api_counter], api_counter)
-            assert type(API_response(apis[api_counter], api_counter) is pandas.DataFrame)
+    # def test_api_response(self):
+    #     range_obj = range(0,len(apis))
+    #     range_iterator = iter(range_obj)
+    #     for api_uri in apis:
+    #         assert type(API_response(api_uri, next(range_iterator)) is pandas.DataFrame)
 
-
+    # test json from url is dictionary
+    def test_json_from_url(self):
+        url = "https://api.census.gov/data/2018/acs/acs1?get=NAME,group(B01001)&for=us:1"
+        data = getJsonFromUrl(url)
+        assert data is __dict__
 
     # check if we are loading in data for 50 states
     def test_states(self):
-        i = 1
-        assert i == 1
-        # states_dict = getStateNumbers()
-        # num_states = len(states_dict)
-        # assert num_states == 52
+        states_dict = getStateNumbers()
+        num_states = len(states_dict)
+        assert num_states == 52
 
     # check if we are loading in data for 435 districts
     def test_districts(self):
-        i = 1
-        assert i == 1
-        # pass
+        pass
+
+    # test loading in data for 535 representatives
+    def test_representatives(self):
+        pass
+
+    # test loading in data for 14 legislations
+    def test_legislations(self):
+        pass
+
 
 if __name__ == "__main__":  # pragma: no cover
     main()
