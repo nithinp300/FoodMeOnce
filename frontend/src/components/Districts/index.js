@@ -60,23 +60,39 @@ class Districts extends Component {
       collapse: !prevState.collapse
     }));
   };
-
+  getName = (state, districtNum) => {
+    return state + " Congressional District " + districtNum
+  }
+  componentDidMount() {
+    fetch("https://api.foodmeonce.me/Districts")
+      .then(response => response.json())
+      .then(data => {
+        let districts = [];
+        for (let i = 0; i < data.length; i++) {
+          const state = data[i].state;
+          const districtNum = data[i].congressional_district;
+          districts.push(data[i]);
+        }
+        this.setState({ districts });
+      })
+      .catch(console.log);
+  }
   render() {
     const districtsRendered = this.state.districts.map((district, i) => {
       return (
         <Link
           key={i}
           to={{
-            pathname: `/Districts/instance/${district.name}`,
+            pathname: `/Districts/instance/${district.state}/${district.congressional_district}`,
           }}
           className="district_link"
         >
           <District
-            name={district.name}
+            name={this.getName(district.state, district.congressional_district)}
             population={district.population}
-            medianIncome={district.medianIncome}
-            avgAge={district.avgAge}
-            genderRatio={district.genderRatio}
+            medianIncome={district.mean_income}
+            avgAge={district.median_age}
+            genderRatio={district.gender_ratio}
             representative={district.representative}
             senators={district.senators}
             peoplePerSquareMile={district.peoplePerSquareMile}
