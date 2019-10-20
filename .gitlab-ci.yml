@@ -1,7 +1,9 @@
-image: "python:3.7"
+image: continuumio/miniconda3:latest
 
 before_script:
-  - python --version
+  - export PIP_CACHE_DIR="/cache/pip"
+  - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
+  - source activate backend_test_env
 
 stages:
   - backend_testing
@@ -9,5 +11,5 @@ stages:
 backend:
   stage: backend_testing
   script:
-  - pip install -r backend/DB_Load/requirements.txt
+  - python --version
   - python backend/DB_Load/testDBloader.py

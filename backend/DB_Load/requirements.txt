@@ -1,9 +1,6 @@
+python
 sqlalchemy
 numpy
 pandas
-xml.etree.ElementTree
-pandas.io.json.json_normalize
 requests
-urllib.request
-json
-sys
+psycopg2
