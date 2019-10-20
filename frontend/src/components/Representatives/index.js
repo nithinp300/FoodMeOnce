@@ -51,20 +51,13 @@ class Representatives extends Component {
   };
 
   componentDidMount() {
-    fetch("https://api.propublica.org/congress/v1/116/house/members.json", {
-      method: "GET",
-      headers: {
-        "X-API-Key": "eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6"
-      }
-    })
+    fetch("https://api.foodmeonce.me/Representatives")
       .then(response => response.json())
       .then(data => {
         let representatives = [];
-        const data_set = data.results[0].members;
-        for (let i = 0; i < data_set.length; ++i) {
-          if (data_set[i].last_name === "Conaway" || data_set[i].last_name === "Connolly" || data_set[i].last_name === "Loebsack") {
-            representatives.push(data_set[i]);
-          }
+        const data_set = data;
+        for (let i = 0; i < data_set.length; i++) {
+          representatives.push(data_set[i]);
         }
         this.setState({ representatives });
       })
@@ -73,7 +66,6 @@ class Representatives extends Component {
   render() {
     const representativesRendered = this.state.representatives.map(
       (representative, i) => {
-        if (i >= 3) return null;
         return (
           <Link
             key={i}
