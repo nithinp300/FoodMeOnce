@@ -12,6 +12,7 @@ RUN pip --version
 RUN pip install flask
 RUN pip install sqlalchemy
 RUN pip install psycopg2
+RUN pip install flask_cors
 RUN pip install freeze
 
 CMD bash

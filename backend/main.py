@@ -5,8 +5,10 @@ from sqlalchemy.sql import text
 import sys
 sys.path.append('DB_Load')
 import db_creds as creds
+from flask_cors import CORS
 
 application = app = Flask(__name__)
+CORS(app)
 
 def pgadminconnect():
     db_name = creds.PGDATABASE
