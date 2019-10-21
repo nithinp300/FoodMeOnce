@@ -45,31 +45,39 @@ class GUI_tests(unittest.TestCase):
         driver.get("http://localhost:3000")
         driver.implicitly_wait(10)
         driver.find_element_by_link_text('Representatives').click()
-        for x in range(0,7):
-            val = driver.find_elements_by_id('rep_inst')
-            val[x].click()
-            driver.back()
-           
+        for page in range(0,5):
+            for x in range(0,7):
+                val = driver.find_elements_by_id('rep_inst')
+                val[x].click()
+                driver.back()
+            driver.find_element_by_link_text('Next').click()
+            print(driver.current_url)
 
     def test_leg_instances(self):
         driver = self.driver
         driver.get("http://localhost:3000")
         driver.implicitly_wait(10)
         driver.find_element_by_link_text('Legislation').click()
-        for x in range(0,8):
-            val = driver.find_elements_by_id('leg_inst')
-            val[x].click()
-            driver.back()
+        for page in range(0,5):
+            for x in range(0,7):
+                val = driver.find_elements_by_id('leg_inst')
+                val[x].click()
+                driver.back()
+            driver.find_element_by_link_text('Next').click()
+            print(driver.current_url)
 
     def test_dist_instances(self):
         driver = self.driver
         driver.get("http://localhost:3000")
         driver.implicitly_wait(10)
         driver.find_element_by_link_text('Districts').click()
-        for x in range(0,8):
-            val = driver.find_elements_by_id('dist_inst')
-            val[x].click()
-            driver.back()
+        for page in range(0,5):
+            for x in range(0,7):
+                val = driver.find_elements_by_id('leg_inst')
+                val[x].click()
+                driver.back()
+            driver.find_element_by_link_text('Next').click()
+            print(driver.current_url)
 
 
 if __name__ == "__main__":

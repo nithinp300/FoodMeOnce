@@ -15,7 +15,7 @@ function Representative(props) {
   }
 
   return (
-    <div className="representative d-flex flex-row text-center">
+    <div className="representative d-flex flex-row text-center" id="rep_inst">
       <div className="representative-desc">{props.name}</div>
       <div className="representative-desc">{props.age}</div>
       <div className="representative-desc">{props.yearsInOffice}</div>

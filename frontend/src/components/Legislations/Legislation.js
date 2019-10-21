@@ -26,7 +26,7 @@ function Legislation(props) {
   }
 
   return (
-    <div className="legislation d-flex flex-row text-center">
+    <div className="legislation d-flex flex-row text-center" id="leg_inst">
       <div className="legislation-desc">{props.name}</div>
       <div className="legislation-desc">{props.year}</div>
       <div className="legislation-desc">{props.status}</div>

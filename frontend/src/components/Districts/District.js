@@ -20,7 +20,7 @@ function District(props) {
   }
 
   return (
-    <div className="district d-flex flex-row text-center">
+    <div className="district d-flex flex-row text-center" id="dist_inst">
       <div className="district-desc">{props.name}</div>
       <div className="district-desc fill-flex">{props.population}</div>
       <div className="district-desc fill-flex">${props.medianIncome}</div>
