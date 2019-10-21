@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import DistrictSortFilter from "./DistrictSortFilter";
 import District from "./District";
+import Pages from "../Pages";
 
 import "./css/Districts.css";
 
@@ -22,7 +23,8 @@ class Districts extends Component {
         povertyRate: "8.7%",
         numHouseholds: "279,550",
         id: "C001062",
-        wikipedia: "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district"
+        wikipedia:
+          "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district"
       },
       {
         name: "Virginia 11th Congressional District",
@@ -36,7 +38,8 @@ class Districts extends Component {
         povertyRate: "4.5%",
         numHouseholds: "268,471",
         id: "L000565",
-        wikipedia: "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
+        wikipedia:
+          "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
       },
       {
         name: "Iowa 2nd Congressional District",
@@ -50,8 +53,9 @@ class Districts extends Component {
         povertyRate: "8.7%",
         numHouseholds: "313,626",
         id: "C001078",
-        wikipedia: "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
-      },
+        wikipedia:
+          "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
+      }
     ]
   };
 
@@ -61,10 +65,29 @@ class Districts extends Component {
     }));
   };
   getName = (state, districtNum) => {
-    return state + " Congressional District " + districtNum
-  }
+    return state + " Congressional District " + districtNum;
+  };
+
+  generatePage = () => {
+    const page = this.state.page != null ? this.state.page : 1;
+  };
+
   componentDidMount() {
-    fetch("https://api.foodmeonce.me/Districts")
+    const querystring = this.props.location.search;
+    let page = 1;
+    if (querystring !== "") {
+      const parsedQuerystring = querystring.substring(1);
+      const queries = parsedQuerystring.split("&");
+      queries.forEach(query => {
+        const keyValue = query.split("=");
+        if (keyValue.length > 1 && keyValue[0] === "page") {
+          page = keyValue[1];
+        }
+      });
+    }
+    this.setState({ page });
+    const url = "https://api.foodmeonce.me/Districts?page=" + page;
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         let districts = [];
@@ -83,7 +106,7 @@ class Districts extends Component {
         <Link
           key={i}
           to={{
-            pathname: `/Districts/instance/${district.state}/${district.congressional_district}`,
+            pathname: `/Districts/instance/${district.state}/${district.congressional_district}`
           }}
           className="district_link"
         >
@@ -122,6 +145,7 @@ class Districts extends Component {
           <District header />
           {districtsRendered}
         </div>
+        <Pages url="/Districts" current={this.state.page} lastPage="100" />
       </div>
     );
   }
