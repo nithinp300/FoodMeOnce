@@ -8,19 +8,20 @@ class Pages extends Component {
     const lastPage = parseInt(this.props.lastPage);
     const pageListsBefore = [];
     const pageListsAfter = [];
+    if (current === 2) pageListsBefore.push(1);
     for (let i = current - 2; i < current && i >= 1; ++i) {
       pageListsBefore.push(i);
     }
     for (let i = current + 1; i <= lastPage && i <= current + 2; ++i) {
       pageListsAfter.push(i);
     }
-    const pageBeforeRender = pageListsBefore.map(page => (
-      <a href={`${url}?page=${page}`}>
+    const pageBeforeRender = pageListsBefore.map((page, i) => (
+      <a key={"before" + i} href={`${url}?page=${page}`}>
         <Button variant="light">{page}</Button>
       </a>
     ));
-    const pageAfterRender = pageListsAfter.map(page => (
-      <a href={`${url}?page=${page}`}>
+    const pageAfterRender = pageListsAfter.map((page, i) => (
+      <a key={"after" + i} href={`${url}?page=${page}`}>
         <Button variant="light">{page}</Button>
       </a>
     ));
@@ -44,7 +45,7 @@ class Pages extends Component {
             <Button variant="light">Next</Button>
           </a>
         )}
-        <a href={`${url}?page=100`}>
+        <a href={`${url}?page=${lastPage}`}>
           <Button variant="light">Last</Button>
         </a>
       </div>

@@ -6,6 +6,7 @@ import sys
 sys.path.append('DB_Load')
 import db_creds as creds
 from flask_cors import CORS
+from math import ceil
 
 application = app = Flask(__name__)
 CORS(app)
@@ -34,29 +35,53 @@ def home():
 @app.route("/Districts")
 def districts():
     page = request.args.get('page')
+    numLimit = request.args.get('limit')
     if page is None:
         page = 1
+    if numLimit is None:
+        numLimit = 8
     actualPage = int(page) - 1
     data = con.execute(f"SELECT * FROM staging.district LIMIT 8 OFFSET {str(actualPage)}")
-    return jsonify([dict(r) for r in data])
+    pages = con.execute("SELECT COUNT(*) AS pages FROM staging.district")
+    for row in pages:
+        pages = ceil(int(row["pages"]) / numLimit)
+    resultData = [dict(r) for r in data]
+    metaData = {"currentPage" : page, "numPages" : pages}
+    return jsonify({"data": resultData, "metaData": metaData})
 
 @app.route("/Representatives")
 def representatives():
     page = request.args.get('page')
+    numLimit = request.args.get('limit')
     if page is None:
         page = 1
+    if numLimit is None:
+        numLimit = 8
     actualPage = int(page) - 1
     data = con.execute(f"SELECT * FROM staging.house_representatives LIMIT 8 OFFSET {actualPage}")
-    return jsonify([dict(r) for r in data])
+    pages = con.execute("SELECT COUNT(*) AS pages FROM staging.house_representatives")
+    for row in pages:
+        pages = ceil(int(row["pages"]) / numLimit)
+    resultData = [dict(r) for r in data]
+    metaData = {"currentPage" : page, "numPages" : pages}
+    return jsonify({"data": resultData, "metaData": metaData})
 
 @app.route("/Legislations")
 def legislations():
     page = request.args.get('page')
+    numLimit = request.args.get('limit')
     if page is None:
         page = 1
+    if numLimit is None:
+        numLimit = 8
     actualPage = int(page) - 1
     data = con.execute(f"SELECT * FROM staging.legislations LIMIT 8 OFFSET {str(actualPage)}")
-    return jsonify([dict(r) for r in data])
+    pages = con.execute("SELECT COUNT(*) AS pages FROM staging.legislations")
+    for row in pages:
+        pages = ceil(int(row["pages"]) / numLimit)
+    resultData = [dict(r) for r in data]
+    metaData = {"currentPage" : page, "numPages" : pages}
+    return jsonify({"data": resultData, "metaData": metaData})
 
 # instance page apis
 @app.route("/Districts/<id>")

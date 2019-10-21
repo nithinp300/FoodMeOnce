@@ -10,53 +10,11 @@ import "./css/Districts.css";
 class Districts extends Component {
   state = {
     collapse: true,
-    districts: [
-      {
-        name: "Texas 11th Congressional District",
-        population: "782,337",
-        medianIncome: "58,983",
-        avgAge: "35.2",
-        genderRatio: "0.98",
-        representative: "K. Michael Conaway",
-        senators: "John Cornyn, Ted Cruz",
-        peoplePerSquareMile: "136.7",
-        povertyRate: "8.7%",
-        numHouseholds: "279,550",
-        id: "C001062",
-        wikipedia:
-          "https://en.wikipedia.org/wiki/Texas%27s_11th_congressional_district"
-      },
-      {
-        name: "Virginia 11th Congressional District",
-        population: "798,464",
-        medianIncome: "111,279",
-        avgAge: "36.7",
-        genderRatio: "1.00",
-        representative: "Gerald E. Connolly",
-        senators: "John Cornyn, Ted Cruz",
-        peoplePerSquareMile: "166.9",
-        povertyRate: "4.5%",
-        numHouseholds: "268,471",
-        id: "L000565",
-        wikipedia:
-          "https://en.wikipedia.org/wiki/Virginia%27s_11th_congressional_district"
-      },
-      {
-        name: "Iowa 2nd Congressional District",
-        population: "783,983",
-        medianIncome: "55,239",
-        avgAge: "38.0",
-        genderRatio: "1.02",
-        representative: "Dave Loebsack",
-        senators: "John Cornyn, Ted Cruz",
-        peoplePerSquareMile: "396.3",
-        povertyRate: "8.7%",
-        numHouseholds: "313,626",
-        id: "C001078",
-        wikipedia:
-          "https://en.wikipedia.org/wiki/Iowa%27s_2nd_congressional_district"
-      }
-    ]
+    districts: [],
+    metaData: {
+      currentPage: 1,
+      numPages: 1
+    }
   };
 
   handleCollapse = () => {
@@ -66,10 +24,6 @@ class Districts extends Component {
   };
   getName = (state, districtNum) => {
     return state + " Congressional District " + districtNum;
-  };
-
-  generatePage = () => {
-    const page = this.state.page != null ? this.state.page : 1;
   };
 
   componentDidMount() {
@@ -90,43 +44,44 @@ class Districts extends Component {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        let districts = [];
-        for (let i = 0; i < data.length; i++) {
-          const state = data[i].state;
-          const districtNum = data[i].congressional_district;
-          districts.push(data[i]);
-        }
-        this.setState({ districts });
+        let districts = data["data"];
+        let metaData = data["metaData"];
+        this.setState({ districts, metaData });
       })
       .catch(console.log);
   }
   render() {
-    const districtsRendered = this.state.districts.map((district, i) => {
-      return (
-        <Link
-          key={i}
-          to={{
-            pathname: `/Districts/instance/${district.state}/${district.congressional_district}`
-          }}
-          className="district_link"
-        >
-          <District
-            name={this.getName(district.state, district.congressional_district)}
-            population={district.population}
-            medianIncome={district.mean_income}
-            avgAge={district.median_age}
-            genderRatio={district.gender_ratio}
-            representative={district.representative}
-            senators={district.senators}
-            peoplePerSquareMile={district.peoplePerSquareMile}
-            povertyRate={district.povertyRate}
-            numHouseholds={district.numHouseholds}
-            id={district.id}
-            wikipedia={district.wikipedia}
-          />
-        </Link>
-      );
-    });
+    let districtsRendered;
+    if (this.state.districts.length > 0)
+      districtsRendered = this.state.districts.map((district, i) => {
+        return (
+          <Link
+            key={i}
+            to={{
+              pathname: `/Districts/instance/${district.state}/${district.congressional_district}`
+            }}
+            className="district_link"
+          >
+            <District
+              name={this.getName(
+                district.state,
+                district.congressional_district
+              )}
+              population={district.population}
+              medianIncome={district.mean_income}
+              avgAge={district.median_age}
+              genderRatio={district.gender_ratio}
+              representative={district.representative}
+              senators={district.senators}
+              peoplePerSquareMile={district.peoplePerSquareMile}
+              povertyRate={district.povertyRate}
+              numHouseholds={district.numHouseholds}
+              id={district.id}
+              wikipedia={district.wikipedia}
+            />
+          </Link>
+        );
+      });
     return (
       <div className="districts-model">
         <div className="sorting-container">
@@ -145,7 +100,11 @@ class Districts extends Component {
           <District header />
           {districtsRendered}
         </div>
-        <Pages url="/Districts" current={this.state.page} lastPage="100" />
+        <Pages
+          url="/Districts"
+          current={this.state.metaData.currentPage}
+          lastPage={this.state.metaData.numPages}
+        />
       </div>
     );
   }
