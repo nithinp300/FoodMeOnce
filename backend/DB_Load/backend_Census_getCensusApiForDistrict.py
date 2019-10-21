@@ -1,6 +1,4 @@
 from json import JSONDecodeError
-import sys
-sys.path.append('../')
 from backend_Scrapper import getJsonFromUrl
 
 class District:
