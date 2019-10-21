@@ -89,12 +89,15 @@ def API_response(api_uri, api_number):
             print(res.status_code)
             print(res.headers)
             # print(res.text)
-            root = et.fromstring(res.text)
-            data = []
-            rows = root.findall('.//members')
-            for row in rows:
-                data.append({c.tag:c.text for c in list(row)})
-            data_df = pd.DataFrame(data)
+            try:
+                root = et.fromstring(res.text)
+                data = []
+                rows = root.findall('.//members')
+                for row in rows:
+                    data.append({c.tag:c.text for c in list(row)})
+                data_df = pd.DataFrame(data)
+            except Exception as e:
+                data_df = pd.DataFrame()
             return data_df
     else:
         print('Connection Failed')
