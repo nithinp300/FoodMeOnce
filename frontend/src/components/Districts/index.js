@@ -39,7 +39,6 @@ class Districts extends Component {
         }
       });
     }
-    this.setState({ page });
     const url = "https://api.foodmeonce.me/Districts?page=" + page;
     fetch(url)
       .then(response => response.json())

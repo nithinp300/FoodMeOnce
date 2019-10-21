@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LegislationSortFilter from "./LegislationSortFilter";
 import Legislation from "./Legislation";
+import Pages from "../Pages";
 
 import "./css/Legislations.css";
 
@@ -36,7 +37,11 @@ class Legislations extends Component {
 
   state = {
     collapse: true,
-    legislations: []
+    legislations: [],
+    metaData: {
+      currentPage: 1,
+      lastPage: 1
+    }
   };
 
   handleCollapse = () => {
@@ -46,15 +51,24 @@ class Legislations extends Component {
   };
 
   componentDidMount() {
-    fetch("https://api.foodmeonce.me/Legislations")
+    const querystring = this.props.location.search;
+    let page = 1;
+    if (querystring !== "") {
+      const parsedQuerystring = querystring.substring(1);
+      const queries = parsedQuerystring.split("&");
+      queries.forEach(query => {
+        const keyValue = query.split("=");
+        if (keyValue.length > 1 && keyValue[0] === "page") {
+          page = keyValue[1];
+        }
+      });
+    }
+    fetch("https://api.foodmeonce.me/Legislations?page=" + page)
       .then(response => response.json())
       .then(data => {
-        let legislations = [];
-        for (let i = 0; i < data.length; i++) {
-          const name = data[i].sponsor_name;
-          legislations.push(data[i]);
-        }
-        this.setState({ legislations });
+        let legislations = data["data"];
+        let metaData = data["metaData"];
+        this.setState({ legislations, metaData });
       })
       .catch(console.log);
   }
@@ -100,6 +114,11 @@ class Legislations extends Component {
           <Legislation header />
           {legislationsRendered}
         </div>
+        <Pages
+          url="/Legislations"
+          current={this.state.metaData.currentPage}
+          lastPage={this.state.metaData.numPages}
+        />
       </div>
     );
   }
