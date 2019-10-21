@@ -28,6 +28,18 @@ class GUI_tests(unittest.TestCase):
         title = driver.find_element_by_class_name('ml-1')
         assert title.text == "Legislations"
 
+    def test_about(self):
+        page_name = "Representatives"
+        driver = self.driver
+        driver.get("https://foodmeonce.me/")
+        driver.find_element_by_link_text('About Us').click()
+        driver.find_element_by_link_text('FoodMeOnce GitLab Repository').click()
+        assert driver.current_url == 'https://gitlab.com/shub95/foodmeonce/'
+        driver.back()
+        driver.find_element_by_link_text('FoodMeOnce API Documentation').click()
+        assert driver.current_url == 'https://documenter.getpostman.com/view/7777503/SVtPXWHE?version=latest'
+        driver.back()
+
 
 if __name__ == "__main__":
     unittest.main()
