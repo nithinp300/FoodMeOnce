@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from sqlalchemy import create_engine
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
 from sqlalchemy.sql import text
@@ -33,17 +33,29 @@ def home():
 # model page apis
 @app.route("/Districts")
 def districts():
-    data = con.execute("SELECT * FROM staging.district")
+    page = request.args.get('page')
+    if page is None:
+        page = 1
+    actualPage = int(page) - 1
+    data = con.execute(f"SELECT * FROM staging.district LIMIT 8 OFFSET {str(actualPage)}")
     return jsonify([dict(r) for r in data])
 
 @app.route("/Representatives")
 def representatives():
-    data = con.execute("SELECT * FROM staging.house_representatives")
+    page = request.args.get('page')
+    if page is None:
+        page = 1
+    actualPage = int(page) - 1
+    data = con.execute(f"SELECT * FROM staging.house_representatives LIMIT 8 OFFSET {actualPage}")
     return jsonify([dict(r) for r in data])
 
 @app.route("/Legislations")
 def legislations():
-    data = con.execute("SELECT * FROM staging.legislations")
+    page = request.args.get('page')
+    if page is None:
+        page = 1
+    actualPage = int(page) - 1
+    data = con.execute(f"SELECT * FROM staging.legislations LIMIT 8 OFFSET {str(actualPage)}")
     return jsonify([dict(r) for r in data])
 
 # instance page apis
