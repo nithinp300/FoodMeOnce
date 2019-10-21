@@ -8,6 +8,7 @@ ADD . /frontend
 RUN apk add --no-cache bash
 RUN npm install
 
+
 # start app
 EXPOSE 3000
 
