@@ -19,4 +19,4 @@ frontend:
   stage: acceptance_testing
   script:
     - cd frontend/gui_test
-    - python frontend/gui_test/guitest.py
+    - python guitest.py
