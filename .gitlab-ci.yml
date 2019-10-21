@@ -19,4 +19,5 @@ frontend:
   stage: acceptance_testing
   script:
     - cd frontend/gui_test
+    - npm i chromedriver
     - python guitest.py
