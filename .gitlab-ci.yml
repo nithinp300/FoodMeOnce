@@ -7,9 +7,15 @@ before_script:
 
 stages:
   - backend_testing
+  - acceptance_testing
 
 backend:
   stage: backend_testing
   script:
   - python --version
   - python backend/DB_Load/testDBloader.py
+
+frontend:
+  stage: acceptance_testing
+  script:
+    - python frontend/gui_test/guitest.py
