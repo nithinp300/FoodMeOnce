@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import RepresentativeSortFilter from "./RepresentativeSortFilter";
 import Representative from "./Representative";
+import Pages from "../Pages";
 
 import "./css/Representatives.css";
 
@@ -41,7 +42,11 @@ class Representatives extends Component {
   };
   state = {
     collapse: true,
-    representatives: []
+    representatives: [],
+    metaData: {
+      currentPage: 1,
+      lastPage: 1
+    }
   };
 
   handleCollapse = () => {
@@ -51,15 +56,25 @@ class Representatives extends Component {
   };
 
   componentDidMount() {
-    fetch("https://api.foodmeonce.me/Representatives")
+    const querystring = this.props.location.search;
+    let page = 1;
+    if (querystring !== "") {
+      const parsedQuerystring = querystring.substring(1);
+      const queries = parsedQuerystring.split("&");
+      queries.forEach(query => {
+        const keyValue = query.split("=");
+        if (keyValue.length > 1 && keyValue[0] === "page") {
+          page = keyValue[1];
+        }
+      });
+    }
+    fetch("https://api.foodmeonce.me/Representatives?page=" + page)
       .then(response => response.json())
       .then(data => {
-        let representatives = [];
-        const data_set = data;
-        for (let i = 0; i < data_set.length; i++) {
-          representatives.push(data_set[i]);
-        }
-        this.setState({ representatives });
+        let representatives = data["data"];
+        let metaData = data["metaData"];
+        console.log(metaData);
+        this.setState({ representatives, metaData });
       })
       .catch(console.log);
   }
@@ -103,6 +118,11 @@ class Representatives extends Component {
           <Representative header />
           {representativesRendered}
         </div>
+        <Pages
+          url="/Representatives"
+          current={this.state.metaData.currentPage}
+          lastPage={this.state.metaData.numPages}
+        />
       </div>
     );
   }
