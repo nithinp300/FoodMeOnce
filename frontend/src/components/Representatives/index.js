@@ -82,13 +82,10 @@ class Representatives extends Component {
     const representativesRendered = this.state.representatives.map(
       (representative, i) => {
         return (
-          <Link
-            key={i}
-            to={{
-              pathname: `/Representatives/instance/${representative.id}`
-            }}
-            className="representative_link"
-          >
+            <a
+            href={`/Representatives/instance/${representative.id}`}
+            className="button-container"
+            >
             <Representative
               name={representative.first_name + " " + representative.last_name}
               age={this.getAge(representative.date_of_birth)}
@@ -96,7 +93,7 @@ class Representatives extends Component {
               party={this.getParty(representative.party)}
               stateDistrict={representative.state}
             />
-          </Link>
+          </a>
         );
       }
     );
