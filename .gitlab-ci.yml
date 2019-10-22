@@ -1,24 +1,23 @@
-image: continuumio/miniconda3:latest
-
-before_script:
-  - export PIP_CACHE_DIR="/cache/pip"
-  - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
-  - source activate backend_test_env
-
 stages:
   - backend_testing
   - acceptance_testing
 
 backend:
+  image: continuumio/miniconda3:latest
   stage: backend_testing
   script:
+  - export PIP_CACHE_DIR="/cache/pip"
+  - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
+  - source activate backend_test_env
   - python --version
   - python backend/DB_Load/testDBloader.py
 
 frontend:
+  image: python
   stage: acceptance_testing
+  services:
+    - selenium/standalone-chrome
   script:
-    - conda install npm
-    - conda --version
-    - npm install chromedriver
+    - pip install selenium
+    - pip install chromedriver-installer
     - python frontend/gui_test/guitest.py

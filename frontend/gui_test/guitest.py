@@ -42,7 +42,7 @@ class GUI_tests(unittest.TestCase):
 
     def test_rep_instances(self):
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://localhost:4444")
         driver.implicitly_wait(10)
         driver.find_element_by_link_text('Representatives').click()
         for page in range(0,5):
@@ -55,7 +55,7 @@ class GUI_tests(unittest.TestCase):
 
     def test_leg_instances(self):
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://localhost:4444")
         driver.implicitly_wait(10)
         driver.find_element_by_link_text('Legislation').click()
         for page in range(0,5):
@@ -68,7 +68,7 @@ class GUI_tests(unittest.TestCase):
 
     def test_dist_instances(self):
         driver = self.driver
-        driver.get("http://localhost:3000")
+        driver.get("http://localhost:4444")
         driver.implicitly_wait(10)
         driver.find_element_by_link_text('Districts').click()
         for page in range(0,5):
