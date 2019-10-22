@@ -32,7 +32,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={SplashPage} />
-          <Route path="/Districts/Instance/:name" component={DistrictInstance} />
+          <Route path="/Districts/Instance/:id" component={DistrictInstance} />
           <Route exact path="/Districts" component={Districts} />
           <Route
             path="/Representatives/Instance/:first_name/:last_name"

@@ -17,8 +17,6 @@ class Districts extends Component {
     }
   };
 
-
-
   handleCollapse = () => {
     this.setState(prevState => ({
       collapse: !prevState.collapse
@@ -56,15 +54,10 @@ class Districts extends Component {
     if (this.state.districts.length > 0)
       districtsRendered = this.state.districts.map((district, i) => {
         return (
-          // <Link
-          //   key={i}
-          //   to={{
-          //     pathname: `/Districts/instance/${district.state}/${district.congressional_district}`
-          //   }}
-          //   className="district_link"
-          // >
-          <a href={`/Districts/instance/${district.state}/${district.congressional_district}`} className="button-container">
-            
+          <a
+            href={`/Districts/Instance/${district.id}`}
+            className="button-container"
+          >
             <District
               name={this.getName(
                 district.state,
@@ -74,7 +67,7 @@ class Districts extends Component {
               medianIncome={district.mean_income}
               avgAge={district.median_age}
               genderRatio={district.gender_ratio}
-              representative={district.representative}
+              representative={district.full_name}
               senators={district.senators}
               peoplePerSquareMile={district.peoplePerSquareMile}
               povertyRate={district.povertyRate}
@@ -83,7 +76,6 @@ class Districts extends Component {
               wikipedia={district.wikipedia}
             />
           </a>
-          // </Link>
         );
       });
     return (
@@ -113,7 +105,5 @@ class Districts extends Component {
     );
   }
 }
-
-
 
 export default Districts;
