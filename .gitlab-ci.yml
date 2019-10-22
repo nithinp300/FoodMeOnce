@@ -4,8 +4,8 @@ stages:
   - Front-end_tests
 
 backend:
+  stage: DB_tests
   image: continuumio/miniconda3:latest
-  stage: DB_testing
   script:
   - export PIP_CACHE_DIR="/cache/pip"
   - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
