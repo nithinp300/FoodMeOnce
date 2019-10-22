@@ -19,4 +19,6 @@ frontend:
   stage: acceptance_testing
   script:
     - cd frontend/gui_test
+    - pip install npm
+    - npm install chromedriver
     - python guitest.py
