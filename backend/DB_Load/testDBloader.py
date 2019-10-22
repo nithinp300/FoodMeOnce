@@ -6,7 +6,7 @@ from driver import pgadminconnect, API_response
 from backend_Scrapper import getJsonFromUrl
 import pandas
 from api_uris import apis
-
+from mapping import states_hash
 
 class TestDBloader(TestCase):
 
@@ -24,11 +24,11 @@ class TestDBloader(TestCase):
         for api_uri in apis:
             assert type(API_response(api_uri, next(range_iterator)) is pandas.DataFrame)
 
-    # test json from url is dictionary
+    # test json from url is list
     def test_json_from_url(self):
         url = "https://api.census.gov/data/2018/acs/acs1?get=NAME,group(B01001)&for=us:1"
         data = getJsonFromUrl(url)
-        print(type(data) is list)
+        assert type(data) is list
 
     # check if we are loading in data for 50 states
     def test_states(self):
@@ -47,30 +47,16 @@ class TestDBloader(TestCase):
             numDistricts += len(state.districts)
         assert numDistricts == 437
 
-    # test loading in data for all representatives
-    def test_representatives(self):
-        url = apis[0]
-        db_objects = pgadminconnect()
-        df = API_response(url, 0)
-        numReps = len(df)
-        assert numReps == 444
+    # test api urls
+    def test_api_urls(self):
+        num_urls = len(apis)
+        assert num_urls == 5
 
-    # test loading in data for all senators
-    def test_senators(self):
-        url = apis[4]
-        db_objects = pgadminconnect()
-        df = API_response(url, 4)
-        numSenators = len(df)
-        assert numSenators == 100
-
-    # test loading in food access legislation
-    def test_legislation(self):
-        db_objects = pgadminconnect()
-        numLegislations = 0
-        for api_counter in range(1, 4):
-            df = API_response(apis[api_counter], api_counter)
-            numLegislations += len(df)
-        assert numLegislations == 0
+    # test state abbreviation hashes
+    def test(self):
+        num_hashes = len(states_hash)
+        print("hhh",num_hashes)
+        assert num_hashes == 59
 
 if __name__ == "__main__":  # pragma: no cover
     main()

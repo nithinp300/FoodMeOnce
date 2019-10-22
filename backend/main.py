@@ -42,7 +42,7 @@ def districts():
     if numLimit is None:
         numLimit = 8
     actualPage = (int(page) - 1) * numLimit
-    data = con.execute(f"SELECT d.*, m.full_name FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND d.congressional_district = m.district LIMIT 8 OFFSET {str(actualPage)}")
+    data = con.execute(f"SELECT d.*, m.full_name FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND d.congressional_district = m.district ORDER BY d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}")
     pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
     for row in pages:
         pages = ceil(int(row["pages"]) / numLimit)
@@ -59,7 +59,7 @@ def representatives():
     if numLimit is None:
         numLimit = 8
     actualPage = (int(page) - 1) * numLimit
-    data = con.execute(f"SELECT * FROM application.members WHERE short_title = 'Rep.' LIMIT 8 OFFSET {actualPage}")
+    data = con.execute(f"SELECT * FROM application.members WHERE short_title = 'Rep.' ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}")
     pages = con.execute("SELECT COUNT(*) AS pages FROM application.members WHERE short_title = 'Rep.'")
     for row in pages:
         pages = ceil(int(row["pages"]) / numLimit)
@@ -76,7 +76,7 @@ def legislations():
     if numLimit is None:
         numLimit = 8
     actualPage = (int(page) - 1) * numLimit
-    data = con.execute(f"SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' LIMIT 8 OFFSET {str(actualPage)}")
+    data = con.execute(f"SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}")
     pages = con.execute("SELECT COUNT(*) AS pages FROM application.legislations WHERE sponsor_title = 'Rep.'")
     for row in pages:
         pages = ceil(int(row["pages"]) / numLimit)
