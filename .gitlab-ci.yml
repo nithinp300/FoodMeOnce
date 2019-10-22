@@ -18,7 +18,7 @@ backend:
 frontend:
   stage: acceptance_testing
   script:
-    - cd frontend/gui_test
-    - pip install npm
+    - conda install npm
+    - conda --version
     - npm install chromedriver
-    - python guitest.py
+    - python frontend/gui_test/guitest.py
