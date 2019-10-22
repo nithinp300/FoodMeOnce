@@ -60,4 +60,4 @@ states_hash = {
    'Wyoming': 'WY'}
 
 for state in states_hash:
-    print(f"UPDATE application.legislations SET sponsor_state = '{state}' where sponsor_state = '{states_hash[state]}';")
+   print(f"UPDATE application.districts SET state_abbreviation = '{states_hash[state]}' WHERE state = '{state}';")

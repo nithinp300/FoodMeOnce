@@ -90,14 +90,12 @@ def district(id = ""):
     data0 = con.execute("SELECT * FROM application.districts WHERE id = " + id)
     data1 = con.execute("SELECT l.names FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND d.congressional_district = m.district JOIN (SELECT l.sponsor_name, array_to_string(array_agg(l.short_title), ',') AS names FROM application.legislations AS l GROUP BY l.sponsor_name) AS l ON m.full_name = l.sponsor_name WHERE d.id = " + id)
     data2 = con.execute("SELECT l.names FROM application.districts AS d JOIN (SELECT l.sponsor_state, array_to_string(array_agg(l.short_title), ',') AS names FROM application.legislations AS l GROUP BY l.sponsor_state) AS l ON d.state = l.sponsor_state WHERE d.id = " + id)
+    data3 = con.execute("SELECT m.id, m.full_name FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND CAST(d.congressional_district AS INT) = CAST(m.district AS INT) WHERE d.id = " + id)
     data = {}
-    data0ToJson = [dict(r) for r in data0]
-    data1ToJson = [dict(r) for r in data1]
-    data2ToJson = [dict(r) for r in data2]
-    data['district'] = data0ToJson
-    data['legislationByRepresentative'] = data1ToJson
-    data['legislationBySenate'] = data2ToJson
-    # return jsonify([dict(r) for r in data])
+    data['district'] = [dict(r) for r in data0]
+    data['legislationByRepresentative'] = [dict(r) for r in data1]
+    data['legislationBySenate'] = [dict(r) for r in data2]
+    data['representative'] = [dict(r) for r in data3]
     return jsonify(data)
 
 @app.route("/Representatives/<id>")
