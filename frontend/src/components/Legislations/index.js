@@ -76,13 +76,14 @@ class Legislations extends Component {
     const legislationsRendered = this.state.legislations.map(
       (legislation, i) => {
         return (
-          <Link
-            key={i}
-            to={{
-              pathname: `/Legislations/instance/${legislation.short_title}`
-            }}
-            className="legislation_link"
-          >
+          // <Link
+          //   key={i}
+          //   to={{
+          //     pathname: `/Legislations/instance/${legislation.short_title}`
+          //   }}
+          //   className="legislation_link"
+          // >
+          <a href="foodmeonce.me/Legislation/instance">
             <Legislation
               name={legislation.short_title}
               year={legislation.introduced_date}
@@ -92,7 +93,8 @@ class Legislations extends Component {
               billType={this.getBillType(legislation.bill_type)}
               sponsors={legislation.sponsor_name}
             />
-          </Link>
+          </a> 
+          //</Link> 
         );
       }
     );
