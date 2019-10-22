@@ -49,6 +49,7 @@ class DistrictInstance extends React.Component {
         );
       }
     );
+
     const legislationsBySenate = this.state.legislationBySenate.map(
       (legislation, i) => {
         if (legislations[legislation.short_title] == null) {
@@ -65,6 +66,11 @@ class DistrictInstance extends React.Component {
         } else return null;
       }
     );
+
+    if(legisltaionsByRepresentative.length === 0 && legislationsBySenate.length === 0) {
+      legisltaionsByRepresentative[0] = <p>This districts representation has not passed any food security related legislation.</p>
+    }
+
     let map_url =
       "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
       district_data.state_abbreviation +
