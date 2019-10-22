@@ -27,6 +27,12 @@ def generateSQL(states):
         state = states[stateKey]
         for district in state:
             generateSQLInsert(district)
+
+def generateUpdateSQL(states):
+    for stateKey in states:
+        state = states[stateKey]
+        for district in state:
+            generateSQLUpdate(district)
         
 race_mappings = [
     "White", "African American", "American Indian", "Asian", "Native Hawaiian", "Others"
@@ -47,10 +53,27 @@ def generateSQLInsert(district):
     print(f"('{stateNum}', '{districtNum}', '{race_mappings[3]}', {asian:.2f}),")
     print(f"('{stateNum}', '{districtNum}', '{race_mappings[4]}', {hawaiian:.2f}),")
     print(f"('{stateNum}', '{districtNum}', '{race_mappings[5]}', {others:.2f}),")
-    
+
+def generateSQLUpdate(district):
+    stateNum = district[len(district) - 2]
+    districtNum = district[len(district) - 1]
+    population = int(district[1])
+    white = int(district[2]) / population * 100
+    african = int(district[3]) / population * 100
+    indian = int(district[4]) / population * 100
+    asian = int(district[5]) / population * 100
+    hawaiian = int(district[6]) / population * 100
+    others = int(district[7]) / population * 100
+    print(f"UPDATE application.districts SET white = {white:.2f} WHERE state_num='{stateNum}' and congressional_district='{districtNum}';")
+    print(f"UPDATE application.districts SET aa = {african:.2f} WHERE state_num='{stateNum}' and congressional_district='{districtNum}';")
+    print(f"UPDATE application.districts SET a_indian = {indian:.2f} WHERE state_num='{stateNum}' and congressional_district='{districtNum}';")
+    print(f"UPDATE application.districts SET asian = {asian:.2f} WHERE state_num='{stateNum}' and congressional_district='{districtNum}';")
+    print(f"UPDATE application.districts SET others = {others:.2f} WHERE state_num='{stateNum}' and congressional_district='{districtNum}';")
+    print(f"UPDATE application.districts SET hawaiian = {hawaiian:.2f} WHERE state_num='{stateNum}' and congressional_district='{districtNum}';")    
     
 if __name__ == "__main__":
     states = {}
     stateNumbers = getStateNumbers()
     getData(states, stateNumbers)
-    generateSQL(states)
+    generateUpdateSQL(states)
+    

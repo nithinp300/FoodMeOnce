@@ -41,9 +41,9 @@ def districts():
         page = 1
     if numLimit is None:
         numLimit = 8
-    actualPage = int(page) - 1
-    data = con.execute(f"SELECT * FROM staging.district LIMIT 8 OFFSET {str(actualPage)}")
-    pages = con.execute("SELECT COUNT(*) AS pages FROM staging.district")
+    actualPage = (int(page) - 1) * numLimit
+    data = con.execute(f"SELECT d.*, m.full_name FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND d.congressional_district = m.district LIMIT 8 OFFSET {str(actualPage)}")
+    pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
     for row in pages:
         pages = ceil(int(row["pages"]) / numLimit)
     resultData = [dict(r) for r in data]
@@ -58,9 +58,9 @@ def representatives():
         page = 1
     if numLimit is None:
         numLimit = 8
-    actualPage = int(page) - 1
-    data = con.execute(f"SELECT * FROM staging.house_representatives LIMIT 8 OFFSET {actualPage}")
-    pages = con.execute("SELECT COUNT(*) AS pages FROM staging.house_representatives")
+    actualPage = (int(page) - 1) * numLimit
+    data = con.execute(f"SELECT * FROM application.members WHERE short_title = 'Rep.' LIMIT 8 OFFSET {actualPage}")
+    pages = con.execute("SELECT COUNT(*) AS pages FROM application.members WHERE short_title = 'Rep.'")
     for row in pages:
         pages = ceil(int(row["pages"]) / numLimit)
     resultData = [dict(r) for r in data]
@@ -75,9 +75,9 @@ def legislations():
         page = 1
     if numLimit is None:
         numLimit = 8
-    actualPage = int(page) - 1
-    data = con.execute(f"SELECT * FROM staging.legislations LIMIT 8 OFFSET {str(actualPage)}")
-    pages = con.execute("SELECT COUNT(*) AS pages FROM staging.legislations")
+    actualPage = (int(page) - 1) * numLimit
+    data = con.execute(f"SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' LIMIT 8 OFFSET {str(actualPage)}")
+    pages = con.execute("SELECT COUNT(*) AS pages FROM application.legislations WHERE sponsor_title = 'Rep.'")
     for row in pages:
         pages = ceil(int(row["pages"]) / numLimit)
     resultData = [dict(r) for r in data]
@@ -87,18 +87,40 @@ def legislations():
 # instance page apis
 @app.route("/Districts/<id>")
 def district(id = ""):
-    data = con.execute("SELECT * FROM staging.district WHERE id = " + id)
-    return jsonify([dict(r) for r in data])
+    data0 = con.execute("SELECT * FROM application.districts WHERE id = " + id)
+    data1 = con.execute("SELECT l.names FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND d.congressional_district = m.district JOIN (SELECT l.sponsor_name, array_to_string(array_agg(l.short_title), ',') AS names FROM application.legislations AS l GROUP BY l.sponsor_name) AS l ON m.full_name = l.sponsor_name WHERE d.id = " + id)
+    data2 = con.execute("SELECT l.names FROM application.districts AS d JOIN (SELECT l.sponsor_state, array_to_string(array_agg(l.short_title), ',') AS names FROM application.legislations AS l GROUP BY l.sponsor_state) AS l ON d.state = l.sponsor_state WHERE d.id = " + id)
+    data = {}
+    data0ToJson = [dict(r) for r in data0]
+    data1ToJson = [dict(r) for r in data1]
+    data2ToJson = [dict(r) for r in data2]
+    data['district'] = data0ToJson
+    data['legislationByRepresentative'] = data1ToJson
+    data['legislationBySenate'] = data2ToJson
+    # return jsonify([dict(r) for r in data])
+    return jsonify(data)
 
 @app.route("/Representatives/<id>")
 def representative(id = ""):
-    data = con.execute("SELECT * FROM staging.house_representatives WHERE id = '" + id + "'")
-    return jsonify([dict(r) for r in data])
+    member = con.execute("SELECT * FROM application.members WHERE id = '" + id + "'")
+    fromDistrict = con.execute("SELECT d.id, d.state, d.congressional_district FROM application.members AS m JOIN application.districts AS d ON m.state = d.state and cast(m.district AS INT) = cast(d.congressional_district AS INT) WHERE m.short_title = 'Rep.' and m.id = '" + id +"';")
+    passedLegislation = con.execute("SELECT l.id, l.short_title from application.members AS m JOIN application.legislations AS l ON m.full_name = l.sponsor_name WHERE m.short_title = 'Rep.' and m.id = '" + id +"';")
+    data = {}
+    data['member'] = [dict(r) for r in member]
+    data['fromDistrict'] = [dict(r) for r in fromDistrict]
+    data['passedLegislation'] = [dict(r) for r in passedLegislation]
+    return jsonify(data)
 
 @app.route("/Legislations/<id>")
 def legislation(id = ""):
-    data = con.execute("SELECT * FROM staging.legislations WHERE index = " + id)
-    return jsonify([dict(r) for r in data])
+    legislation = con.execute("SELECT * FROM application.legislations WHERE id = " + id)
+    sponsor = con.execute("SELECT m.id FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name WHERE l.id = " + id)
+    fromDistrict = con.execute("SELECT d.id, d.state, d.congressional_district FROM application.districts AS d JOIN (SELECT m.id, m.state, m.district FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name WHERE l.id = " + id + ") AS m ON m.state = d.state and CAST(m.district AS INT) = CAST(d.congressional_district AS INT);")
+    data = {}
+    data['legislation'] = [dict(r) for r in legislation]
+    data['sponsor'] = [dict(r) for r in sponsor]
+    data['passedLegislation'] = [dict(r) for r in fromDistrict]
+    return jsonify(data)
 
 # for later use
 @app.route("/Districts/sort")
