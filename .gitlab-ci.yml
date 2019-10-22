@@ -1,10 +1,11 @@
 stages:
-  - backend_testing
-  - acceptance_testing
+  - DB_tests
+  - API_tests
+  - Front-end_tests
 
 backend:
   image: continuumio/miniconda3:latest
-  stage: backend_testing
+  stage: DB_testing
   script:
   - export PIP_CACHE_DIR="/cache/pip"
   - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
@@ -13,11 +14,10 @@ backend:
   - python backend/DB_Load/testDBloader.py
 
 frontend:
-  image: python
-  stage: acceptance_testing
-  services:
-    - selenium/standalone-chrome
+  image:
+    name: postman/newman_alpine33
+    entrypoint: [""]
+  stage: Front-end_tests
   script:
-    - pip install selenium
-    - pip install chromedriver-installer
-    - python frontend/gui_test/guitest.py
+    - newman --version
+
