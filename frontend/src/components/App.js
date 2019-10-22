@@ -35,7 +35,7 @@ function App() {
           <Route path="/Districts/Instance/:id" component={DistrictInstance} />
           <Route exact path="/Districts" component={Districts} />
           <Route
-            path="/Representatives/Instance/:first_name/:last_name"
+            path="/Representatives/Instance/:id"
             component={RepresentativeInstance}
           />
           <Route exact path="/Representatives" component={Representatives} />

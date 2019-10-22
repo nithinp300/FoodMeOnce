@@ -101,7 +101,7 @@ def district(id = ""):
 @app.route("/Representatives/<id>")
 def representative(id = ""):
     member = con.execute("SELECT * FROM application.members WHERE id = '" + id + "'")
-    fromDistrict = con.execute("SELECT d.id, d.state, d.congressional_district FROM application.members AS m JOIN application.districts AS d ON m.state = d.state and cast(m.district AS INT) = cast(d.congressional_district AS INT) WHERE m.short_title = 'Rep.' and m.id = '" + id +"';")
+    fromDistrict = con.execute("SELECT d.id, d.state, d.congressional_district, d.state_abbreviation FROM application.members AS m JOIN application.districts AS d ON m.state = d.state and cast(m.district AS INT) = cast(d.congressional_district AS INT) WHERE m.short_title = 'Rep.' and m.id = '" + id +"';")
     passedLegislation = con.execute("SELECT l.id, l.short_title from application.members AS m JOIN application.legislations AS l ON m.full_name = l.sponsor_name WHERE m.short_title = 'Rep.' and m.id = '" + id +"';")
     data = {}
     data['member'] = [dict(r) for r in member]

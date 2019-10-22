@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import LegislationSortFilter from "./LegislationSortFilter";
 import Legislation from "./Legislation";
 import Pages from "../Pages";
@@ -93,8 +92,8 @@ class Legislations extends Component {
               billType={this.getBillType(legislation.bill_type)}
               sponsors={legislation.sponsor_name}
             />
-          </a> 
-          //</Link> 
+          </a>
+          //</Link>
         );
       }
     );

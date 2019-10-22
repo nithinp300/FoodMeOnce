@@ -58,7 +58,7 @@ class DistrictInstance extends React.Component {
               <p className="m-0">{legislation.names}</p>
             </a>
           );
-        }
+        } else return null;
       }
     );
     let map_url =
@@ -81,6 +81,7 @@ class DistrictInstance extends React.Component {
       >
         <div className="district-instance-map">
           <iframe
+            title="district"
             width="425"
             height="300"
             frameBorder="0"
@@ -98,6 +99,7 @@ class DistrictInstance extends React.Component {
             className="district-instance-wiki"
             href={district_data.wiki_page}
             target="_blank"
+            rel="noopener noreferrer"
           >
             Wikipedia
           </a>

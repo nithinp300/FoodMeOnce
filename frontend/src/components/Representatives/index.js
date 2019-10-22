@@ -14,7 +14,7 @@ class Representatives extends Component {
     var monthDiff = todayDate.getMonth() - birthDate.getMonth();
     if (
       monthDiff < 0 ||
-      (monthDiff == 0 && todayDate.getDate() < birthDate.getDate())
+      (monthDiff === 0 && todayDate.getDate() < birthDate.getDate())
     ) {
       age--;
     }
@@ -85,7 +85,7 @@ class Representatives extends Component {
           <Link
             key={i}
             to={{
-              pathname: `/Representatives/instance/${representative.first_name}/${representative.last_name}`
+              pathname: `/Representatives/instance/${representative.id}`
             }}
             className="representative_link"
           >
