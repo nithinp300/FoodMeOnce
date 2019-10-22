@@ -14,10 +14,10 @@ backend:
   - python backend/DB_Load/testDBloader.py
 
 frontend:
+  stage: Front-end_tests
   image:
     name: postman/newman_alpine33
     entrypoint: [""]
-  stage: Front-end_tests
   script:
     - newman --version
 
