@@ -10,7 +10,9 @@ class DistrictInstance extends React.Component {
     legislationByRepresentative: [],
     legislationBySenate: []
   };
-
+  getName = (state, districtNum) => {
+    return state + " Congressional District " + districtNum;
+  };
   componentDidMount() {
     const id = this.props.match.params.id;
     fetch("https://api.foodmeonce.me/Districts/" + id)
@@ -95,8 +97,10 @@ class DistrictInstance extends React.Component {
         </div>
         <div className="district-instance-head">
           <p className="district-instance-name">
-            {district_data.state} {district_data.congressional_district}
+            {this.getName(district_data.state,district_data.congressional_district)}
           </p>
+        </div>
+        <div className="district-instance-head">
           <a
             className="district-instance-wiki"
             href={district_data.wiki_page}
