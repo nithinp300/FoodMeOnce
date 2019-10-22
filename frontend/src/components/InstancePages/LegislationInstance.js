@@ -75,12 +75,6 @@ class LegislationInstance extends Component {
         legislation_data.sponsor_id +
         ".jpg";
     }
-    const name =
-      legislation_data.sponsor_name == null
-        ? ""
-        : legislation_data.sponsor_name.split(" ");
-    const firstName = name[0];
-    const lastName = name[name.length - 1];
     return (
       <div
         className="legislation-instance d-flex p-2 border border-secondary

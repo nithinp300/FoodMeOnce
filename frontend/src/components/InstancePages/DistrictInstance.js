@@ -16,6 +16,7 @@ class DistrictInstance extends React.Component {
     fetch("https://api.foodmeonce.me/Districts/" + id)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         this.setState({
           loading: false,
           district: data.district[0],
@@ -35,27 +36,28 @@ class DistrictInstance extends React.Component {
     const legislations = {};
     const legisltaionsByRepresentative = this.state.legislationByRepresentative.map(
       (legislation, i) => {
-        legislations[legislation.names] = true;
+        legislations[legislation.short_title] = true;
         return (
           <a
             key={"byRepresentative" + i}
-            href={`/Legislations/instance/${legislation.names}`}
+            href={`/Legislations/instance/${legislation.id}`}
           >
-            <p className="m-0">{legislation.names}</p>
+            <p className="m-0">{legislation.short_title}</p>
           </a>
         );
       }
     );
     const legislationsBySenate = this.state.legislationBySenate.map(
       (legislation, i) => {
-        if (legislations[legislation.names] == null) {
+        if (legislations[legislation.short_title] == null) {
+          legislations[legislation.short_title] = true;
           return (
             <a
               key={"bySenate" + i}
-              href={`/Legislations/instance/${legislation.names}`}
+              href={`/Legislations/instance/${legislation.id}`}
               className=""
             >
-              <p className="m-0">{legislation.names}</p>
+              <p className="m-0">{legislation.short_title}</p>
             </a>
           );
         } else return null;

@@ -88,8 +88,8 @@ def legislations():
 @app.route("/Districts/<id>")
 def district(id = ""):
     data0 = con.execute("SELECT * FROM application.districts WHERE id = " + id)
-    data1 = con.execute("SELECT l.names FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND d.congressional_district = m.district JOIN (SELECT l.sponsor_name, array_to_string(array_agg(l.short_title), ',') AS names FROM application.legislations AS l GROUP BY l.sponsor_name) AS l ON m.full_name = l.sponsor_name WHERE d.id = " + id)
-    data2 = con.execute("SELECT l.names FROM application.districts AS d JOIN (SELECT l.sponsor_state, array_to_string(array_agg(l.short_title), ',') AS names FROM application.legislations AS l GROUP BY l.sponsor_state) AS l ON d.state = l.sponsor_state WHERE d.id = " + id)
+    data1 = con.execute("SELECT l.short_title, l.id FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND d.congressional_district = m.district JOIN (SELECT l.id, l.sponsor_name, l.short_title FROM application.legislations AS l) AS l ON m.full_name = l.sponsor_name WHERE d.id = " + id)
+    data2 = con.execute("SELECT l.short_title, l.id FROM application.districts AS d JOIN (SELECT l.id, l.sponsor_state, l.short_title FROM application.legislations AS l) AS l ON d.state = l.sponsor_state WHERE d.id = " + id)
     data3 = con.execute("SELECT m.id, m.full_name FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND CAST(d.congressional_district AS INT) = CAST(m.district AS INT) WHERE d.id = " + id)
     data = {}
     data['district'] = [dict(r) for r in data0]

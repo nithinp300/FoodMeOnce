@@ -13,6 +13,7 @@ class RepresentativeInstance extends React.Component {
     fetch("https://api.foodmeonce.me/Representatives/" + id)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         this.setState({
           representative: data.member[0],
           district: data.fromDistrict[0],
@@ -46,8 +47,8 @@ class RepresentativeInstance extends React.Component {
     var district = this.state.district;
     var legislations = this.state.legislations.map((legislation, i) => {
       return (
-        <a key={i} href={`/Legislations/instance/${legislation.name}`}>
-          <p className="m-0">{legislation.name}</p>
+        <a key={i} href={`/Legislations/instance/${legislation.id}`}>
+          <p className="m-0">{legislation.short_title}</p>
         </a>
       );
     });
@@ -77,9 +78,7 @@ class RepresentativeInstance extends React.Component {
           src={rep_image}
           alt={rep_data.first_name}
         />
-        <p className="representative-instance-name">
-          {rep_data.first_name} {rep_data.last_name}
-        </p>
+        <p className="representative-instance-name">{rep_data.full_name}</p>
         <ul>
           <li className="representative-instance-desc">
             <span>Age</span>: {age}
