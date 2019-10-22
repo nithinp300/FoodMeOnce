@@ -40,7 +40,7 @@ function App() {
           />
           <Route exact path="/Representatives" component={Representatives} />
           <Route
-            path="/Legislations/Instance/:short_title"
+            path="/Legislations/Instance/:id"
             component={LegislationInstance}
           />
           <Route exact path="/Legislations" component={Legislation} />

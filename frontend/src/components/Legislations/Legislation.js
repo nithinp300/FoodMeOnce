@@ -1,14 +1,5 @@
 import React from "react";
 import "./css/Legislation.css";
-import us_hor from "../../images/us_hor.png";
-import us_sen from "../../images/us_sen.png";
-
-function getImage(billType) {
-  if (billType === "House of Representatives") {
-    return us_hor;
-  }
-  return us_sen;
-}
 
 function Legislation(props) {
   if (props.header) {

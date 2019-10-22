@@ -117,7 +117,7 @@ def legislation(id = ""):
     data = {}
     data['legislation'] = [dict(r) for r in legislation]
     data['sponsor'] = [dict(r) for r in sponsor]
-    data['passedLegislation'] = [dict(r) for r in fromDistrict]
+    data['fromDistrict'] = [dict(r) for r in fromDistrict]
     return jsonify(data)
 
 # for later use
