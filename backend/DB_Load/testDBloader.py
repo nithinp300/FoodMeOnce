@@ -24,7 +24,7 @@ class TestDBloader(TestCase):
         for api_uri in apis:
             assert type(API_response(api_uri, next(range_iterator)) is pandas.DataFrame)
 
-    # test json from url is dictionary
+    # test json from url is list
     def test_json_from_url(self):
         url = "https://api.census.gov/data/2018/acs/acs1?get=NAME,group(B01001)&for=us:1"
         data = getJsonFromUrl(url)
