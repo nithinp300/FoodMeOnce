@@ -1,14 +1,14 @@
 import React from "react";
 import '../App.css';
 import Carousel from 'react-bootstrap/Carousel'
-//import cornField from "../../images/cornField.jpg";
+import cornField from "../../images/cornField.png";
 import welcome_banner from "../../images/welcome_banner.png"; 
 import congress from "../../images/congress.png"; 
 import healthy_food from "../../images/healthy_food.png"; 
 import unhealthy_food from "../../images/unhealthy_food.png"; 
 import congressSlide from "../../images/congressSlide.jpg"
 import librarySlide from '../../images/librarySlide.jpg';
-import fightSlide from '../../images/fightSlide.jpg';
+import fightSlide2 from '../../images/fightSlide2.png';
 import citySlide from '../../images/citySlide.jpg';
 import "../App.css"; 
 
@@ -17,51 +17,52 @@ function SplashPage() {
     <div style={{ margin: '0em 5em 2em 5em' }}>
         <Carousel id="carousel">
           <Carousel.Item>
+            <h3 className="slideBanner"> Welcome to Food Me Once </h3>
             <img
               id="slide-img"
-              src={welcome_banner}
+              src={cornField}
               alt="First Slide"
               style={{width: "100%"}}
             />
           </Carousel.Item>
           <Carousel.Item>
-            <h3 className="slideBanner"> The People Matter</h3>
+            <h3 className="slideBanner"> Healthy Food Matters</h3>
             <img
               id="slide-img"
 
-              // src={healthy_food}
+              src={healthy_food}
+              alt="Second Slide"
+              style={{width: "100%"}}
+              // src={citySlide}
+              // alt="Fourth Slide"
+              // style={{width: "100%", height: "35rem"}}
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <h3 className="slideBanner"> Nutrition Matters</h3>
+            <img
+              id="slide-img"
+
+              src={unhealthy_food}
+              alt="Third Slide"
+              style={{width: "100%"}}
+              // src={congressSlide}
               // alt="Second Slide"
-              // style={{width: "100%"}}
-              src={citySlide}
-              alt="Fourth Slide"
-              style={{width: "100%", height: "35rem"}}
+              // style={{width: "100%", height: "35rem"}}
             />
           </Carousel.Item>
           <Carousel.Item>
             <h3 className="slideBanner"> Responsible Representation Matters</h3>
             <img
               id="slide-img"
-
-              // src={unhealthy_food}
-              // alt="Third Slide"
-              // style={{width: "100%"}}
-              src={congressSlide}
-              alt="Second Slide"
-              style={{width: "100%", height: "35rem"}}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <h3 className="slideBanner"> Supportive Legislation Matters</h3>
-            <img
-              id="slide-img"
-//               src={congress}
-//               alt="Fourth Slide"
-//               style={{width: "100%"}}
+              src={congress}
+              alt="Fourth Slide"
+              style={{width: "100%"}}
 //             />
 //           </Carousel.Item>
-              src={librarySlide}
-              alt="Third Slide"
-              style={{width: "100%", height: "35rem"}}
+              // src={librarySlide}
+              // alt="Third Slide"
+              // style={{width: "100%", height: "35rem"}}
             />
           </Carousel.Item>
           
@@ -69,9 +70,9 @@ function SplashPage() {
             <h3 className="slideBanner"> Fight For Food Security </h3>
             <img
               id="slide-img"
-              src={fightSlide}
+              src={fightSlide2}
               alt="Fifth Slide"
-              style={{width: "100%", height: "35rem"}}
+              style={{width: "100%"}}
             />
           </Carousel.Item>
         </Carousel>

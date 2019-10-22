@@ -12,6 +12,22 @@
     width: 100%;
 }
 
+.button-container {
+    width: 100%;
+    color: black;
+    background-color: white;
+    border: none;
+    text-underline-position: unset;
+}
+
+.button-container:hover {
+    background-color:whitesmoke;
+    text-decoration: none; 
+    color: black;
+}
+
+.button-container:active {background-color:whitesmoke}
+
 .districts-model hr {
     margin-top: 0;
 }
