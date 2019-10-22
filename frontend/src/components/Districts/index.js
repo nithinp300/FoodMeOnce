@@ -17,6 +17,8 @@ class Districts extends Component {
     }
   };
 
+
+
   handleCollapse = () => {
     this.setState(prevState => ({
       collapse: !prevState.collapse
@@ -54,13 +56,15 @@ class Districts extends Component {
     if (this.state.districts.length > 0)
       districtsRendered = this.state.districts.map((district, i) => {
         return (
-          <Link
-            key={i}
-            to={{
-              pathname: `/Districts/instance/${district.state}/${district.congressional_district}`
-            }}
-            className="district_link"
-          >
+          // <Link
+          //   key={i}
+          //   to={{
+          //     pathname: `/Districts/instance/${district.state}/${district.congressional_district}`
+          //   }}
+          //   className="district_link"
+          // >
+          <a href={`/Districts/instance/${district.state}/${district.congressional_district}`} className="button-container">
+            
             <District
               name={this.getName(
                 district.state,
@@ -78,7 +82,8 @@ class Districts extends Component {
               id={district.id}
               wikipedia={district.wikipedia}
             />
-          </Link>
+          </a>
+          // </Link>
         );
       });
     return (
@@ -108,5 +113,7 @@ class Districts extends Component {
     );
   }
 }
+
+
 
 export default Districts;
