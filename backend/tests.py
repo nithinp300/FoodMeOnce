@@ -3,9 +3,7 @@ import sqlalchemy
 import pandas
 from timeit import timeit
 import sys
-sys.path.append('DB_Load')
-print('hello!!!!!!!!!!!!!!!!!')
-print(sys.path)
+sys.path = sys.path.append('DB_Load')
 from backend_Census_getCensusApiForDistrict import getStateNumbers, getData
 from backend_Scrapper import getJsonFromUrl
 from driver import pgadminconnect, API_response
