@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha --require ignore-styles --require @babel/register --require ./unit_tests/dom.js './unit_tests/*.test.js'",
+    "test": "mocha --require ignore-styles --require @babel/register --require ./dom.js './tests.js'",
     "eject": "react-scripts eject",
     "deploy": "aws s3 sync build/ s3://foodmeonce"
   },
