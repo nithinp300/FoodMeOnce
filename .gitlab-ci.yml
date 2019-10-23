@@ -5,7 +5,7 @@ stages:
 
 frontend:
   stage: Front-end_tests
-  image: node
+  image: node:12.11.1
   script:
     - node --version
     - cd frontend
