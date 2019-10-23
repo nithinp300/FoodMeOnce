@@ -62,7 +62,7 @@ def districts():
         numLimit = 8
     actualPage = (int(page) - 1) * numLimit
     data = con.execute(
-        f"SELECT *  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) order by d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
+        f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) order by d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
     )
     pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
     for row in pages:
