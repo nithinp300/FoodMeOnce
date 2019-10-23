@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
     "bootstrap": "^4.3.1",
-    "chromedriver": "^77.0.0",
-    "gitlab": "^11.1.2",
     "mocha": "^6.2.2",
     "react": "^16.10.2",
     "react-bootstrap": "^1.0.0-beta.12",
@@ -14,13 +11,12 @@
     "react-router": "^5.1.0",
     "react-router-dom": "^5.1.0",
     "react-scripts": "3.1.2",
-    "react-table": "^6.10.3",
-    "selenium-webdriver": "^4.0.0-alpha.5"
+    "react-table": "^6.10.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha",
+    "test": "mocha --require ignore-styles --require @babel/register --require ./unit_tests/dom.js './unit_tests/*.test.js'",
     "eject": "react-scripts eject",
     "deploy": "aws s3 sync build/ s3://foodmeonce"
   },
@@ -38,5 +34,36 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "10"
+          }
+        }
+      ],
+      "@babel/react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "async-wait-until": "^1.2.4",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "chromedriver": "^77.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "gitlab": "^11.1.2",
+    "ignore-styles": "^5.0.1",
+    "isomorphic-fetch": "^2.2.1",
+    "selenium-webdriver": "^4.0.0-alpha.5"
   }
 }

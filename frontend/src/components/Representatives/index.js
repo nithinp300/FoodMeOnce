@@ -73,7 +73,6 @@ class Representatives extends Component {
       .then(data => {
         let representatives = data["data"];
         let metaData = data["metaData"];
-        console.log(metaData);
         this.setState({ representatives, metaData });
       })
       .catch(console.log);
@@ -82,10 +81,11 @@ class Representatives extends Component {
     const representativesRendered = this.state.representatives.map(
       (representative, i) => {
         return (
-            <a
+          <a
+            key={i}
             href={`/Representatives/instance/${representative.id}`}
             className="button-container"
-            >
+          >
             <Representative
               name={representative.first_name + " " + representative.last_name}
               age={this.getAge(representative.date_of_birth)}

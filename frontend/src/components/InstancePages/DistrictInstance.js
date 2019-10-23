@@ -18,7 +18,6 @@ class DistrictInstance extends React.Component {
     fetch("https://api.foodmeonce.me/Districts/" + id)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         this.setState({
           loading: false,
           district: data.district[0],
@@ -67,8 +66,16 @@ class DistrictInstance extends React.Component {
       }
     );
 
-    if(legisltaionsByRepresentative.length === 0 && legislationsBySenate.length === 0) {
-      legisltaionsByRepresentative[0] = <p>This districts representation has not passed any food security related legislation.</p>
+    if (
+      legisltaionsByRepresentative.length === 0 &&
+      legislationsBySenate.length === 0
+    ) {
+      legisltaionsByRepresentative[0] = (
+        <p>
+          This districts representation has not passed any food security related
+          legislation.
+        </p>
+      );
     }
 
     let map_url =
@@ -79,7 +86,10 @@ class DistrictInstance extends React.Component {
     if (district_data.length === 0 && !this.state.loading) {
       return <Redirect to="/error" />;
     }
-    let districtName = this.getName(district_data.state, district_data.congressional_district)
+    let districtName = this.getName(
+      district_data.state,
+      district_data.congressional_district
+    );
     var rep_image =
       "https://theunitedstates.io/images/congress/225x275/" +
       representative.id +
@@ -102,9 +112,7 @@ class DistrictInstance extends React.Component {
           ></iframe>
         </div>
         <div className="district-instance-head">
-          <p className="district-instance-name">
-            {districtName}
-          </p>
+          <p className="district-instance-name">{districtName}</p>
         </div>
         <div className="district-instance-head">
           <a
@@ -142,17 +150,33 @@ class DistrictInstance extends React.Component {
             <span>Number of Households</span>: {district_data.num_households}
           </li>
           <li className="district-instance-desc">
-            <span>Race Demographics</span><br />
-            <li>- <i>Asian:</i> {district_data.asian}</li>
-            <li>- <i>African American:</i> {district_data.aa}</li>
-            <li>- <i>Native American:</i> {district_data.a_indian}</li>
-            <li>- <i>Native Hawaiian:</i> {district_data.hawaiian}</li>
-            <li>- <i>Others:</i> {district_data.others}</li>
-            <li>- <i>White:</i> {district_data.white}</li>
+            <span>Race Demographics</span>
+            <br />
+            <li>
+              - <i>Asian:</i> {district_data.asian}
+            </li>
+            <li>
+              - <i>African American:</i> {district_data.aa}
+            </li>
+            <li>
+              - <i>Native American:</i> {district_data.a_indian}
+            </li>
+            <li>
+              - <i>Native Hawaiian:</i> {district_data.hawaiian}
+            </li>
+            <li>
+              - <i>Others:</i> {district_data.others}
+            </li>
+            <li>
+              - <i>White:</i> {district_data.white}
+            </li>
           </li>
           <li className="district-instance-desc">
             <span>Representative</span>:{" "}
-            <a id='repID' href={`/Representatives/instance/${representative.id}`}>
+            <a
+              id="repID"
+              href={`/Representatives/instance/${representative.id}`}
+            >
               {representative.full_name}
             </a>
           </li>

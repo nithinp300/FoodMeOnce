@@ -14,7 +14,6 @@ class LegislationInstance extends Component {
     fetch("https://api.foodmeonce.me/Legislations/" + id)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         this.setState({
           legislation: data.legislation[0],
           district: data.fromDistrict[0],
@@ -122,7 +121,8 @@ class LegislationInstance extends Component {
           </li>
           <li className="legislation-instance-desc">
             <span>Sponsor District</span>:{" "}
-            <a id="distID"
+            <a
+              id="distID"
               href={`/Districts/instance/${this.state.district &&
                 this.state.district.id}`}
             >

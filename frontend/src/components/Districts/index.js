@@ -54,6 +54,7 @@ class Districts extends Component {
       districtsRendered = this.state.districts.map((district, i) => {
         return (
           <a
+            key={i}
             href={`/Districts/Instance/${district.id}`}
             className="button-container"
           >
