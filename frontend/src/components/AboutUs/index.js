@@ -185,7 +185,7 @@ async grabCommits(){
             <div className="card-body">
               <h5 className="card-title">Shubhendra Trivedi</h5>
               <p className="card-title" style = {{}}>Role: Full Stack Developer</p>
-              <p className="card-text"style = {{fontStyle: "italic"}}>Bio: ADD YOUR BIO</p>
+              <p className="card-text"style = {{fontStyle: "italic"}}>Enjoys hot coffee, cold coffee, and occasionally works in IT</p>
             </div>
             <footer className="card-footer border-white ">
               <p className="card-text">Commits: {Shubhendra[0]}</p>
