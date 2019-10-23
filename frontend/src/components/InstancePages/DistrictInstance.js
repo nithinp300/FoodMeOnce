@@ -79,7 +79,7 @@ class DistrictInstance extends React.Component {
     if (district_data.length === 0 && !this.state.loading) {
       return <Redirect to="/error" />;
     }
-
+    let districtName = this.getName(district_data.state, district_data.congressional_district)
     var rep_image =
       "https://theunitedstates.io/images/congress/225x275/" +
       representative.id +
@@ -103,7 +103,7 @@ class DistrictInstance extends React.Component {
         </div>
         <div className="district-instance-head">
           <p className="district-instance-name">
-            {this.getName(district_data.state,district_data.congressional_district)}
+            {districtName}
           </p>
         </div>
         <div className="district-instance-head">

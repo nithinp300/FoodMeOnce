@@ -11,6 +11,7 @@ backend:
   - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
   - source activate backend_test_env
   - python --version
+  - python backend/tests.py
 
 
 API:
@@ -21,4 +22,3 @@ API:
   script:
     - newman --version
     - newman run api_unit_tests.json
-
