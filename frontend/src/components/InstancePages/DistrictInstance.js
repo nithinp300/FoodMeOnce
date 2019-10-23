@@ -49,6 +49,7 @@ class DistrictInstance extends React.Component {
         );
       }
     );
+
     const legislationsBySenate = this.state.legislationBySenate.map(
       (legislation, i) => {
         if (legislations[legislation.short_title] == null) {
@@ -65,6 +66,11 @@ class DistrictInstance extends React.Component {
         } else return null;
       }
     );
+
+    if(legisltaionsByRepresentative.length === 0 && legislationsBySenate.length === 0) {
+      legisltaionsByRepresentative[0] = <p>This districts representation has not passed any food security related legislation.</p>
+    }
+
     let map_url =
       "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
       district_data.state_abbreviation +
@@ -134,6 +140,15 @@ class DistrictInstance extends React.Component {
           </li>
           <li className="district-instance-desc">
             <span>Number of Households</span>: {district_data.num_households}
+          </li>
+          <li className="district-instance-desc">
+            <span>Race Demographics</span><br />
+            <li>- <i>Asian:</i> {district_data.asian}</li>
+            <li>- <i>African American:</i> {district_data.aa}</li>
+            <li>- <i>Native American:</i> {district_data.a_indian}</li>
+            <li>- <i>Native Hawaiian:</i> {district_data.hawaiian}</li>
+            <li>- <i>Others:</i> {district_data.others}</li>
+            <li>- <i>White:</i> {district_data.white}</li>
           </li>
           <li className="district-instance-desc">
             <span>Representative</span>:{" "}

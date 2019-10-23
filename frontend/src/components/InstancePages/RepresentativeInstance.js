@@ -52,6 +52,9 @@ class RepresentativeInstance extends React.Component {
         </a>
       );
     });
+    if(legislations.length === 0) {
+      legislations[0] = <p>This districts representation has not passed any food security related legislation.</p>
+    }
     var rep_data = this.state.representative;
     var age = this.getAge(rep_data.date_of_birth);
     var twitter = "https://twitter.com/" + rep_data.twitter_account;
