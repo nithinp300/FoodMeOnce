@@ -5,12 +5,12 @@ stages:
 
 frontend:
   stage: Front-end_tests
-  image: node:12.11.1
+  image: node:12.2.0-alpine
   script:
     - node -v
     - npm -v
     - cd frontend
-    - npm install --only=dev
+    - npm install
     - npm test
 
 backend:
