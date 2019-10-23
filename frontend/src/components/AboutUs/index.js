@@ -138,10 +138,17 @@ async grabCommits(){
       <div>
         <div className="titleCard">
         <h2 className="descriptionHeader"> What is Food Me Once? </h2>
-          <p class="descriptionBody"> 
+          <h6 class="descriptionBody"> 
             Food Me Once is a website designed to look into the issue of food security in the United States. Our goal is to see how geographic location, congressional representation, 
             and legislation effect the food security of individuals in this country.
-          </p>
+          </h6>
+        </div>
+        <div className="titleCard">
+        <h2 className="descriptionHeader3"> Intended Audience </h2>
+          <h6 class="descriptionBody2"> 
+            We aim to reach those who do not have good food security in their region, and give them the tools to understand why. We encourage all 
+            to push their representatives to fight for good food legislation, and the health and nutrition of all.
+          </h6>
         </div>
         <h2 className="descriptionHeader2"> Who Are We? </h2>
         <div className="cardRow">
@@ -149,33 +156,42 @@ async grabCommits(){
             <img src={Chris_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Christopher Chasteen</h5>
-              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
+              <p className="card-title" style = {{}}>Full Stack Developer</p>
+              <p className="card-text"style = {{fontStyle: "italic"}}> Enjoys hot tea, cold tea, and occasionally IT</p>
+            </div>
+            <footer className="card-footer border-white ">
               <p className="card-text">Commits: {Chris[0]}</p>
               <p className="card-text">Issues Closed: {Chris[1]}</p>
               <p className="card-text">Unit Tests: {Chris[2]}</p>
-            </div>
+            </footer>
           </div>
 
           <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Gyuwon_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Gyuwon Kim</h5>
-              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
+              <p className="card-title" style = {{}}>Role: Full Stack Developer</p>
+              <p className="card-text"style = {{fontStyle: "italic"}}>Bio: ADD YOUR BIO</p>
+            </div>
+            <footer className="card-footer border-white ">
               <p className="card-text">Commits: {Gyuwon[0]}</p>
               <p className="card-text">Issues Closed: {Gyuwon[1]}</p>
               <p className="card-text">Unit Tests: {Gyuwon[2]}</p>
-            </div>
+            </footer>
           </div>
 
           <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Shub_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Shubhendra Trivedi</h5>
-              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
+              <p className="card-title" style = {{}}>Role: Full Stack Developer</p>
+              <p className="card-text"style = {{fontStyle: "italic"}}>Bio: ADD YOUR BIO</p>
+            </div>
+            <footer className="card-footer border-white ">
               <p className="card-text">Commits: {Shubhendra[0]}</p>
               <p className="card-text">Issues Closed: {Shubhendra[1]}</p>
               <p className="card-text">Unit Tests: {Shubhendra[2]}</p>
-            </div>
+            </footer>
           </div>
         </div>
 
@@ -184,22 +200,28 @@ async grabCommits(){
             <img src={Brian_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Brian Dyck</h5>
-              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
+              <p className="card-title" style = {{}}>Role: Full Stack Developer</p>
+              <p className="card-text"style = {{fontStyle: "italic"}}>Bio: ADD YOUR BIO</p>
+            </div>
+            <footer className="card-footer border-white ">
               <p className="card-text">Commits: {Brian[0]}</p>
               <p className="card-text">Issues Closed: {Brian[1]}</p>
               <p className="card-text">Unit Tests: {Brian[2]}</p>
-            </div>
+            </footer>
           </div>
 
           <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
             <img src={Nithin_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Nithin Pingili</h5>
-              <p className="card-title" style = {{fontStyle: "italic"}}>Full Stack Developer</p>
+              <p className="card-title" style = {{}}>Role: Full Stack Developer</p>
+              <p className="card-text"style = {{fontStyle: "italic"}}>Bio: ADD YOUR BIO</p>
+            </div>
+            <footer className="card-footer border-white ">
               <p className="card-text">Commits: {Nithin[0]}</p>
               <p className="card-text">Issues Closed: {Nithin[1]}</p>
               <p className="card-text">Unit Tests: {Nithin[2]}</p>
-            </div>
+            </footer>
           </div>
         </div>
         <h4 className="footer">Total Commits: {totalCommits} </h4>

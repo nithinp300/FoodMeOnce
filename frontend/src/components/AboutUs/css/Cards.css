@@ -23,6 +23,12 @@
     padding-bottom: 3rem;
 }
 
+.descriptionHeader3 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
 .footer {
     display: flex;
     justify-content: center;
@@ -43,10 +49,23 @@
     padding-bottom: 2rem;
 }
 
+.descriptionBody2 {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2rem;
+}
+
 .dataSources {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.titleCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .titleCard {
