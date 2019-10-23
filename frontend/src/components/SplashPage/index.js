@@ -10,14 +10,16 @@ import congressSlide from "../../images/congressSlide.jpg"
 import librarySlide from '../../images/librarySlide.jpg';
 import fightSlide2 from '../../images/fightSlide2.png';
 import citySlide from '../../images/citySlide.jpg';
-import "../App.css"; 
+import "../App.css";
+import './css/splash.css';
+
 
 function SplashPage() {
   return (
-    <div style={{ margin: '2.5em 5em 2em 5em' }}>
+    <div style={{ margin: '1.25em 5em 2em 5em' }}>
         <Carousel id="carousel">
           <Carousel.Item>
-            <h3 className="slideBanner"> Welcome to Food Me Once </h3>
+            <h3 className="slideBanner" > Welcome to Food Me Once </h3>
             <img
               id="slide-img"
               src={cornField}

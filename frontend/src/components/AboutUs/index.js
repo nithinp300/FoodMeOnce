@@ -148,7 +148,7 @@ Food Me Once is a website designed to look into the issue of food security in th
             <img src={Chris_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Christopher Chasteen</h5>
-              <p className="card-title" style = {{}}>Full Stack Developer</p>
+              <p className="card-title" style = {{}}>Role: Full Stack Developer</p>
               <p className="card-text"style = {{fontStyle: "italic"}}> Enjoys hot tea, cold tea, and occasionally IT</p>
             </div>
             <footer className="card-footer border-white ">
