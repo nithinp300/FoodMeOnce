@@ -7,6 +7,7 @@
     "bootstrap": "^4.3.1",
     "chromedriver": "^77.0.0",
     "gitlab": "^11.1.2",
+    "mocha": "^6.2.2",
     "react": "^16.10.2",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
@@ -19,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "mocha",
     "eject": "react-scripts eject",
     "deploy": "aws s3 sync build/ s3://foodmeonce"
   },
