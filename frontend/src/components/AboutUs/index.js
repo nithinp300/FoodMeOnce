@@ -320,7 +320,7 @@ Food Me Once is a website designed to look into the issue of food security in th
             <h6 align="center" className="descriptionBody2"> The obvious choice for congressional district data was a government website. It contains a variety of information with respect to a district. We were able to find the race demographic data requested by our customers in this dataset as well.</h6>
         </div>
         <div className="contactCard">
-          <h6> Project Links</h6>
+          <h4> Project Links</h4>
             <p> </p><p><a href="https://gitlab.com/shub95/foodmeonce/"> FoodMeOnce GitLab Repository</a></p>
         </div>
         <div className="contactCard2">
