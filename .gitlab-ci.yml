@@ -24,7 +24,8 @@ API:
 
 frontend:
   stage: Front-end_tests
-  image: node:lastest-alpine
+  image: alpine:3.7
+  services: - node:lastest
   script:
     - node --version
     - cd frontend
