@@ -30,4 +30,4 @@ API:
     entrypoint: [""]
   script:
     - newman --version
-    - newman run api_unit_tests.json
+    - newman run Postman.json
