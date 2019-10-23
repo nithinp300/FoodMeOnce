@@ -1,5 +1,3 @@
-import sys
-sys.path = sys.path.append('DB_Load')
 from unittest import main,TestCase
 import sqlalchemy
 import pandas
