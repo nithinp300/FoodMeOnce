@@ -9,7 +9,7 @@ frontend:
   script:
     - node --version
     - cd frontend
-    - npm install-dev
+    - npm install --only=dev
     - npm test
 
 backend:
