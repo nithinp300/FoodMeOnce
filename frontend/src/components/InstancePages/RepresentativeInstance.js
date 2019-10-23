@@ -47,7 +47,7 @@ class RepresentativeInstance extends React.Component {
     var district = this.state.district;
     var legislations = this.state.legislations.map((legislation, i) => {
       return (
-        <a key={i} href={`/Legislations/instance/${legislation.id}`}>
+        <a id="legID" key={i} href={`/Legislations/instance/${legislation.id}`}>
           <p className="m-0">{legislation.short_title}</p>
         </a>
       );

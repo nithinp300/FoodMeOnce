@@ -152,7 +152,7 @@ class DistrictInstance extends React.Component {
           </li>
           <li className="district-instance-desc">
             <span>Representative</span>:{" "}
-            <a href={`/Representatives/instance/${representative.id}`}>
+            <a id='repID' href={`/Representatives/instance/${representative.id}`}>
               {representative.full_name}
             </a>
           </li>

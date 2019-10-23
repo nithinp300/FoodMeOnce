@@ -122,7 +122,7 @@ class LegislationInstance extends Component {
           </li>
           <li className="legislation-instance-desc">
             <span>Sponsor District</span>:{" "}
-            <a
+            <a id="distID"
               href={`/Districts/instance/${this.state.district &&
                 this.state.district.id}`}
             >
