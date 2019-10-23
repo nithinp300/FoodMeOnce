@@ -23,7 +23,7 @@ API:
     - newman run api_unit_tests.json
 
 frontend:
-  state: Front-end_tests
+  stage: Front-end_tests
   image: node:lastest
   script:
     - node --version
