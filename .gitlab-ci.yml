@@ -1,7 +1,7 @@
 stages:
+  - Front-end_tests
   - DB_tests
   - API_tests
-  - Front-end_tests
 
 frontend:
   stage: Front-end_tests
