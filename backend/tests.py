@@ -3,13 +3,16 @@ import sqlalchemy
 import pandas
 from timeit import timeit
 import sys
-# sys.path.append('/DB_Load/')
+sys.path.append('DB_Load')
+print('hello!!!!!!!!!!!!!!!!!')
+print(sys.path)
 from backend_Census_getCensusApiForDistrict import getStateNumbers, getData
 from backend_Scrapper import getJsonFromUrl
 from driver import pgadminconnect, API_response
 from api_uris import apis
 from mapping import states_hash
 from API_creds import propublica
+
 
 class TestDBloader(TestCase):
 
@@ -81,7 +84,6 @@ class TestDBloader(TestCase):
         stateNumbers = getStateNumbers()
         getData(states, stateNumbers)
         assert type(states) is dict
-
 
 if __name__ == "__main__":  # pragma: no cover
     main()
