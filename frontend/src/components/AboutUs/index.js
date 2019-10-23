@@ -312,7 +312,7 @@ Food Me Once is a website designed to look into the issue of food security in th
         </div>
         <div className="dataSources">
           <h4 style={{paddingBottom: "1.5rem"}}> Data Sources</h4>
-          <p> <a href="https://sunlightlabs.github.io/congress/"> Represenative Data API</a></p>
+          <p> <a href="https://sunlightlabs.github.io/congress/"> Representative Data API</a></p>
             <h6 align="center" className="descriptionBody2"> This API was the simplest to work with. It provided all the members of congress (House and Senate) in an easy to parse JSON response. Python was used to send the GET request. The response was parsed into a pandas dataframe and subsequently loaded into the DB.</h6>
           <p> <a href="https://projects.propublica.org/api-docs/congress-api/"> Legislation Data API</a></p>
             <h6 align="center" className="descriptionBody2"> Propublica is the sole source of accurate legislation data. We had to request an API key, and once it was active, we used it to send requests for bills with specific key-words (eg: food security, food desert, etc.). The response was a bit funky - providing JSON or XML randomly. Our script had to handle for both types of responses.</h6>
