@@ -7,12 +7,11 @@ backend:
   stage: DB_tests
   image: continuumio/miniconda3:latest
   script:
-  - export PIP_CACHE_DIR="/cache/pip"
-  - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
-  - source activate backend_test_env
-  - python --version
-  - python backend/tests.py
-
+    - export PIP_CACHE_DIR="/cache/pip"
+    - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
+    - source activate backend_test_env
+    - python --version
+    - python backend/tests.py
 
 API:
   stage: API_tests
@@ -22,3 +21,12 @@ API:
   script:
     - newman --version
     - newman run api_unit_tests.json
+
+frontend:
+  state: Front-end_tests
+  image: node:lastest
+  script:
+    - node --version
+    - cd frontend
+    - npm install-dev
+    - npm test
