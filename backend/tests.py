@@ -1,10 +1,11 @@
+import sys
+sys.path = sys.path.append('DB_Load')
 from unittest import main,TestCase
 import sqlalchemy
 import pandas
 from timeit import timeit
-import sys
-sys.path = sys.path.append('DB_Load')
-from backend_Census_getCensusApiForDistrict import getStateNumbers, getData
+from backend_Census_getCensusApiForDistrict import getStateNumbers
+from backend_Census_getCensusApiForDistrict import getData
 from backend_Scrapper import getJsonFromUrl
 from driver import pgadminconnect, API_response
 from api_uris import apis
