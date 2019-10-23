@@ -19,11 +19,11 @@ class AboutUs extends React.Component{
 
   constructor(props){
     super(props)
-    var Chris = [0,0,0]
-    var Gyuwon = [0,0,0]
-    var Shubhendra = [0,0,0]
+    var Chris = [0,0,10]
+    var Gyuwon = [0,0,20]
+    var Shubhendra = [0,0,6]
     var Brian = [0,0,0]
-    var Nithin = [0,0,0]
+    var Nithin = [0,0,6]
     var totalIssues = 0
     var totalCommits = 0
     var closedIssues = 0
@@ -137,22 +137,14 @@ async grabCommits(){
     return (
       <div>
         <div className="titleCard">
-        <h2 className="descriptionHeader"> What is Food Me Once? </h2>
-          <h6 class="descriptionBody"> 
-            Food Me Once is a website designed to look into the issue of food security in the United States. Our goal is to see how geographic location, congressional representation, 
-            and legislation effect the food security of individuals in this country.
-          </h6>
+        <h2 className="descriptionHeader"> What are we? </h2>
+          <h6 align="center" class="descriptionBody">
+Food Me Once is a website designed to look into the issue of food security in the United States. Our goal is to see how geographic location, congressional representation,
+            and legislation affects the food security of individuals in this country.          </h6>
         </div>
-        <div className="titleCard">
-        <h2 className="descriptionHeader3"> Intended Audience </h2>
-          <h6 class="descriptionBody2"> 
-            We aim to reach those who do not have good food security in their region, and give them the tools to understand why. We encourage all 
-            to push their representatives to fight for good food legislation, and the health and nutrition of all.
-          </h6>
-        </div>
-        <h2 className="descriptionHeader2"> Who Are We? </h2>
+          <h2 className="descriptionHeader2"> Who Are We? </h2>
         <div className="cardRow">
-          <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
+          <div className="card text-white bg-dark mb-3" style={{width: "17rem", marginRight: ".5rem"}}>
             <img src={Chris_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Christopher Chasteen</h5>
@@ -166,7 +158,7 @@ async grabCommits(){
             </footer>
           </div>
 
-          <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
+          <div className="card text-white bg-dark mb-3" style={{width: "17rem", marginRight: ".5rem"}}>
             <img src={Gyuwon_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Gyuwon Kim</h5>
@@ -180,7 +172,7 @@ async grabCommits(){
             </footer>
           </div>
 
-          <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
+          <div className="card text-white bg-dark mb-3" style={{width: "17rem", marginRight: ".5rem"}}>
             <img src={Shub_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Shubhendra Trivedi</h5>
@@ -193,10 +185,7 @@ async grabCommits(){
               <p className="card-text">Unit Tests: {Shubhendra[2]}</p>
             </footer>
           </div>
-        </div>
-
-        <div className="cardRow">
-        <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
+            <div className="card text-white bg-dark mb-3" style={{width: "17rem", marginRight: ".5rem"}}>
             <img src={Brian_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Brian Dyck</h5>
@@ -210,7 +199,7 @@ async grabCommits(){
             </footer>
           </div>
 
-          <div className="card text-white bg-dark mb-3" style={{width: "18rem", marginRight: ".5rem"}}>
+          <div className="card text-white bg-dark mb-3" style={{width: "17rem", marginRight: ".5rem"}}>
             <img src={Nithin_img} className="card-img-top" alt="Card Background"/>
             <div className="card-body">
               <h5 className="card-title">Nithin Pingili</h5>
@@ -224,102 +213,118 @@ async grabCommits(){
             </footer>
           </div>
         </div>
-        <h4 className="footer">Total Commits: {totalCommits} </h4>
-        <h4 className="footer">Issues Opened: {totalIssues} </h4>
-        <h4 className="footer">Issues Closed: {closedIssues} </h4>
-
-        <div className="toolsHeader"> 
-          <h4> Tools</h4>
+          <div>
+        <h4 className="footer">Total Commits: {totalCommits} | Issues Opened: {totalIssues} | Issues Closed: {closedIssues} </h4>
+        <h4 className="footer"> </h4>
+        <h4 className="footer"></h4>
+          </div>
+          <div className="titleCard">
+              <h2 className="descriptionHeader3">
+                  Who are you? </h2>
+              <h6 align="center" className="descriptionBody2">
+                  We welcome one and all. Our goal is simply to spread awareness on this critical issue and provide the tools necessary to understand the how and why. We hope this platform also helps those in regions of low food security, and provides them insight in to
+                  why. We encourage all to push their representatives to fight for good food legislation, and the health and nutrition of all.
+              </h6>
+          </div>
+          <div className="titleCard">
+              <h2 className="descriptionHeader3">
+                  Mission </h2>
+              <h6 align="center" className="descriptionBody2">
+            Food Me Once is being developed to provide a platform for users to gather information on the food security of communities across the United States. It combines disparate data sources about food security across districts/counties, political representation and legislation to present a well-rounded perspective. It will enable users to understand how political representation affects health outcomes as well as what actions have been undertaken to ensure equitable access to healthy food and eradicating food deserts. The website will generate statistics/visualizations across various dimensions (population, representation, race, etc.).</h6>
+          </div>
+        <div className="toolsHeader">
+            <h2 className="descriptionHeader"> Toolstack </h2>
         </div>
         <div className="toolsContainer">
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={React_img} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">React</h3>
-                <p> Used in front end development for creating dynamic components</p>
+                <p align="center"> Used in front end development for creating dynamic components</p>
               </div>
           </div>
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={Bootstrap_img} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Bootstrap</h3>
-                <p> Utilized various css frameworks for user design</p>
+                <p align="center"> Utilized CSS framework for designing, styling and formatting the website</p>
               </div>
           </div>
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={Flask_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Flask</h3>
-                <p> Used Flask for Python Frameworks for API's</p>
+                <p align="center"> Developed backend API server as a Flask application</p>
               </div>
           </div>
-        </div>
-        <div className="toolsContainer">
-          <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+            <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={Selenium_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Selenium</h3>
-                <p> Used to test GUI of the website through automation</p>
+                <p align="center"> Automated GUI testing implemented using Selenium</p>
               </div>
           </div>
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={Postgres_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">PostgreSQL</h3>
-                <p> Cloud PostGreSQL database used to host data driving website</p>
+                <p align="center"> Cloud PostGreSQL database used to host data driving website</p>
               </div>
           </div>
+        </div>
+        <div className="toolsContainer">
+
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={AWS_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">AWS</h3>
-                <p> Used to host the website for public access</p>
+                <p align="center"> Used to host the website, database as well as backend API server</p>
               </div>
           </div>
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={Postman_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">POSTMAN</h3>
-                <p> Used to design and implement RESTful API for database</p>
+                <p align="center"> Utilized to design and document RESTful API for database</p>
               </div>
           </div>
-        </div>
-        <div className="toolsContainer">
-        <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
+            <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={Mocha_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Mocha</h3>
-                <p> Used to write Unit Tests for front end javascript code</p>
+                <p align="center"> Unit testing of front end React JS framework implemented via Mocha</p>
               </div>
           </div>
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={Python_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">Python</h3>
-                <p> Used to write scripts to scrape data from data sources</p>
+                <p align="center"> Database loading, API implementation via Python</p>
               </div>
           </div>
           <div className="card text-white bg-dark mb-3" style={{width: "14rem", marginRight: ".5rem"}}>
               <img src={Alchemy_image} className="card-img-top" alt="Card Background" style={{height:"250px"}}/>
               <div className="card-body">
                 <h3 className="toolName">SQLAlchemy</h3>
-                <p> Used to speak with and load data into database</p>
+                <p align="center"> Module used to speak with and load data into database</p>
               </div>
           </div>
         </div>
         <div className="dataSources">
-          <h4 style={{paddingBottom: "1rem"}}> Data Sources</h4>
-          <h6> API's</h6>
-          <p> <a href="https://hudgis-hud.opendata.arcgis.com/datasets/acs-5yr-socioeconomic-estimate-data-by-tract"> Socioeconomic data API</a></p>
-          <p> <a href="https://projects.propublica.org/api-docs/congress-api/"> Congressional Data API</a></p>
-          <p> <a href="https://www.census.gov/data/developers/guidance/api-user-guide.Query_Components.html"> Census Data API</a></p>
+          <h4 style={{paddingBottom: "1.5rem"}}> Data Sources</h4>
+          <p> <a href="https://sunlightlabs.github.io/congress/"> Represenative Data API</a></p>
+            <h6 align="center" className="descriptionBody2"> This API was the simplest to work with. It provided all the members of congress (House and Senate) in an easy to parse JSON response. Python was used to send the GET request. The response was parsed into a pandas dataframe and subsequently loaded into the DB.</h6>
+          <p> <a href="https://projects.propublica.org/api-docs/congress-api/"> Legislation Data API</a></p>
+            <h6 align="center" className="descriptionBody2"> Propublica is the sole source of accurate legislation data. We had to request an API key, and once it was active, we used it to send requests for bills with specific key-words (eg: food security, food desert, etc.). The response was a bit funky - providing JSON or XML randomly. Our script had to handle for both types of responses.</h6>
+          <p> <a href="https://www.census.gov/data/developers/guidance/api-user-guide.Query_Components.html"> District Data API</a></p>
+            <h6 align="center" className="descriptionBody2"> The obvious choice for congressional district data was a government website. It contains a variety of information with respect to a district. We were able to find the race demographic data requested by our customers in this dataset as well.</h6>
         </div>
         <div className="contactCard">
           <h6> Project Links</h6>
-          <p> <a href="https://gitlab.com/shub95/foodmeonce/"> FoodMeOnce GitLab Repository</a></p>
+            <p> </p><p><a href="https://gitlab.com/shub95/foodmeonce/"> FoodMeOnce GitLab Repository</a></p>
         </div>
         <div className="contactCard2">
-          <p> <a href="https://documenter.getpostman.com/view/7777503/SVtPXWHE?version=latest"> FoodMeOnce API Documentation</a></p>
+          <p> <a href="https://documenter.getpostman.com/view/7777503/SVtPXWHE?version=latest">  FoodMeOnce API Documentation</a></p>
         </div>
       </div>
     );

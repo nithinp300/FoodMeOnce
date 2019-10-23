@@ -9,6 +9,7 @@ import DistrictInstance from "./InstancePages/DistrictInstance";
 import RepresentativeInstance from "./InstancePages/RepresentativeInstance";
 import LegislationInstance from "./InstancePages/LegislationInstance";
 import ErrorPage from "./Error";
+//import logo from "././images";
 import { Navbar, Nav } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,7 +18,7 @@ function App() {
   return (
     <div>
       <Navbar bg="light" variant="light" expand="lg">
-        <Navbar.Brand href="/">FoodMeOnce</Navbar.Brand>
+        <Navbar.Brand href="/"><img src="/logo.ico" width="35" height="35" alt="Home" /> FoodMeOnce</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">

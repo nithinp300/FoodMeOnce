@@ -47,12 +47,17 @@
     padding-left: 15%;
     padding-right: 15%;
     padding-bottom: 2rem;
+    font-family: Calibri;
+    font-size: 17.5px;
 }
 
 .descriptionBody2 {
     padding-left: 15%;
     padding-right: 15%;
     padding-bottom: 2rem;
+    font-family: Calibri;
+    font-size: 17.5px;
+
 }
 
 .dataSources {
@@ -84,7 +89,6 @@
 
 .toolsHeader {
     display: flex;
-    padding-top: 3rem;
     justify-content: center;
 }
 
@@ -97,5 +101,4 @@
 .toolName {
     display: flex;
     justify-content: center;
-
 }
