@@ -11,6 +11,9 @@ class DistrictInstance extends React.Component {
     legislationBySenate: []
   };
   getName = (state, districtNum) => {
+    if(districtNum === "00"){
+      return state + " At Large Congressional District ";
+    }
     return state + " Congressional District " + districtNum;
   };
   componentDidMount() {
