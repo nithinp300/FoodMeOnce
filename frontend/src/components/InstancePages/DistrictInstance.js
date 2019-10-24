@@ -156,22 +156,22 @@ class DistrictInstance extends React.Component {
             <span>Race Demographics</span>
             <br />
             <li>
-              - <i>Asian:</i> {district_data.asian}
+              - <i>African American:</i> {district_data.aa} %
             </li>
             <li>
-              - <i>African American:</i> {district_data.aa}
+              - <i>Asian:</i> {district_data.asian} %
             </li>
             <li>
-              - <i>Native American:</i> {district_data.a_indian}
+              - <i>Native American:</i> {district_data.a_indian} %
             </li>
             <li>
-              - <i>Native Hawaiian:</i> {district_data.hawaiian}
+              - <i>Native Hawaiian:</i> {district_data.hawaiian} %
             </li>
             <li>
-              - <i>Others:</i> {district_data.others}
+              - <i>Others:</i> {district_data.others} %
             </li>
             <li>
-              - <i>White:</i> {district_data.white}
+              - <i>White:</i> {district_data.white} %
             </li>
           </li>
           <li className="district-instance-desc">
