@@ -9,7 +9,8 @@ function Representative(props) {
         <div className="representative-desc">Age</div>
         <div className="representative-desc">Years In Office</div>
         <div className="representative-desc">Party</div>
-        <div className="representative-desc">State/District</div>
+        <div className="representative-desc">State</div>
+          <div className="representative-desc">District</div>
       </div>
     );
   }
@@ -21,6 +22,7 @@ function Representative(props) {
       <div className="representative-desc">{props.yearsInOffice}</div>
       <div className="representative-desc">{props.party}</div>
       <div className="representative-desc">{props.stateDistrict}</div>
+        <div className="representative-desc">{props.district}</div>
     </div>
   );
 }

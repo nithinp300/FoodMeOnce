@@ -92,6 +92,7 @@ class Representatives extends Component {
               yearsInOffice={representative.seniority}
               party={this.getParty(representative.party)}
               stateDistrict={representative.state}
+              district={representative.district}
             />
           </a>
         );
