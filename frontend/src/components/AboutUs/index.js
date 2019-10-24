@@ -163,7 +163,7 @@ Food Me Once is a website designed to look into the issue of food security in th
             <div className="card-body">
               <h5 className="card-title">Gyuwon Kim</h5>
               <p className="card-title" style = {{}}>Role: Full Stack Developer</p>
-              <p className="card-text"style = {{fontStyle: "italic"}}>Bio: ADD YOUR BIO</p>
+              <p className="card-text" style={{ fontStyle: "italic" }}>Bio: Enjoys coffee, ramen, and always IT</p>
             </div>
             <footer className="card-footer border-white ">
               <p className="card-text">Commits: {Gyuwon[0]}</p>
