@@ -75,7 +75,7 @@ class DistrictInstance extends React.Component {
     ) {
       legisltaionsByRepresentative[0] = (
         <p>
-          This districts representation has not passed any food security related
+          This district's representative has not sponsored any food security related
           legislation.
         </p>
       );

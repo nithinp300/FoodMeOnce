@@ -54,7 +54,7 @@ class RepresentativeInstance extends React.Component {
     if (legislations.length === 0) {
       legislations[0] = (
         <p>
-          This districts representation has not passed any food security related
+          This representative has not sponsored any food security related
           legislation.
         </p>
       );

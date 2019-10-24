@@ -35,6 +35,7 @@
 .representative-instance-desc {
     margin: 0;
     text_align: center;
+    padding-left: 10px;
 }
 
 .representative-instance-desc span {
@@ -44,6 +45,7 @@
 .representative-instance-list {
     margin: 0;
     text_align: center;
+    padding-left: 10px;
 }
 
 .representative-instance-list span {
