@@ -47,8 +47,8 @@ def pgadminconnect():
 
 @app.route("/")
 def home():
-    data = con.execute("SELECT * FROM staging.district LIMIT 5 OFFSET 0")
-    return jsonify([dict(r) for r in data])
+    data = {'status': 200, 'response': "Welcome to foodmeonce.me API services. You can get all the information about our service in this API."}
+    return jsonify(data)
 
 
 # model page apis
