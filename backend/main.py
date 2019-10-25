@@ -47,7 +47,10 @@ def pgadminconnect():
 
 @app.route("/")
 def home():
-    data = {'status': 200, 'response': "Welcome to foodmeonce.me API services. You can get all the information about our service in this API."}
+    data = {
+        "status": 200,
+        "response": "Welcome to foodmeonce.me API services. You can get all the information about our service in this API.",
+    }
     return jsonify(data)
 
 

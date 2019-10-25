@@ -1,4 +1,4 @@
-from unittest import main,TestCase
+from unittest import main, TestCase
 import sqlalchemy
 import pandas
 from timeit import timeit
@@ -16,20 +16,22 @@ class TestDBloader(TestCase):
     # test database connection and engine
     def test_pgadminconnect(self):
         db_objects = pgadminconnect()
-        assert(type(db_objects) is list)
-        assert(type(db_objects[0]) is sqlalchemy.engine.base.Connection)
-        assert(type(db_objects[1]) is sqlalchemy.engine.base.Engine)
+        assert type(db_objects) is list
+        assert type(db_objects[0]) is sqlalchemy.engine.base.Connection
+        assert type(db_objects[1]) is sqlalchemy.engine.base.Engine
 
     # test api connections:
     def test_api_response(self):
-        range_obj = range(0,len(apis))
+        range_obj = range(0, len(apis))
         range_iterator = iter(range_obj)
         for api_uri in apis:
             assert type(API_response(api_uri, next(range_iterator)) is pandas.DataFrame)
 
     # test json from url is dictionary
     def test_json_from_url(self):
-        url = "https://api.census.gov/data/2018/acs/acs1?get=NAME,group(B01001)&for=us:1"
+        url = (
+            "https://api.census.gov/data/2018/acs/acs1?get=NAME,group(B01001)&for=us:1"
+        )
         data = getJsonFromUrl(url)
         assert type(data) is list
 
@@ -63,7 +65,7 @@ class TestDBloader(TestCase):
     # test api credentials
     def test_api_credentials(self):
         key = propublica()
-        self.assertEquals(key, 'eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6')
+        self.assertEquals(key, "eqgLGZRNuOktoYkIpRdonPmtq4zIKokpsvT0EpN6")
 
     # test api credentials type
     def test_api_credentials_type(self):
@@ -81,6 +83,7 @@ class TestDBloader(TestCase):
         stateNumbers = getStateNumbers()
         getData(states, stateNumbers)
         assert type(states) is dict
+
 
 if __name__ == "__main__":  # pragma: no cover
     main()

@@ -1,6 +1,7 @@
 from json import JSONDecodeError
 from backend_Scrapper import getJsonFromUrl
 
+
 class District:
     def __init__(self, state, district):
         self.state = state
@@ -28,34 +29,42 @@ class District:
         print("%.2f" % float(self.povertyRate), end="', '")
         print(self.numHouseholds, end="', '")
         print(self.wikiPage, end="'),\n")
-    
+
     def __lt__(self, rhs):
         return int(self.district) < int(rhs.district)
-    
+
     def setPopulation(self, population):
         self.population = population
 
     def setGenderRatio(self, malePopulation):
-        self.genderRatio = str((int(self.population) - int(malePopulation)) / int(malePopulation))
-    
+        self.genderRatio = str(
+            (int(self.population) - int(malePopulation)) / int(malePopulation)
+        )
+
     def setMedianAge(self, medianAge):
         self.medianAge = medianAge
-    
+
     def setMeanIncome(self, meanIncome):
         total = 0
         for index in range(len(meanIncome)):
             total += int(meanIncome[index])
         avg = total // len(meanIncome)
         self.meanIncome = str(avg)
-    
+
     def setPovertyRate(self, povertyPopulation):
         self.povertyRate = str(int(povertyPopulation) / int(self.population) * 100)
 
     def setNumHouseholds(self, numHouseholds):
         self.numHouseholds = numHouseholds
-    
+
     def generateNumHouseholdsColumn(self, num):
-        return "UPDATE staging.district SET num_households = " + self.numHouseholds + " WHERE id = " + str(num) + ";"
+        return (
+            "UPDATE staging.district SET num_households = "
+            + self.numHouseholds
+            + " WHERE id = "
+            + str(num)
+            + ";"
+        )
 
     def setWikiPage(self, state, district):
         if district == "01":
@@ -88,11 +97,17 @@ class District:
             district = "52nd"
         elif district == "53":
             district = "53rd"
-        elif district[0] == '0':
+        elif district[0] == "0":
             district = district[1]
         if len(district) <= 2:
             district += "th"
-        self.wikiPage = "https://en.wikipedia.org/wiki/" + state + "%27s_"  + district + "_congressional_district"
+        self.wikiPage = (
+            "https://en.wikipedia.org/wiki/"
+            + state
+            + "%27s_"
+            + district
+            + "_congressional_district"
+        )
 
 
 class State:
@@ -113,6 +128,7 @@ class State:
     def __lt__(self, rhs):
         return int(self.state) < int(rhs.state)
 
+
 def getStateNumbers():
     states = {}
     url = "https://api.census.gov/data/2018/acs/acs1?get=NAME,group(B01001)&for=state"
@@ -122,9 +138,13 @@ def getStateNumbers():
     # states["arkansus"] = "01"
     return states
 
+
 def getData(states, stateNumbers):
     for key in stateNumbers:
-        url = "https://api.census.gov/data/2018/acs/acs1?get=NAME,B01001_001E,B01001_002E,B01002_001E,B19081_001E,B19081_002E,B19081_003E,B19081_004E,B19081_005E,B17001_002E,B25002_002E&for=congressional+district:*&in=state:"+stateNumbers[key]
+        url = (
+            "https://api.census.gov/data/2018/acs/acs1?get=NAME,B01001_001E,B01001_002E,B01002_001E,B19081_001E,B19081_002E,B19081_003E,B19081_004E,B19081_005E,B17001_002E,B25002_002E&for=congressional+district:*&in=state:"
+            + stateNumbers[key]
+        )
         resp = getJsonFromUrl(url)
         state = State(resp[1][len(resp[1]) - 2], key)
         districts = state.getDistricts()
@@ -137,7 +157,7 @@ def getData(states, stateNumbers):
                 resp[cd][5],
                 resp[cd][6],
                 resp[cd][7],
-                resp[cd][8]
+                resp[cd][8],
             ]
             povertyPopulation = resp[cd][9]
             numHouseholds = resp[cd][10]
@@ -152,6 +172,7 @@ def getData(states, stateNumbers):
             district.setWikiPage(key, congressionalDistrict)
             districts.append(district)
         states[key] = state
+
 
 if __name__ == "__main__":
     states = {}
