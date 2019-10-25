@@ -1,6 +1,6 @@
 # Food Me Once
 
-## Team Memebers
+## Team Members
 |        Name        | UT eid |   GitLab ID   |
 |--------------------|:------:|:-------------:|
 |     Gyuwon Kim     | gk4893 |    wonkgo1    |
@@ -13,5 +13,11 @@
 ## Git SHA
 Phase 1: e052f7632497263241288cb2004eb7558253e8d2
 
-## Link to the Website
-### https://foodmeonce.me
+Phase 2: 
+
+## Website 
+https://foodmeonce.me
+
+## Gitlab Pipelines 
+https://gitlab.com/shub95/foodmeonce/pipelines
+
