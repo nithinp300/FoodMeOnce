@@ -6,6 +6,7 @@ import Pages from "../Pages";
 
 import "./css/Representatives.css";
 
+
 class Representatives extends Component {
   getAge = birthDateString => {
     var todayDate = new Date();
@@ -73,6 +74,7 @@ class Representatives extends Component {
       .then(data => {
         let representatives = data["data"];
         let metaData = data["metaData"];
+        console.log(metaData);
         this.setState({ representatives, metaData });
       })
       .catch(console.log);
@@ -80,13 +82,20 @@ class Representatives extends Component {
   render() {
     const representativesRendered = this.state.representatives.map(
       (representative, i) => {
+        var rep_image = "";
+        if (representative.first_name != null) {
+          rep_image =
+            "https://theunitedstates.io/images/congress/original/" +
+            representative.id +
+            ".jpg";
+        }
         return (
-          <a
-            key={i}
+            <a
             href={`/Representatives/instance/${representative.id}`}
             className="button-container"
-          >
+            >
             <Representative
+              image={rep_image}
               name={representative.first_name + " " + representative.last_name}
               age={this.getAge(representative.date_of_birth)}
               yearsInOffice={representative.seniority}
@@ -112,9 +121,11 @@ class Representatives extends Component {
           </div>
           {this.state.collapse && <RepresentativeSortFilter />}
         </div>
-        <div className="representatives-container d-flex flex-column bd-highlight mb-3">
-          <Representative header />
-          {representativesRendered}
+        <div className="representatives-container">
+          {representativesRendered.slice(0,4)}
+        </div>
+        <div className="representatives-container">
+          {representativesRendered.slice(4,8)}
         </div>
         <Pages
           url="/Representatives"

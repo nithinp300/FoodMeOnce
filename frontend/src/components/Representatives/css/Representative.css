@@ -14,3 +14,16 @@ a.representative_link {
   padding: 5px;
   vertical-align: middle;
 }
+
+.previewImage {
+  width: 95px;
+  height: 80px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px
+}
+
+.previewImageDescription {
+  width: 115px;
+  padding: 5px;
+}
