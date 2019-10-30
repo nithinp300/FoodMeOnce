@@ -1,33 +1,33 @@
-# stages:
-#   - Front-end_tests
-#   - DB_tests
-#   - API_tests
+stages:
+  - Front-end_tests
+  - DB_tests
+  - API_tests
 
-# frontend:
-#   stage: Front-end_tests
-#   image: node:12.2.0-alpine
-#   script:
-#     - node -v
-#     - npm -v
-#     - cd frontend
-#     - npm install
-#     - npm test
+frontend:
+  stage: Front-end_tests
+  image: node:12.2.0-alpine
+  script:
+    - node -v
+    - npm -v
+    - cd frontend
+    - npm install
+    - npm test
 
-# backend:
-#   stage: DB_tests
-#   image: continuumio/miniconda3:latest
-#   script:
-#     - export PIP_CACHE_DIR="/cache/pip"
-#     - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
-#     - source activate backend_test_env
-#     - python --version
-#     - python backend/tests.py
+backend:
+  stage: DB_tests
+  image: continuumio/miniconda3:latest
+  script:
+    - export PIP_CACHE_DIR="/cache/pip"
+    - conda create --name backend_test_env --file backend/DB_Load/requirements.txt
+    - source activate backend_test_env
+    - python --version
+    - python backend/tests.py
 
-# API:
-#   stage: API_tests
-#   image:
-#     name: postman/newman_alpine33
-#     entrypoint: [""]
-#   script:
-#     - newman --version
-#     - newman run Postman.json
+API:
+  stage: API_tests
+  image:
+    name: postman/newman_alpine33
+    entrypoint: [""]
+  script:
+    - newman --version
+    - newman run Postman.json
