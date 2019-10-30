@@ -31,3 +31,4 @@ API:
   script:
     - newman --version
     - newman run Postman.json
+    
