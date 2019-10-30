@@ -52,7 +52,7 @@ class Districts extends Component {
       .catch(console.log);
   }
   render() {
-    let districtsRendered;
+    let districtsRendered = [];
     if (this.state.districts.length > 0)
       districtsRendered = this.state.districts.map((district, i) => {
         return (
@@ -66,9 +66,11 @@ class Districts extends Component {
                 district.state,
                 district.congressional_district
               )}
+              number={district.congressional_district}
               population={district.population}
               medianIncome={district.mean_income}
               avgAge={district.median_age}
+              stateAbbreviation={district.state_abbreviation}
               genderRatio={district.gender_ratio}
               representative={district.full_name}
               senators={district.senators}
@@ -95,9 +97,11 @@ class Districts extends Component {
           </div>
           {this.state.collapse && <DistrictSortFilter />}
         </div>
-        <div className="districts-container d-flex justify-content-center flex-column bd-highlight mb-3">
-          <District header />
-          {districtsRendered}
+        <div className="districts-container">
+          {districtsRendered.slice(0,4)}
+        </div>
+        <div className="districts-container">
+          {districtsRendered.slice(4,8)}
         </div>
         <Pages
           url="/Districts"

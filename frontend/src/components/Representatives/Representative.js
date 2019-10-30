@@ -2,11 +2,6 @@ import React from "react";
 import "./css/Representative.css";
 
 function Representative(props) {
-  if (props.header) {
-    return (
-      <div></div>
-    );
-  }
 
   return (
     <div className="card text-white bg-dark mb-3" style={{width: "17rem", marginRight: ".5rem"}}>
@@ -21,15 +16,6 @@ function Representative(props) {
 
             </div>
     </div>
-    // <div className="representative d-flex flex-row text-center" id="rep_inst">
-    //   <img src={props.image} className="previewImage" alt="None Found"/>
-    //   <div className="representative-desc">{props.name}</div>
-    //   <div className="representative-desc">{props.age}</div>
-    //   <div className="representative-desc">{props.yearsInOffice}</div>
-    //   <div className="representative-desc">{props.party}</div>
-    //   <div className="representative-desc">{props.stateDistrict}</div>
-    //   <div className="representative-desc">{props.district}</div>
-    // </div>
   );
 }
 
