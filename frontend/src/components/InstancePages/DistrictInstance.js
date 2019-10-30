@@ -184,7 +184,7 @@ class DistrictInstance extends React.Component {
             </a>
           </li>
           <li className="district-instance-desc">
-            <span>Legislation by Representative</span>:<br />
+            <span>Impactful legislation</span>:<br />
             {legisltaionsByRepresentative}
             {legislationsBySenate}
           </li>
