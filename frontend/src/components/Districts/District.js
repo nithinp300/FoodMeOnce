@@ -27,7 +27,7 @@ function District(props) {
             src={map_url}
           ></iframe>
             <div className="card-body">
-              <h5 className="card-title">{props.name}</h5>
+              <h5 className="card-title" align="center">{props.name}</h5>
               <p className="card-title" style = {{}}>Population: {props.population}</p>
               <p className="card-title" style = {{}}>Median Income: {props.medianIncome}</p>
               <p className="card-title" style = {{}}>Average Age: {props.avgAge}</p>
