@@ -1,5 +1,5 @@
 .representative-instance {
-    width: 500px;
+    width: 850px;
     margin: auto;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -15,9 +15,23 @@
 }
 
 .representative-instance-image {
-    width: 55%;
+    width: 30%;
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+.feed-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    justify-content: space-between;
+}
+
+.single-feed {
+    padding-right: 2%;
+    padding-bottom: 5%;
 }
 
 .representative-instance-name {
@@ -31,6 +45,11 @@
     margin: 0;
     padding: 0;
     list-style: none;
+}
+.page-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .representative-instance-desc {
     margin: 0;

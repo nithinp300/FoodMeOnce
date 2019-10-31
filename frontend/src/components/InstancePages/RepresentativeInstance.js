@@ -1,11 +1,17 @@
 import React from "react";
 import "./css/RepresentativeInstance.css";
+import {Timeline} from 'react-twitter-widgets'
+import {FacebookProvider,Page} from 'react-facebook';
+
+
 
 class RepresentativeInstance extends React.Component {
   state = {
     representative: {},
     district: {},
-    legislations: []
+    legislations: [],
+    showTwitter: true,
+    showFacebook: false,
   };
 
   componentDidMount() {
@@ -62,6 +68,8 @@ class RepresentativeInstance extends React.Component {
     var rep_data = this.state.representative;
     var age = this.getAge(rep_data.date_of_birth);
     var twitter = "https://twitter.com/" + rep_data.twitter_account;
+    var twitterUser = "" + rep_data.twitter_account
+    var fbUser = rep_data.facebook_account
     var facebook = "https://facebook.com/" + rep_data.facebook_account;
     var map_url =
       "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
@@ -76,6 +84,7 @@ class RepresentativeInstance extends React.Component {
         ".jpg";
     }
     return (
+      <div className="page-container">
       <div
         className="representative-instance d-flex p-2 border border-secondary
                 justify-content-center flex-column align-items-center"
@@ -116,15 +125,9 @@ class RepresentativeInstance extends React.Component {
           <li className="representative-instance-list">
             <span>Social Media</span>:
             <br />
-            <a href={twitter} target="_blank" rel="noopener noreferrer">
-              Twitter{" "}
-            </a>
-            <a href={facebook} target="_blank" rel="noopener noreferrer">
-              Facebook{" "}
-            </a>
             <a href={rep_data.url} target="_blank" rel="noopener noreferrer">
               {" "}
-              .gov site{" "}
+              Government site{" "}
             </a>
           </li>
         </ul>
@@ -141,6 +144,21 @@ class RepresentativeInstance extends React.Component {
           ></iframe>
         </div>
       </div>
+      {this.state.showTwitter? 
+        <div className="feed-container">
+          <div className="single-feed">
+        <FacebookProvider appId="908709349494568">
+           <Page href={"https://www.facebook.com/" + fbUser}  tabs="timeline" width="425" />
+         </FacebookProvider>
+         </div>
+        <div className="single-feed">
+        <Timeline dataSource={{sourceType:"profile", screenName:twitterUser}}
+                      options={{username:{twitterUser}, height:"500", width:"425"}}/>
+        </div>
+        
+        </div>
+        : null}
+        </div>
     );
   }
 }
