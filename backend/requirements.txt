@@ -1,5 +1,6 @@
 Click==7.0
 Flask==1.1.1
+Flask-API==1.1
 Flask-Cors==3.0.8
 freeze==1.0.10
 itsdangerous==1.1.0

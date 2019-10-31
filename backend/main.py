@@ -10,12 +10,14 @@ sys.path.append("DB_Load")
 import db_creds as creds
 from flask_cors import CORS
 from math import ceil
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, json
 from sqlalchemy import create_engine
+from sqlalchemy.exc import SQLAlchemyError
+from flask_api import status
+from werkzeug.exceptions import HTTPException, BadRequest
 
 application = app = Flask(__name__)
 CORS(app)
-
 
 def pgadminconnect():
     db_name = creds.PGDATABASE
@@ -44,6 +46,20 @@ def pgadminconnect():
 
 [con, engine] = pgadminconnect()
 
+# from flask documentation
+@app.errorhandler(HTTPException)
+def handle_exception(e):
+    """Return JSON instead of HTML for HTTP errors."""
+    # start with the correct headers and status code from the error
+    response = e.get_response()
+    # replace the body with JSON
+    response.data = json.dumps({
+        "code": e.code,
+        "name": e.name,
+        "description": e.description,
+    })
+    response.content_type = "application/json"
+    return response
 
 @app.route("/")
 def home():
@@ -181,21 +197,95 @@ def legislation(id=""):
     data["fromDistrict"] = [dict(r) for r in fromDistrict]
     return jsonify(data)
 
-
-# for later use
 @app.route("/Districts/sort")
 def sortedDistricts():
-    return jsonify(response="for later implementation")
+    try:
+        attribute = request.args.get("attribute")
+        order = request.args.get("order")
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+        if attribute is None:
+            raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
+        if order is None or (order != "ASC" and order != "DESC"):
+            order = "ASC"
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        data = con.execute(
+            f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) order by d.{attribute} {order} LIMIT 8 OFFSET {str(actualPage)}"
+        )
+        pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
+        for row in pages:
+            pages = ceil(int(row["pages"]) / numLimit)
+        resultData = [dict(r) for r in data]
+        metaData = {"currentPage": page, "numPages": pages}
+        return jsonify({"data": resultData, "metaData": metaData})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
 
 @app.route("/Representatives/sort")
 def sortedRepresentatives():
-    return jsonify(response="for later implementation")
+    try:
+        attribute = request.args.get("attribute")
+        order = request.args.get("order")
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+        if attribute is None:
+            raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
+        if order is None or (order != "ASC" and order != "DESC"):
+            order = "ASC"
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        data = con.execute(
+            f"SELECT * FROM application.members WHERE short_title = 'Rep.' ORDER BY application.members.{attribute} LIMIT 8 OFFSET {actualPage}"
+        )
+        pages = con.execute(
+            "SELECT COUNT(*) AS pages FROM application.members WHERE short_title = 'Rep.'"
+        )
+        for row in pages:
+            pages = ceil(int(row["pages"]) / numLimit)
+        resultData = [dict(r) for r in data]
+        metaData = {"currentPage": page, "numPages": pages}
+        return jsonify({"data": resultData, "metaData": metaData})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
 
 @app.route("/Legislations/sort")
 def sortedLegislations():
-    return jsonify(response="for later implementation")
+    try:
+        attribute = request.args.get("attribute")
+        order = request.args.get("order")
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+        if attribute is None:
+            raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
+        if order is None or (order != "ASC" and order != "DESC"):
+            order = "ASC"
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        data = con.execute(
+            f"SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' order by application.legislations.{attribute} LIMIT 8 OFFSET {str(actualPage)}"
+        )
+        pages = con.execute(
+            "SELECT COUNT(*) AS pages FROM application.legislations WHERE sponsor_title = 'Rep.'"
+        )
+        for row in pages:
+            pages = ceil(int(row["pages"]) / numLimit)
+        resultData = [dict(r) for r in data]
+        metaData = {"currentPage": page, "numPages": pages}
+        return jsonify({"data": resultData, "metaData": metaData})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
 
 @app.route("/Districts/filter")
