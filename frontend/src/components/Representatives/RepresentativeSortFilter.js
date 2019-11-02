@@ -70,11 +70,11 @@ class representativeSortFilter extends Component {
               <div>
                 <input
                   type="radio"
-                  name="stateDistrict"
-                  checked={this.state.sort.name === "stateDistrict"}
+                  name="state"
+                  checked={this.state.sort.name === "state"}
                   onChange={this.handleSort}
                 />{" "}
-                State/District
+                State
               </div>
               <div className="d-flex justify-content-end">
                 <button className="btn btn-primary">Apply</button>
@@ -152,16 +152,16 @@ class representativeSortFilter extends Component {
               <div className="input-group input-group-sm">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="">
-                    State/District
+                    State
                   </span>
                 </div>
                 <input
                   type="text"
                   className="form-control"
-                  name="stateDistrict"
+                  name="state"
                   onChange={this.handleFilter}
-                  value={this.state.filter.stateDistrict}
-                  placeholder="State/District"
+                  value={this.state.filter.state}
+                  placeholder="State"
                 />
               </div>
               <div className="d-flex mt-3 justify-content-end">
