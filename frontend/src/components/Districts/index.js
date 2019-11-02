@@ -94,7 +94,8 @@ class Districts extends Component {
           {districtsRendered.slice(4, 8)}
         </div>
         <Pages
-          url="/Districts"
+          url={this.props.location.pathname}
+          querystring={this.props.location.search}
           current={this.state.metaData.currentPage}
           lastPage={this.state.metaData.numPages}
         />

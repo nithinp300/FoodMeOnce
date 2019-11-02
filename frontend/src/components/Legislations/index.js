@@ -103,7 +103,8 @@ class Legislations extends Component {
           {legislationsRendered}
         </div>
         <Pages
-          url="/Legislations"
+          url={this.props.location.pathname}
+          querystring={this.props.location.search}
           current={this.state.metaData.currentPage}
           lastPage={this.state.metaData.numPages}
         />

@@ -3,6 +3,17 @@ import Button from "react-bootstrap/Button";
 
 class Pages extends Component {
   render() {
+    let querystring = this.props.querystring;
+    if (querystring.length > 0) {
+      querystring = querystring.substring(1);
+    }
+    const parsedQuerystring = querystring.split("&");
+    querystring = "";
+    parsedQuerystring.forEach(query => {
+      if (!query.includes("page")) {
+        querystring += "&" + query;
+      }
+    });
     const url = this.props.url;
     const current = parseInt(this.props.current);
     const lastPage = parseInt(this.props.lastPage);
@@ -16,24 +27,24 @@ class Pages extends Component {
       pageListsAfter.push(i);
     }
     const pageBeforeRender = pageListsBefore.map((page, i) => (
-      <a key={"before" + i} href={`${url}?page=${page}`}>
+      <a key={"before" + i} href={`${url}?page=${page}${querystring}`}>
         <Button variant="light">{page}</Button>
       </a>
     ));
     const pageAfterRender = pageListsAfter.map((page, i) => (
-      <a key={"after" + i} href={`${url}?page=${page}`}>
+      <a key={"after" + i} href={`${url}?page=${page}${querystring}`}>
         <Button variant="light">{page}</Button>
       </a>
     ));
     return (
       <div className="d-flex justify-content-center">
         {current > 1 && (
-          <a href={`${url}?page=1`}>
+          <a href={`${url}?page=1${querystring}`}>
             <Button variant="light">First</Button>
           </a>
         )}
         {current > 1 && (
-          <a href={`${url}?page=${current - 1}`}>
+          <a href={`${url}?page=${current - 1}${querystring}`}>
             <Button variant="light">Prev</Button>
           </a>
         )}
@@ -41,11 +52,11 @@ class Pages extends Component {
         <Button variant="outline-info">{current}</Button>
         {pageAfterRender}
         {current < lastPage && (
-          <a href={`${url}?page=${current + 1}`}>
+          <a href={`${url}?page=${current + 1}${querystring}`}>
             <Button variant="light">Next</Button>
           </a>
         )}
-        <a href={`${url}?page=${lastPage}`}>
+        <a href={`${url}?page=${lastPage}${querystring}`}>
           <Button variant="light">Last</Button>
         </a>
       </div>
