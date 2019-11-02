@@ -30,18 +30,8 @@ class Districts extends Component {
 
   componentDidMount() {
     const querystring = this.props.location.search;
-    let page = 1;
-    if (querystring !== "") {
-      const parsedQuerystring = querystring.substring(1);
-      const queries = parsedQuerystring.split("&");
-      queries.forEach(query => {
-        const keyValue = query.split("=");
-        if (keyValue.length > 1 && keyValue[0] === "page") {
-          page = keyValue[1];
-        }
-      });
-    }
-    const url = "https://api.foodmeonce.me/Districts?page=" + page;
+    const pathname = this.props.location.pathname;
+    const url = `https://api.foodmeonce.me${pathname}${querystring}`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -98,10 +88,10 @@ class Districts extends Component {
           {this.state.collapse && <DistrictSortFilter />}
         </div>
         <div className="districts-container">
-          {districtsRendered.slice(0,4)}
+          {districtsRendered.slice(0, 4)}
         </div>
         <div className="districts-container">
-          {districtsRendered.slice(4,8)}
+          {districtsRendered.slice(4, 8)}
         </div>
         <Pages
           url="/Districts"

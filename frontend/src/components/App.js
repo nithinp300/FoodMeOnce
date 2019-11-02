@@ -18,11 +18,15 @@ function App() {
   return (
     <div>
       <Navbar bg="light" variant="light" expand="lg">
-        <Navbar.Brand href="/"><img src="/logo.ico" width="35" height="35" alt="Home" /> FoodMeOnce</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img src="/logo.ico" width="35" height="35" alt="Home" /> FoodMeOnce
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/Districts" id="BIGID">Districts</Nav.Link>
+            <Nav.Link href="/Districts" id="BIGID">
+              Districts
+            </Nav.Link>
             <Nav.Link href="/Representatives">Representatives</Nav.Link>
             <Nav.Link href="/Legislations">Legislation</Nav.Link>
             <Nav.Link href="/About Us">About Us</Nav.Link>
@@ -33,8 +37,12 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={SplashPage} />
-          <Route path="/Districts/Instance/:id" component={DistrictInstance} />
-          <Route exact path="/Districts" component={Districts} />
+          <Route
+            exact
+            path="/Districts/Instance/:id"
+            component={DistrictInstance}
+          />
+          <Route path="/Districts" component={Districts} />
           <Route
             path="/Representatives/Instance/:id"
             component={RepresentativeInstance}
