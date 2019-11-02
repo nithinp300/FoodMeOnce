@@ -57,18 +57,10 @@ class Representatives extends Component {
 
   componentDidMount() {
     const querystring = this.props.location.search;
-    let page = 1;
-    if (querystring !== "") {
-      const parsedQuerystring = querystring.substring(1);
-      const queries = parsedQuerystring.split("&");
-      queries.forEach(query => {
-        const keyValue = query.split("=");
-        if (keyValue.length > 1 && keyValue[0] === "page") {
-          page = keyValue[1];
-        }
-      });
-    }
-    fetch("https://api.foodmeonce.me/Representatives?page=" + page)
+    const pathname = this.props.location.pathname;
+    console.log(this.props.location);
+    const url = `https://api.foodmeonce.me${pathname}${querystring}`;
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         let representatives = data["data"];

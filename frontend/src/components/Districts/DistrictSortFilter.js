@@ -15,10 +15,11 @@ class DistrictSortFilter extends Component {
     this.setState({ sort: newSort });
   };
 
-  handleSortSubmit = _ => {
+  handleSortSubmit = e => {
+    e.preventDefault();
     const { name, order } = this.state.sort;
     const url = `/Districts/sort?attribute=${name}&order=${order}`;
-    this.props.history.push(url);
+    window.location = url;
   };
 
   handleFilter = e => {

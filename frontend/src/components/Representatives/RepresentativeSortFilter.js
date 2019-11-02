@@ -3,7 +3,8 @@ import React, { Component } from "react";
 class representativeSortFilter extends Component {
   state = {
     sort: {},
-    filter: []
+    filter: [],
+    url: ""
   };
 
   handleSort = e => {
@@ -20,6 +21,13 @@ class representativeSortFilter extends Component {
     this.setState({ filter });
   };
 
+  handleSortSubmit = e => {
+    e.preventDefault();
+    const { name, order } = this.state.sort;
+    const url = `/Representatives/sort?attribute=${name}&order=${order}`;
+    window.location = url;
+  };
+
   handleSubmit = e => {
     e.preventDefault();
   };
@@ -31,12 +39,12 @@ class representativeSortFilter extends Component {
         <div className="d-flex flex-wrap bd-heightlight mb-3 flex-row">
           <div className="d-flex flex-column sort pr-5 flex-fill">
             <h5 className="ml-2">Sort By</h5>
-            <form className="ml-3 mb-3" action="/representatives/sort">
+            <form className="ml-3 mb-3" onSubmit={this.handleSortSubmit}>
               <div>
                 <input
                   type="radio"
-                  name="age"
-                  checked={this.state.sort.name === "age"}
+                  name="date_of_birth"
+                  checked={this.state.sort.name === "date_of_birth"}
                   onChange={this.handleSort}
                 />{" "}
                 Age
@@ -44,8 +52,8 @@ class representativeSortFilter extends Component {
               <div>
                 <input
                   type="radio"
-                  name="yearsInOffice"
-                  checked={this.state.sort.name === "yearsInOffice"}
+                  name="seniority"
+                  checked={this.state.sort.name === "seniority"}
                   onChange={this.handleSort}
                 />{" "}
                 Years In Office

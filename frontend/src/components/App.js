@@ -44,15 +44,17 @@ function App() {
           />
           <Route path="/Districts" component={Districts} />
           <Route
+            exact
             path="/Representatives/Instance/:id"
             component={RepresentativeInstance}
           />
-          <Route exact path="/Representatives" component={Representatives} />
+          <Route path="/Representatives" component={Representatives} />
           <Route
+            exact
             path="/Legislations/Instance/:id"
             component={LegislationInstance}
           />
-          <Route exact path="/Legislations" component={Legislation} />
+          <Route path="/Legislations" component={Legislation} />
           <Route path="/About Us" component={AboutUs} />
           <Route path="/error" component={ErrorPage} />
           <Redirect to="/error" />
