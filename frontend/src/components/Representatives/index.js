@@ -58,7 +58,6 @@ class Representatives extends Component {
   componentDidMount() {
     const querystring = this.props.location.search;
     const pathname = this.props.location.pathname;
-    console.log(this.props.location);
     const url = `https://api.foodmeonce.me${pathname}${querystring}`;
     fetch(url)
       .then(response => response.json())
