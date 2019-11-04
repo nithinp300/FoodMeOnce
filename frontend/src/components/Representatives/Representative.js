@@ -1,18 +1,22 @@
 import React from "react";
 import "./css/Representative.css";
-
+import ReactImageFallback from "react-image-fallback";
+import blankProfile from "../../images/blankProfile.png"
+import republican from "../../images/republicanLogo.png"
+import democrat from "../../images/democratLogo.png"
 function Representative(props) {
   return (
     <div
       className="card text-white bg-dark mb-3"
       style={{ width: "17rem", marginRight: ".5rem" }}
     >
-      <img
-        src={props.image}
-        className="card-img-top"
-        style={{ height: "20rem", objectFit: "cover" }}
-        alt="Card Background"
-      />
+      <ReactImageFallback 
+      src={props.image} 
+      fallbackImage={props.party==="Democrat"? democrat : republican} 
+      className="card-img-top" 
+      style ={{ height: "20rem",  objectFit: "cover"}} 
+      alt="Card Background"/>
+      
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         <p className="card-title" style={{}}>
