@@ -1,7 +1,6 @@
 import React from "react";
 import "./css/Representative.css";
 import ReactImageFallback from "react-image-fallback";
-import blankProfile from "../../images/blankProfile.png"
 import republican from "../../images/republicanLogo.png"
 import democrat from "../../images/democratLogo.png"
 function Representative(props) {

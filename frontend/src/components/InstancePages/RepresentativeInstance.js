@@ -2,8 +2,9 @@ import React from "react";
 import "./css/RepresentativeInstance.css";
 import {Timeline} from 'react-twitter-widgets'
 import {FacebookProvider,Page} from 'react-facebook';
-
-
+import ReactImageFallback from "react-image-fallback";
+import republican from "../../images/republicanLogo.png"
+import democrat from "../../images/democratLogo.png"
 
 class RepresentativeInstance extends React.Component {
   state = {
@@ -89,9 +90,10 @@ class RepresentativeInstance extends React.Component {
         className="representative-instance d-flex p-2 border border-secondary
                 justify-content-center flex-column align-items-center"
       >
-        <img
+        <ReactImageFallback
           className="representative-instance-image"
           src={rep_image}
+          fallbackImage={rep_data.party==="D"? democrat : republican} 
           alt={rep_data.first_name}
         />
         <p className="representative-instance-name">{rep_data.full_name}</p>
