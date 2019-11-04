@@ -290,17 +290,147 @@ def sortedLegislations():
 
 @app.route("/Districts/filter")
 def filteredDistricts():
-    return jsonify(response="for later implementation")
+    try:
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+
+        state = request.args.get("state")
+        population = request.args.get("population")
+        mean_income = request.args.get("mean_income")
+        median_age = request.args.get("median_age")
+        gender_ratio = request.args.get("gender_ratio")
+        
+        filteringPhrase = ""
+        if state is not None:
+            filteringPhrase += f" state like '%%{state}%%'"
+        if population is not None:
+            minMax = population.split(',')
+            addAnd = " and" if filteringPhrase != "" else ""
+            filteringPhrase += addAnd
+            filteringPhrase += f" population between {minMax[0]} and {minMax[1]}"
+        if mean_income is not None:
+            minMax = mean_income.split(',')
+            addAnd = " and" if filteringPhrase != "" else ""
+            filteringPhrase += addAnd
+            filteringPhrase += f" mean_income between {minMax[0]} and {minMax[1]}"
+        if median_age is not None:
+            minMax = median_age.split(',')
+            addAnd = " and" if filteringPhrase != "" else ""
+            filteringPhrase += addAnd
+            filteringPhrase += f" median_age between {minMax[0]} and {minMax[1]}"
+        if gender_ratio is not None:
+            minMax = gender_ratio.split(',')
+            addAnd = " and" if filteringPhrase != "" else ""
+            filteringPhrase += addAnd
+            filteringPhrase += f" gender_ratio between {minMax[0]} and {minMax[1]}"
+        if filteringPhrase != "":
+            filteringPhrase = " WHERE " + filteringPhrase
+
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) {filteringPhrase} order by d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
+        data = con.execute(query)
+        pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
+        for row in pages:
+            pages = ceil(int(row["pages"]) / numLimit)
+        resultData = [dict(r) for r in data]
+        metaData = {"currentPage": page, "numPages": pages}
+        return jsonify({"data": resultData, "metaData": metaData})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
 
 @app.route("/Representatives/filter")
 def filteredRepresentatives():
-    return jsonify(response="for later implementation")
+    try:
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+
+        date_of_birth = request.args.get("date_of_birth")
+        seniority = request.args.get("seniority")
+        party = request.args.get("party")
+        state = request.args.get("state")
+        
+        filteringPhrase = ""
+        if date_of_birth is not None:
+            minMax = date_of_birth.split(',')
+            filteringPhrase += f" and cast(left(date_of_birth, 4) as int) between {minMax[0]} and {minMax[1]}"
+        if seniority is not None:
+            minMax = seniority.split(',')
+            filteringPhrase += f" and seniority between {minMax[0]} and {minMax[1]}"
+        if party is not None:
+            filteringPhrase += f" and party like '%%{party}%%'"
+        if state is not None:
+            filteringPhrase += f" and state like '%%{state}%%'"
+
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        data = con.execute(f"SELECT * FROM application.members WHERE short_title = 'Rep.' {filteringPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}")
+        pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
+        print("done here")
+        for row in pages:
+            pages = ceil(int(row["pages"]) / numLimit)
+        resultData = [dict(r) for r in data]
+        metaData = {"currentPage": page, "numPages": pages}
+        return jsonify({"data": resultData, "metaData": metaData})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
 
 @app.route("/Legislations/filter")
 def filteredLegislations():
-    return jsonify(response="for later implementation")
+    try:
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+
+        introduced_date = request.args.get("introduced_date")
+        enacted = request.args.get("enacted")
+        sponsor_party = request.args.get("sponsor_party")
+        bill_type = request.args.get("bill_type")
+        sponsor_name = request.args.get("sponsor_name")
+        status = request.args.get("status")
+        
+        filteringPhrase = ""
+        if introduced_date is not None:
+            minMax = introduced_date.split(',')
+            filteringPhrase += f" and cast(left(introduced_date, 4) as int) between {minMax[0]} and {minMax[1]}"
+        if enacted is not None:
+            minMax = enacted.split(',')
+            filteringPhrase += f" and cast(left(enacted, 4) as int) between {minMax[0]} and {minMax[1]}"
+        if sponsor_party is not None:
+            filteringPhrase += f" and sponsor_party like '%%{sponsor_party}%%'"
+        if status is not None:
+            if status == "pending":
+                filteringPhrase += f" and enacted is null"
+            else:
+                filteringPhrase += f" and enacted is not null"
+        if bill_type is not None:
+            filteringPhrase += f" and bill_type like '%%{bill_type}%%'"
+        if sponsor_name is not None:
+            filteringPhrase += f" and sponsor_name like '%%{sponsor_name}%%'"
+
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        query = f"SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' {filteringPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
+        print(query)
+        data = con.execute(query)
+        pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
+        for row in pages:
+            pages = ceil(int(row["pages"]) / numLimit)
+        resultData = [dict(r) for r in data]
+        metaData = {"currentPage": page, "numPages": pages}
+        return jsonify({"data": resultData, "metaData": metaData})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
 
 if __name__ == "__main__":
