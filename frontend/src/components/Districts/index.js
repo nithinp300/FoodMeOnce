@@ -32,6 +32,7 @@ class Districts extends Component {
     const querystring = this.props.location.search;
     const pathname = this.props.location.pathname;
     const url = `https://api.foodmeonce.me${pathname}${querystring}`;
+    console.log(url);
     fetch(url)
       .then(response => response.json())
       .then(data => {

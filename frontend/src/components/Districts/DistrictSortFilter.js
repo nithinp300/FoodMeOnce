@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class DistrictSortFilter extends Component {
   state = {
     sort: {},
-    filter: [],
+    filter: {},
     redirect: false,
     url: ""
   };
@@ -27,6 +27,73 @@ class DistrictSortFilter extends Component {
     let filter = this.state.filter;
     filter[field] = e.target.value;
     this.setState({ filter });
+  };
+
+  handleFilterSubmit = e => {
+    e.preventDefault();
+    let url = "/Districts/filter?";
+    let firstAttribute = true;
+    const population = this.getFilteringAttributes(
+      "populationMin",
+      "populationMax"
+    );
+    const median_income = this.getFilteringAttributes(
+      "medianIncomeMin",
+      "medianIncomeMax"
+    );
+    const median_age = this.getFilteringAttributes("avgAgeMin", "avgAgeMax");
+    const gender_ratio = this.getFilteringAttributes(
+      "genderRatioMin",
+      "genderRatioMax"
+    );
+
+    if (population) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "population=" + population;
+    }
+    if (median_income) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "median_income=" + median_income;
+    }
+    if (median_age) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "median_age=" + median_age;
+    }
+    if (gender_ratio) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "gender_ratio=" + gender_ratio;
+    }
+    window.location = url;
+  };
+
+  getFilteringAttributes = (fieldMin, fieldMax) => {
+    const min = "0";
+    const max = "2147483647";
+    const filter = this.state.filter;
+    let attribute = null;
+    if (filter[fieldMin] != null || filter[fieldMax] != null) {
+      attribute = "";
+      attribute = filter[fieldMin] != null ? filter[fieldMin] : min;
+      attribute += ",";
+      attribute += filter[fieldMax] != null ? filter[fieldMax] : max;
+    }
+    return attribute;
   };
 
   render() {
@@ -80,7 +147,7 @@ class DistrictSortFilter extends Component {
           </div>
           <div className="d-flex flex-column filter pr-5 flex-fill">
             <h5>Filter By</h5>
-            <form className="ml-3" action="/Districts/filter">
+            <form className="ml-3" onSubmit={this.handleFilterSubmit}>
               <div className="input-group input-group-sm">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="">
