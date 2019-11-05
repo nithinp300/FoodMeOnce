@@ -101,16 +101,24 @@ def representatives():
         numLimit = 8
     actualPage = (int(page) - 1) * numLimit
     data = con.execute(
-        f"SELECT * FROM application.members WHERE short_title = 'Rep.' ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}"
+        f"SELECT * FROM application.members ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}"
     )
     pages = con.execute(
-        "SELECT COUNT(*) AS pages FROM application.members WHERE short_title = 'Rep.'"
+        "SELECT COUNT(*) AS pages FROM application.members"
     )
     for row in pages:
         pages = ceil(int(row["pages"]) / numLimit)
     resultData = [dict(r) for r in data]
     metaData = {"currentPage": page, "numPages": pages}
     return jsonify({"data": resultData, "metaData": metaData})
+
+@app.route("/Representatives/search")
+def representatives_search():
+    data = con.execute(
+        f"SELECT * FROM application.members ORDER BY application.members.full_name"
+    )
+    resultData = [dict(r) for r in data]
+    return jsonify(resultData)
 
 
 @app.route("/Legislations")
@@ -123,10 +131,10 @@ def legislations():
         numLimit = 8
     actualPage = (int(page) - 1) * numLimit
     data = con.execute(
-        f"SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
+        f"SELECT * FROM application.legislations  order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
     )
     pages = con.execute(
-        "SELECT COUNT(*) AS pages FROM application.legislations WHERE sponsor_title = 'Rep.'"
+        "SELECT COUNT(*) AS pages FROM application.legislations"
     )
     for row in pages:
         pages = ceil(int(row["pages"]) / numLimit)
@@ -162,13 +170,17 @@ def district(id=""):
 @app.route("/Representatives/<id>")
 def representative(id=""):
     member = con.execute("SELECT * FROM application.members WHERE id = '" + id + "'")
-    fromDistrict = con.execute(
-        "SELECT d.id, d.state, d.congressional_district, d.state_abbreviation FROM application.members AS m JOIN application.districts AS d ON m.state = d.state and cast(m.district AS INT) = cast(d.congressional_district AS INT) WHERE m.short_title = 'Rep.' and m.id = '"
-        + id
-        + "';"
-    )
+    type = con.execute("SELECT type_flag FROM application.members WHERE id = '" + id + "'")
+    if type:
+        fromDistrict = con.execute(
+            "SELECT d.id, d.state, d.congressional_district, d.state_abbreviation FROM application.members AS m JOIN application.districts AS d ON m.state = d.state and cast(m.district AS INT) = cast(d.congressional_district AS INT) WHERE m.short_title = 'Rep.' and m.id = '"
+            + id
+            + "';"
+        )
+    else:
+        fromDistrict = 'SENATOR'
     passedLegislation = con.execute(
-        "SELECT l.id, l.short_title from application.members AS m JOIN application.legislations AS l ON m.full_name = l.sponsor_name WHERE m.short_title = 'Rep.' and m.id = '"
+        "SELECT l.id, l.short_title from application.members AS m JOIN application.legislations AS l ON m.full_name = l.sponsor_name and m.id = '"
         + id
         + "';"
     )
