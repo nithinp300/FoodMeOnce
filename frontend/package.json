@@ -10,6 +10,7 @@
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.11.0",
     "react-facebook": "^8.0.4",
+    "react-highlighter": "^0.4.3",
     "react-image-fallback": "^8.0.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
