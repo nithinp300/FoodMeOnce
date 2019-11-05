@@ -33,6 +33,9 @@ function Representative(props) {
         <p className="card-title" style={{}}>
           District: {props.district}
         </p>
+        <p className="card-title" style={{}}>
+          Type: {props.type_flag}
+        </p>
       </div>
     </div>
   );
