@@ -79,6 +79,14 @@ class Districts extends Component {
         <div className="sorting-container">
           <div className="d-flex flex-row justify-content-between">
             <h3 className="ml-1">Districts</h3>
+            <input class="form-control" type="text" 
+            onKeyPress={event =>{
+              if(event.key === 'Enter') {
+                alert()
+              }
+            }}
+            placeholder="Search" 
+            style={{marginLeft:"15%"}}aria-label="Search"/>
             <button
               className="ml-2 btn btn-secondary"
               onClick={this.handleCollapse}

@@ -46,15 +46,10 @@ class Representatives extends Component {
     metaData: {
       currentPage: 1,
       lastPage: 1
-    }
+    },
+    searchQueries: [],
+    searchField: ""
   };
-
-  getType = type_flag => {
-    if (type_flag) {
-      return "House Rep.";
-    }
-    return "Senator";
-  }
 
   handleCollapse = () => {
     this.setState(prevState => ({
@@ -62,6 +57,37 @@ class Representatives extends Component {
     }));
   };
 
+  search = (representative) => {
+    // console.log(this.state.searchQueries[0])
+    //Add Fetch to api to set representatives and metadata here
+    console.log()
+    if(this.state.searchQueries.length > 0){
+      var found = true
+      this.state.searchQueries.forEach((elem)=>{
+        var query = elem.toLowerCase()
+        if(!(representative.first_name.toLowerCase().includes(query) ||
+            representative.last_name.toLowerCase().includes(query) ||
+            this.getAge(representative.date_of_birth).toString().includes(query) ||
+            representative.seniority.toString().includes(query) ||
+            this.getParty(representative.party).toLowerCase().includes(query) ||
+            representative.state.toLowerCase().includes(query) ||
+            representative.district.toLowerCase().includes(query)
+        
+        ))
+          found = false
+        // if( ! (
+        //   representative.first_name.toLowerCase().includes(query) ||
+        //   representative.last_name.toLowerCase().includes(query))
+        
+        
+        // ){
+        //   return false
+        // }
+      })
+     }
+    else return true
+    return found
+  }
 
   componentDidMount() {
     const querystring = this.props.location.search;
@@ -77,7 +103,9 @@ class Representatives extends Component {
       .catch(console.log);
   }
   render() {
-    const representativesRendered = this.state.representatives.map(
+
+    var tempRender = this.state.representatives.filter( (representative) => this.search(representative) )
+    var representativesRendered = tempRender.map(
       (representative, i) => {
         var rep_image = "";
         if (representative.first_name != null) {
@@ -99,17 +127,48 @@ class Representatives extends Component {
               party={this.getParty(representative.party)}
               state={representative.state}
               district={representative.district}
-              type_flag = {this.getType(representative.type_flag)}
             />
           </a>
         );
       }
     );
+    //Splice total list to get only the ones for the page we are on
+    //representativesRendered = representativesRendered.splice(0,8)
     return (
       <div className="representatives-model">
+        
         <div className="sorting-container">
+        
           <div className="d-flex flex-row justify-content-between">
             <h3 className="ml-1">Representatives</h3>
+            <input class="form-control" type="text" 
+            onKeyPress={event =>{
+              if(event.key === 'Enter') {
+                // console.log(this.state.searchField)
+
+                var value = this.state.searchField
+                if(value=== "")
+                  this.setState(prevState => ({
+                  searchQueries: []
+                }));
+                else{
+                  this.setState(prevState => ({
+                  searchQueries: value.split(" ")
+                }));
+              }
+                //console.log(this.state.searchQueries)
+              }
+            }}
+
+            onChange={event => {
+                // console.log(event.target.value)
+                this.setState({
+                  searchField: event.target.value
+                })
+                // console.log(this.state)
+            }}
+            placeholder="Search" 
+            style={{marginLeft:"15%"}}aria-label="Search"/>
             <button
               className="ml-2 btn btn-secondary"
               onClick={this.handleCollapse}
