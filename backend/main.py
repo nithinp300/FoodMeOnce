@@ -178,7 +178,10 @@ def representative(id=""):
             + "';"
         )
     else:
-        fromDistrict = 'SENATOR'
+        fromDistrict = con.execute("SELECT distinct m.full_name, type_flag, d.state_abbreviation FROM application.members as m JOIN application.districts as d on m.state = d.state  where m.id = '"
+            + id
+            + "';"
+            )
     passedLegislation = con.execute(
         "SELECT l.id, l.short_title from application.members AS m JOIN application.legislations AS l ON m.full_name = l.sponsor_name and m.id = '"
         + id
