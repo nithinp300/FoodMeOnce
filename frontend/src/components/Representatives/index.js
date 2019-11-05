@@ -51,13 +51,6 @@ class Representatives extends Component {
     searchField: ""
   };
 
-  getType = type_flag => {
-    if (type_flag) {
-      return "House Rep.";
-    }
-    return "Senator";
-  }
-
   handleCollapse = () => {
     this.setState(prevState => ({
       collapse: !prevState.collapse
@@ -99,13 +92,11 @@ class Representatives extends Component {
   componentDidMount() {
     const querystring = this.props.location.search;
     const pathname = this.props.location.pathname;
-    // console.log(querystring)
-    const url = `https://api.foodmeonce.me/Representatives`;
+    const url = `https://api.foodmeonce.me${pathname}${querystring}`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
         let representatives = data["data"];
-        console.log(representatives)
         let metaData = data["metaData"];
         this.setState({ representatives, metaData });
       })
@@ -136,7 +127,6 @@ class Representatives extends Component {
               party={this.getParty(representative.party)}
               state={representative.state}
               district={representative.district}
-              type_flag = {this.getType(representative.type_flag)}
             />
           </a>
         );
