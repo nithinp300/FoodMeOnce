@@ -72,11 +72,16 @@ class RepresentativeInstance extends React.Component {
     var twitterUser = "" + rep_data.twitter_account
     var fbUser = rep_data.facebook_account
     var facebook = "https://facebook.com/" + rep_data.facebook_account;
-    var map_url =
-      "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
-      district.state_abbreviation +
-      "&district=" +
-      district.congressional_district;
+    if (district.type_flag == 'True') {
+        var map_url =
+        "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
+        district.state_abbreviation +
+        "&district=" +
+        district.congressional_district;}
+    else {
+        var map_url =
+        "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
+        district.state_abbreviation;}
     var rep_image = "";
     if (this.state.representative.first_name != null) {
       rep_image =

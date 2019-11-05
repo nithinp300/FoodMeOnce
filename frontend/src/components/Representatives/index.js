@@ -51,6 +51,20 @@ class Representatives extends Component {
     searchField: ""
   };
 
+  getDistrict = district => {
+    if (district) {
+      return district;
+    }
+    return "N/A";
+  }
+
+  getType = type_flag => {
+    if (type_flag) {
+      return "House Rep.";
+    }
+    return "Senator";
+  }
+
   handleCollapse = () => {
     this.setState(prevState => ({
       collapse: !prevState.collapse
@@ -72,14 +86,14 @@ class Representatives extends Component {
             this.getParty(representative.party).toLowerCase().includes(query) ||
             representative.state.toLowerCase().includes(query) ||
             representative.district.toLowerCase().includes(query)
-        
+
         ))
           found = false
         // if( ! (
         //   representative.first_name.toLowerCase().includes(query) ||
         //   representative.last_name.toLowerCase().includes(query))
-        
-        
+
+
         // ){
         //   return false
         // }
@@ -126,7 +140,8 @@ class Representatives extends Component {
               yearsInOffice={representative.seniority}
               party={this.getParty(representative.party)}
               state={representative.state}
-              district={representative.district}
+              district={this.getDistrict(representative.district)}
+              type_flag = {this.getType(representative.type_flag)}
             />
           </a>
         );
@@ -136,12 +151,12 @@ class Representatives extends Component {
     //representativesRendered = representativesRendered.splice(0,8)
     return (
       <div className="representatives-model">
-        
+
         <div className="sorting-container">
-        
+
           <div className="d-flex flex-row justify-content-between">
             <h3 className="ml-1">Representatives</h3>
-            <input class="form-control" type="text" 
+            <input class="form-control" type="text"
             onKeyPress={event =>{
               if(event.key === 'Enter') {
                 // console.log(this.state.searchField)
@@ -167,7 +182,7 @@ class Representatives extends Component {
                 })
                 // console.log(this.state)
             }}
-            placeholder="Search" 
+            placeholder="Search"
             style={{marginLeft:"15%"}}aria-label="Search"/>
             <button
               className="ml-2 btn btn-secondary"
