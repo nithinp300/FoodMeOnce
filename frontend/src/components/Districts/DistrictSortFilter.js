@@ -240,6 +240,20 @@ class DistrictSortFilter extends Component {
                   placeholder="Maximum"
                 />
               </div>
+              <div className="input-group input-group-sm">
+                <div className="input-group-prepend">
+                  <span className="input-group-text" id="">
+                    State
+                  </span>
+                </div>
+                <select id="state-choice"
+                  className="form-control"
+                  name="stateMin"
+                  onChange={this.handleFilter}
+                  >
+                <option selected value="base">Select state</option>
+                </select>
+              </div>
               <div className="d-flex mt-3 justify-content-end">
                 <button className="btn btn-primary">Apply</button>
               </div>
