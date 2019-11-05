@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class representativeSortFilter extends Component {
   state = {
     sort: {},
-    filter: [],
+    filter: {},
     url: ""
   };
 
@@ -28,8 +28,87 @@ class representativeSortFilter extends Component {
     window.location = url;
   };
 
-  handleSubmit = e => {
+  handleFilter = e => {
+    let field = e.target.name;
+    let filter = this.state.filter;
+    let value = e.target.value;
+    filter[field] = value;
+    this.setState({ filter });
+  };
+
+  handleFilterSubmit = e => {
     e.preventDefault();
+    let url = "/Representatives/filter?";
+    let firstAttribute = true;
+    const date_of_birth = this.getFilteringAttributes("ageMin", "ageMax");
+    const seniority = this.getFilteringAttributes(
+      "yearsInOfficeMin",
+      "yearsInOfficeMax"
+    );
+    const party =
+      this.state.filter.party != null
+        ? this.state.filter.party === "Democratic"
+          ? "D"
+          : "R"
+        : null;
+    const state = this.state.filter.state;
+
+    if (date_of_birth) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "date_of_birth=" + date_of_birth;
+    }
+    if (seniority) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "seniority=" + seniority;
+    }
+    if (party) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "party=" + party;
+    }
+    if (state) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "state=" + state;
+    }
+    window.location = url;
+  };
+
+  getFilteringAttributes = (fieldMin, fieldMax) => {
+    const min = "0";
+    const max = "2147483647";
+    const filter = this.state.filter;
+    let attribute = null;
+    if (fieldMin === "ageMin") {
+      if (filter[fieldMin] != null || filter[fieldMax] != null) {
+        attribute = "";
+        attribute =
+          filter[fieldMax] != null ? 2019 - parseInt(filter[fieldMax]) : 1900;
+        attribute += ",";
+        attribute +=
+          filter[fieldMin] != null ? 2019 - parseInt(filter[fieldMin]) : 2019;
+      }
+    } else if (filter[fieldMin] != null || filter[fieldMax] != null) {
+      attribute = "";
+      attribute = filter[fieldMin] != null ? filter[fieldMin] : min;
+      attribute += ",";
+      attribute += filter[fieldMax] != null ? filter[fieldMax] : max;
+    }
+    return attribute;
   };
 
   render() {
@@ -86,7 +165,7 @@ class representativeSortFilter extends Component {
             <form
               className="ml-3"
               action="/representatives/filter"
-              onSubmit={this.handleSubmit}
+              onSubmit={this.handleFilterSubmit}
             >
               <div className="input-group input-group-sm">
                 <div className="input-group-prepend">
