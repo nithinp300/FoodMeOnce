@@ -118,7 +118,7 @@ def representatives_search():
         f"SELECT * FROM application.members ORDER BY application.members.full_name"
     )
     resultData = [dict(r) for r in data]
-    return jsonify(resultData)
+    return jsonify({"data": resultData})
 
 
 @app.route("/Legislations")
@@ -171,14 +171,17 @@ def district(id=""):
 def representative(id=""):
     member = con.execute("SELECT * FROM application.members WHERE id = '" + id + "'")
     type = con.execute("SELECT type_flag FROM application.members WHERE id = '" + id + "'")
-    if type:
+    type_dict = [dict(r) for r in type]
+    print(type_dict[0]["type_flag"])
+    if type_dict[0]["type_flag"]:
         fromDistrict = con.execute(
             "SELECT d.id, d.state, d.congressional_district, d.state_abbreviation FROM application.members AS m JOIN application.districts AS d ON m.state = d.state and cast(m.district AS INT) = cast(d.congressional_district AS INT) WHERE m.short_title = 'Rep.' and m.id = '"
             + id
             + "';"
         )
     else:
-        fromDistrict = con.execute("SELECT distinct m.full_name, type_flag, d.state_abbreviation FROM application.members as m JOIN application.districts as d on m.state = d.state  where m.id = '"
+        fromDistrict = con.execute(
+            "SELECT distinct m.full_name, type_flag, d.state_abbreviation FROM application.members as m JOIN application.districts as d on m.state = d.state  where m.id = '"
             + id
             + "';"
             )
