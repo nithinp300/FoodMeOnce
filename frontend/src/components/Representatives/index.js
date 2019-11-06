@@ -90,40 +90,39 @@ class Representatives extends Component {
   };
 
   handleSearch = _ => {
-    const search = this.state.search;
+    const search = this.state.search.toLowerCase();
     window.location = `/Representatives/search?attribute=${search}`;
   };
 
   render() {
-    var tempRender = this.state.representatives.filter(representative =>
-      this.search(representative)
-    );
-    var representativesRendered = tempRender.map((representative, i) => {
-      var rep_image = "";
-      if (representative.first_name != null) {
-        rep_image =
-          "https://theunitedstates.io/images/congress/original/" +
-          representative.id +
-          ".jpg";
+    var representativesRendered = this.state.representatives.map(
+      (representative, i) => {
+        var rep_image = "";
+        if (representative.first_name != null) {
+          rep_image =
+            "https://theunitedstates.io/images/congress/original/" +
+            representative.id +
+            ".jpg";
+        }
+        return (
+          <a
+            href={`/Representatives/instance/${representative.id}`}
+            className="button-container"
+          >
+            <Representative
+              image={rep_image}
+              name={representative.first_name + " " + representative.last_name}
+              age={this.getAge(representative.date_of_birth)}
+              yearsInOffice={representative.seniority}
+              party={this.getParty(representative.party)}
+              state={representative.state}
+              district={this.getDistrict(representative.district)}
+              type_flag={this.getType(representative.type_flag)}
+            />
+          </a>
+        );
       }
-      return (
-        <a
-          href={`/Representatives/instance/${representative.id}`}
-          className="button-container"
-        >
-          <Representative
-            image={rep_image}
-            name={representative.first_name + " " + representative.last_name}
-            age={this.getAge(representative.date_of_birth)}
-            yearsInOffice={representative.seniority}
-            party={this.getParty(representative.party)}
-            state={representative.state}
-            district={this.getDistrict(representative.district)}
-            type_flag={this.getType(representative.type_flag)}
-          />
-        </a>
-      );
-    });
+    );
     const renderPage = this.state.loading ? (
       <h2 className="text-center m-3">Loading...</h2>
     ) : this.state.representatives.length > 0 ? (

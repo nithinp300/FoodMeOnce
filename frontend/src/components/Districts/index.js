@@ -49,7 +49,7 @@ class Districts extends Component {
   };
 
   handleSearch = _ => {
-    const search = this.state.search;
+    const search = this.state.search.toLowerCase();
     window.location = `/Districts/search?attribute=${search}`;
   };
 

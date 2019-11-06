@@ -453,10 +453,10 @@ def searchDistricts():
             attributes.append(f"'%%{splittedAttributes[i]}%%'")
 
         searchPhrase = ""
-        searchPhrase = generatePhrase(searchPhrase, "CAST(population as VARCHAR(11)) LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "CAST(mean_income as VARCHAR(11)) LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "CAST(median_age as VARCHAR(11)) LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "m.full_name LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(population as VARCHAR(11))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(mean_income as VARCHAR(11))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(median_age as VARCHAR(11))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(m.full_name) LIKE", attributes)
 
         page = request.args.get("page")
         numLimit = request.args.get("limit")
@@ -489,13 +489,13 @@ def searchRepresentatives():
             attributes.append(f"'%%{splittedAttributes[i]}%%'")
 
         searchPhrase = ""
-        searchPhrase = generatePhrase(searchPhrase, "full_name LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "CAST(2019 - CAST(LEFT(date_of_birth,4) AS int) AS VARCHAR(3)) LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "CAST(seniority as VARCHAR(4)) LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "party LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "state LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "title LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "CAST(district as VARCHAR(4)) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(full_name) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(2019 - CAST(LEFT(date_of_birth,4) AS int) AS VARCHAR(3))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(seniority as VARCHAR(4))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(party) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(state) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(title) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(district as VARCHAR(4))) LIKE", attributes)
 
         page = request.args.get("page")
         numLimit = request.args.get("limit")
@@ -527,11 +527,11 @@ def searchLegislations():
             attributes.append(f"'%%{splittedAttributes[i]}%%'")
 
         searchPhrase = ""
-        searchPhrase = generatePhrase(searchPhrase, "short_title LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "enacted LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "sponsor_party LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "bill_type LIKE", attributes)
-        searchPhrase = generatePhrase(searchPhrase, "sponsor_name LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(short_title) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(enacted) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(sponsor_party) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(bill_type) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(sponsor_name) LIKE", attributes)
 
         page = request.args.get("page")
         numLimit = request.args.get("limit")
