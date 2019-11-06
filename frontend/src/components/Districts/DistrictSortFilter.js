@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 
 class DistrictSortFilter extends Component {
-  _isMounted = false;
   state = {
     sort: {},
     filter: {},
-    redirect: false,
-    url: "",
     states: []
   };
 
@@ -109,7 +106,6 @@ class DistrictSortFilter extends Component {
 
   render() {
     let US_states = this.state.all_states;
-    // console.log(size);
     let optionItems = [];
     optionItems.push(<option>Select a state</option>);
     if (US_states) {
@@ -117,8 +113,6 @@ class DistrictSortFilter extends Component {
         return optionItems.push(<option>{US_state.state}</option>);
       });
     }
-
-    // console.log(optionItems)
     return (
       <React.Fragment>
         <hr />

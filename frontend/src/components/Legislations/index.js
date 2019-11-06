@@ -50,6 +50,15 @@ class Legislations extends Component {
     }));
   };
 
+  handleChange = e => {
+    this.setState({ search: e.target.value });
+  };
+
+  handleSearch = _ => {
+    const search = this.state.search;
+    window.location = `/Legislations/search?attribute=${search}`;
+  };
+
   componentDidMount() {
     const querystring = this.props.location.search;
     const pathname = this.props.location.pathname;
@@ -111,9 +120,11 @@ class Legislations extends Component {
             <input
               class="form-control"
               type="text"
+              value={this.state.search}
+              onChange={this.handleChange}
               onKeyPress={event => {
                 if (event.key === "Enter") {
-                  alert();
+                  this.handleSearch();
                 }
               }}
               placeholder="Search"

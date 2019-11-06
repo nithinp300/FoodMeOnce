@@ -47,8 +47,7 @@ class Representatives extends Component {
       currentPage: 1,
       lastPage: 1
     },
-    searchQueries: [],
-    searchField: "",
+    search: "",
     loading: true
   };
 
@@ -72,42 +71,6 @@ class Representatives extends Component {
     }));
   };
 
-  search = representative => {
-    // console.log(this.state.searchQueries[0])
-    //Add Fetch to api to set representatives and metadata here
-    console.log();
-    if (this.state.searchQueries.length > 0) {
-      var found = true;
-      this.state.searchQueries.forEach(elem => {
-        var query = elem.toLowerCase();
-        if (
-          !(
-            representative.first_name.toLowerCase().includes(query) ||
-            representative.last_name.toLowerCase().includes(query) ||
-            this.getAge(representative.date_of_birth)
-              .toString()
-              .includes(query) ||
-            representative.seniority.toString().includes(query) ||
-            this.getParty(representative.party)
-              .toLowerCase()
-              .includes(query) ||
-            representative.state.toLowerCase().includes(query) ||
-            representative.district.toLowerCase().includes(query)
-          )
-        )
-          found = false;
-        // if( ! (
-        //   representative.first_name.toLowerCase().includes(query) ||
-        //   representative.last_name.toLowerCase().includes(query))
-
-        // ){
-        //   return false
-        // }
-      });
-    } else return true;
-    return found;
-  };
-
   componentDidMount() {
     const querystring = this.props.location.search;
     const pathname = this.props.location.pathname;
@@ -121,6 +84,16 @@ class Representatives extends Component {
       })
       .catch(console.log);
   }
+
+  handleChange = e => {
+    this.setState({ search: e.target.value });
+  };
+
+  handleSearch = _ => {
+    const search = this.state.search;
+    window.location = `/Representatives/search?attribute=${search}`;
+  };
+
   render() {
     var tempRender = this.state.representatives.filter(representative =>
       this.search(representative)
@@ -181,29 +154,12 @@ class Representatives extends Component {
             <input
               class="form-control"
               type="text"
+              value={this.state.search}
+              onChange={this.handleChange}
               onKeyPress={event => {
                 if (event.key === "Enter") {
-                  // console.log(this.state.searchField)
-
-                  var value = this.state.searchField;
-                  if (value === "")
-                    this.setState(prevState => ({
-                      searchQueries: []
-                    }));
-                  else {
-                    this.setState(prevState => ({
-                      searchQueries: value.split(" ")
-                    }));
-                  }
-                  //console.log(this.state.searchQueries)
+                  this.handleSearch();
                 }
-              }}
-              onChange={event => {
-                // console.log(event.target.value)
-                this.setState({
-                  searchField: event.target.value
-                });
-                // console.log(this.state)
               }}
               placeholder="Search"
               style={{ marginLeft: "15%" }}
