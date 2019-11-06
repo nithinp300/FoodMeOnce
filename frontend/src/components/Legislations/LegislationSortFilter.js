@@ -27,6 +27,85 @@ class LegislationSortFilter extends Component {
     this.setState({ filter });
   };
 
+  handleFilterSubmit = e => {
+    e.preventDefault();
+    let url = "/Legislations/filter?";
+    let firstAttribute = true;
+    const introduced_date = this.getFilteringAttributes("yearMin", "yearMax");
+    const status = this.state.filter.status;
+    const enacted = this.getFilteringAttributes(
+      "enacted_YearMin",
+      "enacted_YearMax"
+    );
+    const sponsor_party = this.state.filter.sponsor_party;
+    const bill_type = this.state.filter.billTypeMin;
+    const sponsor_name = this.state.filter.sponsorsMin;
+
+    if (introduced_date) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "introduced_date=" + introduced_date;
+    }
+    if (status) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "status=" + status;
+    }
+    if (enacted) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "enacted=" + enacted;
+    }
+    if (sponsor_party) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "sponsor_party=" + sponsor_party;
+    }
+    if (bill_type) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "bill_type=" + bill_type;
+    }
+    if (sponsor_name) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "sponsor_name=" + sponsor_name;
+    }
+    window.location = url;
+  };
+
+  getFilteringAttributes = (fieldMin, fieldMax) => {
+    const min = "0";
+    const max = "2147483647";
+    const filter = this.state.filter;
+    let attribute = null;
+    if (filter[fieldMin] != null || filter[fieldMax] != null) {
+      attribute = "";
+      attribute = filter[fieldMin] != null ? filter[fieldMin] : min;
+      attribute += ",";
+      attribute += filter[fieldMax] != null ? filter[fieldMax] : max;
+    }
+    return attribute;
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -87,7 +166,7 @@ class LegislationSortFilter extends Component {
           </div>
           <div className="d-flex flex-column filter pr-5 flex-fill">
             <h5>Filter By</h5>
-            <form className="ml-3" action="/legislations/filter">
+            <form className="ml-3" onSubmit={this.handleFilterSubmit}>
               <div className="input-group input-group-sm">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="">
@@ -122,9 +201,8 @@ class LegislationSortFilter extends Component {
                   value={this.state.filter.status}
                 >
                   <option>Choose...</option>
-                  <option value="1">Pending</option>
-                  <option value="2">1</option>
-                  <option value="3">2</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Enacted">Enacted</option>
                 </select>
               </div>
               <div className="input-group input-group-sm">
@@ -159,7 +237,7 @@ class LegislationSortFilter extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  name="houseOfRepresentativeMin"
+                  name="sponsor_party"
                   onChange={this.handleFilter}
                   value={this.state.filter.houseOfRepresentativeMin}
                   placeholder="Representative"

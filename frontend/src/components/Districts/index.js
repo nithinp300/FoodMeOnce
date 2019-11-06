@@ -13,7 +13,8 @@ class Districts extends Component {
     metaData: {
       currentPage: 1,
       numPages: 1
-    }
+    },
+    loading: true
   };
 
   handleCollapse = () => {
@@ -38,7 +39,7 @@ class Districts extends Component {
       .then(data => {
         let districts = data["data"];
         let metaData = data["metaData"];
-        this.setState({ districts, metaData });
+        this.setState({ districts, metaData, loading: false });
       })
       .catch(console.log);
   }
@@ -74,28 +75,10 @@ class Districts extends Component {
           </a>
         );
       });
-    return (
-      <div className="districts-model">
-        <div className="sorting-container">
-          <div className="d-flex flex-row justify-content-between">
-            <h3 className="ml-1">Districts</h3>
-            <input class="form-control" type="text" 
-            onKeyPress={event =>{
-              if(event.key === 'Enter') {
-                alert()
-              }
-            }}
-            placeholder="Search" 
-            style={{marginLeft:"15%"}}aria-label="Search"/>
-            <button
-              className="ml-2 btn btn-secondary"
-              onClick={this.handleCollapse}
-            >
-              {this.state.collapse ? "-" : "+"}
-            </button>
-          </div>
-          {this.state.collapse && <DistrictSortFilter />}
-        </div>
+    const renderPage = this.state.loading ? (
+      <h2 className="text-center m-3">Loading...</h2>
+    ) : this.state.districts.length > 0 ? (
+      <React.Fragment>
         <div className="districts-container">
           {districtsRendered.slice(0, 4)}
         </div>
@@ -108,6 +91,37 @@ class Districts extends Component {
           current={this.state.metaData.currentPage}
           lastPage={this.state.metaData.numPages}
         />
+      </React.Fragment>
+    ) : (
+      <h2 className="text-center m-3">No filtered/searched data...</h2>
+    );
+    return (
+      <div className="districts-model">
+        <div className="sorting-container">
+          <div className="d-flex flex-row justify-content-between">
+            <h3 className="ml-1">Districts</h3>
+            <input
+              class="form-control"
+              type="text"
+              onKeyPress={event => {
+                if (event.key === "Enter") {
+                  alert();
+                }
+              }}
+              placeholder="Search"
+              style={{ marginLeft: "15%" }}
+              aria-label="Search"
+            />
+            <button
+              className="ml-2 btn btn-secondary"
+              onClick={this.handleCollapse}
+            >
+              {this.state.collapse ? "-" : "+"}
+            </button>
+          </div>
+          {this.state.collapse && <DistrictSortFilter />}
+        </div>
+        {renderPage}
       </div>
     );
   }

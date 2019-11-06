@@ -7,24 +7,6 @@ class representativeSortFilter extends Component {
     url: ""
   };
 
-  componentDidMount() {
-    this._isMounted = true;
-    let statesfromAPI = [];
-    fetch('https://api.foodmeonce.me/Representatives/states')
-      .then(response => response.json())
-      .then(data => {
-        if (this._isMounted) {
-          let all_states = data["data"];
-          this.setState({ all_states });
-          }
-      })
-      .catch(console.log);
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
-
   handleSort = e => {
     let newSort = {};
     newSort.name = e.target.name;
@@ -129,15 +111,10 @@ class representativeSortFilter extends Component {
     let optionItems = [];
     optionItems.push(<option>Select a state</option>);
     if (US_states) {
-      const statesRendered =
-          US_states.map(
-              (US_state, i) => {
-                return (
-                    optionItems.push(<option>{US_state.state}</option>)
-                );
-              }
-          )
-        }
+      const statesRendered = US_states.map((US_state, i) => {
+        return optionItems.push(<option>{US_state.state}</option>);
+      });
+    }
     return (
       <React.Fragment>
         <hr />

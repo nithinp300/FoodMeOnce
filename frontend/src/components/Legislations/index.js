@@ -40,7 +40,8 @@ class Legislations extends Component {
     metaData: {
       currentPage: 1,
       lastPage: 1
-    }
+    },
+    loading: true
   };
 
   handleCollapse = () => {
@@ -58,7 +59,7 @@ class Legislations extends Component {
       .then(data => {
         let legislations = data["data"];
         let metaData = data["metaData"];
-        this.setState({ legislations, metaData });
+        this.setState({ legislations, metaData, loading: false });
       })
       .catch(console.log);
   }
@@ -84,28 +85,10 @@ class Legislations extends Component {
         );
       }
     );
-    return (
-      <div className="legislations-model">
-        <div className="sorting-container">
-          <div className="d-flex flex-row justify-content-between">
-            <h3 className="ml-1">Legislations</h3>
-            <input class="form-control" type="text" 
-            onKeyPress={event =>{
-              if(event.key === 'Enter') {
-                alert()
-              }
-            }}
-            placeholder="Search" 
-            style={{marginLeft:"15%"}}aria-label="Search"/>
-            <button
-              className="ml-2 btn btn-secondary"
-              onClick={this.handleCollapse}
-            >
-              {this.state.collapse ? "-" : "+"}
-            </button>
-          </div>
-          {this.state.collapse && <LegislationSortFilter />}
-        </div>
+    const renderPage = this.state.loading ? (
+      <h2 className="text-center m-3">Loading...</h2>
+    ) : this.state.legislations.length > 0 ? (
+      <React.Fragment>
         <div className="legislations-container d-flex flex-column bd-highlight mb-3">
           <Legislation header />
           {legislationsRendered}
@@ -116,6 +99,37 @@ class Legislations extends Component {
           current={this.state.metaData.currentPage}
           lastPage={this.state.metaData.numPages}
         />
+      </React.Fragment>
+    ) : (
+      <h2 className="text-center m-3">No filtered/searched data...</h2>
+    );
+    return (
+      <div className="legislations-model">
+        <div className="sorting-container">
+          <div className="d-flex flex-row justify-content-between">
+            <h3 className="ml-1">Legislations</h3>
+            <input
+              class="form-control"
+              type="text"
+              onKeyPress={event => {
+                if (event.key === "Enter") {
+                  alert();
+                }
+              }}
+              placeholder="Search"
+              style={{ marginLeft: "15%" }}
+              aria-label="Search"
+            />
+            <button
+              className="ml-2 btn btn-secondary"
+              onClick={this.handleCollapse}
+            >
+              {this.state.collapse ? "-" : "+"}
+            </button>
+          </div>
+          {this.state.collapse && <LegislationSortFilter />}
+        </div>
+        {renderPage}
       </div>
     );
   }

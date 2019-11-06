@@ -415,7 +415,7 @@ def filteredLegislations():
         if sponsor_party is not None:
             filteringPhrase += f" and sponsor_party like '%%{sponsor_party}%%'"
         if status is not None:
-            if status == "pending":
+            if status == "Pending":
                 filteringPhrase += f" and enacted is null"
             else:
                 filteringPhrase += f" and enacted is not null"
