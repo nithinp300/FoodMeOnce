@@ -163,7 +163,7 @@ def representative(id=""):
     member = con.execute("SELECT * FROM application.members WHERE id = '" + id + "'")
     type = con.execute("SELECT type_flag FROM application.members WHERE id = '" + id + "'")
     type_dict = [dict(r) for r in type]
-    print(type_dict[0]["type_flag"])
+    # print(type_dict[0]["type_flag"])
     if type_dict[0]["type_flag"]:
         fromDistrict = con.execute(
             "SELECT d.id, d.state, d.congressional_district, d.state_abbreviation FROM application.members AS m JOIN application.districts AS d ON m.state = d.state and cast(m.district AS INT) = cast(d.congressional_district AS INT) WHERE m.short_title = 'Rep.' and m.id = '"
@@ -195,10 +195,28 @@ def legislation(id=""):
         "SELECT m.id FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name WHERE l.id = "
         + id
     )
-    fromDistrict = con.execute(
-        "SELECT d.id, d.state, d.congressional_district FROM application.districts AS d JOIN (SELECT m.id, m.state, m.district FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name WHERE l.id = "
+    sponsor_type = con.execute(
+        "SELECT m.id, m.type_flag FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name WHERE l.id = "
         + id
-        + ") AS m ON m.state = d.state and CAST(m.district AS INT) = CAST(d.congressional_district AS INT);"
+    )
+    type_dict = [dict(r) for r in type]
+    # print(type_dict[0]["type_flag"])
+    if type_dict[0]["type_flag"]:
+        fromDistrict = con.execute(
+            "SELECT d.id, d.state, d.congressional_district, d.state_abbreviation FROM application.members AS m JOIN application.districts AS d ON m.state = d.state and cast(m.district AS INT) = cast(d.congressional_district AS INT) WHERE m.short_title = 'Rep.' and m.id = '"
+            + id
+            + "';"
+        )
+    else:
+        fromDistrict = con.execute(
+            "SELECT distinct m.full_name, type_flag, d.state_abbreviation FROM application.members as m JOIN application.districts as d on m.state = d.state  where m.id = '"
+            + id
+            + "';"
+        )
+    passedLegislation = con.execute(
+        "SELECT l.id, l.short_title from application.members AS m JOIN application.legislations AS l ON m.full_name = l.sponsor_name and m.id = '"
+        + id
+        + "';"
     )
     data = {}
     data["legislation"] = [dict(r) for r in legislation]
