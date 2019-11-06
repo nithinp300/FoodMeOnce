@@ -77,17 +77,29 @@ class RepresentativeInstance extends React.Component {
         "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
         district.state_abbreviation +
         "&district=" +
-        district.congressional_district;}
+        district.congressional_district;
+        }
     else {
         var map_url =
         "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
-        district.state_abbreviation;}
+        district.state_abbreviation;
+          }
     var rep_image = "";
     if (this.state.representative.first_name != null) {
       rep_image =
         "https://theunitedstates.io/images/congress/original/" +
         rep_data.id +
         ".jpg";
+    var state_district = "";
+    var rep_dis_url = "";
+    if (this.state.representative.district == null) {
+      state_district = rep_data.state;
+      rep_dis_url = "localhost:3000/Districts/filter?state=" + rep_data.state ;
+    }
+    else {
+      state_district = rep_data.state + ' ' + rep_data.district;
+      rep_dis_url = "localhost:3000/Districts/instance/" + district.id;
+      }
     }
     return (
       <div className="page-container">
@@ -114,8 +126,8 @@ class RepresentativeInstance extends React.Component {
           </li>
           <li className="representative-instance-desc">
             <span>State/District</span>:{" "}
-            <a href={`/Districts/instance/${district.id}`}>
-              {rep_data.state} {rep_data.district}
+            <a href={rep_dis_url}>
+              {state_district}
             </a>
           </li>
           <li className="representative-instance-desc">
