@@ -72,18 +72,10 @@ class RepresentativeInstance extends React.Component {
     var twitterUser = "" + rep_data.twitter_account
     var fbUser = rep_data.facebook_account
     var facebook = "https://facebook.com/" + rep_data.facebook_account;
-    if (district.type_flag == 'True') {
-        var map_url =
-        "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
-        district.state_abbreviation +
-        "&district=" +
-        district.congressional_district;
-        }
-    else {
-        var map_url =
-        "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
-        district.state_abbreviation;
-          }
+    var map_url =
+    "https://www.govtrack.us/congress/members/embed/mapframe?state=" +
+    district.state_abbreviation + "&district=" +
+    district.congressional_district;
     var rep_image = "";
     if (this.state.representative.first_name != null) {
       rep_image =
@@ -110,7 +102,7 @@ class RepresentativeInstance extends React.Component {
         <ReactImageFallback
           className="representative-instance-image"
           src={rep_image}
-          fallbackImage={rep_data.party==="D"? democrat : republican} 
+          fallbackImage={rep_data.party==="D"? democrat : republican}
           alt={rep_data.first_name}
         />
         <p className="representative-instance-name">{rep_data.full_name}</p>
@@ -163,7 +155,7 @@ class RepresentativeInstance extends React.Component {
           ></iframe>
         </div>
       </div>
-      {this.state.showTwitter? 
+      {this.state.showTwitter?
         <div className="feed-container">
           <div className="single-feed">
         <FacebookProvider appId="908709349494568">
@@ -174,7 +166,7 @@ class RepresentativeInstance extends React.Component {
         <Timeline dataSource={{sourceType:"profile", screenName:twitterUser}}
                       options={{username:{twitterUser}, height:"500", width:"425"}}/>
         </div>
-        
+
         </div>
         : null}
         </div>
