@@ -63,12 +63,7 @@ class representativeSortFilter extends Component {
       "yearsInOfficeMin",
       "yearsInOfficeMax"
     );
-    const party =
-      this.state.filter.party != null
-        ? this.state.filter.party === "Democratic"
-          ? "D"
-          : "R"
-        : null;
+    const party = this.state.filter.party;
     const state = this.state.filter.state;
 
     if (date_of_birth) {
@@ -252,7 +247,6 @@ class representativeSortFilter extends Component {
                   className="custom-select"
                   name="party"
                   onChange={this.handleFilter}
-                  value={this.state.filter.party}
                 >
                   <option>Choose...</option>
                   <option value="D">Democratic</option>
