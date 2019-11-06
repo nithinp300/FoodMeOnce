@@ -73,6 +73,19 @@ class Legislations extends Component {
       .catch(console.log);
   }
   render() {
+    const pathname = this.props.location.pathname;
+    const querystring = this.props.location.search;
+    let search = null;
+    if (pathname === "/Legislations/search" && querystring != null) {
+      const parsedQuerystring = querystring.substring(1).split("&");
+      for (let i = 0; i < parsedQuerystring.length; ++i) {
+        if (parsedQuerystring[i].includes("attribute")) {
+          const index = parsedQuerystring[i].indexOf("=");
+          search = parsedQuerystring[i].substring(index + 1);
+          break;
+        }
+      }
+    }
     const legislationsRendered = this.state.legislations.map(
       (legislation, i) => {
         return (
@@ -89,6 +102,7 @@ class Legislations extends Component {
               houseOfRepresentative={this.getParty(legislation.sponsor_party)}
               billType={this.getBillType(legislation.bill_type)}
               sponsors={legislation.sponsor_name}
+              search={search}
             />
           </a>
         );

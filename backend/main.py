@@ -578,15 +578,55 @@ def generatePhrase(searchPhrase, phrase, attributes):
         searchPhrase += f"{phrase} {attributes[i]}"
     return searchPhrase
 
-# @app.route("/Representatives/states")
-# def repStates():
-#     try:
-#         query = f"SELECT distinct state from application.members order by state asc"
-#         data = con.execute(query)
-#         resultData = [dict(r) for r in data]
-#         return jsonify({"data": resultData})
-#     except SQLAlchemyError as e:
-#         pass
+@app.route("/Search")
+def searchEntire():
+    try:
+        attribute = request.args.get("attribute")
+        if attribute is None:
+            raise BadRequest("Please make sure the query parameters are passed in with search phrase")
+        splittedAttributes = attribute.split(' ')
+        attributes = []
+        for i in range(len(splittedAttributes)):
+            attributes.append(f"'%%{splittedAttributes[i]}%%'")
+
+        searchPhrase = ""
+        searchPhrase = generatePhrase(searchPhrase, "lower(d.state) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(d.congressional_district) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(population as VARCHAR(11))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(mean_income as VARCHAR(11))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(median_age as VARCHAR(11))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(m.full_name) LIKE", attributes)
+        
+        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase} ORDER BY d.state, d.congressional_district"
+        data = con.execute(query)
+        districts = [dict(r) for r in data]
+
+        searchPhrase = ""
+        searchPhrase = generatePhrase(searchPhrase, "lower(full_name) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(2019 - CAST(LEFT(date_of_birth,4) AS int) AS VARCHAR(3))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(seniority as VARCHAR(4))) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(party) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(state) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(title) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(CAST(district as VARCHAR(4))) LIKE", attributes)
+
+        query = f"SELECT * FROM application.members WHERE {searchPhrase} ORDER BY application.members.full_name"
+        data = con.execute(query)
+        representatives = [dict(r) for r in data]
+
+        searchPhrase = ""
+        searchPhrase = generatePhrase(searchPhrase, "lower(short_title) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(enacted) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(sponsor_party) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(bill_type) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(sponsor_name) LIKE", attributes)
+        query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title"
+        data = con.execute(query)
+        legislations = [dict(r) for r in data]
+
+        return jsonify({"districts": districts, "representatives": representatives, "legislations": legislations})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with search phrase")
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=80)

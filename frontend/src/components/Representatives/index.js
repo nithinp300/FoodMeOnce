@@ -95,6 +95,19 @@ class Representatives extends Component {
   };
 
   render() {
+    const pathname = this.props.location.pathname;
+    const querystring = this.props.location.search;
+    let search = null;
+    if (pathname === "/Representatives/search" && querystring != null) {
+      const parsedQuerystring = querystring.substring(1).split("&");
+      for (let i = 0; i < parsedQuerystring.length; ++i) {
+        if (parsedQuerystring[i].includes("attribute")) {
+          const index = parsedQuerystring[i].indexOf("=");
+          search = parsedQuerystring[i].substring(index + 1);
+          break;
+        }
+      }
+    }
     var representativesRendered = this.state.representatives.map(
       (representative, i) => {
         var rep_image = "";
@@ -118,6 +131,7 @@ class Representatives extends Component {
               state={representative.state}
               district={this.getDistrict(representative.district)}
               type_flag={this.getType(representative.type_flag)}
+              search={search}
             />
           </a>
         );

@@ -53,7 +53,6 @@ class Districts extends Component {
   };
 
   render() {
-    console.log(this.props.location);
     const pathname = this.props.location.pathname;
     const querystring = this.props.location.search;
     let search = null;

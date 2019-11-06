@@ -1,7 +1,9 @@
 import React from "react";
+import Show from "../SearchResult";
 import "./css/Legislation.css";
 
 function Legislation(props) {
+  const searches = props.search != null ? props.search.split("%20") : null;
   if (props.header) {
     return (
       <div className="legislation d-flex flex-row font-weight-bold text-center">
@@ -18,13 +20,27 @@ function Legislation(props) {
 
   return (
     <div className="legislation d-flex flex-row text-center" id="leg_inst">
-      <div className="legislation-desc">{props.name}</div>
-      <div className="legislation-desc">{props.year}</div>
-      <div className="legislation-desc">{props.status}</div>
-      <div className="legislation-desc">{props.enacted_Year}</div>
-      <div className="legislation-desc">{props.houseOfRepresentative}</div>
-      <div className="legislation-desc">{props.billType}</div>
-      <div className="legislation-desc">{props.sponsors}</div>
+      <div className="legislation-desc">
+        <Show search={searches}>{props.name}</Show>
+      </div>
+      <div className="legislation-desc">
+        <Show search={searches}>{props.year}</Show>
+      </div>
+      <div className="legislation-desc">
+        <Show search={searches}>{props.status}</Show>
+      </div>
+      <div className="legislation-desc">
+        <Show search={searches}>{props.enacted_Year}</Show>
+      </div>
+      <div className="legislation-desc">
+        <Show search={searches}>{props.houseOfRepresentative}</Show>
+      </div>
+      <div className="legislation-desc">
+        <Show search={searches}>{props.billType}</Show>
+      </div>
+      <div className="legislation-desc">
+        <Show search={searches}>{props.sponsors}</Show>
+      </div>
     </div>
   );
 }
