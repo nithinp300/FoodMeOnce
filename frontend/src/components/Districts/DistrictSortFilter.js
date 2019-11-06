@@ -148,6 +148,8 @@ class DistrictSortFilter extends Component {
                 />{" "}
                 Gender Ratio
               </div>
+              <p>(*Number of male births to 1 female birth)</p>
+
               <div className="d-flex justify-content-end">
                 <button className="btn btn-primary">Apply</button>
               </div>
