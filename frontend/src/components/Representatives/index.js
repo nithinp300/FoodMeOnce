@@ -151,7 +151,7 @@ class Representatives extends Component {
           <div className="d-flex flex-row justify-content-between">
             <h3 className="ml-1">Representatives</h3>
             <input
-              class="form-control"
+              className="form-control"
               type="text"
               value={this.state.search}
               onChange={this.handleChange}

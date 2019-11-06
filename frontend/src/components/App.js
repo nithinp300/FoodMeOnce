@@ -9,7 +9,7 @@ import DistrictInstance from "./InstancePages/DistrictInstance";
 import RepresentativeInstance from "./InstancePages/RepresentativeInstance";
 import LegislationInstance from "./InstancePages/LegislationInstance";
 import ErrorPage from "./Error";
-import SearchPage from "./Search"
+import SearchPage from "./Search";
 //import logo from "././images";
 import { Navbar, Nav } from "react-bootstrap";
 
@@ -32,11 +32,17 @@ function App() {
             <Nav.Link href="/Legislations">Legislation</Nav.Link>
             <Nav.Link href="/About Us">About Us</Nav.Link>
           </Nav>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search Site Wide" aria-label="Search"/>
-            <a class="btn btn-outline-success my-2 my-sm-0" href="/search">Search </a>
+          <form className="form-inline my-2 my-lg-0">
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search Site Wide"
+              aria-label="Search"
+            />
+            <a className="btn btn-outline-success my-2 my-sm-0" href="/search">
+              Search{" "}
+            </a>
           </form>
-            
         </Navbar.Collapse>
       </Navbar>
 

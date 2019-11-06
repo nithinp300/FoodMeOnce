@@ -33,7 +33,6 @@ class Districts extends Component {
     const querystring = this.props.location.search;
     const pathname = this.props.location.pathname;
     const url = `https://api.foodmeonce.me${pathname}${querystring}`;
-    console.log(url);
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -54,6 +53,20 @@ class Districts extends Component {
   };
 
   render() {
+    console.log(this.props.location);
+    const pathname = this.props.location.pathname;
+    const querystring = this.props.location.search;
+    let search = null;
+    if (pathname === "/Districts/search" && querystring != null) {
+      const parsedQuerystring = querystring.substring(1).split("&");
+      for (let i = 0; i < parsedQuerystring.length; ++i) {
+        if (parsedQuerystring[i].includes("attribute")) {
+          const index = parsedQuerystring[i].indexOf("=");
+          search = parsedQuerystring[i].substring(index + 1);
+          break;
+        }
+      }
+    }
     let districtsRendered = [];
     if (this.state.districts.length > 0)
       districtsRendered = this.state.districts.map((district, i) => {
@@ -81,6 +94,7 @@ class Districts extends Component {
               numHouseholds={district.numHouseholds}
               id={district.id}
               wikipedia={district.wikipedia}
+              search={search}
             />
           </a>
         );
@@ -111,7 +125,7 @@ class Districts extends Component {
           <div className="d-flex flex-row justify-content-between">
             <h3 className="ml-1">Districts</h3>
             <input
-              class="form-control"
+              className="form-control"
               type="text"
               value={this.state.search}
               onChange={this.handleChange}

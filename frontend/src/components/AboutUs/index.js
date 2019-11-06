@@ -138,7 +138,7 @@ async grabCommits(){
       <div>
         <div className="titleCard">
         <h2 className="descriptionHeader"> What are we? </h2>
-          <h6 align="center" class="descriptionBody">
+          <h6 align="center" className="descriptionBody">
 Food Me Once is a website designed to look into the issue of food security in the United States. Our goal is to see how geographic location, congressional representation,
             and legislation affects the food security of individuals in this country.          </h6>
         </div>
