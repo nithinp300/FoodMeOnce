@@ -1,12 +1,33 @@
 import React, { Component } from "react";
 
 class DistrictSortFilter extends Component {
+  _isMounted = false;
   state = {
     sort: {},
     filter: {},
     redirect: false,
-    url: ""
+    url: "",
+    states:[]
   };
+
+  componentDidMount() {
+    this._isMounted = true;
+    let statesfromAPI = [];
+    fetch('https://api.foodmeonce.me/Representatives/states')
+      .then(response => response.json())
+      .then(data => {
+        if (this._isMounted) {
+          let all_states = data["data"];
+          this.setState({ all_states });
+          // console.log(all_states)
+          }
+      })
+      .catch(console.log);
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
 
   handleSort = e => {
     let newSort = {};
@@ -97,6 +118,22 @@ class DistrictSortFilter extends Component {
   };
 
   render() {
+    let US_states = this.state.all_states;
+    // console.log(size);
+    let optionItems = [];
+    optionItems.push(<option>Select a state</option>);
+    if (US_states) {
+      const statesRendered =
+          US_states.map(
+              (US_state, i) => {
+                return (
+                    optionItems.push(<option>{US_state.state}</option>)
+                );
+              }
+          )
+        }
+
+    // console.log(optionItems)
     return (
       <React.Fragment>
         <hr />
@@ -246,12 +283,8 @@ class DistrictSortFilter extends Component {
                     State
                   </span>
                 </div>
-                <select id="state-choice"
-                  className="form-control"
-                  name="stateMin"
-                  onChange={this.handleFilter}
-                  >
-                <option selected value="base">Select state</option>
+                <select id="state-choice" className="form-control" onChange={this.handleFilter}>
+                  {optionItems}
                 </select>
               </div>
               <div className="d-flex mt-3 justify-content-end">
