@@ -453,6 +453,8 @@ def searchDistricts():
             attributes.append(f"'%%{splittedAttributes[i]}%%'")
 
         searchPhrase = ""
+        searchPhrase = generatePhrase(searchPhrase, "lower(d.state) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "lower(d.congressional_district) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(CAST(population as VARCHAR(11))) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(CAST(mean_income as VARCHAR(11))) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(CAST(median_age as VARCHAR(11))) LIKE", attributes)
