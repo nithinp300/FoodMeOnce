@@ -5,7 +5,6 @@ function Show(props) {
   if (props.search == null) {
     return <span>{data}</span>;
   }
-  console.log("searches", props.search);
   for (let i = 0; i < props.search.length; ++i) {
     const search = props.search[i];
     data = data + "";
@@ -15,7 +14,7 @@ function Show(props) {
         <span>
           {data.substring(0, index)}
           <span className="bg-warning">
-            {data.substring(index, search.length)}
+            {data.substring(index, index + search.length)}
           </span>
           {data.substring(index + search.length)}
         </span>
