@@ -67,6 +67,7 @@ class DistrictSortFilter extends Component {
       "genderRatioMin",
       "genderRatioMax"
     );
+    const state = this.state.filter.state;
 
     if (population) {
       if (firstAttribute) {
@@ -99,6 +100,14 @@ class DistrictSortFilter extends Component {
         url += "&";
       }
       url += "gender_ratio=" + gender_ratio;
+    }
+    if (state) {
+      if (firstAttribute) {
+        firstAttribute = false;
+      } else {
+        url += "&";
+      }
+      url += "state=" + state;
     }
     window.location = url;
   };
@@ -283,7 +292,11 @@ class DistrictSortFilter extends Component {
                     State
                   </span>
                 </div>
-                <select id="state-choice" className="form-control" onChange={this.handleFilter}>
+                <select
+                  className="custom-select"
+                  name="state"
+                  onChange={this.handleFilter}
+                >
                   {optionItems}
                 </select>
               </div>
