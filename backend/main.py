@@ -450,6 +450,15 @@ def filteredLegislations():
     except SQLAlchemyError as ex:
         raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
+@app.route("/Representatives/states")
+def repStates():
+    try:
+        query = f"SELECT distinct state from application.members order by state asc"
+        data = con.execute(query)
+        resultData = [dict(r) for r in data]
+        return jsonify({"data": resultData})
+    except SQLAlchemyError as e:
+        pass
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=80)
