@@ -311,7 +311,7 @@ def filteredDistricts():
         
         filteringPhrase = ""
         if state is not None:
-            filteringPhrase += f" state like '%%{state}%%'"
+            filteringPhrase += f" d.state like '%%{state}%%'"
         if population is not None:
             minMax = population.split(',')
             addAnd = " and" if filteringPhrase != "" else ""

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import State from "../Districts/State";
 
 class representativeSortFilter extends Component {
   state = {
     sort: {},
-    filter: {},
-    url: ""
+    filter: {}
   };
 
   handleSort = e => {
@@ -107,14 +107,6 @@ class representativeSortFilter extends Component {
   };
 
   render() {
-    let US_states = this.state.all_states;
-    let optionItems = [];
-    optionItems.push(<option>Select a state</option>);
-    if (US_states) {
-      const statesRendered = US_states.map((US_state, i) => {
-        return optionItems.push(<option>{US_state.state}</option>);
-      });
-    }
     return (
       <React.Fragment>
         <hr />
@@ -230,20 +222,7 @@ class representativeSortFilter extends Component {
                   <option value="R">Republican</option>
                 </select>
               </div>
-              <div className="input-group input-group-sm">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="">
-                    State
-                  </span>
-                </div>
-                <select
-                  className="custom-select"
-                  name="state"
-                  onChange={this.handleFilter}
-                >
-                  {optionItems}
-                </select>
-              </div>
+              <State handleFilter={this.handleFilter} />
               <div className="d-flex mt-3 justify-content-end">
                 <button className="btn btn-primary">Apply</button>
               </div>
