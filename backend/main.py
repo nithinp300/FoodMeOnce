@@ -112,15 +112,6 @@ def representatives():
     metaData = {"currentPage": page, "numPages": pages}
     return jsonify({"data": resultData, "metaData": metaData})
 
-@app.route("/Representatives/search")
-def representatives_search():
-    data = con.execute(
-        f"SELECT * FROM application.members ORDER BY application.members.full_name"
-    )
-    resultData = [dict(r) for r in data]
-    return jsonify({"data": resultData})
-
-
 @app.route("/Legislations")
 def legislations():
     page = request.args.get("page")
@@ -450,15 +441,132 @@ def filteredLegislations():
     except SQLAlchemyError as ex:
         raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
-@app.route("/Representatives/states")
-def repStates():
+@app.route("/Districts/search")
+def searchDistricts():
     try:
-        query = f"SELECT distinct state from application.members order by state asc"
+        attribute = request.args.get("attribute")
+        if attribute is None:
+            raise BadRequest("Please make sure the query parameters are passed in with search phrase")
+        splittedAttributes = attribute.split(' ')
+        attributes = []
+        for i in range(len(splittedAttributes)):
+            attributes.append(f"'%%{splittedAttributes[i]}%%'")
+
+        searchPhrase = ""
+        searchPhrase = generatePhrase(searchPhrase, "CAST(population as VARCHAR(11)) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "CAST(mean_income as VARCHAR(11)) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "CAST(median_age as VARCHAR(11)) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "m.full_name LIKE", attributes)
+
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase} ORDER BY d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
         data = con.execute(query)
+        pageQuery = f"SELECT COUNT(d.*) AS pages FROM (SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase}) AS d"
+        pages = con.execute(pageQuery)
+        for row in pages:
+            pages = ceil(int(row["pages"]) / numLimit)
         resultData = [dict(r) for r in data]
-        return jsonify({"data": resultData})
-    except SQLAlchemyError as e:
-        pass
+        metaData = {"currentPage": page, "numPages": pages}
+        return jsonify({"data": resultData, "metaData": metaData})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with search phrase")
+
+@app.route("/Representatives/search")
+def searchRepresentatives():
+    try:
+        attribute = request.args.get("attribute")
+        if attribute is None:
+            raise BadRequest("Please make sure the query parameters are passed in with search phrase")
+        splittedAttributes = attribute.split(' ')
+        attributes = []
+        for i in range(len(splittedAttributes)):
+            attributes.append(f"'%%{splittedAttributes[i]}%%'")
+
+        searchPhrase = ""
+        searchPhrase = generatePhrase(searchPhrase, "full_name LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "CAST(2019 - CAST(LEFT(date_of_birth,4) AS int) AS VARCHAR(3)) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "CAST(seniority as VARCHAR(4)) LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "party LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "state LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "title LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "CAST(district as VARCHAR(4)) LIKE", attributes)
+
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        query = f"SELECT * FROM application.members WHERE {searchPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}"
+        data = con.execute(query)
+        pages = con.execute(f"SELECT COUNT(m.*) AS pages FROM (SELECT * FROM application.members WHERE {searchPhrase}) AS m")
+        for row in pages:
+            pages = ceil(int(row["pages"]) / numLimit)
+        resultData = [dict(r) for r in data]
+        metaData = {"currentPage": page, "numPages": pages}
+        return jsonify({"data": resultData, "metaData": metaData})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with search phrase")
+
+@app.route("/Legislations/search")
+def searchLegislations():
+    try:
+        attribute = request.args.get("attribute")
+        if attribute is None:
+            raise BadRequest("Please make sure the query parameters are passed in with search phrase")
+        splittedAttributes = attribute.split(' ')
+        attributes = []
+        for i in range(len(splittedAttributes)):
+            attributes.append(f"'%%{splittedAttributes[i]}%%'")
+
+        searchPhrase = ""
+        searchPhrase = generatePhrase(searchPhrase, "short_title LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "enacted LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "sponsor_party LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "bill_type LIKE", attributes)
+        searchPhrase = generatePhrase(searchPhrase, "sponsor_name LIKE", attributes)
+
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
+        data = con.execute(query)
+        pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}) AS l")
+        for row in pages:
+            pages = ceil(int(row["pages"]) / numLimit)
+        resultData = [dict(r) for r in data]
+        metaData = {"currentPage": page, "numPages": pages}
+        return jsonify({"data": resultData, "metaData": metaData})
+    except SQLAlchemyError as ex:
+        raise BadRequest("Please make sure the query parameters are passed in with search phrase")
+
+def generatePhrase(searchPhrase, phrase, attributes):
+    for i in range(len(attributes)):
+        if searchPhrase != "":
+            searchPhrase += " OR "
+        searchPhrase += f"{phrase} {attributes[i]}"
+    return searchPhrase
+
+# @app.route("/Representatives/states")
+# def repStates():
+#     try:
+#         query = f"SELECT distinct state from application.members order by state asc"
+#         data = con.execute(query)
+#         resultData = [dict(r) for r in data]
+#         return jsonify({"data": resultData})
+#     except SQLAlchemyError as e:
+#         pass
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=80)
