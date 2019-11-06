@@ -7,6 +7,24 @@ class representativeSortFilter extends Component {
     url: ""
   };
 
+  componentDidMount() {
+    this._isMounted = true;
+    let statesfromAPI = [];
+    fetch('https://api.foodmeonce.me/Representatives/states')
+      .then(response => response.json())
+      .then(data => {
+        if (this._isMounted) {
+          let all_states = data["data"];
+          this.setState({ all_states });
+          }
+      })
+      .catch(console.log);
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   handleSort = e => {
     let newSort = {};
     newSort.name = e.target.name;
@@ -112,6 +130,19 @@ class representativeSortFilter extends Component {
   };
 
   render() {
+    let US_states = this.state.all_states;
+    let optionItems = [];
+    optionItems.push(<option>Select a state</option>);
+    if (US_states) {
+      const statesRendered =
+          US_states.map(
+              (US_state, i) => {
+                return (
+                    optionItems.push(<option>{US_state.state}</option>)
+                );
+              }
+          )
+        }
     return (
       <React.Fragment>
         <hr />
@@ -224,8 +255,8 @@ class representativeSortFilter extends Component {
                   value={this.state.filter.party}
                 >
                   <option>Choose...</option>
-                  <option value="democratic">Democratic</option>
-                  <option value="republic">Republic</option>
+                  <option value="D">Democratic</option>
+                  <option value="R">Republican</option>
                 </select>
               </div>
               <div className="input-group input-group-sm">
@@ -234,14 +265,13 @@ class representativeSortFilter extends Component {
                     State
                   </span>
                 </div>
-                <input
-                  type="text"
-                  className="form-control"
+                <select
+                  className="custom-select"
                   name="state"
                   onChange={this.handleFilter}
-                  value={this.state.filter.state}
-                  placeholder="State"
-                />
+                >
+                  {optionItems}
+                </select>
               </div>
               <div className="d-flex mt-3 justify-content-end">
                 <button className="btn btn-primary">Apply</button>
