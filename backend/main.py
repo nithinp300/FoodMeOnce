@@ -589,6 +589,15 @@ def searchEntire():
         for i in range(len(splittedAttributes)):
             attributes.append(f"'%%{splittedAttributes[i]}%%'")
 
+        page = request.args.get("page")
+        numLimit = request.args.get("limit")
+        if page is None:
+            page = 1
+        if numLimit is None:
+            numLimit = 8
+        actualPage = (int(page) - 1) * numLimit
+        numPages = 0
+
         searchPhrase = ""
         searchPhrase = generatePhrase(searchPhrase, "lower(d.state) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(d.congressional_district) LIKE", attributes)
@@ -597,8 +606,11 @@ def searchEntire():
         searchPhrase = generatePhrase(searchPhrase, "lower(CAST(median_age as VARCHAR(11))) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(m.full_name) LIKE", attributes)
         
-        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase} ORDER BY d.state, d.congressional_district"
+        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase} ORDER BY d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
         data = con.execute(query)
+        pages = con.execute(f"SELECT COUNT(d.*) AS pages FROM (SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase}) AS d")
+        for row in pages:
+            numPages = max(numPages, ceil(int(row["pages"]) / numLimit))
         districts = [dict(r) for r in data]
 
         searchPhrase = ""
@@ -610,8 +622,11 @@ def searchEntire():
         searchPhrase = generatePhrase(searchPhrase, "lower(title) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(CAST(district as VARCHAR(4))) LIKE", attributes)
 
-        query = f"SELECT * FROM application.members WHERE {searchPhrase} ORDER BY application.members.full_name"
+        query = f"SELECT * FROM application.members WHERE {searchPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}"
         data = con.execute(query)
+        pages = con.execute(f"SELECT COUNT(m.*) AS pages FROM (SELECT * FROM application.members WHERE {searchPhrase}) AS m")
+        for row in pages:
+            numPages = max(numPages, ceil(int(row["pages"]) / numLimit))
         representatives = [dict(r) for r in data]
 
         searchPhrase = ""
@@ -620,11 +635,14 @@ def searchEntire():
         searchPhrase = generatePhrase(searchPhrase, "lower(sponsor_party) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(bill_type) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(sponsor_name) LIKE", attributes)
-        query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title"
+        query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
         data = con.execute(query)
+        pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}) AS l")
+        for row in pages:
+            numPages = max(numPages, ceil(int(row["pages"]) / numLimit))
         legislations = [dict(r) for r in data]
-
-        return jsonify({"districts": districts, "representatives": representatives, "legislations": legislations})
+        
+        return jsonify({"districts": districts, "representatives": representatives, "legislations": legislations, "currentPage": page, "numPages": numPages})
     except SQLAlchemyError as ex:
         raise BadRequest("Please make sure the query parameters are passed in with search phrase")
 

@@ -3,16 +3,29 @@ import { Redirect } from "react-router-dom";
 import Representative from "../Representatives/Representative";
 import District from "../Districts/District";
 import Legislation from "../Legislations/Legislation";
+import Pages from "../Pages";
 // import "../Representatives/css/Representatives.css";
 // import "../Legislations/css/Representatives.css";
 // import "../Districts/css/District.css";
 class SearchPage extends Component {
   state = {
-    collapse: true,
+    collapse: {
+      districts: true,
+      representatives: true,
+      legislations: true
+    },
     districts: [],
     representatives: [],
     legislations: [],
-    loading: true
+    loading: true,
+    currentPage: 1,
+    numPages: 0
+  };
+
+  handleClick = e => {
+    let collapse = this.state.collapse;
+    collapse[e.target.name] = !collapse[e.target.name];
+    this.setState({ collapse });
   };
 
   componentDidMount() {
@@ -21,6 +34,7 @@ class SearchPage extends Component {
     fetch(url)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         this.setState({
           ...data,
           loading: false
@@ -87,6 +101,7 @@ class SearchPage extends Component {
         }
         return (
           <a
+            key={"Representatives" + i}
             href={`/Representatives/instance/${representative.id}`}
             className="button-container"
           >
@@ -129,30 +144,99 @@ class SearchPage extends Component {
 
     return (
       <div className="text-center">
-        <h1>THIS WILL BE THE SEARCH PAGE</h1>
-        <div style={{ paddingBottom: "5%", paddingTop: "5%" }}>
-          <h4>Districts</h4>
-          <div className="districts-container">{districts}</div>
-          {this.state.districts.length === 0 && (
-            <p>There is no result for districts</p>
+        <h2>Search the entire site!</h2>
+        <div style={{ paddingBottom: "20px", paddingTop: "20px" }}>
+          <h4>
+            Districts
+            <button
+              style={{
+                marginLeft: "10px",
+                backgroundColor: "lightgray",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                cursor: "pointer"
+              }}
+              name="districts"
+              onClick={this.handleClick}
+            >
+              {this.state.collapse.districts ? "-" : "+"}
+            </button>
+          </h4>
+          {this.state.collapse.districts && (
+            <React.Fragment>
+              <div className="districts-container">{districts.slice(0, 4)}</div>
+              <div className="districts-container">{districts.slice(4, 8)}</div>
+            </React.Fragment>
           )}
+          {this.state.collapse.districts &&
+            this.state.districts.length === 0 && (
+              <p>There is no (more) result for districts</p>
+            )}
         </div>
-        <div style={{ paddingBottom: "5%" }}>
-          <h4>Representatives</h4>
-          <div className="representatives-container">{representatives}</div>
-          {this.state.representatives.length === 0 && (
-            <p>There is no result for Representatives</p>
+        <div style={{ paddingBottom: "20px" }}>
+          <h4>
+            Representatives
+            <button
+              style={{
+                marginLeft: "10px",
+                backgroundColor: "lightgray",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                cursor: "pointer"
+              }}
+              name="representatives"
+              onClick={this.handleClick}
+            >
+              {this.state.collapse.representatives ? "-" : "+"}
+            </button>
+          </h4>
+          {this.state.collapse.representatives && (
+            <React.Fragment>
+              <div className="representatives-container">
+                {representatives.slice(0, 4)}
+              </div>
+              <div className="representatives-container">
+                {representatives.slice(4, 8)}
+              </div>
+            </React.Fragment>
           )}
+          {this.state.collapse.representatives &&
+            this.state.representatives.length === 0 && (
+              <p>There is no (more) result for Representatives</p>
+            )}
         </div>
 
-        <div style={{ paddingBottom: "5%" }}>
-          <h4>Legislation</h4>
-          {this.state.legislations.length === 0 && (
-            <p>There is no result for Legislations</p>
-          )}
-          {this.state.legislations.length !== 0 && <Legislation header />}
-          {legislations}
+        <div style={{ paddingBottom: "20px" }}>
+          <h4>
+            Legislation
+            <button
+              style={{
+                marginLeft: "10px",
+                backgroundColor: "lightgray",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                cursor: "pointer"
+              }}
+              name="legislations"
+              onClick={this.handleClick}
+            >
+              {this.state.collapse.legislations ? "-" : "+"}
+            </button>
+          </h4>
+          {this.state.collapse.legislations &&
+            this.state.legislations.length === 0 && (
+              <p>There is no (more) result for Legislations</p>
+            )}
+          {this.state.collapse.legislations &&
+            this.state.legislations.length !== 0 && <Legislation header />}
+          {this.state.collapse.legislations && legislations}
         </div>
+        <Pages
+          url={this.props.location.pathname}
+          querystring={this.props.location.search}
+          current={this.state.currentPage}
+          lastPage={this.state.numPages}
+        />
       </div>
     );
   }
