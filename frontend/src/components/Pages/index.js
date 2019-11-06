@@ -23,7 +23,11 @@ class Pages extends Component {
     for (let i = current - 2; i < current && i >= 1; ++i) {
       pageListsBefore.push(i);
     }
-    for (let i = current + 1; i <= lastPage && i <= current + 2; ++i) {
+    for (
+      let i = current + 1;
+      lastPage > 1 && i <= lastPage && i <= current + 2;
+      ++i
+    ) {
       pageListsAfter.push(i);
     }
     const pageBeforeRender = pageListsBefore.map((page, i) => (
@@ -38,12 +42,12 @@ class Pages extends Component {
     ));
     return (
       <div className="d-flex justify-content-center">
-        {current > 1 && (
+        {current > 1 && lastPage > 1 && (
           <a href={`${url}?page=1${querystring}`}>
             <Button variant="light">First</Button>
           </a>
         )}
-        {current > 1 && (
+        {current > 1 && lastPage > 1 && (
           <a href={`${url}?page=${current - 1}${querystring}`}>
             <Button variant="light">Prev</Button>
           </a>
@@ -56,9 +60,11 @@ class Pages extends Component {
             <Button variant="light">Next</Button>
           </a>
         )}
-        <a href={`${url}?page=${lastPage}${querystring}`}>
-          <Button variant="light">Last</Button>
-        </a>
+        {lastPage > 1 && (
+          <a href={`${url}?page=${lastPage}${querystring}`}>
+            <Button variant="light">Last</Button>
+          </a>
+        )}
       </div>
     );
   }

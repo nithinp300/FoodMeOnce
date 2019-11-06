@@ -360,7 +360,7 @@ def filteredDistricts():
         actualPage = (int(page) - 1) * numLimit
         query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) {filteringPhrase} order by d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
         data = con.execute(query)
-        pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
+        pages = con.execute(f"SELECT COUNT(d.*) AS pages FROM (SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) {filteringPhrase} order by d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}) AS d")
         for row in pages:
             pages = ceil(int(row["pages"]) / numLimit)
         resultData = [dict(r) for r in data]
@@ -399,7 +399,7 @@ def filteredRepresentatives():
             numLimit = 8
         actualPage = (int(page) - 1) * numLimit
         data = con.execute(f"SELECT * FROM application.members WHERE short_title = 'Rep.' {filteringPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}")
-        pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
+        pages = con.execute(f"SELECT COUNT(m.*) AS pages FROM (SELECT * FROM application.members WHERE short_title = 'Rep.' {filteringPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}) AS m")
         print("done here")
         for row in pages:
             pages = ceil(int(row["pages"]) / numLimit)
@@ -450,7 +450,7 @@ def filteredLegislations():
         query = f"SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' {filteringPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
         print(query)
         data = con.execute(query)
-        pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
+        pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' {filteringPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}) AS l")
         for row in pages:
             pages = ceil(int(row["pages"]) / numLimit)
         resultData = [dict(r) for r in data]
