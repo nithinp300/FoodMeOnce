@@ -119,15 +119,15 @@ class representativeSortFilter extends Component {
               <div>Age: {" "}
                 <input
                   type="radio"
-                  name="date_of_birth-ASC"
-                  checked={this.state.sort.name === "date_of_birth-ASC"}
+                  name="date_of_birth-DESC"
+                  checked={this.state.sort.name === "date_of_birth-DESC"}
                   onChange={this.handleSort}
                 />{" "}
                 Ascending {" "}
                 <input
                   type="radio"
-                  name="date_of_birth-DESC"
-                  checked={this.state.sort.name === "date_of_birth-DESC"}
+                  name="date_of_birth-ASC"
+                  checked={this.state.sort.name === "date_of_birth-ASC"}
                   onChange={this.handleSort}
                 />{" "}
                 Descending
