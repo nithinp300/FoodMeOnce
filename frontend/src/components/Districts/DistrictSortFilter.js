@@ -16,7 +16,9 @@ class DistrictSortFilter extends Component {
 
   handleSortSubmit = e => {
     e.preventDefault();
-    const { name, order } = this.state.sort;
+    const attribute = this.state.sort.name;
+    const name = attribute.split('-')[0];
+    const order = attribute.split('-')[1];
     const url = `/Districts/sort?attribute=${name}&order=${order}`;
     window.location = url;
   };
@@ -112,41 +114,69 @@ class DistrictSortFilter extends Component {
           <div className="d-flex flex-column sort pr-5 flex-fill">
             <h5 className="ml-2">Sort By</h5>
             <form className="ml-3 mb-3" onSubmit={this.handleSortSubmit}>
-              <div>
+              <div> Population: {" "}
                 <input
                   type="radio"
-                  name="population"
-                  checked={this.state.sort.name === "population"}
+                  name="population-ASC"
+                  checked={this.state.sort.name === "population-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Population
+                Ascending {" "}
+                <input
+                  type="radio"
+                  name="population-DESC"
+                  checked={this.state.sort.name === "population-DESC"}
+                  onChange={this.handleSort}
+                />{" "}
+                Descending
               </div>
-              <div>
+              <div>Median Income: {" "}
                 <input
                   type="radio"
-                  name="mean_income"
-                  checked={this.state.sort.name === "mean_income"}
+                  name="mean_income-ASC"
+                  checked={this.state.sort.name === "mean_income-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Median Income
+                Ascending {" "}
+                <input
+                  type="radio"
+                  name="mean_income-DESC"
+                  checked={this.state.sort.name === "mean_income-DESC"}
+                  onChange={this.handleSort}
+                />{" "}
+                Descending
               </div>
-              <div>
+              <div>Average Age: {" "}
                 <input
                   type="radio"
-                  name="median_age"
-                  checked={this.state.sort.name === "median_age"}
+                  name="median_age-ASC"
+                  checked={this.state.sort.name === "median_age-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Average Age
+                Ascending {" "}
+                <input
+                  type="radio"
+                  name="median_age-DESC"
+                  checked={this.state.sort.name === "median_age-DESC"}
+                  onChange={this.handleSort}
+                />{" "}
+                Descending
               </div>
-              <div>
+              <div>Gender Ratio: {" "}
                 <input
                   type="radio"
-                  name="gender_ratio"
-                  checked={this.state.sort.name === "gender_ratio"}
+                  name="gender_ratio-ASC"
+                  checked={this.state.sort.name === "gender_ratio-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Gender Ratio
+                Ascending {" "}
+                <input
+                  type="radio"
+                  name="gender_ratio-DESC"
+                  checked={this.state.sort.name === "gender_ratio-DESC"}
+                  onChange={this.handleSort}
+                />{" "}
+                Descending
               </div>
               <p>(*Number of male births to 1 female birth)</p>
 
