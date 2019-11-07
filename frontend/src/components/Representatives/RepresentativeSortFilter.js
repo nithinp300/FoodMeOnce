@@ -171,7 +171,7 @@ class representativeSortFilter extends Component {
                   checked={this.state.sort.name === "state-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending
+                Ascending {" "}
                 <input
                   type="radio"
                   name="state-DESC"
