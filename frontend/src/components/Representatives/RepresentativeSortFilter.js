@@ -23,7 +23,9 @@ class representativeSortFilter extends Component {
 
   handleSortSubmit = e => {
     e.preventDefault();
-    const { name, order } = this.state.sort;
+    const attribute = this.state.sort.name;
+    const name = attribute.split('-')[0];
+    const order = attribute.split('-')[1];
     const url = `/Representatives/sort?attribute=${name}&order=${order}`;
     window.location = url;
   };
@@ -114,41 +116,69 @@ class representativeSortFilter extends Component {
           <div className="d-flex flex-column sort pr-5 flex-fill">
             <h5 className="ml-2">Sort By</h5>
             <form className="ml-3 mb-3" onSubmit={this.handleSortSubmit}>
-              <div>
+              <div>Age: {" "}
                 <input
                   type="radio"
-                  name="date_of_birth"
-                  checked={this.state.sort.name === "date_of_birth"}
+                  name="date_of_birth-ASC"
+                  checked={this.state.sort.name === "date_of_birth-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Age
+                Ascending {" "}
+                <input
+                  type="radio"
+                  name="date_of_birth-DESC"
+                  checked={this.state.sort.name === "date_of_birth-DESC"}
+                  onChange={this.handleSort}
+                />{" "}
+                Descending
               </div>
-              <div>
+              <div>Years In Office: {" "}
                 <input
                   type="radio"
-                  name="seniority"
-                  checked={this.state.sort.name === "seniority"}
+                  name="seniority-ASC"
+                  checked={this.state.sort.name === "seniority-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Years In Office
+                Ascending {" "}
+                <input
+                  type="radio"
+                  name="seniority-DESC"
+                  checked={this.state.sort.name === "seniority-DESC"}
+                  onChange={this.handleSort}
+                />{" "}
+                Descending
               </div>
-              <div>
+              <div>Party: {" "}
                 <input
                   type="radio"
-                  name="party"
-                  checked={this.state.sort.name === "party"}
+                  name="party-ASC"
+                  checked={this.state.sort.name === "party-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Party
+                Ascending {" "}
+                <input
+                  type="radio"
+                  name="party-DESC"
+                  checked={this.state.sort.name === "party-DESC"}
+                  onChange={this.handleSort}
+                />{" "}
+                Descending
               </div>
-              <div>
+              <div>State: {" "}
                 <input
                   type="radio"
-                  name="state"
-                  checked={this.state.sort.name === "state"}
+                  name="state-ASC"
+                  checked={this.state.sort.name === "state-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                State
+                Ascending
+                <input
+                  type="radio"
+                  name="state-DESC"
+                  checked={this.state.sort.name === "state-DESC"}
+                  onChange={this.handleSort}
+                />{" "}
+                Descending
               </div>
               <div className="d-flex justify-content-end">
                 <button className="btn btn-primary">Apply</button>
