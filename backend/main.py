@@ -265,7 +265,7 @@ def sortedRepresentatives():
             numLimit = 8
         actualPage = (int(page) - 1) * numLimit
         data = con.execute(
-            f"SELECT * FROM application.members ORDER BY application.members.{attribute} LIMIT 8 OFFSET {actualPage}"
+            f"SELECT * FROM application.members ORDER BY application.members.{attribute} {order} LIMIT 8 OFFSET {actualPage}"
         )
         pages = con.execute(
             "SELECT COUNT(*) AS pages FROM application.members"
@@ -296,7 +296,7 @@ def sortedLegislations():
             numLimit = 8
         actualPage = (int(page) - 1) * numLimit
         data = con.execute(
-            f"SELECT * FROM application.legislations  order by application.legislations.{attribute} LIMIT 8 OFFSET {str(actualPage)}"
+            f"SELECT * FROM application.legislations  order by application.legislations.{attribute} {order} LIMIT 8 OFFSET {str(actualPage)}"
         )
         pages = con.execute(
             "SELECT COUNT(*) AS pages FROM application.legislations"
