@@ -67,6 +67,7 @@ class LegislationInstance extends Component {
 
   render() {
     let legislation_data = this.state.legislation;
+    let rep_data = this.state.representative;
     let sponsor_image = "";
     if (legislation_data.sponsor_id != null) {
       sponsor_image =
@@ -112,15 +113,15 @@ class LegislationInstance extends Component {
           </li>
           <li className="legislation-instance-desc">
             <span>Sponsor(s)</span>:{" "}
-            {this.getSponsorTitle(legislation_data.sponsor_title)}{" "}
+            {legislation_data.sponsor_title}{" "}
             <a
               href={`/Representatives/instance/${this.state.representative.id}`}
             >
-              {legislation_data.sponsor_name}
+              {rep_data.full_name}
             </a>
           </li>
           <li className="legislation-instance-desc">
-            <span>Sponsor District</span>:{" "}
+            <span>Sponsor State/District</span>:{" "}
             <a
               id="distID"
               href={`/Districts/instance/${this.state.district &&

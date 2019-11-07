@@ -192,14 +192,14 @@ def representative(id=""):
 def legislation(id=""):
     legislation = con.execute("SELECT * FROM application.legislations WHERE id = " + id)
     sponsor = con.execute(
-        "SELECT m.id FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name WHERE l.id = "
+        "SELECT m.id, m.full_name FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name WHERE l.id = "
         + id
     )
     sponsor_type = con.execute(
         "SELECT m.id, m.type_flag FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name WHERE l.id = "
         + id
     )
-    type_dict = [dict(r) for r in type]
+    type_dict = [dict(r) for r in sponsor_type]
     # print(type_dict[0]["type_flag"])
     if type_dict[0]["type_flag"]:
         fromDistrict = con.execute(
@@ -213,11 +213,6 @@ def legislation(id=""):
             + id
             + "';"
         )
-    passedLegislation = con.execute(
-        "SELECT l.id, l.short_title from application.members AS m JOIN application.legislations AS l ON m.full_name = l.sponsor_name and m.id = '"
-        + id
-        + "';"
-    )
     data = {}
     data["legislation"] = [dict(r) for r in legislation]
     data["sponsor"] = [dict(r) for r in sponsor]
@@ -270,10 +265,10 @@ def sortedRepresentatives():
             numLimit = 8
         actualPage = (int(page) - 1) * numLimit
         data = con.execute(
-            f"SELECT * FROM application.members WHERE short_title = 'Rep.' ORDER BY application.members.{attribute} LIMIT 8 OFFSET {actualPage}"
+            f"SELECT * FROM application.members ORDER BY application.members.{attribute} LIMIT 8 OFFSET {actualPage}"
         )
         pages = con.execute(
-            "SELECT COUNT(*) AS pages FROM application.members WHERE short_title = 'Rep.'"
+            "SELECT COUNT(*) AS pages FROM application.members"
         )
         for row in pages:
             pages = ceil(int(row["pages"]) / numLimit)
@@ -301,10 +296,10 @@ def sortedLegislations():
             numLimit = 8
         actualPage = (int(page) - 1) * numLimit
         data = con.execute(
-            f"SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' order by application.legislations.{attribute} LIMIT 8 OFFSET {str(actualPage)}"
+            f"SELECT * FROM application.legislations  order by application.legislations.{attribute} LIMIT 8 OFFSET {str(actualPage)}"
         )
         pages = con.execute(
-            "SELECT COUNT(*) AS pages FROM application.legislations WHERE sponsor_title = 'Rep.'"
+            "SELECT COUNT(*) AS pages FROM application.legislations"
         )
         for row in pages:
             pages = ceil(int(row["pages"]) / numLimit)
@@ -398,8 +393,8 @@ def filteredRepresentatives():
         if numLimit is None:
             numLimit = 8
         actualPage = (int(page) - 1) * numLimit
-        data = con.execute(f"SELECT * FROM application.members WHERE short_title = 'Rep.' {filteringPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}")
-        pages = con.execute(f"SELECT COUNT(m.*) AS pages FROM (SELECT * FROM application.members WHERE short_title = 'Rep.' {filteringPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}) AS m")
+        data = con.execute(f"SELECT * FROM application.members {filteringPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}")
+        pages = con.execute(f"SELECT COUNT(m.*) AS pages FROM (SELECT * FROM application.members {filteringPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}) AS m")
         print("done here")
         for row in pages:
             pages = ceil(int(row["pages"]) / numLimit)
@@ -447,10 +442,10 @@ def filteredLegislations():
         if numLimit is None:
             numLimit = 8
         actualPage = (int(page) - 1) * numLimit
-        query = f"SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' {filteringPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
+        query = f"SELECT * FROM application.legislations {filteringPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
         print(query)
         data = con.execute(query)
-        pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE sponsor_title = 'Rep.' {filteringPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}) AS l")
+        pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations  {filteringPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}) AS l")
         for row in pages:
             pages = ceil(int(row["pages"]) / numLimit)
         resultData = [dict(r) for r in data]
