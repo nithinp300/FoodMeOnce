@@ -29,6 +29,10 @@ class Districts extends Component {
     return state + " Congressional District " + districtNum;
   };
 
+  getFormatNum = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); 
+  }; 
+
   componentDidMount() {
     const querystring = this.props.location.search;
     const pathname = this.props.location.pathname;
@@ -51,6 +55,7 @@ class Districts extends Component {
     const search = this.state.search.toLowerCase();
     window.location = `/Districts/search?attribute=${search}`;
   };
+  
 
   render() {
     const pathname = this.props.location.pathname;
@@ -81,8 +86,8 @@ class Districts extends Component {
                 district.congressional_district
               )}
               number={district.congressional_district}
-              population={district.population}
-              medianIncome={district.mean_income}
+              population={this.getFormatNum(district.population)}
+              medianIncome={this.getFormatNum(district.mean_income)}
               avgAge={district.median_age}
               stateAbbreviation={district.state_abbreviation}
               genderRatio={district.gender_ratio}
