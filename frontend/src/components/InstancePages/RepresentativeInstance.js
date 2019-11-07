@@ -86,7 +86,7 @@ class RepresentativeInstance extends React.Component {
     var rep_dis_url = "";
     if (this.state.representative.district == null) {
       state_district = rep_data.state;
-      rep_dis_url = "/Districts/filter?state=" + rep_data.state ;
+      rep_dis_url = "" ;
     }
     else {
       state_district = rep_data.state + ' ' + rep_data.district;

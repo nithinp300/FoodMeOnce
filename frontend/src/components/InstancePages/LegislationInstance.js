@@ -15,14 +15,20 @@ class LegislationInstance extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
+          districts: data.fromDistrict[0],
           legislation: data.legislation[0],
-          district: data.fromDistrict[0],
           representative: data.sponsor[0]
         });
       })
       .catch(err => console.log(err));
   }
 
+  getSummary = summary_short => {
+    if(summary_short) {
+      return summary_short;
+    }
+    return 'N/A';
+  }
   getStatus = enacted => {
     if (enacted != null) {
       return "Enacted";
@@ -69,11 +75,21 @@ class LegislationInstance extends Component {
     let legislation_data = this.state.legislation;
     let rep_data = this.state.representative;
     let sponsor_image = "";
+    let state_district = "";
+    let leg_dis_url = "";
     if (legislation_data.sponsor_id != null) {
       sponsor_image =
         "https://theunitedstates.io/images/congress/225x275/" +
         legislation_data.sponsor_id +
         ".jpg";
+    }
+    if (this.state.districts.district == null) {
+      state_district = this.state.districts.state;
+      leg_dis_url = "";
+    }
+    else {
+      state_district = this.state.districts.state + ' ' + this.state.districts.district;
+      leg_dis_url = "/Districts/instance/" + this.state.districts.id;
     }
     return (
       <div
@@ -113,7 +129,7 @@ class LegislationInstance extends Component {
           </li>
           <li className="legislation-instance-desc">
             <span>Sponsor(s)</span>:{" "}
-            {legislation_data.sponsor_title}{" "}
+            {this.getSponsorTitle(legislation_data.sponsor_title)}{" "}
             <a
               href={`/Representatives/instance/${this.state.representative.id}`}
             >
@@ -122,15 +138,8 @@ class LegislationInstance extends Component {
           </li>
           <li className="legislation-instance-desc">
             <span>Sponsor State/District</span>:{" "}
-            <a
-              id="distID"
-              href={`/Districts/instance/${this.state.district &&
-                this.state.district.id}`}
-            >
-              {this.state.district && this.state.district.state}
-              &nbsp;
-              {this.state.district &&
-                this.state.district.congressional_district}
+            <a href={leg_dis_url}>
+              {state_district}
             </a>
           </li>
           <li className="legislation-instance-desc">
@@ -147,7 +156,7 @@ class LegislationInstance extends Component {
             <span>Latest Action</span>: {legislation_data.latest_major_action}
           </li>
           <li className="legislation-instance-desc">
-            <span>Summary</span>: {legislation_data.summary_short}
+            <span>Summary</span>: {this.getSummary(legislation_data.summary_short)}
           </li>
         </ul>
         <div className="sponsor" align="left">

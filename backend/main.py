@@ -143,7 +143,7 @@ def district(id=""):
         + id
     )
     data2 = con.execute(
-        "SELECT l.short_title, l.id FROM application.districts AS d JOIN (SELECT l.id, l.sponsor_state, l.short_title FROM application.legislations AS l) AS l ON d.state = l.sponsor_state WHERE d.id = "
+        "SELECT l.short_title, l.id FROM application.districts AS d JOIN (SELECT l.id, l.sponsor_state, l.short_title FROM application.legislations AS l) AS l ON d.state_abbreviation = l.sponsor_state WHERE d.id = "
         + id
     )
     data3 = con.execute(
@@ -201,15 +201,17 @@ def legislation(id=""):
     )
     type_dict = [dict(r) for r in sponsor_type]
     # print(type_dict[0]["type_flag"])
-    if type_dict[0]["type_flag"]:
+    if (type_dict[0]["type_flag"]):
         fromDistrict = con.execute(
-            "SELECT d.id, d.state, d.congressional_district, d.state_abbreviation FROM application.members AS m JOIN application.districts AS d ON m.state = d.state and cast(m.district AS INT) = cast(d.congressional_district AS INT) WHERE m.short_title = 'Rep.' and m.id = '"
+            "SELECT m.full_name, d.id, m.state, m.district FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name "
+            "JOIN application.districts as d "
+            "on m.state = d.state and cast(m.district as INT) = cast(d.congressional_district as INT) where l.id = '"
             + id
             + "';"
         )
     else:
         fromDistrict = con.execute(
-            "SELECT distinct m.full_name, type_flag, d.state_abbreviation FROM application.members as m JOIN application.districts as d on m.state = d.state  where m.id = '"
+            "SELECT distinct m.full_name, type_flag, m.state FROM application.legislations AS l JOIN application.members AS m ON m.full_name = l.sponsor_name WHERE l.id = '"
             + id
             + "';"
         )
