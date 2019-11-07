@@ -21,7 +21,7 @@ class Legislations extends Component {
   };
 
   getBillType = billType => {
-    if (billType === "hr") {
+    if (billType === "hr" || billType === "hres") {
       return "House of Representatives";
     }
     return "Senate";

@@ -38,7 +38,7 @@ class LegislationInstance extends Component {
   };
 
   getBillType = billType => {
-    if (billType === "hr") {
+    if (billType === "hr" || billType === "hres") {
       return "House of Representatives";
     }
     return "Senate";
@@ -52,7 +52,7 @@ class LegislationInstance extends Component {
   };
 
   getImage = billType => {
-    if (billType === "hr") {
+    if (billType === "hr" || billType === "hres") {
       return us_hor;
     }
     return us_sen;

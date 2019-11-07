@@ -234,14 +234,14 @@ class LegislationSortFilter extends Component {
                     Party
                   </span>
                 </div>
-                <input
-                  type="text"
-                  className="form-control"
+                <select
+                  className="custom-select"
                   name="sponsor_party"
-                  onChange={this.handleFilter}
-                  value={this.state.filter.houseOfRepresentativeMin}
-                  placeholder="Representative"
-                />
+                  onChange={this.handleFilter}>
+                  <option>Choose...</option>
+                  <option value="D">Democratic</option>
+                  <option value="R">Republican</option>
+                </select>
               </div>
               <div className="input-group input-group-sm">
                 <div className="input-group-prepend">
@@ -249,14 +249,15 @@ class LegislationSortFilter extends Component {
                     Bill Type
                   </span>
                 </div>
-                <input
-                  type="text"
-                  className="form-control"
+                <select
+                  className="custom-select"
                   name="billTypeMin"
                   onChange={this.handleFilter}
-                  value={this.state.filter.billTypeMin}
-                  placeholder="Bill Type"
-                />
+                  value={this.state.filter.billTypeMin}>
+                  <option>Choose...</option>
+                  <option value="hr">House of Representatives</option>
+                  <option value="s">Senate</option>
+                </select>
               </div>
               <div className="input-group input-group-sm">
                 <div className="input-group-prepend">
