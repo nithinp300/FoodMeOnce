@@ -162,7 +162,7 @@ class DistrictSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <div>Gender Ratio: {" "}
+              <div>*Gender Ratio: {" "}
                 <input
                   type="radio"
                   name="gender_ratio-ASC"
@@ -178,7 +178,7 @@ class DistrictSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <p>(*Number of male births to 1 female birth)</p>
+              <p><i><sub>*Number of male births to 1 female birth</sub></i></p>
 
               <div className="d-flex justify-content-end">
                 <button className="btn btn-primary">Apply</button>
