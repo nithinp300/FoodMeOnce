@@ -559,7 +559,7 @@ def searchLegislations():
         actualPage = (int(page) - 1) * numLimit
         query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
         data = con.execute(query)
-        pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}) AS l")
+        pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title) AS l")
         for row in pages:
             pages = ceil(int(row["pages"]) / numLimit)
         resultData = [dict(r) for r in data]
@@ -634,7 +634,7 @@ def searchEntire():
         searchPhrase = generatePhrase(searchPhrase, "lower(sponsor_name) LIKE", attributes)
         query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
         data = con.execute(query)
-        pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}) AS l")
+        pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title) AS l")
         for row in pages:
             numPages = max(numPages, ceil(int(row["pages"]) / numLimit))
         legislations = [dict(r) for r in data]
