@@ -19,8 +19,8 @@ class AboutUs extends React.Component{
 
   constructor(props){
     super(props)
-    var Chris = [0,0,10]
-    var Gyuwon = [0,0,20]
+    var Chris = [0,0,20]
+    var Gyuwon = [0,0,30]
     var Shubhendra = [0,0,6]
     var Brian = [0,0,0]
     var Nithin = [0,0,6]
