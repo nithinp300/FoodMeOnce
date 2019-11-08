@@ -41,6 +41,7 @@ class Legislations extends Component {
       currentPage: 1,
       lastPage: 1
     },
+    sorted: "",
     loading: true
   };
 
@@ -68,7 +69,8 @@ class Legislations extends Component {
       .then(data => {
         let legislations = data["data"];
         let metaData = data["metaData"];
-        this.setState({ legislations, metaData, loading: false });
+        let sorted = data["sorted"];
+        this.setState({ legislations, metaData, sorted, loading: false });
       })
       .catch(console.log);
   }
@@ -152,7 +154,9 @@ class Legislations extends Component {
               {this.state.collapse ? "-" : "+"}
             </button>
           </div>
-          {this.state.collapse && <LegislationSortFilter />}
+          {this.state.collapse && (
+            <LegislationSortFilter sorted={this.state.sorted} />
+          )}
         </div>
         {renderPage}
       </div>

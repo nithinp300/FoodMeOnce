@@ -3,14 +3,14 @@ import React, { Component } from "react";
 class LegislationSortFilter extends Component {
   state = {
     sort: {},
+    sortModified: false,
     filter: []
   };
 
   handleSort = e => {
     let newSort = {};
     newSort.name = e.target.name;
-    newSort.order = "ASC";
-    this.setState({ sort: newSort });
+    this.setState({ sort: newSort, sortModified: true });
   };
 
   handleSortSubmit = e => {
@@ -118,6 +118,9 @@ class LegislationSortFilter extends Component {
   };
 
   render() {
+    let name = this.state.sortModified
+      ? this.state.sort.name
+      : this.props.sorted;
     return (
       <React.Fragment>
         <hr />
@@ -130,14 +133,14 @@ class LegislationSortFilter extends Component {
                 <input
                   type="radio"
                   name="introduced_date-ASC"
-                  checked={this.state.sort.name === "introduced_date-ASC"}
+                  checked={name === "introduced_date-ASC"}
                   onChange={this.handleSort}
                 />{" "}
                 Ascending{" "}
                 <input
                   type="radio"
                   name="introduced_date-DESC"
-                  checked={this.state.sort.name === "introduced_date-DESC"}
+                  checked={name === "introduced_date-DESC"}
                   onChange={this.handleSort}
                 />{" "}
                 Descending{" "}
@@ -147,14 +150,14 @@ class LegislationSortFilter extends Component {
                 <input
                   type="radio"
                   name="enacted-ASC"
-                  checked={this.state.sort.name === "enacted-ASC"}
+                  checked={name === "enacted-ASC"}
                   onChange={this.handleSort}
                 />{" "}
                 Ascending{" "}
                 <input
                   type="radio"
                   name="enacted-DESC"
-                  checked={this.state.sort.name === "enacted-DESC"}
+                  checked={name === "enacted-DESC"}
                   onChange={this.handleSort}
                 />{" "}
                 Descending{" "}
@@ -164,14 +167,14 @@ class LegislationSortFilter extends Component {
                 <input
                   type="radio"
                   name="sponsor_party-ASC"
-                  checked={this.state.sort.name === "sponsor_party-ASC"}
+                  checked={name === "sponsor_party-ASC"}
                   onChange={this.handleSort}
                 />{" "}
                 Ascending{" "}
                 <input
                   type="radio"
                   name="sponsor_party-DESC"
-                  checked={this.state.sort.name === "sponsor_party-DESC"}
+                  checked={name === "sponsor_party-DESC"}
                   onChange={this.handleSort}
                 />{" "}
                 Descending

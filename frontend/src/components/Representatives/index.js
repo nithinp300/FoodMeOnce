@@ -48,6 +48,7 @@ class Representatives extends Component {
       lastPage: 1
     },
     search: "",
+    sorted: "",
     loading: true
   };
 
@@ -80,7 +81,8 @@ class Representatives extends Component {
       .then(data => {
         let representatives = data["data"];
         let metaData = data["metaData"];
-        this.setState({ representatives, metaData, loading: false });
+        let sorted = data["sorted"];
+        this.setState({ representatives, metaData, sorted, loading: false });
       })
       .catch(console.log);
   }
@@ -188,7 +190,9 @@ class Representatives extends Component {
               {this.state.collapse ? "-" : "+"}
             </button>
           </div>
-          {this.state.collapse && <RepresentativeSortFilter />}
+          {this.state.collapse && (
+            <RepresentativeSortFilter sorted={this.state.sorted} />
+          )}
         </div>
         {renderPage}
       </div>

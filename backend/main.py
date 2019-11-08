@@ -245,7 +245,7 @@ def sortedDistricts():
             pages = ceil(int(row["pages"]) / numLimit)
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
-        return jsonify({"data": resultData, "metaData": metaData})
+        return jsonify({"data": resultData, "metaData": metaData, "sorted": attribute + "-" + order})
     except SQLAlchemyError as ex:
         raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
@@ -276,7 +276,7 @@ def sortedRepresentatives():
             pages = ceil(int(row["pages"]) / numLimit)
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
-        return jsonify({"data": resultData, "metaData": metaData})
+        return jsonify({"data": resultData, "metaData": metaData, "sorted": attribute + "-" + order})
     except SQLAlchemyError as ex:
         raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 
@@ -307,7 +307,7 @@ def sortedLegislations():
             pages = ceil(int(row["pages"]) / numLimit)
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
-        return jsonify({"data": resultData, "metaData": metaData})
+        return jsonify({"data": resultData, "metaData": metaData, "sorted": attribute + "-" + order})
     except SQLAlchemyError as ex:
         raise BadRequest("Please make sure the query parameters are passed in with correct attribute name and value")
 

@@ -14,6 +14,7 @@ class Districts extends Component {
       currentPage: 1,
       numPages: 1
     },
+    sorted: "",
     loading: true
   };
 
@@ -38,7 +39,8 @@ class Districts extends Component {
       .then(data => {
         let districts = data["data"];
         let metaData = data["metaData"];
-        this.setState({ districts, metaData, loading: false });
+        let sorted = data["sorted"];
+        this.setState({ districts, metaData, sorted, loading: false });
       })
       .catch(console.log);
   }
@@ -144,7 +146,9 @@ class Districts extends Component {
               {this.state.collapse ? "-" : "+"}
             </button>
           </div>
-          {this.state.collapse && <DistrictSortFilter />}
+          {this.state.collapse && (
+            <DistrictSortFilter sorted={this.state.sorted} />
+          )}
         </div>
         {renderPage}
       </div>

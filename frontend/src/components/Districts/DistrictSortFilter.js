@@ -4,14 +4,14 @@ import State from "./State";
 class DistrictSortFilter extends Component {
   state = {
     sort: {},
+    sortModified: false,
     filter: {}
   };
 
   handleSort = e => {
     let newSort = {};
     newSort.name = e.target.name;
-    newSort.order = "ASC";
-    this.setState({ sort: newSort });
+    this.setState({ sort: newSort, sortModified: true });
   };
 
   handleSortSubmit = e => {
@@ -116,6 +116,9 @@ class DistrictSortFilter extends Component {
   };
 
   render() {
+    const name = this.state.sortModified
+      ? this.state.sort.name
+      : this.props.sorted;
     return (
       <React.Fragment>
         <hr />
@@ -129,14 +132,14 @@ class DistrictSortFilter extends Component {
                 <input
                   type="radio"
                   name="population-ASC"
-                  checked={this.state.sort.name === "population-ASC"}
+                  checked={name === "population-ASC"}
                   onChange={this.handleSort}
                 />{" "}
                 Ascending{" "}
                 <input
                   type="radio"
                   name="population-DESC"
-                  checked={this.state.sort.name === "population-DESC"}
+                  checked={name === "population-DESC"}
                   onChange={this.handleSort}
                 />{" "}
                 Descending
@@ -146,14 +149,14 @@ class DistrictSortFilter extends Component {
                 <input
                   type="radio"
                   name="mean_income-ASC"
-                  checked={this.state.sort.name === "mean_income-ASC"}
+                  checked={name === "mean_income-ASC"}
                   onChange={this.handleSort}
                 />{" "}
                 Ascending{" "}
                 <input
                   type="radio"
                   name="mean_income-DESC"
-                  checked={this.state.sort.name === "mean_income-DESC"}
+                  checked={name === "mean_income-DESC"}
                   onChange={this.handleSort}
                 />{" "}
                 Descending
@@ -163,14 +166,14 @@ class DistrictSortFilter extends Component {
                 <input
                   type="radio"
                   name="median_age-ASC"
-                  checked={this.state.sort.name === "median_age-ASC"}
+                  checked={name === "median_age-ASC"}
                   onChange={this.handleSort}
                 />{" "}
                 Ascending{" "}
                 <input
                   type="radio"
                   name="median_age-DESC"
-                  checked={this.state.sort.name === "median_age-DESC"}
+                  checked={name === "median_age-DESC"}
                   onChange={this.handleSort}
                 />{" "}
                 Descending
@@ -180,14 +183,14 @@ class DistrictSortFilter extends Component {
                 <input
                   type="radio"
                   name="gender_ratio-ASC"
-                  checked={this.state.sort.name === "gender_ratio-ASC"}
+                  checked={name === "gender_ratio-ASC"}
                   onChange={this.handleSort}
                 />{" "}
                 Ascending{" "}
                 <input
                   type="radio"
                   name="gender_ratio-DESC"
-                  checked={this.state.sort.name === "gender_ratio-DESC"}
+                  checked={name === "gender_ratio-DESC"}
                   onChange={this.handleSort}
                 />{" "}
                 Descending
