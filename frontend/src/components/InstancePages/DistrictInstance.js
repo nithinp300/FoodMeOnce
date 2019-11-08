@@ -196,7 +196,7 @@ class DistrictInstance extends React.Component {
         </ul>
         <ReactImageFallback
         src={rep_image}
-        fallbackImage={representative.party === "Democrat" ? democrat : republican}
+        fallbackImage={representative.party === "D" ? democrat : republican}
         className="district-instance-rep-image"
         alt="Representative Photo"
       />
