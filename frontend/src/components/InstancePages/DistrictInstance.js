@@ -40,8 +40,8 @@ class DistrictInstance extends React.Component {
     }
     const district_data = this.state.district;
     const representative = this.state.representative;
-    console.log("REP")
-    console.log(representative)
+    //console.log("REP")
+    //console.log(representative)
     const legislations = {};
     const legisltaionsByRepresentative = this.state.legislationByRepresentative.map(
       (legislation, i) => {
