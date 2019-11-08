@@ -28,7 +28,7 @@ class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const search = this.state.search;
+    const search = this.state.search.toLowerCase();
     if (search.trim().length === 0) {
       alert("Please provide the search value");
       this.setState({ search: "" });
