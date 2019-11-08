@@ -16,6 +16,7 @@ configure({ adapter: new Adapter() });
 
 describe("Districts test", function() {
   let querystring = {
+    pathname: "/Districts",
     search: "?page=1"
   };
 
@@ -35,6 +36,7 @@ describe("Districts test", function() {
 
 describe("Legislations test", function() {
   let querystring = {
+    pathname: "/Legislations",
     search: "?page=1"
   };
 
@@ -54,6 +56,7 @@ describe("Legislations test", function() {
 
 describe("Representatives test", function() {
   let querystring = {
+    pathname: "/Representatives",
     search: "?page=1"
   };
 
@@ -117,7 +120,7 @@ describe("Representative Instance test", function() {
 describe("Legislation Instance test", function() {
   const match = {
     params: {
-      id: "2"
+      id: "80"
     }
   };
   it("Legislation Instance page doesn't have any data at first render", function() {
@@ -128,7 +131,7 @@ describe("Legislation Instance test", function() {
   it("Legislation Instance page loads correctly from api", function(done) {
     const root = shallow(<LegislationInstance match={match} />);
     waitUntil(() => root.state("legislation").id != null).then(() => {
-      assert.equal(root.state("legislation").id, "2");
+      assert.equal(root.state("legislation").id, "80");
       assert.equal(
         root.state("legislation").short_title,
         "Agriculture Improvement Act of 2018"
