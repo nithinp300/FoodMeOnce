@@ -1,6 +1,9 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import "./css/DistrictInstance.css";
+import ReactImageFallback from "react-image-fallback";
+import republican from "../../images/republicanLogo.png";
+import democrat from "../../images/democratLogo.png";
 
 class DistrictInstance extends React.Component {
   state = {
@@ -37,6 +40,8 @@ class DistrictInstance extends React.Component {
     }
     const district_data = this.state.district;
     const representative = this.state.representative;
+    console.log("REP")
+    console.log(representative)
     const legislations = {};
     const legisltaionsByRepresentative = this.state.legislationByRepresentative.map(
       (legislation, i) => {
@@ -189,11 +194,12 @@ class DistrictInstance extends React.Component {
             {legislationsBySenate}
           </li>
         </ul>
-        <img
-          className="district-instance-rep-image"
-          src={rep_image}
-          alt="us flag"
-        />
+        <ReactImageFallback
+        src={rep_image}
+        fallbackImage={representative.party === "Democrat" ? democrat : republican}
+        className="district-instance-rep-image"
+        alt="Representative Photo"
+      />
       </div>
     );
   }

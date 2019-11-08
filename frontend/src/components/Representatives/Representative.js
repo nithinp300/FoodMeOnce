@@ -10,6 +10,7 @@ function Representative(props) {
     <div
       className="card text-white bg-dark mb-3"
       style={{ width: "17rem", marginRight: ".5rem" }}
+      id="rep_inst"
     >
       <ReactImageFallback
         src={props.image}
