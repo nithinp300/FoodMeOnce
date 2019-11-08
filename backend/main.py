@@ -381,14 +381,24 @@ def filteredRepresentatives():
         filteringPhrase = ""
         if date_of_birth is not None:
             minMax = date_of_birth.split(',')
-            filteringPhrase += f" and cast(left(date_of_birth, 4) as int) between {minMax[0]} and {minMax[1]}"
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
+            filteringPhrase += f"cast(left(date_of_birth, 4) as int) between {minMax[0]} and {minMax[1]}"
         if seniority is not None:
             minMax = seniority.split(',')
-            filteringPhrase += f" and seniority between {minMax[0]} and {minMax[1]}"
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
+            filteringPhrase += f"seniority between {minMax[0]} and {minMax[1]}"
         if party is not None:
-            filteringPhrase += f" and party like '%%{party}%%'"
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
+            filteringPhrase += f"party like '%%{party}%%'"
         if state is not None:
-            filteringPhrase += f" and state like '%%{state}%%'"
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
+            filteringPhrase += f"state like '%%{state}%%'"
+        if filteringPhrase != "":
+            filteringPhrase = "WHERE " + filteringPhrase
 
         if page is None:
             page = 1
