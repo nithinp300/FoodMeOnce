@@ -146,15 +146,15 @@
 									"});",
 									"",
 									"pm.test(\"Json id is correct\", function() {",
-									"    pm.expect(jsonData.data[0].id).equal(2);",
+									"    pm.expect(jsonData.data[0].id).equal(77);",
 									"});",
 									"",
 									"pm.test(\"Json sponsor_id is correct\", function() {",
-									"    pm.expect(jsonData.data[0].sponsor_id).equal(\"C001062\");",
+									"    pm.expect(jsonData.data[0].sponsor_id).equal(\"R000307\");",
 									"});",
 									"",
 									"pm.test(\"Json short_title is correct\", function() {",
-									"    pm.expect(jsonData.data[0].short_title).equal(\"Agriculture Improvement Act of 2018\");",
+									"    pm.expect(jsonData.data[0].short_title).equal(\"A concurrent resolution recognizing the 50th anniversary of the Food and Nutrition Service of the Department of Agriculture.\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -349,11 +349,46 @@
 			"item": [
 				{
 					"name": "Sorted list of District",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9f1273d7-ccb8-471f-b480-40721a1a4a62",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Json structure is correct\", function() {",
+									"   pm.expect(jsonData.data.length).equal(8)",
+									"});",
+									"",
+									"pm.test(\"Json id is correct\", function() {",
+									"    pm.expect(jsonData.data[0].id).equal(345);",
+									"});",
+									"",
+									"pm.test(\"Json first population is correct\", function() {",
+									"    pm.expect(jsonData.data[0].population).equal(524725);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.foodmeonce.me/Districts/sort?key=name",
+							"raw": "https://api.foodmeonce.me/Districts/sort?attribute=population&order=ASC",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -366,8 +401,12 @@
 							],
 							"query": [
 								{
-									"key": "key",
-									"value": "name"
+									"key": "attribute",
+									"value": "population"
+								},
+								{
+									"key": "order",
+									"value": "ASC"
 								}
 							]
 						},
@@ -380,7 +419,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.foodmeonce.me/Districts/sort?key=name",
+									"raw": "https://api.foodmeonce.me/Districts/sort?attribute=population&order=ASC",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -393,8 +432,12 @@
 									],
 									"query": [
 										{
-											"key": "key",
-											"value": "name"
+											"key": "attribute",
+											"value": "population"
+										},
+										{
+											"key": "order",
+											"value": "ASC"
 										}
 									]
 								}
@@ -404,12 +447,16 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json"
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 20 Oct 2019 02:13:02 GMT"
+									"value": "Fri, 08 Nov 2019 20:58:11 GMT"
 								},
 								{
 									"key": "Server",
@@ -417,7 +464,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "40"
+									"value": "4131"
 								},
 								{
 									"key": "Connection",
@@ -425,17 +472,52 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": \"for later implementation\"\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"a_indian\": \"0.5\",\n            \"aa\": \"4.74\",\n            \"asian\": \"3.7\",\n            \"cancer_rate\": \"483.9\",\n            \"congressional_district\": \"02\",\n            \"food_insecurity_rate\": \"10.5\",\n            \"full_name\": \"Jim Langevin\",\n            \"gender_ratio\": 1.06,\n            \"hawaiian\": \"0.03\",\n            \"id\": 345,\n            \"mean_income\": 90026,\n            \"median_age\": 40.3,\n            \"num_households\": 201975,\n            \"others\": \"3.26\",\n            \"population\": 524725,\n            \"poverty_rate\": \"10.31\",\n            \"snap_rate\": \"12.99\",\n            \"state\": \"Rhode Island\",\n            \"state_abbreviation\": \"RI\",\n            \"state_name\": \"44\",\n            \"white\": \"84.95\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Rhode Island%27s_2nd_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.32\",\n            \"aa\": \"8.61\",\n            \"asian\": \"3.12\",\n            \"cancer_rate\": \"470.2\",\n            \"congressional_district\": \"01\",\n            \"food_insecurity_rate\": \"12.3\",\n            \"full_name\": \"David Cicilline\",\n            \"gender_ratio\": 1.04,\n            \"hawaiian\": \"0.14\",\n            \"id\": 344,\n            \"mean_income\": 83220,\n            \"median_age\": 39.5,\n            \"num_households\": 204598,\n            \"others\": \"8\",\n            \"population\": 532590,\n            \"poverty_rate\": \"14.48\",\n            \"snap_rate\": \"17.81\",\n            \"state\": \"Rhode Island\",\n            \"state_abbreviation\": \"RI\",\n            \"state_name\": \"44\",\n            \"white\": \"76.43\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Rhode Island%27s_1st_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.08\",\n            \"aa\": \"4.08\",\n            \"asian\": \"0.4\",\n            \"cancer_rate\": \"494.4\",\n            \"congressional_district\": \"03\",\n            \"food_insecurity_rate\": \"16.3\",\n            \"full_name\": \"Carol Miller\",\n            \"gender_ratio\": 1.03,\n            \"hawaiian\": \"0.03\",\n            \"id\": 427,\n            \"mean_income\": 52577,\n            \"median_age\": 44,\n            \"num_households\": 238860,\n            \"others\": \"0.2\",\n            \"population\": 575576,\n            \"poverty_rate\": \"20.91\",\n            \"snap_rate\": \"21.56\",\n            \"state\": \"West Virginia\",\n            \"state_abbreviation\": \"WV\",\n            \"state_name\": \"54\",\n            \"white\": \"93.57\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/West Virginia%27s_3rd_congressional_district\"\n        },\n        {\n            \"a_indian\": \"2.8\",\n            \"aa\": \"0.63\",\n            \"asian\": \"1.01\",\n            \"cancer_rate\": \"397.3\",\n            \"congressional_district\": \"00\",\n            \"food_insecurity_rate\": \"12.3\",\n            \"full_name\": \"Liz Cheney\",\n            \"gender_ratio\": 0.97,\n            \"hawaiian\": \"0.19\",\n            \"id\": 436,\n            \"mean_income\": 81935,\n            \"median_age\": 38.5,\n            \"num_households\": 230252,\n            \"others\": \"1.52\",\n            \"population\": 577737,\n            \"poverty_rate\": \"10.78\",\n            \"snap_rate\": \"6.31\",\n            \"state\": \"Wyoming\",\n            \"state_abbreviation\": \"WY\",\n            \"state_name\": \"56\",\n            \"white\": \"91.47\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Wyoming%27s_0th_congressional_district\"\n        },\n        {\n            \"a_indian\": \"1.08\",\n            \"aa\": \"1.34\",\n            \"asian\": \"0.71\",\n            \"cancer_rate\": \"444.2\",\n            \"congressional_district\": \"03\",\n            \"food_insecurity_rate\": \"10.7\",\n            \"full_name\": \"Adrian Smith\",\n            \"gender_ratio\": 1.01,\n            \"hawaiian\": \"0.11\",\n            \"id\": 237,\n            \"mean_income\": 67326,\n            \"median_age\": 39.9,\n            \"num_households\": 247754,\n            \"others\": \"3.51\",\n            \"population\": 602579,\n            \"poverty_rate\": \"11.71\",\n            \"snap_rate\": \"8.19\",\n            \"state\": \"Nebraska\",\n            \"state_abbreviation\": \"NE\",\n            \"state_name\": \"31\",\n            \"white\": \"90.93\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Nebraska%27s_3rd_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.14\",\n            \"aa\": \"2.7\",\n            \"asian\": \"0.95\",\n            \"cancer_rate\": \"460.9\",\n            \"congressional_district\": \"01\",\n            \"food_insecurity_rate\": \"14\",\n            \"full_name\": \"David McKinley\",\n            \"gender_ratio\": 1,\n            \"hawaiian\": \"0\",\n            \"id\": 425,\n            \"mean_income\": 64317,\n            \"median_age\": 41.8,\n            \"num_households\": 244052,\n            \"others\": \"0.33\",\n            \"population\": 606136,\n            \"poverty_rate\": \"15.47\",\n            \"snap_rate\": \"13.4\",\n            \"state\": \"West Virginia\",\n            \"state_abbreviation\": \"WV\",\n            \"state_name\": \"54\",\n            \"white\": \"93.95\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/West Virginia%27s_1st_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.22\",\n            \"aa\": \"4.62\",\n            \"asian\": \"0.86\",\n            \"cancer_rate\": \"476.6\",\n            \"congressional_district\": \"02\",\n            \"food_insecurity_rate\": \"14\",\n            \"full_name\": \"Alex Mooney\",\n            \"gender_ratio\": 1.02,\n            \"hawaiian\": \"0.04\",\n            \"id\": 426,\n            \"mean_income\": 67835,\n            \"median_age\": 42.7,\n            \"num_households\": 251791,\n            \"others\": \"0.53\",\n            \"population\": 624120,\n            \"poverty_rate\": \"15.71\",\n            \"snap_rate\": \"15.31\",\n            \"state\": \"West Virginia\",\n            \"state_abbreviation\": \"WV\",\n            \"state_name\": \"54\",\n            \"white\": \"91.61\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/West Virginia%27s_2nd_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.28\",\n            \"aa\": \"1.22\",\n            \"asian\": \"1.89\",\n            \"cancer_rate\": \"452.8\",\n            \"congressional_district\": \"00\",\n            \"food_insecurity_rate\": \"11.9\",\n            \"full_name\": \"Peter Welch\",\n            \"gender_ratio\": 1.03,\n            \"hawaiian\": \"0.02\",\n            \"id\": 403,\n            \"mean_income\": 79514,\n            \"median_age\": 43.1,\n            \"num_households\": 261373,\n            \"others\": \"0.45\",\n            \"population\": 626299,\n            \"poverty_rate\": \"10.54\",\n            \"snap_rate\": \"11.5\",\n            \"state\": \"Vermont\",\n            \"state_abbreviation\": \"VT\",\n            \"state_name\": \"50\",\n            \"white\": \"94.1\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Vermont%27s_0th_congressional_district\"\n        }\n    ],\n    \"metaData\": {\n        \"currentPage\": 1,\n        \"numPages\": 55\n    }\n}"
 						}
 					]
 				},
 				{
 					"name": "Sorted list of Legislations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3e734d91-a9ed-4ef8-88ab-f48ddac6fdc8",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Json structure is correct\", function() {",
+									"   pm.expect(jsonData.data.length).equal(8)",
+									"});",
+									"",
+									"pm.test(\"Json id is correct\", function() {",
+									"    pm.expect(jsonData.data[0].id).equal(86);",
+									"});",
+									"",
+									"pm.test(\"Json first short title is correct\", function() {",
+									"    pm.expect(jsonData.data[0].short_title).equal(\"Department of State, Foreign Operations, and Related Programs Appropriations Act, 2020\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.foodmeonce.me/Legislations/sort?key=status",
+							"raw": "https://api.foodmeonce.me/Legislations/sort?attribute=introduced_date&order=DESC",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -448,8 +530,12 @@
 							],
 							"query": [
 								{
-									"key": "key",
-									"value": "status"
+									"key": "attribute",
+									"value": "introduced_date"
+								},
+								{
+									"key": "order",
+									"value": "DESC"
 								}
 							]
 						},
@@ -462,7 +548,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.foodmeonce.me/Legislations/sort?key=status",
+									"raw": "https://api.foodmeonce.me/Legislations/sort?attribute=introduced_date&order=DESC",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -475,8 +561,12 @@
 									],
 									"query": [
 										{
-											"key": "key",
-											"value": "status"
+											"key": "attribute",
+											"value": "introduced_date"
+										},
+										{
+											"key": "order",
+											"value": "DESC"
 										}
 									]
 								}
@@ -486,12 +576,16 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json"
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 20 Oct 2019 02:13:11 GMT"
+									"value": "Fri, 08 Nov 2019 21:02:34 GMT"
 								},
 								{
 									"key": "Server",
@@ -499,7 +593,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "40"
+									"value": "17213"
 								},
 								{
 									"key": "Connection",
@@ -507,17 +601,52 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": \"for later implementation\"\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"active\": true,\n            \"bill_id\": \"s2583-116\",\n            \"bill_slug\": \"s2583\",\n            \"bill_type\": \"s\",\n            \"bill_uri\": \"https://api.propublica.org/congress/v1/116/bills/s2583.json\",\n            \"committee_codes\": \"{SSAP}\",\n            \"committees\": \"Senate Appropriations Committee\",\n            \"congressdotgov_url\": \"https://www.congress.gov/bill/116th-congress/senate-bill/2583\",\n            \"cosponsors\": 0,\n            \"cosponsors_by_party_D\": null,\n            \"cosponsors_by_party_R\": null,\n            \"enacted\": null,\n            \"govtrack_url\": \"https://www.govtrack.us/congress/bills/116/s2583\",\n            \"gpo_pdf_uri\": null,\n            \"house_passage\": null,\n            \"id\": 86,\n            \"introduced_date\": \"2019-09-26\",\n            \"last_vote\": null,\n            \"latest_major_action\": \"Placed on Senate Legislative Calendar under General Orders. Calendar No. 230.\",\n            \"latest_major_action_date\": \"2019-09-26\",\n            \"number\": \"S.2583\",\n            \"primary_subject\": \"International Affairs\",\n            \"senate_passage\": null,\n            \"short_title\": \"Department of State, Foreign Operations, and Related Programs Appropriations Act, 2020\",\n            \"sponsor_id\": \"G000359\",\n            \"sponsor_name\": \"Lindsey Graham\",\n            \"sponsor_party\": \"R\",\n            \"sponsor_state\": \"SC\",\n            \"sponsor_title\": \"Sen.\",\n            \"sponsor_uri\": \"https://api.propublica.org/congress/v1/members/G000359.json\",\n            \"subcommittee_codes\": \"{}\",\n            \"summary\": \"Department of State, Foreign Operations, and Related Programs Appropriations Act, 2020 This bill provides FY2020 appropriations for the Department of State, foreign operations, and related programs.  The bill provides appropriations to the State Department for    Administration of Foreign Affairs,  International Organizations, and  International Commissions.   The bill provides appropriations for Related Agencies and Related Programs, including   the U.S. Agency for Global Media, the Asia Foundation,   the U.S. Institute of Peace,   the Center for Middle Eastern-Western Dialogue Trust Fund,   the Eisenhower Exchange Fellowship Program,   the Israeli Arab Scholarship Program,  the East-West Center, and  the National Endowment for Democracy.   The bill provides appropriations for Other Commissions, including   the Commission for the Preservation of America's Heritage Abroad,   the U.S. Commission on International Religious Freedom,   the Commission on Security and Cooperation in Europe,   the Congressional-Executive Commission on the People's Republic of China, and  the U.S.-China Economic and Security Review Commission.  The bill provides appropriations to  the U.S. Agency for International Development (USAID), the State Department and the President for International Security Assistance,  the President and International Financial Institutions for Multilateral Assistance, and specified accounts for Overseas Contingency Operations/ Global War on Terrorism.   The bill provides appropriations for Bilateral Economic Assistance to   the President;   the State Department;   Independent Agencies, including the Peace Corps, the Millennium Challenge Corporation, the Inter-American Foundation, and the U.S. African Development Foundation; and   the Department of the Treasury.   The bill provides appropriations for Export and Investment Assistance to  the Export-Import Bank of the United States,  the U.S. International Development Finance Corporation, and  the U.S. Trade and Development Agency.  The bill sets forth requirements and restrictions for using funds provided by this and other appropriations Acts.   \",\n            \"summary_short\": \"Department of State, Foreign Operations, and Related Programs Appropriations Act, 2020 This bill provides FY2020 appropriations for the Department of State, foreign operations, and related programs.  The bill provides appropriations to the State Department for    Administration of Foreign Affairs,  International Organizations, and  International Commissions.   The bill provides appropriations for Related Agencies and Related Programs, including   the U.S. Agency for Global Media, the Asia Fou...\",\n            \"title\": \"An original bill making appropriations for the Department of State, foreign operations, and related programs for the fiscal year ending September 30, 2020, and for other purposes.\",\n            \"vetoed\": null\n        },\n        {\n            \"active\": false,\n            \"bill_id\": \"hres602-116\",\n            \"bill_slug\": \"hres602\",\n            \"bill_type\": \"hres\",\n            \"bill_uri\": \"https://api.propublica.org/congress/v1/116/bills/hres602.json\",\n            \"committee_codes\": \"{HSIF}\",\n            \"committees\": \"House Energy and Commerce Committee\",\n            \"congressdotgov_url\": \"https://www.congress.gov/bill/116th-congress/house-resolution/602\",\n            \"cosponsors\": 2,\n            \"cosponsors_by_party_D\": 1,\n            \"cosponsors_by_party_R\": 1,\n            \"enacted\": null,\n            \"govtrack_url\": \"https://www.govtrack.us/congress/bills/116/hres602\",\n            \"gpo_pdf_uri\": null,\n            \"house_passage\": null,\n            \"id\": 87,\n            \"introduced_date\": \"2019-09-26\",\n            \"last_vote\": null,\n            \"latest_major_action\": \"Referred to the House Committee on Energy and Commerce.\",\n            \"latest_major_action_date\": \"2019-09-26\",\n            \"number\": \"H.RES.602\",\n            \"primary_subject\": \"Commerce\",\n            \"senate_passage\": null,\n            \"short_title\": \"Commending the cooperative business model and the businesses, employees, and practitioners nationally and internationally who use it for their contributions to the economy and social impacts they make on their communities.\",\n            \"sponsor_id\": \"P000607\",\n            \"sponsor_name\": \"Mark Pocan\",\n            \"sponsor_party\": \"D\",\n            \"sponsor_state\": \"WI\",\n            \"sponsor_title\": \"Rep.\",\n            \"sponsor_uri\": \"https://api.propublica.org/congress/v1/members/P000607.json\",\n            \"subcommittee_codes\": \"{}\",\n            \"summary\": \"\",\n            \"summary_short\": \"\",\n            \"title\": \"Commending the cooperative business model and the businesses, employees, and practitioners nationally and internationally who use it for their contributions to the economy and social impacts they make on their communities.\",\n            \"vetoed\": null\n        },\n        {\n            \"active\": false,\n            \"bill_id\": \"sres342-116\",\n            \"bill_slug\": \"sres342\",\n            \"bill_type\": \"sres\",\n            \"bill_uri\": \"https://api.propublica.org/congress/v1/116/bills/sres342.json\",\n            \"committee_codes\": \"{SSCM}\",\n            \"committees\": \"Senate Commerce, Science, and Transportation Committee\",\n            \"congressdotgov_url\": \"https://www.congress.gov/bill/116th-congress/senate-resolution/342\",\n            \"cosponsors\": 4,\n            \"cosponsors_by_party_D\": 4,\n            \"cosponsors_by_party_R\": null,\n            \"enacted\": null,\n            \"govtrack_url\": \"https://www.govtrack.us/congress/bills/116/sres342\",\n            \"gpo_pdf_uri\": null,\n            \"house_passage\": null,\n            \"id\": 62,\n            \"introduced_date\": \"2019-09-25\",\n            \"last_vote\": null,\n            \"latest_major_action\": \"Referred to the Committee on Commerce, Science, and Transportation. (text: CR S5711-5712)\",\n            \"latest_major_action_date\": \"2019-09-25\",\n            \"number\": \"S.RES.342\",\n            \"primary_subject\": \"Environmental Protection\",\n            \"senate_passage\": null,\n            \"short_title\": \"A resolution expressing the need for immediate climate action in response to the report of the United Nations Intergovernmental Panel on Climate Change entitled \\\"Special Report on the Ocean and Cryosphere in a Changing Climate\\\".\",\n            \"sponsor_id\": \"M000133\",\n            \"sponsor_name\": \"Edward J. Markey\",\n            \"sponsor_party\": \"D\",\n            \"sponsor_state\": \"MA\",\n            \"sponsor_title\": \"Sen.\",\n            \"sponsor_uri\": \"https://api.propublica.org/congress/v1/members/M000133.json\",\n            \"subcommittee_codes\": \"{}\",\n            \"summary\": \"\",\n            \"summary_short\": \"\",\n            \"title\": \"A resolution expressing the need for immediate climate action in response to the report of the United Nations Intergovernmental Panel on Climate Change entitled \\\"Special Report on the Ocean and Cryosphere in a Changing Climate\\\".\",\n            \"vetoed\": null\n        },\n        {\n            \"active\": false,\n            \"bill_id\": \"hres589-116\",\n            \"bill_slug\": \"hres589\",\n            \"bill_type\": \"hres\",\n            \"bill_uri\": \"https://api.propublica.org/congress/v1/116/bills/hres589.json\",\n            \"committee_codes\": \"{HSIF}\",\n            \"committees\": \"House Science, Space, and Technology Committee\",\n            \"congressdotgov_url\": \"https://www.congress.gov/bill/116th-congress/house-resolution/589\",\n            \"cosponsors\": 43,\n            \"cosponsors_by_party_D\": 43,\n            \"cosponsors_by_party_R\": null,\n            \"enacted\": null,\n            \"govtrack_url\": \"https://www.govtrack.us/congress/bills/116/hres589\",\n            \"gpo_pdf_uri\": null,\n            \"house_passage\": null,\n            \"id\": 90,\n            \"introduced_date\": \"2019-09-25\",\n            \"last_vote\": null,\n            \"latest_major_action\": \"Referred to the Committee on Energy and Commerce, and in addition to the Committees on Foreign Affairs, Natural Resources, and Science, Space, and Technology, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.\",\n            \"latest_major_action_date\": \"2019-09-25\",\n            \"number\": \"H.RES.589\",\n            \"primary_subject\": \"Environmental Protection\",\n            \"senate_passage\": null,\n            \"short_title\": \"Expressing the need for immediate climate action in response to the United Nations Intergovernmental Panel on Climate Change Special Report on the Ocean and Cryosphere in a Changing Climate.\",\n            \"sponsor_id\": \"B001278\",\n            \"sponsor_name\": \"Suzanne Bonamici\",\n            \"sponsor_party\": \"D\",\n            \"sponsor_state\": \"OR\",\n            \"sponsor_title\": \"Rep.\",\n            \"sponsor_uri\": \"https://api.propublica.org/congress/v1/members/B001278.json\",\n            \"subcommittee_codes\": \"{}\",\n            \"summary\": \"\",\n            \"summary_short\": \"\",\n            \"title\": \"Expressing the need for immediate climate action in response to the United Nations Intergovernmental Panel on Climate Change Special Report on the Ocean and Cryosphere in a Changing Climate.\",\n            \"vetoed\": null\n        },\n        {\n            \"active\": true,\n            \"bill_id\": \"s2522-116\",\n            \"bill_slug\": \"s2522\",\n            \"bill_type\": \"s\",\n            \"bill_uri\": \"https://api.propublica.org/congress/v1/116/bills/s2522.json\",\n            \"committee_codes\": \"{SSAP}\",\n            \"committees\": \"Senate Appropriations Committee\",\n            \"congressdotgov_url\": \"https://www.congress.gov/bill/116th-congress/senate-bill/2522\",\n            \"cosponsors\": 0,\n            \"cosponsors_by_party_D\": null,\n            \"cosponsors_by_party_R\": null,\n            \"enacted\": null,\n            \"govtrack_url\": \"https://www.govtrack.us/congress/bills/116/s2522\",\n            \"gpo_pdf_uri\": null,\n            \"house_passage\": null,\n            \"id\": 59,\n            \"introduced_date\": \"2019-09-19\",\n            \"last_vote\": null,\n            \"latest_major_action\": \"Placed on Senate Legislative Calendar under General Orders. Calendar No. 210.\",\n            \"latest_major_action_date\": \"2019-09-19\",\n            \"number\": \"S.2522\",\n            \"primary_subject\": \"Agriculture and Food\",\n            \"senate_passage\": null,\n            \"short_title\": \"Agriculture, Rural Development, Food and Drug Administration, and Related Agencies Appropriations Act, 2020\",\n            \"sponsor_id\": \"H001061\",\n            \"sponsor_name\": \"John Hoeven\",\n            \"sponsor_party\": \"R\",\n            \"sponsor_state\": \"ND\",\n            \"sponsor_title\": \"Sen.\",\n            \"sponsor_uri\": \"https://api.propublica.org/congress/v1/members/H001061.json\",\n            \"subcommittee_codes\": \"{}\",\n            \"summary\": \"Agriculture, Rural Development, Food and Drug Administration, and Related Agencies Appropriations Act, 2020 This bill provides FY2020 appropriations for the Department of Agriculture (USDA), the Food and Drug Administration, and Related Agencies.  The bill provides appropriations to USDA for Agricultural Programs, including   the Office of the Secretary,  Executive Operations, the Office of the Chief Information Officer,  the Office of the Chief Financial Officer,  the Office of Civil Rights, Agriculture Buildings and Facilities,  Hazardous Materials Management,  the Office of Inspector General, the Office of the General Counsel, the Office of Ethics, the Economic Research Service,  the National Agricultural Statistics Service, the Agricultural Research Service, the National Institute of Food and Agriculture,  the Animal and Plant Health Inspection Service,  the Agricultural Marketing Service, and the Food Safety and Inspection Service.  The bill also provides appropriations to USDA for Farm Production and Conservation Programs, including  the Farm Production and Conservation Business Center,  the Farm Service Agency,  the Risk Management Agency, and  the Natural Resources Conservation Service.  The bill provides appropriations to the Federal Crop Insurance Corporation Fund and the Commodity Credit Corporation Fund. For USDA Rural Development programs, the bill includes appropriations for  Rural Development Salaries and Expenses,  the Rural Housing Service,  the Rural Business-Cooperative Service, and the Rural Utilities Service.  Within the Food and Nutrition Service budget, the bill includes appropriations for   Child Nutrition Programs;  the Special Supplemental Nutrition Program for Women, Infants, and Children (WIC);  the Supplemental Nutrition Assistance Program (SNAP, formerly known as the food stamp program);  the Commodity Assistance Program; and  Nutrition Programs Administration.   Within the Foreign Agricultural Service budget, the bill provides appropriations for Food for Peace Title II Grants and McGovern-Dole International Food for Education and Child Nutrition Program Grants.  The bill also provides appropriations for the Food and Drug Administration and the Farm Credit Administration.  Additionally, the bill sets forth requirements and restrictions for using funds provided by this and other appropriations Acts. \",\n            \"summary_short\": \"Agriculture, Rural Development, Food and Drug Administration, and Related Agencies Appropriations Act, 2020 This bill provides FY2020 appropriations for the Department of Agriculture (USDA), the Food and Drug Administration, and Related Agencies.  The bill provides appropriations to USDA for Agricultural Programs, including   the Office of the Secretary,  Executive Operations, the Office of the Chief Information Officer,  the Office of the Chief Financial Officer,  the Office of Civil Rights,...\",\n            \"title\": \"An original bill making appropriations for Agriculture, Rural Development, Food and Drug Administration, and Related Agencies for the fiscal year ending September 30, 2020, and for other purposes.\",\n            \"vetoed\": null\n        },\n        {\n            \"active\": true,\n            \"bill_id\": \"hr4269-116\",\n            \"bill_slug\": \"hr4269\",\n            \"bill_type\": \"hr\",\n            \"bill_uri\": \"https://api.propublica.org/congress/v1/116/bills/hr4269.json\",\n            \"committee_codes\": \"{HSAG}\",\n            \"committees\": \"House Natural Resources Committee\",\n            \"congressdotgov_url\": \"https://www.congress.gov/bill/116th-congress/house-bill/4269\",\n            \"cosponsors\": 3,\n            \"cosponsors_by_party_D\": 3,\n            \"cosponsors_by_party_R\": null,\n            \"enacted\": null,\n            \"govtrack_url\": \"https://www.govtrack.us/congress/bills/116/hr4269\",\n            \"gpo_pdf_uri\": null,\n            \"house_passage\": null,\n            \"id\": 66,\n            \"introduced_date\": \"2019-09-10\",\n            \"last_vote\": null,\n            \"latest_major_action\": \"Referred to the Subcommittee on Water, Oceans, and Wildlife.\",\n            \"latest_major_action_date\": \"2019-09-16\",\n            \"number\": \"H.R.4269\",\n            \"primary_subject\": \"Agriculture and Food\",\n            \"senate_passage\": null,\n            \"short_title\": \"Climate Stewardship Act of 2019\",\n            \"sponsor_id\": \"H001080\",\n            \"sponsor_name\": \"Debra Haaland\",\n            \"sponsor_party\": \"D\",\n            \"sponsor_state\": \"NM\",\n            \"sponsor_title\": \"Rep.\",\n            \"sponsor_uri\": \"https://api.propublica.org/congress/v1/members/H001080.json\",\n            \"subcommittee_codes\": \"{HSII13,HSII10,HSII06}\",\n            \"summary\": \"\",\n            \"summary_short\": \"\",\n            \"title\": \"To provide incentives for agricultural producers to carry out climate stewardship practices, to provide for increased reforestation across the United States, to establish the Coastal and Estuary Resilience Grant Program, and for other purposes.\",\n            \"vetoed\": null\n        },\n        {\n            \"active\": false,\n            \"bill_id\": \"s2452-116\",\n            \"bill_slug\": \"s2452\",\n            \"bill_type\": \"s\",\n            \"bill_uri\": \"https://api.propublica.org/congress/v1/116/bills/s2452.json\",\n            \"committee_codes\": \"{SSAF}\",\n            \"committees\": \"Senate Agriculture, Nutrition, and Forestry Committee\",\n            \"congressdotgov_url\": \"https://www.congress.gov/bill/116th-congress/senate-bill/2452\",\n            \"cosponsors\": 3,\n            \"cosponsors_by_party_D\": 3,\n            \"cosponsors_by_party_R\": null,\n            \"enacted\": null,\n            \"govtrack_url\": \"https://www.govtrack.us/congress/bills/116/s2452\",\n            \"gpo_pdf_uri\": null,\n            \"house_passage\": null,\n            \"id\": 57,\n            \"introduced_date\": \"2019-09-10\",\n            \"last_vote\": null,\n            \"latest_major_action\": \"Read twice and referred to the Committee on Agriculture, Nutrition, and Forestry.\",\n            \"latest_major_action_date\": \"2019-09-10\",\n            \"number\": \"S.2452\",\n            \"primary_subject\": \"Agriculture and Food\",\n            \"senate_passage\": null,\n            \"short_title\": \"Climate Stewardship Act of 2019\",\n            \"sponsor_id\": \"B001288\",\n            \"sponsor_name\": \"Cory Booker\",\n            \"sponsor_party\": \"D\",\n            \"sponsor_state\": \"NJ\",\n            \"sponsor_title\": \"Sen.\",\n            \"sponsor_uri\": \"https://api.propublica.org/congress/v1/members/B001288.json\",\n            \"subcommittee_codes\": \"{}\",\n            \"summary\": \"\",\n            \"summary_short\": \"\",\n            \"title\": \"A bill to provide incentives for agricultural producers to carry out climate stewardship practices, to provide for increased reforestation across the United States, to establish the Coastal and Estuary Resilience Grant Program, and for other purposes.\",\n            \"vetoed\": null\n        },\n        {\n            \"active\": true,\n            \"bill_id\": \"sconres24-116\",\n            \"bill_slug\": \"sconres24\",\n            \"bill_type\": \"sconres\",\n            \"bill_uri\": \"https://api.propublica.org/congress/v1/116/bills/sconres24.json\",\n            \"committee_codes\": \"{HSAG}\",\n            \"committees\": \"House Agriculture Committee\",\n            \"congressdotgov_url\": \"https://www.congress.gov/bill/116th-congress/senate-concurrent-resolution/24\",\n            \"cosponsors\": 1,\n            \"cosponsors_by_party_D\": 1,\n            \"cosponsors_by_party_R\": null,\n            \"enacted\": null,\n            \"govtrack_url\": \"https://www.govtrack.us/congress/bills/116/sconres24\",\n            \"gpo_pdf_uri\": null,\n            \"house_passage\": null,\n            \"id\": 77,\n            \"introduced_date\": \"2019-07-31\",\n            \"last_vote\": null,\n            \"latest_major_action\": \"Referred to the Subcommittee on Nutrition, Oversight, and Department Operations.\",\n            \"latest_major_action_date\": \"2019-08-09\",\n            \"number\": \"S.CON.RES.24\",\n            \"primary_subject\": \"Agriculture and Food\",\n            \"senate_passage\": null,\n            \"short_title\": \"A concurrent resolution recognizing the 50th anniversary of the Food and Nutrition Service of the Department of Agriculture.\",\n            \"sponsor_id\": \"R000307\",\n            \"sponsor_name\": \"Pat Roberts\",\n            \"sponsor_party\": \"R\",\n            \"sponsor_state\": \"KS\",\n            \"sponsor_title\": \"Sen.\",\n            \"sponsor_uri\": \"https://api.propublica.org/congress/v1/members/R000307.json\",\n            \"subcommittee_codes\": \"{HSAG03}\",\n            \"summary\": \"\",\n            \"summary_short\": \"\",\n            \"title\": \"A concurrent resolution recognizing the 50th anniversary of the Food and Nutrition Service of the Department of Agriculture.\",\n            \"vetoed\": null\n        }\n    ],\n    \"metaData\": {\n        \"currentPage\": 1,\n        \"numPages\": 6\n    }\n}"
 						}
 					]
 				},
 				{
 					"name": "Sorted list of Representatives",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "21889244-fa16-4486-92a7-e71e7b86ae78",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Json structure is correct\", function() {",
+									"   pm.expect(jsonData.data.length).equal(8)",
+									"});",
+									"",
+									"pm.test(\"Json id is correct\", function() {",
+									"    pm.expect(jsonData.data[0].id).equal(\"O000172\");",
+									"});",
+									"",
+									"pm.test(\"Json first age is correct\", function() {",
+									"    pm.expect(jsonData.data[0].date_of_birth).equal(\"1989-10-13\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.foodmeonce.me/Representatives/sort?key=age",
+							"raw": "https://api.foodmeonce.me/Representatives/sort?attribute=date_of_birth&order=DESC",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -530,8 +659,12 @@
 							],
 							"query": [
 								{
-									"key": "key",
-									"value": "age"
+									"key": "attribute",
+									"value": "date_of_birth"
+								},
+								{
+									"key": "order",
+									"value": "DESC"
 								}
 							]
 						},
@@ -544,7 +677,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.foodmeonce.me/Representatives/sort?key=age",
+									"raw": "https://api.foodmeonce.me/Representatives/sort?attribute=date_of_birth&order=DESC",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -557,8 +690,12 @@
 									],
 									"query": [
 										{
-											"key": "key",
-											"value": "age"
+											"key": "attribute",
+											"value": "date_of_birth"
+										},
+										{
+											"key": "order",
+											"value": "DESC"
 										}
 									]
 								}
@@ -568,12 +705,16 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json"
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 20 Oct 2019 02:13:17 GMT"
+									"value": "Fri, 08 Nov 2019 21:01:13 GMT"
 								},
 								{
 									"key": "Server",
@@ -581,7 +722,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "40"
+									"value": "9661"
 								},
 								{
 									"key": "Connection",
@@ -589,7 +730,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": \"for later implementation\"\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"api_uri\": \"false\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/O000172.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00041162\",\n            \"cspan_id\": null,\n            \"date_of_birth\": \"1989-10-13\",\n            \"district\": \"14\",\n            \"dw_nominate\": null,\n            \"facebook_account\": null,\n            \"fax\": null,\n            \"fec_candidate_id\": \"H8NY15148\",\n            \"first_name\": \"Alexandria\",\n            \"full_name\": \"Alexandria Ocasio-Cortez\",\n            \"gender\": \"F\",\n            \"geoid\": \"3614\",\n            \"google_entity_id\": \"/g/11f6y3nqg6\",\n            \"govtrack_id\": \"412804\",\n            \"icpsr_id\": null,\n            \"id\": \"O000172\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 298,\n            \"last_name\": \"Ocasio-Cortez\",\n            \"last_updated\": \"2019-10-16 17:30:22 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 400,\n            \"middle_name\": null,\n            \"missed_votes\": 1,\n            \"missed_votes_pct\": 0.18,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ny/cd:14\",\n            \"office\": \"229 Cannon House Office Building\",\n            \"party\": \"D\",\n            \"phone\": \"202-225-3965\",\n            \"rss_url\": null,\n            \"senate_class\": null,\n            \"seniority\": 2,\n            \"short_title\": \"Rep.\",\n            \"state\": \"New York\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepAOC\",\n            \"type_flag\": true,\n            \"url\": \"https://ocasio-cortez.house.gov/\",\n            \"votes_against_party_pct\": 4.3,\n            \"votes_with_party_pct\": 95.52,\n            \"votesmart_id\": \"180416\",\n            \"youtube_account\": null\n        },\n        {\n            \"api_uri\": \"false\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/F000467.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00040888\",\n            \"cspan_id\": null,\n            \"date_of_birth\": \"1988-12-27\",\n            \"district\": \"1\",\n            \"dw_nominate\": null,\n            \"facebook_account\": null,\n            \"fax\": null,\n            \"fec_candidate_id\": \"H8IA01094\",\n            \"first_name\": \"Abby\",\n            \"full_name\": \"Abby Finkenauer\",\n            \"gender\": \"F\",\n            \"geoid\": \"1901\",\n            \"google_entity_id\": \"/g/11cmg58r7d\",\n            \"govtrack_id\": \"412771\",\n            \"icpsr_id\": null,\n            \"id\": \"F000467\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 124,\n            \"last_name\": \"Finkenauer\",\n            \"last_updated\": \"2019-10-16 17:30:22 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 226,\n            \"middle_name\": null,\n            \"missed_votes\": 1,\n            \"missed_votes_pct\": 0.18,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ia/cd:1\",\n            \"office\": \"124 Cannon House Office Building\",\n            \"party\": \"D\",\n            \"phone\": \"202-225-2911\",\n            \"rss_url\": null,\n            \"senate_class\": null,\n            \"seniority\": 2,\n            \"short_title\": \"Rep.\",\n            \"state\": \"Iowa\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepFinkenauer\",\n            \"type_flag\": true,\n            \"url\": \"https://finkenauer.house.gov/\",\n            \"votes_against_party_pct\": 4.12,\n            \"votes_with_party_pct\": 95.7,\n            \"votesmart_id\": \"151127\",\n            \"youtube_account\": null\n        },\n        {\n            \"api_uri\": \"false\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/H001087.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00040644\",\n            \"cspan_id\": null,\n            \"date_of_birth\": \"1987-08-25\",\n            \"district\": \"25\",\n            \"dw_nominate\": null,\n            \"facebook_account\": null,\n            \"fax\": null,\n            \"fec_candidate_id\": \"H8CA25074\",\n            \"first_name\": \"Katie\",\n            \"full_name\": \"Katie Hill\",\n            \"gender\": \"F\",\n            \"geoid\": \"0625\",\n            \"google_entity_id\": \"/g/11gtgfywx0\",\n            \"govtrack_id\": \"412756\",\n            \"icpsr_id\": null,\n            \"id\": \"H001087\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 177,\n            \"last_name\": \"Hill\",\n            \"last_updated\": \"2019-10-16 17:30:23 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 278,\n            \"middle_name\": null,\n            \"missed_votes\": 4,\n            \"missed_votes_pct\": 0.71,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ca/cd:25\",\n            \"office\": \"1130 Longworth House Office Building\",\n            \"party\": \"D\",\n            \"phone\": \"202-225-1956\",\n            \"rss_url\": null,\n            \"senate_class\": null,\n            \"seniority\": 2,\n            \"short_title\": \"Rep.\",\n            \"state\": \"California\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepKatieHill\",\n            \"type_flag\": true,\n            \"url\": \"https://katiehill.house.gov/\",\n            \"votes_against_party_pct\": 1.44,\n            \"votes_with_party_pct\": 98.38,\n            \"votesmart_id\": \"179354\",\n            \"youtube_account\": null\n        },\n        {\n            \"api_uri\": \"false\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/R000613.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00041588\",\n            \"cspan_id\": null,\n            \"date_of_birth\": \"1986-11-28\",\n            \"district\": \"11\",\n            \"dw_nominate\": null,\n            \"facebook_account\": null,\n            \"fax\": null,\n            \"fec_candidate_id\": \"H8NY11113\",\n            \"first_name\": \"Max\",\n            \"full_name\": \"Max Rose\",\n            \"gender\": \"M\",\n            \"geoid\": \"3611\",\n            \"google_entity_id\": \"/g/11fhr0yrwq\",\n            \"govtrack_id\": \"412803\",\n            \"icpsr_id\": null,\n            \"id\": \"R000613\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 338,\n            \"last_name\": \"Rose\",\n            \"last_updated\": \"2019-10-16 17:30:22 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 440,\n            \"middle_name\": null,\n            \"missed_votes\": 9,\n            \"missed_votes_pct\": 1.61,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ny/cd:11\",\n            \"office\": \"1529 Longworth House Office Building\",\n            \"party\": \"D\",\n            \"phone\": \"202-225-3371\",\n            \"rss_url\": null,\n            \"senate_class\": null,\n            \"seniority\": 2,\n            \"short_title\": \"Rep.\",\n            \"state\": \"New York\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepMaxRose\",\n            \"type_flag\": true,\n            \"url\": \"https://maxrose.house.gov/\",\n            \"votes_against_party_pct\": 4.55,\n            \"votes_with_party_pct\": 95.27,\n            \"votesmart_id\": null,\n            \"youtube_account\": null\n        },\n        {\n            \"api_uri\": \"false\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/U000040.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00041569\",\n            \"cspan_id\": null,\n            \"date_of_birth\": \"1986-10-04\",\n            \"district\": \"14\",\n            \"dw_nominate\": null,\n            \"facebook_account\": null,\n            \"fax\": null,\n            \"fec_candidate_id\": \"H8IL14174\",\n            \"first_name\": \"Lauren\",\n            \"full_name\": \"Lauren Underwood\",\n            \"gender\": \"F\",\n            \"geoid\": \"1714\",\n            \"google_entity_id\": \"/g/11gfm73_1z\",\n            \"govtrack_id\": \"412776\",\n            \"icpsr_id\": null,\n            \"id\": \"U000040\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 408,\n            \"last_name\": \"Underwood\",\n            \"last_updated\": \"2019-10-16 17:30:23 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 509,\n            \"middle_name\": null,\n            \"missed_votes\": 6,\n            \"missed_votes_pct\": 1.07,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:il/cd:14\",\n            \"office\": \"1118 Longworth House Office Building\",\n            \"party\": \"D\",\n            \"phone\": \"202-225-2976\",\n            \"rss_url\": null,\n            \"senate_class\": null,\n            \"seniority\": 2,\n            \"short_title\": \"Rep.\",\n            \"state\": \"Illinois\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepUnderwood\",\n            \"type_flag\": true,\n            \"url\": \"https://underwood.house.gov/\",\n            \"votes_against_party_pct\": 1.81,\n            \"votes_with_party_pct\": 98.01,\n            \"votesmart_id\": \"177001\",\n            \"youtube_account\": null\n        },\n        {\n            \"api_uri\": \"false\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/H001090.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00040853\",\n            \"cspan_id\": null,\n            \"date_of_birth\": \"1986-08-01\",\n            \"district\": \"10\",\n            \"dw_nominate\": null,\n            \"facebook_account\": null,\n            \"fax\": null,\n            \"fec_candidate_id\": \"H8CA10126\",\n            \"first_name\": \"Josh\",\n            \"full_name\": \"Josh Harder\",\n            \"gender\": \"M\",\n            \"geoid\": \"0610\",\n            \"google_entity_id\": \"/g/11fhwknffg\",\n            \"govtrack_id\": \"412754\",\n            \"icpsr_id\": null,\n            \"id\": \"H001090\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 166,\n            \"last_name\": \"Harder\",\n            \"last_updated\": \"2019-10-16 17:30:22 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 267,\n            \"middle_name\": null,\n            \"missed_votes\": 7,\n            \"missed_votes_pct\": 1.25,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ca/cd:10\",\n            \"office\": \"131 Cannon House Office Building\",\n            \"party\": \"D\",\n            \"phone\": \"202-225-4540\",\n            \"rss_url\": null,\n            \"senate_class\": null,\n            \"seniority\": 2,\n            \"short_title\": \"Rep.\",\n            \"state\": \"California\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepJoshHarder\",\n            \"type_flag\": true,\n            \"url\": \"https://harder.house.gov/\",\n            \"votes_against_party_pct\": 5.25,\n            \"votes_with_party_pct\": 94.57,\n            \"votesmart_id\": \"179326\",\n            \"youtube_account\": null\n        },\n        {\n            \"api_uri\": \"false\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/T000484.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00042467\",\n            \"cspan_id\": null,\n            \"date_of_birth\": \"1984-11-15\",\n            \"district\": \"2\",\n            \"dw_nominate\": null,\n            \"facebook_account\": null,\n            \"fax\": null,\n            \"fec_candidate_id\": \"H8NM02248\",\n            \"first_name\": \"Xochitl\",\n            \"full_name\": \"Xochitl Torres Small\",\n            \"gender\": \"F\",\n            \"geoid\": \"3502\",\n            \"google_entity_id\": \"/g/11gtg88psh\",\n            \"govtrack_id\": \"412801\",\n            \"icpsr_id\": null,\n            \"id\": \"T000484\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 404,\n            \"last_name\": \"Torres Small\",\n            \"last_updated\": \"2019-10-16 17:30:22 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 505,\n            \"middle_name\": null,\n            \"missed_votes\": 3,\n            \"missed_votes_pct\": 0.54,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:nm/cd:2\",\n            \"office\": \"430 Cannon House Office Building\",\n            \"party\": \"D\",\n            \"phone\": \"202-225-2365\",\n            \"rss_url\": null,\n            \"senate_class\": null,\n            \"seniority\": 2,\n            \"short_title\": \"Rep.\",\n            \"state\": \"New Mexico\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepTorresSmall\",\n            \"type_flag\": true,\n            \"url\": \"http://torressmall.house.gov\",\n            \"votes_against_party_pct\": 6.65,\n            \"votes_with_party_pct\": 93.17,\n            \"votesmart_id\": \"177978\",\n            \"youtube_account\": null\n        },\n        {\n            \"api_uri\": \"false\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/G000588.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00041690\",\n            \"cspan_id\": null,\n            \"date_of_birth\": \"1984-09-19\",\n            \"district\": \"16\",\n            \"dw_nominate\": null,\n            \"facebook_account\": null,\n            \"fax\": null,\n            \"fec_candidate_id\": \"H8OH16124\",\n            \"first_name\": \"Anthony\",\n            \"full_name\": \"Anthony Gonzalez\",\n            \"gender\": \"M\",\n            \"geoid\": \"3916\",\n            \"google_entity_id\": \"/m/0gznlq\",\n            \"govtrack_id\": \"412807\",\n            \"icpsr_id\": null,\n            \"id\": \"G000588\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 147,\n            \"last_name\": \"Gonzalez\",\n            \"last_updated\": \"2019-10-16 17:30:21 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 248,\n            \"middle_name\": null,\n            \"missed_votes\": 1,\n            \"missed_votes_pct\": 0.18,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:oh/cd:16\",\n            \"office\": \"1023 Longworth House Office Building\",\n            \"party\": \"R\",\n            \"phone\": \"202-225-3876\",\n            \"rss_url\": null,\n            \"senate_class\": null,\n            \"seniority\": 2,\n            \"short_title\": \"Rep.\",\n            \"state\": \"Ohio\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 3,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepAGonzalez\",\n            \"type_flag\": true,\n            \"url\": \"https://anthonygonzalez.house.gov/\",\n            \"votes_against_party_pct\": 13.13,\n            \"votes_with_party_pct\": 86.69,\n            \"votesmart_id\": null,\n            \"youtube_account\": null\n        }\n    ],\n    \"metaData\": {\n        \"currentPage\": 1,\n        \"numPages\": 68\n    }\n}"
 						}
 					]
 				}
@@ -600,11 +741,46 @@
 			"item": [
 				{
 					"name": "Filtered list of Districts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "12fc0cac-306b-461c-85eb-378a2e20ee84",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Json structure is correct\", function() {",
+									"   pm.expect(jsonData.data.length).equal(8)",
+									"});",
+									"",
+									"pm.test(\"Json id is correct\", function() {",
+									"    pm.expect(jsonData.data[0].id).equal(2);",
+									"});",
+									"",
+									"pm.test(\"Json first population is correct\", function() {",
+									"    pm.expect(jsonData.data[0].population).equal(678122);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.foodmeonce.me/Districts/filter?key1=name&val1=Texas",
+							"raw": "https://api.foodmeonce.me/Districts/filter?population=500000,700000",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -617,12 +793,8 @@
 							],
 							"query": [
 								{
-									"key": "key1",
-									"value": "name"
-								},
-								{
-									"key": "val1",
-									"value": "Texas"
+									"key": "population",
+									"value": "500000,700000"
 								}
 							]
 						},
@@ -635,7 +807,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.foodmeonce.me/Districts/filter?key1=name&val1=Texas",
+									"raw": "https://api.foodmeonce.me/Districts/filter?population=500000,700000",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -648,12 +820,8 @@
 									],
 									"query": [
 										{
-											"key": "key1",
-											"value": "name"
-										},
-										{
-											"key": "val1",
-											"value": "Texas"
+											"key": "population",
+											"value": "500000,700000"
 										}
 									]
 								}
@@ -663,12 +831,16 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json"
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 20 Oct 2019 02:13:27 GMT"
+									"value": "Fri, 08 Nov 2019 21:10:28 GMT"
 								},
 								{
 									"key": "Server",
@@ -676,7 +848,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "40"
+									"value": "4124"
 								},
 								{
 									"key": "Connection",
@@ -684,17 +856,52 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": \"for later implementation\"\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"a_indian\": \"0.42\",\n            \"aa\": \"32.14\",\n            \"asian\": \"1.1\",\n            \"cancer_rate\": \"451.5\",\n            \"congressional_district\": \"02\",\n            \"food_insecurity_rate\": \"17.6\",\n            \"full_name\": \"Martha Roby\",\n            \"gender_ratio\": 1.08,\n            \"hawaiian\": \"0\",\n            \"id\": 2,\n            \"mean_income\": 64712,\n            \"median_age\": 38.8,\n            \"num_households\": 254315,\n            \"others\": \"1.2\",\n            \"population\": 678122,\n            \"poverty_rate\": \"17.44\",\n            \"snap_rate\": \"15.81\",\n            \"state\": \"Alabama\",\n            \"state_abbreviation\": \"AL\",\n            \"state_name\": \"01\",\n            \"white\": \"62.92\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Alabama%27s_2nd_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.64\",\n            \"aa\": \"7.46\",\n            \"asian\": \"0.45\",\n            \"cancer_rate\": \"453.7\",\n            \"congressional_district\": \"04\",\n            \"food_insecurity_rate\": \"13.7\",\n            \"full_name\": \"Robert B. Aderholt\",\n            \"gender_ratio\": 1.04,\n            \"hawaiian\": \"0.1\",\n            \"id\": 4,\n            \"mean_income\": 63553,\n            \"median_age\": 40.5,\n            \"num_households\": 256963,\n            \"others\": \"2.96\",\n            \"population\": 686297,\n            \"poverty_rate\": \"17.36\",\n            \"snap_rate\": \"13.96\",\n            \"state\": \"Alabama\",\n            \"state_abbreviation\": \"AL\",\n            \"state_name\": \"01\",\n            \"white\": \"86.13\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Alabama%27s_4th_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.29\",\n            \"aa\": \"63.12\",\n            \"asian\": \"0.76\",\n            \"cancer_rate\": \"454.8\",\n            \"congressional_district\": \"07\",\n            \"food_insecurity_rate\": \"25.2\",\n            \"full_name\": \"Terri Sewell\",\n            \"gender_ratio\": 1.13,\n            \"hawaiian\": \"0.03\",\n            \"id\": 7,\n            \"mean_income\": 52652,\n            \"median_age\": 36.4,\n            \"num_households\": 250210,\n            \"others\": \"0.9\",\n            \"population\": 660468,\n            \"poverty_rate\": \"23.68\",\n            \"snap_rate\": \"21.91\",\n            \"state\": \"Alabama\",\n            \"state_abbreviation\": \"AL\",\n            \"state_name\": \"01\",\n            \"white\": \"33.54\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Alabama%27s_7th_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.34\",\n            \"aa\": \"4.28\",\n            \"asian\": \"3.47\",\n            \"cancer_rate\": \"473.5\",\n            \"congressional_district\": \"02\",\n            \"food_insecurity_rate\": \"10.1\",\n            \"full_name\": \"Joe Courtney\",\n            \"gender_ratio\": 1.01,\n            \"hawaiian\": \"0.01\",\n            \"id\": 83,\n            \"mean_income\": 99978,\n            \"median_age\": 42.5,\n            \"num_households\": 273946,\n            \"others\": \"2.69\",\n            \"population\": 699657,\n            \"poverty_rate\": \"8.31\",\n            \"snap_rate\": \"8.86\",\n            \"state\": \"Connecticut\",\n            \"state_abbreviation\": \"CT\",\n            \"state_name\": \"09\",\n            \"white\": \"85.26\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Connecticut%27s_2nd_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.19\",\n            \"aa\": \"51.13\",\n            \"asian\": \"1.15\",\n            \"cancer_rate\": \"475.6\",\n            \"congressional_district\": \"02\",\n            \"food_insecurity_rate\": \"23\",\n            \"full_name\": \"Sanford D. Bishop\",\n            \"gender_ratio\": 1.03,\n            \"hawaiian\": \"0.08\",\n            \"id\": 117,\n            \"mean_income\": 53209,\n            \"median_age\": 37,\n            \"num_households\": 246910,\n            \"others\": \"2.04\",\n            \"population\": 665539,\n            \"poverty_rate\": \"23.91\",\n            \"snap_rate\": \"12.16\",\n            \"state\": \"Georgia\",\n            \"state_abbreviation\": \"GA\",\n            \"state_name\": \"13\",\n            \"white\": \"42.36\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Georgia%27s_2nd_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.16\",\n            \"aa\": \"56.67\",\n            \"asian\": \"0.91\",\n            \"cancer_rate\": \"Data Suppressed\",\n            \"congressional_district\": \"02\",\n            \"food_insecurity_rate\": \"22\",\n            \"full_name\": \"Robin Kelly\",\n            \"gender_ratio\": 1.16,\n            \"hawaiian\": \"0.01\",\n            \"id\": 135,\n            \"mean_income\": 66217,\n            \"median_age\": 37.9,\n            \"num_households\": 257381,\n            \"others\": \"3.7\",\n            \"population\": 694459,\n            \"poverty_rate\": \"18.09\",\n            \"snap_rate\": \"9.43\",\n            \"state\": \"Illinois\",\n            \"state_abbreviation\": \"IL\",\n            \"state_name\": \"17\",\n            \"white\": \"36.55\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Illinois%27s_2nd_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.19\",\n            \"aa\": \"17.11\",\n            \"asian\": \"1.3\",\n            \"cancer_rate\": \"Data Suppressed\",\n            \"congressional_district\": \"12\",\n            \"food_insecurity_rate\": \"15\",\n            \"full_name\": \"Mike Bost\",\n            \"gender_ratio\": 1.01,\n            \"hawaiian\": \"0.02\",\n            \"id\": 145,\n            \"mean_income\": 67185,\n            \"median_age\": 39.9,\n            \"num_households\": 277817,\n            \"others\": \"1.21\",\n            \"population\": 687072,\n            \"poverty_rate\": \"16.16\",\n            \"snap_rate\": \"11.06\",\n            \"state\": \"Illinois\",\n            \"state_abbreviation\": \"IL\",\n            \"state_name\": \"17\",\n            \"white\": \"77.64\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Illinois%27s_12th_congressional_district\"\n        },\n        {\n            \"a_indian\": \"0.18\",\n            \"aa\": \"4.49\",\n            \"asian\": \"0.55\",\n            \"cancer_rate\": \"Data Suppressed\",\n            \"congressional_district\": \"15\",\n            \"food_insecurity_rate\": \"11.3\",\n            \"full_name\": \"John Shimkus\",\n            \"gender_ratio\": 0.99,\n            \"hawaiian\": \"0.04\",\n            \"id\": 148,\n            \"mean_income\": 68432,\n            \"median_age\": 41.3,\n            \"num_households\": 276514,\n            \"others\": \"0.43\",\n            \"population\": 691196,\n            \"poverty_rate\": \"13.16\",\n            \"snap_rate\": \"4.27\",\n            \"state\": \"Illinois\",\n            \"state_abbreviation\": \"IL\",\n            \"state_name\": \"17\",\n            \"white\": \"92.56\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Illinois%27s_15th_congressional_district\"\n        }\n    ],\n    \"metaData\": {\n        \"currentPage\": 1,\n        \"numPages\": 7\n    }\n}"
 						}
 					]
 				},
 				{
 					"name": "Filtered list of Legislations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "431e8632-1da1-480c-8f58-71b5c9f5aabf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Json structure is correct\", function() {",
+									"   pm.expect(jsonData.data.length).equal(1)",
+									"});",
+									"",
+									"pm.test(\"Json id is correct\", function() {",
+									"    pm.expect(jsonData.data[0].id).equal(80);",
+									"});",
+									"",
+									"pm.test(\"Json first fullname is correct\", function() {",
+									"    pm.expect(jsonData.data[0].short_title).equal(\"Agriculture Improvement Act of 2018\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.foodmeonce.me/Legislations/filter?key1=party&val1=Democratic",
+							"raw": "https://api.foodmeonce.me/Legislations/filter?status=Enacted",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -707,12 +914,8 @@
 							],
 							"query": [
 								{
-									"key": "key1",
-									"value": "party"
-								},
-								{
-									"key": "val1",
-									"value": "Democratic"
+									"key": "status",
+									"value": "Enacted"
 								}
 							]
 						},
@@ -725,7 +928,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.foodmeonce.me/Legislations/filter?key1=party&val1=Democratic",
+									"raw": "https://api.foodmeonce.me/Legislations/filter?status=Enacted",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -738,12 +941,8 @@
 									],
 									"query": [
 										{
-											"key": "key1",
-											"value": "party"
-										},
-										{
-											"key": "val1",
-											"value": "Democratic"
+											"key": "status",
+											"value": "Enacted"
 										}
 									]
 								}
@@ -753,12 +952,16 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json"
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 20 Oct 2019 02:13:41 GMT"
+									"value": "Fri, 08 Nov 2019 21:13:18 GMT"
 								},
 								{
 									"key": "Server",
@@ -766,7 +969,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "40"
+									"value": "3850"
 								},
 								{
 									"key": "Connection",
@@ -774,17 +977,52 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": \"for later implementation\"\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"active\": true,\n            \"bill_id\": \"hr2-115\",\n            \"bill_slug\": \"hr2\",\n            \"bill_type\": \"hr\",\n            \"bill_uri\": \"https://api.propublica.org/congress/v1/115/bills/hr2.json\",\n            \"committee_codes\": \"{HSPW,HSSY,HSGO,HSII,HSFA,HSBA,HSIF,HSED,HSAG}\",\n            \"committees\": \"House Agriculture Committee\",\n            \"congressdotgov_url\": \"https://www.congress.gov/bill/115th-congress/house-bill/2\",\n            \"cosponsors\": 0,\n            \"cosponsors_by_party_D\": null,\n            \"cosponsors_by_party_R\": null,\n            \"enacted\": \"2018-12-20\",\n            \"govtrack_url\": \"https://www.govtrack.us/congress/bills/115/hr2\",\n            \"gpo_pdf_uri\": null,\n            \"house_passage\": \"2018-07-18\",\n            \"id\": 80,\n            \"introduced_date\": \"2018-04-12\",\n            \"last_vote\": \"2018-12-12\",\n            \"latest_major_action\": \"Became Public Law No: 115-334.\",\n            \"latest_major_action_date\": \"2018-12-20\",\n            \"number\": \"H.R.2\",\n            \"primary_subject\": \"Agriculture and Food\",\n            \"senate_passage\": \"2018-06-28\",\n            \"short_title\": \"Agriculture Improvement Act of 2018\",\n            \"sponsor_id\": \"C001062\",\n            \"sponsor_name\": \"K. Michael Conaway\",\n            \"sponsor_party\": \"R\",\n            \"sponsor_state\": \"TX\",\n            \"sponsor_title\": \"Rep.\",\n            \"sponsor_uri\": \"https://api.propublica.org/congress/v1/members/C001062.json\",\n            \"subcommittee_codes\": \"{}\",\n            \"summary\": \"Agriculture Improvement Act of 2018  This bill (commonly known as the farm bill) reauthorizes through FY2023 and modifies Department of Agriculture (USDA) programs that address:    commodity support,   conservation,   trade and international food aid,   nutrition assistance,   farm credit,   rural development,   research and extension activities,   forestry,   energy,   horticulture, and   crop insurance.   The bill modifies agriculture and nutrition policies to:    require farmers to make a new election to obtain either Price Loss Coverage or Agricultural Risk Coverage for the 2019-2023 crop years, which may be changed for the 2021-2023 crop years;  replace the Dairy Margin Protection Program with Dairy Risk Coverage and modify coverage levels and premiums;  make Indian tribes and tribal organizations eligible for supplemental agricultural disaster assistance programs;  reduce the adjusted gross income limitation for receiving benefits under commodity and conservation programs;  modify funding levels and requirements for several conservation programs,   consolidate several existing trade and export promotion programs into a new Priority Trade Promotion, Development, and Assistance program;   legalize industrial hemp and make hemp producers eligible for the federal crop insurance program;   establish an interstate data system to prevent the simultaneous issuance of Supplemental Nutrition Assistance Program (SNAP, formerly known as the food stamp program) benefits to an individual by more than one state;  increase the loan limits for farm ownership and operating loans;  modify the experience requirement for farm ownership loans;  authorize a categorical exclusion from requirements for environmental assessments and environmental impact statements for certain forest management projects with the primary purpose of protecting, restoring, or improving habitat for the greater sage-grouse or mule deer; and modify the organic certification requirements for imported agricultural products.  \",\n            \"summary_short\": \"Agriculture Improvement Act of 2018  This bill (commonly known as the farm bill) reauthorizes through FY2023 and modifies Department of Agriculture (USDA) programs that address:    commodity support,   conservation,   trade and international food aid,   nutrition assistance,   farm credit,   rural development,   research and extension activities,   forestry,   energy,   horticulture, and   crop insurance.   The bill modifies agriculture and nutrition policies to:    require farmers to make a ...\",\n            \"title\": \"To provide for the reform and continuation of agricultural and other programs of the Department of Agriculture through fiscal year 2023, and for other purposes.\",\n            \"vetoed\": null\n        }\n    ],\n    \"metaData\": {\n        \"currentPage\": 1,\n        \"numPages\": 1\n    }\n}"
 						}
 					]
 				},
 				{
 					"name": "Filtered list of Representatives",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "792cf6e2-2580-4c50-a1b9-dad24ecabd80",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Json structure is correct\", function() {",
+									"   pm.expect(jsonData.data.length).equal(1)",
+									"});",
+									"",
+									"pm.test(\"Json id is correct\", function() {",
+									"    pm.expect(jsonData.data[0].id).equal(\"O000172\");",
+									"});",
+									"",
+									"pm.test(\"Json first fullname is correct\", function() {",
+									"    pm.expect(jsonData.data[0].full_name).equal(\"Alexandria Ocasio-Cortez\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.foodmeonce.me/Representatives/filter?key1=age&val1min=20&val1max=50",
+							"raw": "https://api.foodmeonce.me/Representatives/filter?date_of_birth=1989,2018",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -797,16 +1035,8 @@
 							],
 							"query": [
 								{
-									"key": "key1",
-									"value": "age"
-								},
-								{
-									"key": "val1min",
-									"value": "20"
-								},
-								{
-									"key": "val1max",
-									"value": "50"
+									"key": "date_of_birth",
+									"value": "1989,2018"
 								}
 							]
 						},
@@ -819,7 +1049,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.foodmeonce.me/Representatives/filter?key1=age&val1min=20&val1max=50",
+									"raw": "https://api.foodmeonce.me/Representatives/filter?date_of_birth=1989,2018",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -832,16 +1062,8 @@
 									],
 									"query": [
 										{
-											"key": "key1",
-											"value": "age"
-										},
-										{
-											"key": "val1min",
-											"value": "20"
-										},
-										{
-											"key": "val1max",
-											"value": "50"
+											"key": "date_of_birth",
+											"value": "1989,2018"
 										}
 									]
 								}
@@ -851,12 +1073,16 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
 									"value": "application/json"
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 20 Oct 2019 02:13:48 GMT"
+									"value": "Fri, 08 Nov 2019 21:12:06 GMT"
 								},
 								{
 									"key": "Server",
@@ -864,7 +1090,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "40"
+									"value": "1269"
 								},
 								{
 									"key": "Connection",
@@ -872,7 +1098,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": \"for later implementation\"\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"api_uri\": \"false\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/O000172.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00041162\",\n            \"cspan_id\": null,\n            \"date_of_birth\": \"1989-10-13\",\n            \"district\": \"14\",\n            \"dw_nominate\": null,\n            \"facebook_account\": null,\n            \"fax\": null,\n            \"fec_candidate_id\": \"H8NY15148\",\n            \"first_name\": \"Alexandria\",\n            \"full_name\": \"Alexandria Ocasio-Cortez\",\n            \"gender\": \"F\",\n            \"geoid\": \"3614\",\n            \"google_entity_id\": \"/g/11f6y3nqg6\",\n            \"govtrack_id\": \"412804\",\n            \"icpsr_id\": null,\n            \"id\": \"O000172\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 298,\n            \"last_name\": \"Ocasio-Cortez\",\n            \"last_updated\": \"2019-10-16 17:30:22 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 400,\n            \"middle_name\": null,\n            \"missed_votes\": 1,\n            \"missed_votes_pct\": 0.18,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ny/cd:14\",\n            \"office\": \"229 Cannon House Office Building\",\n            \"party\": \"D\",\n            \"phone\": \"202-225-3965\",\n            \"rss_url\": null,\n            \"senate_class\": null,\n            \"seniority\": 2,\n            \"short_title\": \"Rep.\",\n            \"state\": \"New York\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepAOC\",\n            \"type_flag\": true,\n            \"url\": \"https://ocasio-cortez.house.gov/\",\n            \"votes_against_party_pct\": 4.3,\n            \"votes_with_party_pct\": 95.52,\n            \"votesmart_id\": \"180416\",\n            \"youtube_account\": null\n        }\n    ],\n    \"metaData\": {\n        \"currentPage\": 1,\n        \"numPages\": 1\n    }\n}"
 						}
 					]
 				}
@@ -1020,15 +1246,15 @@
 									"});",
 									"",
 									"pm.test(\"Json id is correct\", function() {",
-									"    pm.expect(jsonData.legislation[0].id).equal(2);",
+									"    pm.expect(jsonData.legislation[0].id).equal(77);",
 									"});",
 									"",
 									"pm.test(\"Json sponsor_id is correct\", function() {",
-									"    pm.expect(jsonData.legislation[0].sponsor_id).equal(\"C001062\");",
+									"    pm.expect(jsonData.legislation[0].sponsor_id).equal(\"R000307\");",
 									"});",
 									"",
 									"pm.test(\"Json short_title is correct\", function() {",
-									"    pm.expect(jsonData.legislation[0].short_title).equal(\"Agriculture Improvement Act of 2018\");",
+									"    pm.expect(jsonData.legislation[0].short_title).equal(\"A concurrent resolution recognizing the 50th anniversary of the Food and Nutrition Service of the Department of Agriculture.\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1039,7 +1265,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.foodmeonce.me/Legislations/2",
+							"raw": "https://api.foodmeonce.me/Legislations/77",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -1048,7 +1274,7 @@
 							],
 							"path": [
 								"Legislations",
-								"2"
+								"77"
 							]
 						},
 						"description": "Get the data for a specific instance of Legislation by id."
@@ -1221,6 +1447,509 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Searched list of Legislations",
+			"item": [
+				{
+					"name": "Searched list of Districts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d6813bf6-a930-49b9-ab57-94da8647a380",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Json structure is correct\", function() {",
+									"   pm.expect(jsonData.data.length).equal(1)",
+									"});",
+									"",
+									"pm.test(\"Json id is correct\", function() {",
+									"    pm.expect(jsonData.data[0].id).equal(8);",
+									"});",
+									"",
+									"pm.test(\"Json first population is correct\", function() {",
+									"    pm.expect(jsonData.data[0].population).equal(737438);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.foodmeonce.me/Districts/search?attribute=alaska",
+							"protocol": "https",
+							"host": [
+								"api",
+								"foodmeonce",
+								"me"
+							],
+							"path": [
+								"Districts",
+								"search"
+							],
+							"query": [
+								{
+									"key": "attribute",
+									"value": "alaska"
+								}
+							]
+						},
+						"description": "Search instances of districts for given attribute"
+					},
+					"response": [
+						{
+							"name": "Searched list of Districts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.foodmeonce.me/Districts/search?attribute=alaska",
+									"protocol": "https",
+									"host": [
+										"api",
+										"foodmeonce",
+										"me"
+									],
+									"path": [
+										"Districts",
+										"search"
+									],
+									"query": [
+										{
+											"key": "attribute",
+											"value": "alaska"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2019 21:14:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Amazon) mod_wsgi/3.5 Python/3.6.8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "550"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"a_indian\": \"15.1\",\n            \"aa\": \"3.42\",\n            \"asian\": \"6.29\",\n            \"cancer_rate\": \"413.1\",\n            \"congressional_district\": \"00\",\n            \"food_insecurity_rate\": \"13.6\",\n            \"full_name\": \"Don Young\",\n            \"gender_ratio\": 0.93,\n            \"hawaiian\": \"1.08\",\n            \"id\": 8,\n            \"mean_income\": 96080,\n            \"median_age\": 34.9,\n            \"num_households\": 254551,\n            \"others\": \"1.33\",\n            \"population\": 737438,\n            \"poverty_rate\": \"10.66\",\n            \"snap_rate\": \"10.8\",\n            \"state\": \"Alaska\",\n            \"state_abbreviation\": \"AK\",\n            \"state_name\": \"02\",\n            \"white\": \"64.35\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Alaska%27s_0th_congressional_district\"\n        }\n    ],\n    \"metaData\": {\n        \"currentPage\": 1,\n        \"numPages\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Searched list of Representatives",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6de79137-8dcc-4972-9cc1-e575d0eeeaf5",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Json structure is correct\", function() {",
+									"   pm.expect(jsonData.data.length).equal(3)",
+									"});",
+									"",
+									"pm.test(\"Json id is correct\", function() {",
+									"    pm.expect(jsonData.data[0].id).equal(\"S001198\");",
+									"});",
+									"",
+									"pm.test(\"Json first fullname is correct\", function() {",
+									"    pm.expect(jsonData.data[0].full_name).equal(\"Dan Sullivan\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.foodmeonce.me/Representatives/search?attribute=alaska",
+							"protocol": "https",
+							"host": [
+								"api",
+								"foodmeonce",
+								"me"
+							],
+							"path": [
+								"Representatives",
+								"search"
+							],
+							"query": [
+								{
+									"key": "attribute",
+									"value": "alaska"
+								}
+							]
+						},
+						"description": "Search instances of represesntatives for given attribute"
+					},
+					"response": [
+						{
+							"name": "Searched list of Representatives",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.foodmeonce.me/Representatives/search?attribute=alaska",
+									"protocol": "https",
+									"host": [
+										"api",
+										"foodmeonce",
+										"me"
+									],
+									"path": [
+										"Representatives",
+										"search"
+									],
+									"query": [
+										{
+											"key": "attribute",
+											"value": "alaska"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2019 21:17:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Amazon) mod_wsgi/3.5 Python/3.6.8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3848"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"api_uri\": \"https://api.propublica.org/congress/v1/members/S001198.\",\n            \"at_large\": null,\n            \"contact_form\": \"https://www.sullivan.senate.gov/contact/email\",\n            \"crp_id\": \"N00035774\",\n            \"cspan_id\": \"1023262\",\n            \"date_of_birth\": \"1964-11-13\",\n            \"district\": null,\n            \"dw_nominate\": 0.472,\n            \"facebook_account\": \"SenDanSullivan\",\n            \"fax\": null,\n            \"fec_candidate_id\": \"S4AK00214\",\n            \"first_name\": \"Dan\",\n            \"full_name\": \"Dan Sullivan\",\n            \"gender\": \"M\",\n            \"geoid\": null,\n            \"google_entity_id\": \"/m/07s4r4q\",\n            \"govtrack_id\": \"412665\",\n            \"icpsr_id\": \"41500\",\n            \"id\": \"S001198\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 87,\n            \"last_name\": \"Sullivan\",\n            \"last_updated\": \"2019-10-16 13:30:59 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": \"S383\",\n            \"m_id\": 88,\n            \"middle_name\": null,\n            \"missed_votes\": 9,\n            \"missed_votes_pct\": 2.83,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ak\",\n            \"office\": \"302 Hart Senate Office Building\",\n            \"party\": \"R\",\n            \"phone\": \"202-224-3004\",\n            \"rss_url\": null,\n            \"senate_class\": \"2\",\n            \"seniority\": 1,\n            \"short_title\": \"Sen.\",\n            \"state\": \"Alaska\",\n            \"state_rank\": \"junior\",\n            \"suffix\": null,\n            \"title\": \"Senator, 2nd Class\",\n            \"total_present\": 0,\n            \"total_votes\": 318,\n            \"twitter_account\": \"SenDanSullivan\",\n            \"type_flag\": false,\n            \"url\": \"https://www.sullivan.senate.gov\",\n            \"votes_against_party_pct\": 2.27,\n            \"votes_with_party_pct\": 97.73,\n            \"votesmart_id\": \"114964\",\n            \"youtube_account\": null\n        },\n        {\n            \"api_uri\": \"true\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/Y000033.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00007999\",\n            \"cspan_id\": \"1897\",\n            \"date_of_birth\": \"1933-06-09\",\n            \"district\": \"00\",\n            \"dw_nominate\": 0.284,\n            \"facebook_account\": \"RepDonYoung\",\n            \"fax\": null,\n            \"fec_candidate_id\": \"H6AK00045\",\n            \"first_name\": \"Don\",\n            \"full_name\": \"Don Young\",\n            \"gender\": \"M\",\n            \"geoid\": \"0200\",\n            \"google_entity_id\": \"/m/024p1k\",\n            \"govtrack_id\": \"400440\",\n            \"icpsr_id\": \"14066\",\n            \"id\": \"Y000033\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 442,\n            \"last_name\": \"Young\",\n            \"last_updated\": \"2019-10-16 17:30:21 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 543,\n            \"middle_name\": null,\n            \"missed_votes\": 25,\n            \"missed_votes_pct\": 4.46,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ak/cd:1\",\n            \"office\": \"2314 Rayburn House Office Building\",\n            \"party\": \"R\",\n            \"phone\": \"202-225-5765\",\n            \"rss_url\": \"https://donyoung.house.gov/news/rss.aspx\",\n            \"senate_class\": null,\n            \"seniority\": 48,\n            \"short_title\": \"Rep.\",\n            \"state\": \"Alaska\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepDonYoung\",\n            \"type_flag\": true,\n            \"url\": \"https://donyoung.house.gov\",\n            \"votes_against_party_pct\": 11.65,\n            \"votes_with_party_pct\": 88.16,\n            \"votesmart_id\": \"26717\",\n            \"youtube_account\": \"RepDonYoung\"\n        },\n        {\n            \"api_uri\": \"https://api.propublica.org/congress/v1/members/M001153.\",\n            \"at_large\": null,\n            \"contact_form\": \"https://www.murkowski.senate.gov/public/index.cfm/contact\",\n            \"crp_id\": \"N00026050\",\n            \"cspan_id\": \"1004138\",\n            \"date_of_birth\": \"1957-05-22\",\n            \"district\": null,\n            \"dw_nominate\": 0.21,\n            \"facebook_account\": \"SenLisaMurkowski\",\n            \"fax\": \"202-224-5301\",\n            \"fec_candidate_id\": \"S4AK00099\",\n            \"first_name\": \"Lisa\",\n            \"full_name\": \"Lisa Murkowski\",\n            \"gender\": \"F\",\n            \"geoid\": null,\n            \"google_entity_id\": \"/m/0202kt\",\n            \"govtrack_id\": \"300075\",\n            \"icpsr_id\": \"40300\",\n            \"id\": \"M001153\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 62,\n            \"last_name\": \"Murkowski\",\n            \"last_updated\": \"2019-10-16 13:30:59 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": \"S288\",\n            \"m_id\": 63,\n            \"middle_name\": null,\n            \"missed_votes\": 17,\n            \"missed_votes_pct\": 5.35,\n            \"next_election\": \"2022\",\n            \"ocd_id\": \"ocd-division/country:us/state:ak\",\n            \"office\": \"522 Hart Senate Office Building\",\n            \"party\": \"R\",\n            \"phone\": \"202-224-6665\",\n            \"rss_url\": null,\n            \"senate_class\": \"3\",\n            \"seniority\": 19,\n            \"short_title\": \"Sen.\",\n            \"state\": \"Alaska\",\n            \"state_rank\": \"senior\",\n            \"suffix\": null,\n            \"title\": \"Senator, 3rd Class\",\n            \"total_present\": 0,\n            \"total_votes\": 318,\n            \"twitter_account\": \"LisaMurkowski\",\n            \"type_flag\": false,\n            \"url\": \"https://www.murkowski.senate.gov\",\n            \"votes_against_party_pct\": 5.33,\n            \"votes_with_party_pct\": 94.67,\n            \"votesmart_id\": \"15841\",\n            \"youtube_account\": \"senatormurkowski\"\n        }\n    ],\n    \"metaData\": {\n        \"currentPage\": 1,\n        \"numPages\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Searched list of Legislations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43b8f121-bfa9-4064-9337-3da59eba7554",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Json structure is correct\", function() {",
+									"   pm.expect(jsonData.data.length).equal(0)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.foodmeonce.me/Legislations/search?attribute=alaska",
+							"protocol": "https",
+							"host": [
+								"api",
+								"foodmeonce",
+								"me"
+							],
+							"path": [
+								"Legislations",
+								"search"
+							],
+							"query": [
+								{
+									"key": "attribute",
+									"value": "alaska"
+								}
+							]
+						},
+						"description": "Search instances of legislations for given attribute"
+					},
+					"response": [
+						{
+							"name": "Searched list of Legislations",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.foodmeonce.me/Legislations/search?attribute=alaska",
+									"protocol": "https",
+									"host": [
+										"api",
+										"foodmeonce",
+										"me"
+									],
+									"path": [
+										"Legislations",
+										"search"
+									],
+									"query": [
+										{
+											"key": "attribute",
+											"value": "alaska"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2019 21:18:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Amazon) mod_wsgi/3.5 Python/3.6.8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [],\n    \"metaData\": {\n        \"currentPage\": 1,\n        \"numPages\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Searched list of all the models",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "79af2643-d16a-45c5-8c33-7c09df2cdf5d",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.test(\"Status code is 200\", function () { ",
+									"    pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Search result for districts is correct\", function() {",
+									"   pm.expect(jsonData.districts.length).equal(1); ",
+									"});",
+									"",
+									"pm.test(\"Search result for representatives is correct\", function() {",
+									"   pm.expect(jsonData.representatives.length).equal(3); ",
+									"});",
+									"",
+									"pm.test(\"Search result for legislations is correct\", function() {",
+									"   pm.expect(jsonData.legislations.length).equal(0); ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.foodmeonce.me/Search?attribute=alaska",
+							"protocol": "https",
+							"host": [
+								"api",
+								"foodmeonce",
+								"me"
+							],
+							"path": [
+								"Search"
+							],
+							"query": [
+								{
+									"key": "attribute",
+									"value": "alaska"
+								}
+							]
+						},
+						"description": "Search instances of districts/representatives/legislations\nfor given attribute"
+					},
+					"response": [
+						{
+							"name": "Searched list of all the models",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.foodmeonce.me/Search?attribute=alaska",
+									"protocol": "https",
+									"host": [
+										"api",
+										"foodmeonce",
+										"me"
+									],
+									"path": [
+										"Search"
+									],
+									"query": [
+										{
+											"key": "attribute",
+											"value": "alaska"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2019 21:20:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Amazon) mod_wsgi/3.5 Python/3.6.8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4375"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"currentPage\": 1,\n    \"districts\": [\n        {\n            \"a_indian\": \"15.1\",\n            \"aa\": \"3.42\",\n            \"asian\": \"6.29\",\n            \"cancer_rate\": \"413.1\",\n            \"congressional_district\": \"00\",\n            \"food_insecurity_rate\": \"13.6\",\n            \"full_name\": \"Don Young\",\n            \"gender_ratio\": 0.93,\n            \"hawaiian\": \"1.08\",\n            \"id\": 8,\n            \"mean_income\": 96080,\n            \"median_age\": 34.9,\n            \"num_households\": 254551,\n            \"others\": \"1.33\",\n            \"population\": 737438,\n            \"poverty_rate\": \"10.66\",\n            \"snap_rate\": \"10.8\",\n            \"state\": \"Alaska\",\n            \"state_abbreviation\": \"AK\",\n            \"state_name\": \"02\",\n            \"white\": \"64.35\",\n            \"wiki_page\": \"https://en.wikipedia.org/wiki/Alaska%27s_0th_congressional_district\"\n        }\n    ],\n    \"legislations\": [],\n    \"numPages\": 1,\n    \"representatives\": [\n        {\n            \"api_uri\": \"https://api.propublica.org/congress/v1/members/S001198.\",\n            \"at_large\": null,\n            \"contact_form\": \"https://www.sullivan.senate.gov/contact/email\",\n            \"crp_id\": \"N00035774\",\n            \"cspan_id\": \"1023262\",\n            \"date_of_birth\": \"1964-11-13\",\n            \"district\": null,\n            \"dw_nominate\": 0.472,\n            \"facebook_account\": \"SenDanSullivan\",\n            \"fax\": null,\n            \"fec_candidate_id\": \"S4AK00214\",\n            \"first_name\": \"Dan\",\n            \"full_name\": \"Dan Sullivan\",\n            \"gender\": \"M\",\n            \"geoid\": null,\n            \"google_entity_id\": \"/m/07s4r4q\",\n            \"govtrack_id\": \"412665\",\n            \"icpsr_id\": \"41500\",\n            \"id\": \"S001198\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 87,\n            \"last_name\": \"Sullivan\",\n            \"last_updated\": \"2019-10-16 13:30:59 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": \"S383\",\n            \"m_id\": 88,\n            \"middle_name\": null,\n            \"missed_votes\": 9,\n            \"missed_votes_pct\": 2.83,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ak\",\n            \"office\": \"302 Hart Senate Office Building\",\n            \"party\": \"R\",\n            \"phone\": \"202-224-3004\",\n            \"rss_url\": null,\n            \"senate_class\": \"2\",\n            \"seniority\": 1,\n            \"short_title\": \"Sen.\",\n            \"state\": \"Alaska\",\n            \"state_rank\": \"junior\",\n            \"suffix\": null,\n            \"title\": \"Senator, 2nd Class\",\n            \"total_present\": 0,\n            \"total_votes\": 318,\n            \"twitter_account\": \"SenDanSullivan\",\n            \"type_flag\": false,\n            \"url\": \"https://www.sullivan.senate.gov\",\n            \"votes_against_party_pct\": 2.27,\n            \"votes_with_party_pct\": 97.73,\n            \"votesmart_id\": \"114964\",\n            \"youtube_account\": null\n        },\n        {\n            \"api_uri\": \"true\",\n            \"at_large\": \"https://api.propublica.org/congress/v1/members/Y000033.\",\n            \"contact_form\": null,\n            \"crp_id\": \"N00007999\",\n            \"cspan_id\": \"1897\",\n            \"date_of_birth\": \"1933-06-09\",\n            \"district\": \"00\",\n            \"dw_nominate\": 0.284,\n            \"facebook_account\": \"RepDonYoung\",\n            \"fax\": null,\n            \"fec_candidate_id\": \"H6AK00045\",\n            \"first_name\": \"Don\",\n            \"full_name\": \"Don Young\",\n            \"gender\": \"M\",\n            \"geoid\": \"0200\",\n            \"google_entity_id\": \"/m/024p1k\",\n            \"govtrack_id\": \"400440\",\n            \"icpsr_id\": \"14066\",\n            \"id\": \"Y000033\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 442,\n            \"last_name\": \"Young\",\n            \"last_updated\": \"2019-10-16 17:30:21 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": null,\n            \"m_id\": 543,\n            \"middle_name\": null,\n            \"missed_votes\": 25,\n            \"missed_votes_pct\": 4.46,\n            \"next_election\": \"2020\",\n            \"ocd_id\": \"ocd-division/country:us/state:ak/cd:1\",\n            \"office\": \"2314 Rayburn House Office Building\",\n            \"party\": \"R\",\n            \"phone\": \"202-225-5765\",\n            \"rss_url\": \"https://donyoung.house.gov/news/rss.aspx\",\n            \"senate_class\": null,\n            \"seniority\": 48,\n            \"short_title\": \"Rep.\",\n            \"state\": \"Alaska\",\n            \"state_rank\": null,\n            \"suffix\": null,\n            \"title\": \"Representative\",\n            \"total_present\": 0,\n            \"total_votes\": 560,\n            \"twitter_account\": \"RepDonYoung\",\n            \"type_flag\": true,\n            \"url\": \"https://donyoung.house.gov\",\n            \"votes_against_party_pct\": 11.65,\n            \"votes_with_party_pct\": 88.16,\n            \"votesmart_id\": \"26717\",\n            \"youtube_account\": \"RepDonYoung\"\n        },\n        {\n            \"api_uri\": \"https://api.propublica.org/congress/v1/members/M001153.\",\n            \"at_large\": null,\n            \"contact_form\": \"https://www.murkowski.senate.gov/public/index.cfm/contact\",\n            \"crp_id\": \"N00026050\",\n            \"cspan_id\": \"1004138\",\n            \"date_of_birth\": \"1957-05-22\",\n            \"district\": null,\n            \"dw_nominate\": 0.21,\n            \"facebook_account\": \"SenLisaMurkowski\",\n            \"fax\": \"202-224-5301\",\n            \"fec_candidate_id\": \"S4AK00099\",\n            \"first_name\": \"Lisa\",\n            \"full_name\": \"Lisa Murkowski\",\n            \"gender\": \"F\",\n            \"geoid\": null,\n            \"google_entity_id\": \"/m/0202kt\",\n            \"govtrack_id\": \"300075\",\n            \"icpsr_id\": \"40300\",\n            \"id\": \"M001153\",\n            \"ideal_point\": null,\n            \"in_office\": true,\n            \"index\": 62,\n            \"last_name\": \"Murkowski\",\n            \"last_updated\": \"2019-10-16 13:30:59 -0400\",\n            \"leadership_role\": null,\n            \"lis_id\": \"S288\",\n            \"m_id\": 63,\n            \"middle_name\": null,\n            \"missed_votes\": 17,\n            \"missed_votes_pct\": 5.35,\n            \"next_election\": \"2022\",\n            \"ocd_id\": \"ocd-division/country:us/state:ak\",\n            \"office\": \"522 Hart Senate Office Building\",\n            \"party\": \"R\",\n            \"phone\": \"202-224-6665\",\n            \"rss_url\": null,\n            \"senate_class\": \"3\",\n            \"seniority\": 19,\n            \"short_title\": \"Sen.\",\n            \"state\": \"Alaska\",\n            \"state_rank\": \"senior\",\n            \"suffix\": null,\n            \"title\": \"Senator, 3rd Class\",\n            \"total_present\": 0,\n            \"total_votes\": 318,\n            \"twitter_account\": \"LisaMurkowski\",\n            \"type_flag\": false,\n            \"url\": \"https://www.murkowski.senate.gov\",\n            \"votes_against_party_pct\": 5.33,\n            \"votes_with_party_pct\": 94.67,\n            \"votesmart_id\": \"15841\",\n            \"youtube_account\": \"senatormurkowski\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "Search instances of legislations for given attribute",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4bf4f10d-7a46-46e2-b2fe-3d6ca4c95705",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e88d1d0-f3f6-4bd3-b270-1b5805d49af9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	]
 }
