@@ -30,10 +30,16 @@ function District(props) {
           <Show search={searches}>{props.name}</Show>
         </h5>
         <p className="card-title" style={{}}>
-          Population: <Show search={searches}>{props.population}</Show>
+          Population:{" "}
+          <Show format search={searches}>
+            {props.population}
+          </Show>
         </p>
         <p className="card-title" style={{}}>
-          Median Income: <Show search={searches}>{props.medianIncome}</Show>
+          Median Income:{" "}
+          <Show format search={searches}>
+            {props.medianIncome}
+          </Show>
         </p>
         <p className="card-title" style={{}}>
           Average Age: <Show search={searches}>{props.avgAge}</Show>

@@ -54,8 +54,12 @@ function State(props) {
     "Wisconsin",
     "Wyoming"
   ];
-  const options = states.map(state => {
-    return <option value={state}>{state}</option>;
+  const options = states.map((state, i) => {
+    return (
+      <option key={i} value={state}>
+        {state}
+      </option>
+    );
   });
   return (
     <div className="input-group input-group-sm">
