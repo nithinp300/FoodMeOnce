@@ -246,6 +246,27 @@ describe("Sorted Representatives test", function() {
   });
 });
 
+describe("Filtered Representatives test", function() {
+  let querystring = {
+    pathname: "/Representatives/filter",
+    search: "?page=1&party=R"
+  };
+
+  it("Filtered Representatives don't have any data at first render", function() {
+    const root = shallow(<Representatives location={querystring} />);
+    assert.equal(root.state("representatives").length, 0);
+  });
+
+  it("Filtered Representatives load correctly from api", function(done) {
+    const root = shallow(<Representatives location={querystring} />);
+    waitUntil(() => root.state("representatives").length > 0).then(() => {
+      assert.equal(root.state("representatives").length, 8);
+      assert.equal(root.state("representatives")[0].id, "K000378");
+      done();
+    });
+  });
+});
+
 describe("Searched Legislations test", function() {
   let querystring = {
     pathname: "/Legislations/search",
@@ -262,6 +283,7 @@ describe("Searched Legislations test", function() {
     waitUntil(() => root.state("legislations").length > 0).then(() => {
       assert.equal(root.state("legislations").length, 6);
       assert.equal(root.state("legislations")[0].id, "56");
+      assert.equal(root.state("legislations")[0].short_title, "Healthy Food Access for All Americans Act");
       done();
     });
   });
@@ -283,6 +305,28 @@ describe("Sorted Legislations test", function() {
     waitUntil(() => root.state("legislations").length > 0).then(() => {
       assert.equal(root.state("legislations").length, 8);
       assert.equal(root.state("legislations")[0].id, "82");
+      done();
+    });
+  });
+});
+
+describe("Filtered Legislations test", function() {
+  let querystring = {
+    pathname: "/Legislations/filter",
+    search: "?page=1&bill_type=hr"
+  };
+
+  it("Filtered Legislations don't have any data at first render", function() {
+    const root = shallow(<Legislations location={querystring} />);
+    assert.equal(root.state("legislations").length, 0);
+  });
+
+  it("Filtered Legislations load correctly from api", function(done) {
+    const root = shallow(<Legislations location={querystring} />);
+    waitUntil(() => root.state("legislations").length > 0).then(() => {
+      assert.equal(root.state("legislations").length, 8);
+      assert.equal(root.state("legislations")[0].id, "80");
+      assert.equal(root.state("legislations")[0].short_title, "Agriculture Improvement Act of 2018");
       done();
     });
   });
