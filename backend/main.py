@@ -433,21 +433,35 @@ def filteredLegislations():
         filteringPhrase = ""
         if introduced_date is not None:
             minMax = introduced_date.split(',')
-            filteringPhrase += f" and cast(left(introduced_date, 4) as int) between {minMax[0]} and {minMax[1]}"
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
+            filteringPhrase += f"cast(left(introduced_date, 4) as int) between {minMax[0]} and {minMax[1]}"
         if enacted is not None:
             minMax = enacted.split(',')
-            filteringPhrase += f" and cast(left(enacted, 4) as int) between {minMax[0]} and {minMax[1]}"
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
+            filteringPhrase += f"cast(left(enacted, 4) as int) between {minMax[0]} and {minMax[1]}"
         if sponsor_party is not None:
-            filteringPhrase += f" and sponsor_party like '%%{sponsor_party}%%'"
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
+            filteringPhrase += f"sponsor_party like '%%{sponsor_party}%%'"
         if status is not None:
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
             if status == "Pending":
-                filteringPhrase += f" and enacted is null"
+                filteringPhrase += f"enacted is null"
             else:
-                filteringPhrase += f" and enacted is not null"
+                filteringPhrase += f"enacted is not null"
         if bill_type is not None:
-            filteringPhrase += f" and bill_type like '%%{bill_type}%%'"
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
+            filteringPhrase += f"bill_type like '%%{bill_type}%%'"
         if sponsor_name is not None:
-            filteringPhrase += f" and sponsor_name like '%%{sponsor_name}%%'"
+            if filteringPhrase != "" :
+                filteringPhrase += " and "
+            filteringPhrase += f"sponsor_name like '%%{sponsor_name}%%'"
+        if filteringPhrase != "":
+            filteringPhrase = "WHERE " + filteringPhrase
 
         if page is None:
             page = 1
