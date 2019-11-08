@@ -1,0 +1,755 @@
+{
+  "id": "ac5bafc7-d376-47a1-bfdf-0693a422bef6",
+  "version": "2.0",
+  "name": "guitest",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "0417eedd-cab6-48c4-9fc0-c238ef3866c9",
+    "name": "Search Names",
+    "commands": [{
+      "id": "5d46a913-857d-44d9-b1b9-eb2428f4d42c",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5dbbe11d-39a6-426e-a2e6-67cd749fd0f0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-control",
+      "targets": [
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='basic-navbar-nav']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c25cd814-9005-4752-93e6-2675bc00f452",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control",
+      "targets": [
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='basic-navbar-nav']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "adam"
+    }, {
+      "id": "73dd8851-9e49-471d-84cc-db2fef94d5ca",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//div[@id='basic-navbar-nav']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fe8919e-4d9b-4213-afc3-912100c72643",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1)",
+      "targets": [
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='rep_inst']/div/h5", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a/div/div/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Adam Schiff')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "63d5d615-ac33-4049-999d-5df108bc78e4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1)",
+      "targets": [
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='rep_inst']/div/h5", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a/div/div/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Adam Schiff')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0609e06-3862-4ac9-af40-2edc01dc63f3",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.districts-container:nth-child(3) .card-body",
+      "targets": [
+        ["css=.districts-container:nth-child(3) .card-body", "css:finder"],
+        ["xpath=(//div[@id='dist_inst']/div)[5]", "xpath:idRelative"],
+        ["xpath=//div[2]/a/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "76cf0940-ef22-4250-82a7-e74972992594",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-control",
+      "targets": [
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='basic-navbar-nav']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "jam"
+    }, {
+      "id": "f819c474-8a79-4770-9a56-93954cbf2708",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-outline-success",
+      "targets": [
+        ["css=.btn-outline-success", "css:finder"],
+        ["xpath=//div[@id='basic-navbar-nav']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfe6035b-1e79-4349-99d8-322be0aee0c7",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1)",
+      "targets": [
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='rep_inst']/div/h5", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a/div/div/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Benjamin Cardin')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "25241949-6d65-45ee-896f-52ecdd43e735",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=(//div[@id='rep_inst']/div/h5/span)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a[2]/div/div/h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'F. Sensenbrenner')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "abb2d135-3157-4c54-b221-094c2eaa484f",
+    "name": "search districts",
+    "commands": [{
+      "id": "d5fa90d8-9610-4d13-b0de-7f5a8de63e3c",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df68da64-faf5-404d-888f-51fd470c0a6d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Districts",
+      "targets": [
+        ["linkText=Districts", "linkText"],
+        ["css=.nav-link:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Districts')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Districts')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Districts')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "db7f97b4-d673-4530-a9d5-335d769a8612",
+      "comment": "",
+      "command": "type",
+      "target": "css=.mr-sm-2",
+      "targets": [
+        ["css=.mr-sm-2", "css:finder"],
+        ["xpath=//input[@value='texas']", "xpath:attributes"],
+        ["xpath=//div[@id='basic-navbar-nav']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "texas"
+    }, {
+      "id": "f672b1b0-9cd4-48c6-bf85-58c3fcb6d537",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-outline-success",
+      "targets": [
+        ["css=.btn-outline-success", "css:finder"],
+        ["xpath=//div[@id='basic-navbar-nav']/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f4027ba-977f-445d-aec6-a46b83fd7720",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.districts-container:nth-child(2) > .button-container:nth-child(1) > #dist_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.districts-container:nth-child(2) > .button-container:nth-child(1) > #dist_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='dist_inst']/div/h5/span", "xpath:idRelative"],
+        ["xpath=//h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Texas Congressional District 01')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "1c6e2e87-6426-4daf-aed6-779790a43c00",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.districts-container:nth-child(2) > .button-container:nth-child(2) > #dist_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.districts-container:nth-child(2) > .button-container:nth-child(2) > #dist_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=(//div[@id='dist_inst']/div/h5/span)[2]", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Texas Congressional District 02')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "44a576e0-4125-4e74-be06-8fb73b5abacf",
+    "name": "Search Legislation",
+    "commands": [{
+      "id": "5a6eee07-6f08-42d2-9739-ecc7c36831d9",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e984ab6c-db79-48cc-a32a-3486ece6d602",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Legislation",
+      "targets": [
+        ["linkText=Legislation", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Legislation')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Legislations')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Legislation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "62d25bf0-c5fa-45df-8505-d9c703174f0d",
+      "comment": "",
+      "command": "type",
+      "target": "css=.d-flex > .form-control",
+      "targets": [
+        ["css=.d-flex > .form-control", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "food"
+    }, {
+      "id": "3acc4768-9f54-4669-aaff-4870c5db98c9",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "css=.d-flex > .form-control",
+      "targets": [
+        ["css=.d-flex > .form-control", "css:finder"],
+        ["xpath=//input[@value='food']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3b17f90c-bf83-49a5-a8f9-3dc766c551b6",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.button-container:nth-child(3) > #leg_inst",
+      "targets": [
+        ["css=.button-container:nth-child(3) > #leg_inst", "css:finder"],
+        ["xpath=(//div[@id='leg_inst'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a[2]/div", "xpath:idRelative"],
+        ["xpath=//a[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d4e9f476-6664-4451-8fc3-f6270d0bfb82",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=leg_inst",
+      "targets": [
+        ["id=leg_inst", "id"],
+        ["css=.button-container:nth-child(2) > #leg_inst", "css:finder"],
+        ["xpath=//div[@id='leg_inst']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c8d86b26-7fa0-4424-8f0d-ddfc450e4dc7",
+    "name": "Sort Districts",
+    "commands": [{
+      "id": "c3461eff-e162-44b5-92d2-442f2e0e2a8c",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b6ce5d4-f910-40e5-81ed-1ff12d3a0eed",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Districts",
+      "targets": [
+        ["linkText=Districts", "linkText"],
+        ["css=.nav-link:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Districts')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Districts')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Districts')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed19d826-d048-4d8c-8e6e-3a3a19951b92",
+      "comment": "",
+      "command": "click",
+      "target": "name=median_age-ASC",
+      "targets": [
+        ["name=median_age-ASC", "name"],
+        ["css=div:nth-child(3) > input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='median_age-ASC']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1eb46503-a4d2-4d1e-a3e9-185c9a1e75e3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .d-flex > .btn",
+      "targets": [
+        ["css=.mb-3 > .d-flex > .btn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/form/div[5]/button", "xpath:idRelative"],
+        ["xpath=//div[5]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Apply')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a5b99fc-503f-49b1-81f7-8b64c29a8a8f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.districts-container:nth-child(2) > .button-container:nth-child(1) > #dist_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.districts-container:nth-child(2) > .button-container:nth-child(1) > #dist_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='dist_inst']/div/h5/span", "xpath:idRelative"],
+        ["xpath=//h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Utah Congressional District 03')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "2eedee7c-dca2-448a-bb45-6f063dc8b8d8",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.districts-container:nth-child(2) > .button-container:nth-child(2) > #dist_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.districts-container:nth-child(2) > .button-container:nth-child(2) > #dist_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=(//div[@id='dist_inst']/div/h5/span)[2]", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Arizona Congressional District 07')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "94841e1d-f85c-4ae2-81b9-4b661b7252fc",
+    "name": "Filter Districts",
+    "commands": [{
+      "id": "ba7a403d-62dc-40f1-acd9-d257db972ee2",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49b0c971-ca06-4cdc-a1fa-ac9fc9378b1c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Districts",
+      "targets": [
+        ["linkText=Districts", "linkText"],
+        ["css=.nav-link:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Districts')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Districts')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Districts')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d874192-32e4-4006-ad18-720d6f1fc958",
+      "comment": "",
+      "command": "type",
+      "target": "name=medianIncomeMin",
+      "targets": [
+        ["name=medianIncomeMin", "name"],
+        ["css=.input-group:nth-child(2) > .form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='medianIncomeMin']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "80000"
+    }, {
+      "id": "5fd23912-a43c-4d63-bd13-192e42c290a4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mt-3 > .btn",
+      "targets": [
+        ["css=.mt-3 > .btn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/form/div[6]/button", "xpath:idRelative"],
+        ["xpath=//div[6]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e668614-d443-4e22-89e6-3e6c13042d9e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.justify-content-between",
+      "targets": [
+        ["css=.justify-content-between", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "676929cb-2273-4e2e-a232-04bfb1ea1e21",
+    "name": "Filter Legislation",
+    "commands": [{
+      "id": "61ecb0c5-aab5-4aa4-b2a8-3c3a330f0005",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97a28103-58c0-4fc7-9352-c9863127936b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Legislation",
+      "targets": [
+        ["linkText=Legislation", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Legislation')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Legislations')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Legislation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3508b3c5-a50f-4bfb-a328-5256ed0e20aa",
+      "comment": "",
+      "command": "type",
+      "target": "name=enacted_YearMin",
+      "targets": [
+        ["name=enacted_YearMin", "name"],
+        ["css=.input-group:nth-child(3) > .form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='enacted_YearMin']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "1000"
+    }, {
+      "id": "38b54e37-ab11-40bd-8324-f24806546b5c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mt-3 > .btn",
+      "targets": [
+        ["css=.mt-3 > .btn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/form/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f49f1232-5876-419f-88a9-a1c8f4f9678f",
+    "name": "Search Reps",
+    "commands": [{
+      "id": "9727e661-0e41-46b9-bac4-9d88aaa7f6d0",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5ef1c5a-b882-4f04-992b-2f348a84cd12",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Representatives",
+      "targets": [
+        ["linkText=Representatives", "linkText"],
+        ["css=.nav-link:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Representatives')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Representatives')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Representatives')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5adeaba-d73c-475b-b564-46226696c3fa",
+      "comment": "",
+      "command": "type",
+      "target": "css=.d-flex > .form-control",
+      "targets": [
+        ["css=.d-flex > .form-control", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Dave"
+    }, {
+      "id": "957ae447-d6db-427c-8858-caec70c12097",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "css=.d-flex > .form-control",
+      "targets": [
+        ["css=.d-flex > .form-control", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "c354bdc8-0686-4560-b09b-e4658abc1285",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='rep_inst']/div/h5/span", "xpath:idRelative"],
+        ["xpath=//h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Dave Joyce')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d10e747f-cc0c-4dc0-8a72-521130b55eb4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=(//div[@id='rep_inst']/div/h5/span)[2]", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Dave Loebsack')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "da7a1df7-dabb-4c62-a234-ebaea7872b04",
+    "name": "Filter Rep",
+    "commands": [{
+      "id": "6f3db2f5-dfad-4d67-8fa7-ffa0b11eff37",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f84364a3-6489-4970-99dc-027702a6e00c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Representatives",
+      "targets": [
+        ["linkText=Representatives", "linkText"],
+        ["css=.nav-link:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Representatives')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Representatives')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Representatives')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "22a75004-9f87-4dc9-a815-884312754b60",
+      "comment": "",
+      "command": "type",
+      "target": "name=ageMin",
+      "targets": [
+        ["name=ageMin", "name"],
+        ["css=.input-group:nth-child(1) > .form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='ageMin']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": "60"
+    }, {
+      "id": "81c7948c-af66-447d-857b-5357edd6bbe9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mt-3 > .btn",
+      "targets": [
+        ["css=.mt-3 > .btn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/form/div[5]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/form/div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5785e820-9e1b-485b-a180-2c20e490588b",
+    "name": "Sort Rep",
+    "commands": [{
+      "id": "d8914abc-52e7-4d5e-9cd8-a7c5a113e957",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a228e3a8-6568-418a-b973-24442f19fc21",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Representatives",
+      "targets": [
+        ["linkText=Representatives", "linkText"],
+        ["css=.nav-link:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Representatives')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Representatives')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Representatives')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "82e5d041-a0d5-4eab-b352-38dfff4b7854",
+      "comment": "",
+      "command": "click",
+      "target": "name=state",
+      "targets": [
+        ["name=state", "name"],
+        ["css=div:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='state']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/form/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f756e3b-9948-4a1f-b54f-b75c66a7d274",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .d-flex > .btn",
+      "targets": [
+        ["css=.mb-3 > .d-flex > .btn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/form/div[5]/button", "xpath:idRelative"],
+        ["xpath=//div[5]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Apply')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c5f8919-6f8e-4733-ba50-fa288ad3ecd5",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=(//div[@id='rep_inst']/div/h5/span)[2]", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Robert Aderholt')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "08b8d48a-2b59-4c09-b001-8313db241cad",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='rep_inst']/div/h5/span", "xpath:idRelative"],
+        ["xpath=//h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Gary Palmer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9a554ed4-8de0-4cc0-8f47-cc1140653100",
+    "name": "Sort Legislation",
+    "commands": [{
+      "id": "29462064-434d-4252-abd5-daeddc222d0b",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aea1cbff-9e12-4252-bfa2-fabca09842d2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Legislation",
+      "targets": [
+        ["linkText=Legislation", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Legislation')]", "xpath:link"],
+        ["xpath=//div[@id='basic-navbar-nav']/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Legislations')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Legislation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35569121-25a7-448d-b942-b2361540afdb",
+      "comment": "",
+      "command": "click",
+      "target": "name=introduced_date-ASC",
+      "targets": [
+        ["name=introduced_date-ASC", "name"],
+        ["css=div:nth-child(1) > input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='introduced_date-ASC']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d337f194-0bdc-47c3-aead-79a197f454dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.d-flex:nth-child(6) > .btn",
+      "targets": [
+        ["css=.d-flex:nth-child(6) > .btn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/form/div[6]/button", "xpath:idRelative"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Apply')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2bceaa5f-05d8-4d75-8e8a-7f7bde24501f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.button-container:nth-child(2) .legislation-desc:nth-child(1)",
+      "targets": [
+        ["css=.button-container:nth-child(2) .legislation-desc:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='leg_inst']/div", "xpath:idRelative"],
+        ["xpath=//a/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "84d94dbb-cd9d-43d7-8118-a768185f3084",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.button-container:nth-child(3) .legislation-desc:nth-child(1) > span",
+      "targets": [
+        ["css=.button-container:nth-child(3) .legislation-desc:nth-child(1) > span", "css:finder"],
+        ["xpath=(//div[@id='leg_inst']/div/span)[8]", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Growing Opportunities for Agriculture and Responding to Markets Act of 2013')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8afdac8c-6f45-4e87-95f0-6983ef29c03d",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0417eedd-cab6-48c4-9fc0-c238ef3866c9"]
+  }],
+  "urls": ["localhost:3000", "https://localhost:3000/", "http://localhost:3000/"],
+  "plugins": []
+}

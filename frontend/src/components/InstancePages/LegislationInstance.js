@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./css/LegislationInstance.css";
 import us_hor from "../../images/us_hor.png";
 import us_sen from "../../images/us_sen.png";
+import ReactImageFallback from "react-image-fallback";
+import republican from "../../images/republicanLogo.png";
+import democrat from "../../images/democratLogo.png";
 
 class LegislationInstance extends Component {
   state = {
@@ -160,11 +163,12 @@ class LegislationInstance extends Component {
           </li>
         </ul>
         <div className="sponsor" align="left">
-          <img
-            className="legislation-instance-rep"
-            src={sponsor_image}
-            alt={legislation_data.sponsor_name}
-          />
+          <ReactImageFallback
+          src={sponsor_image}
+          fallbackImage={legislation_data.sponsor_party === "Democrat" ? democrat : republican}
+          className="district-instance-rep-image"
+          alt="Representative Photo"
+        />
         </div>
       </div>
     );
