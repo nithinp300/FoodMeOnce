@@ -24,8 +24,8 @@ class representativeSortFilter extends Component {
   handleSortSubmit = e => {
     e.preventDefault();
     const attribute = this.state.sort.name;
-    const name = attribute.split('-')[0];
-    const order = attribute.split('-')[1];
+    const name = attribute.split("-")[0];
+    const order = attribute.split("-")[1];
     const url = `/Representatives/sort?attribute=${name}&order=${order}`;
     window.location = url;
   };
@@ -94,19 +94,55 @@ class representativeSortFilter extends Component {
       if (filter[fieldMin] != null || filter[fieldMax] != null) {
         attribute = "";
         attribute =
-          filter[fieldMax] != null ? 2019 - parseInt(filter[fieldMax]) : 1900;
+          filter[fieldMax] != null && filter[fieldMax].trim().length > 0
+            ? 2019 - parseInt(filter[fieldMax])
+            : 1900;
         attribute += ",";
         attribute +=
-          filter[fieldMin] != null ? 2019 - parseInt(filter[fieldMin]) : 2019;
+          filter[fieldMin] != null && filter[fieldMin].trim().length > 0
+            ? 2019 - parseInt(filter[fieldMin])
+            : 2019;
       }
-    } else if (filter[fieldMin] != null || filter[fieldMax] != null) {
+    } else if (
+      (filter[fieldMin] != null && filter[fieldMin].trim().length > 0) ||
+      (filter[fieldMax] != null && filter[fieldMax].trim().length > 0)
+    ) {
       attribute = "";
-      attribute = filter[fieldMin] != null ? filter[fieldMin] : min;
+      attribute =
+        filter[fieldMin] != null && filter[fieldMin].trim().length > 0
+          ? filter[fieldMin]
+          : min;
       attribute += ",";
-      attribute += filter[fieldMax] != null ? filter[fieldMax] : max;
+      attribute +=
+        filter[fieldMax] != null && filter[fieldMax].trim().length > 0
+          ? filter[fieldMax]
+          : max;
     }
     return attribute;
   };
+
+  // getFilteringAttributes = (fieldMin, fieldMax) => {
+  //   const min = "0";
+  //   const max = "2147483647";
+  //   const filter = this.state.filter;
+  //   let attribute = null;
+  //   if (fieldMin === "ageMin") {
+  //     if (filter[fieldMin] != null || filter[fieldMax] != null) {
+  //       attribute = "";
+  //       attribute =
+  //         filter[fieldMax] != null ? 2019 - parseInt(filter[fieldMax]) : 1900;
+  //       attribute += ",";
+  //       attribute +=
+  //         filter[fieldMin] != null ? 2019 - parseInt(filter[fieldMin]) : 2019;
+  //     }
+  //   } else if (filter[fieldMin] != null || filter[fieldMax] != null) {
+  //     attribute = "";
+  //     attribute = filter[fieldMin] != null ? filter[fieldMin] : min;
+  //     attribute += ",";
+  //     attribute += filter[fieldMax] != null ? filter[fieldMax] : max;
+  //   }
+  //   return attribute;
+  // };
 
   render() {
     return (
@@ -116,14 +152,15 @@ class representativeSortFilter extends Component {
           <div className="d-flex flex-column sort pr-5 flex-fill">
             <h5 className="ml-2">Sort By</h5>
             <form className="ml-3 mb-3" onSubmit={this.handleSortSubmit}>
-              <div>Age: {" "}
+              <div>
+                Age:{" "}
                 <input
                   type="radio"
                   name="date_of_birth-DESC"
                   checked={this.state.sort.name === "date_of_birth-DESC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="date_of_birth-ASC"
@@ -132,14 +169,15 @@ class representativeSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <div>Years In Office: {" "}
+              <div>
+                Years In Office:{" "}
                 <input
                   type="radio"
                   name="seniority-ASC"
                   checked={this.state.sort.name === "seniority-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="seniority-DESC"
@@ -148,14 +186,15 @@ class representativeSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <div>Party: {" "}
+              <div>
+                Party:{" "}
                 <input
                   type="radio"
                   name="party-ASC"
                   checked={this.state.sort.name === "party-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="party-DESC"
@@ -164,14 +203,15 @@ class representativeSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <div>State: {" "}
+              <div>
+                State:{" "}
                 <input
                   type="radio"
                   name="state-ASC"
                   checked={this.state.sort.name === "state-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="state-DESC"

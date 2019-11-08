@@ -108,38 +108,41 @@ class Representatives extends Component {
         }
       }
     }
-    var representativesRendered = this.state.representatives.map(
-      (representative, i) => {
-        var rep_image = "";
-        if (representative.first_name != null) {
-          rep_image =
-            "https://theunitedstates.io/images/congress/original/" +
-            representative.id +
-            ".jpg";
-        }
-        return (
-          <a
-            href={`/Representatives/instance/${representative.id}`}
-            className="button-container"
-          >
-            <Representative
-              image={rep_image}
-              name={representative.first_name + " " + representative.last_name}
-              age={this.getAge(representative.date_of_birth)}
-              yearsInOffice={representative.seniority}
-              party={this.getParty(representative.party)}
-              state={representative.state}
-              district={this.getDistrict(representative.district)}
-              type_flag={this.getType(representative.type_flag)}
-              search={search}
-            />
-          </a>
-        );
-      }
-    );
+    var representativesRendered = this.state.representatives
+      ? this.state.representatives.map((representative, i) => {
+          var rep_image = "";
+          if (representative.first_name != null) {
+            rep_image =
+              "https://theunitedstates.io/images/congress/original/" +
+              representative.id +
+              ".jpg";
+          }
+          return (
+            <a
+              href={`/Representatives/instance/${representative.id}`}
+              className="button-container"
+              key={i}
+            >
+              <Representative
+                image={rep_image}
+                name={
+                  representative.first_name + " " + representative.last_name
+                }
+                age={this.getAge(representative.date_of_birth)}
+                yearsInOffice={representative.seniority}
+                party={this.getParty(representative.party)}
+                state={representative.state}
+                district={this.getDistrict(representative.district)}
+                type_flag={this.getType(representative.type_flag)}
+                search={search}
+              />
+            </a>
+          );
+        })
+      : null;
     const renderPage = this.state.loading ? (
       <h2 className="text-center m-3">Loading...</h2>
-    ) : this.state.representatives.length > 0 ? (
+    ) : this.state.representatives ? (
       <React.Fragment>
         <div className="representatives-container">
           {representativesRendered.slice(0, 4)}

@@ -16,8 +16,8 @@ class LegislationSortFilter extends Component {
   handleSortSubmit = e => {
     e.preventDefault();
     const attribute = this.state.sort.name;
-    const name = attribute.split('-')[0];
-    const order = attribute.split('-')[1];
+    const name = attribute.split("-")[0];
+    const order = attribute.split("-")[1];
     const url = `/Legislations/sort?attribute=${name}&order=${order}`;
     window.location = url;
   };
@@ -99,11 +99,20 @@ class LegislationSortFilter extends Component {
     const max = "2147483647";
     const filter = this.state.filter;
     let attribute = null;
-    if (filter[fieldMin] != null || filter[fieldMax] != null) {
+    if (
+      (filter[fieldMin] != null && filter[fieldMin].trim().length > 0) ||
+      (filter[fieldMax] != null && filter[fieldMax].trim().length > 0)
+    ) {
       attribute = "";
-      attribute = filter[fieldMin] != null ? filter[fieldMin] : min;
+      attribute =
+        filter[fieldMin] != null && filter[fieldMin].trim().length > 0
+          ? filter[fieldMin]
+          : min;
       attribute += ",";
-      attribute += filter[fieldMax] != null ? filter[fieldMax] : max;
+      attribute +=
+        filter[fieldMax] != null && filter[fieldMax].trim().length > 0
+          ? filter[fieldMax]
+          : max;
     }
     return attribute;
   };
@@ -116,46 +125,49 @@ class LegislationSortFilter extends Component {
           <div className="d-flex flex-column sort pr-5 flex-fill">
             <h5 className="ml-2">Sort By</h5>
             <form className="ml-3 mb-3" onSubmit={this.handleSortSubmit}>
-              <div>Introduced Year :{" "}
+              <div>
+                Introduced Year :{" "}
                 <input
                   type="radio"
                   name="introduced_date-ASC"
                   checked={this.state.sort.name === "introduced_date-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
-                                <input
+                Ascending{" "}
+                <input
                   type="radio"
                   name="introduced_date-DESC"
                   checked={this.state.sort.name === "introduced_date-DESC"}
                   onChange={this.handleSort}
                 />{" "}
-                Descending {" "}
+                Descending{" "}
               </div>
-              <div>Status :{" "}
+              <div>
+                Status :{" "}
                 <input
                   type="radio"
                   name="enacted-ASC"
                   checked={this.state.sort.name === "enacted-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="enacted-DESC"
                   checked={this.state.sort.name === "enacted-DESC"}
                   onChange={this.handleSort}
                 />{" "}
-                Descending {" "}
+                Descending{" "}
               </div>
-              <div>Party : {" "}
+              <div>
+                Party :{" "}
                 <input
                   type="radio"
                   name="sponsor_party-ASC"
                   checked={this.state.sort.name === "sponsor_party-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="sponsor_party-DESC"
@@ -164,14 +176,15 @@ class LegislationSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <div>Bill Type : {" "}
+              <div>
+                Bill Type :{" "}
                 <input
                   type="radio"
                   name="bill_type-ASC"
                   checked={this.state.sort.name === "bill_type-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="bill_type-DESC"
@@ -180,7 +193,8 @@ class LegislationSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <div>Sponsor(s) :{" "}
+              <div>
+                Sponsor(s) :{" "}
                 <input
                   type="radio"
                   name="sponsor_name-ASC"
@@ -274,7 +288,8 @@ class LegislationSortFilter extends Component {
                 <select
                   className="custom-select"
                   name="sponsor_party"
-                  onChange={this.handleFilter}>
+                  onChange={this.handleFilter}
+                >
                   <option>Choose...</option>
                   <option value="D">Democratic</option>
                   <option value="R">Republican</option>
@@ -290,7 +305,8 @@ class LegislationSortFilter extends Component {
                   className="custom-select"
                   name="billTypeMin"
                   onChange={this.handleFilter}
-                  value={this.state.filter.billTypeMin}>
+                  value={this.state.filter.billTypeMin}
+                >
                   <option>Choose...</option>
                   <option value="hr">House of Representatives</option>
                   <option value="s">Senate</option>

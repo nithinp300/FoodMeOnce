@@ -97,11 +97,20 @@ class DistrictSortFilter extends Component {
     const max = "2147483647";
     const filter = this.state.filter;
     let attribute = null;
-    if (filter[fieldMin] != null || filter[fieldMax] != null) {
+    if (
+      (filter[fieldMin] != null && filter[fieldMin].trim().length > 0) ||
+      (filter[fieldMax] != null && filter[fieldMax].trim().length > 0)
+    ) {
       attribute = "";
-      attribute = filter[fieldMin] != null ? filter[fieldMin] : min;
+      attribute =
+        filter[fieldMin] != null && filter[fieldMin].trim().length > 0
+          ? filter[fieldMin]
+          : min;
       attribute += ",";
-      attribute += filter[fieldMax] != null ? filter[fieldMax] : max;
+      attribute +=
+        filter[fieldMax] != null && filter[fieldMax].trim().length > 0
+          ? filter[fieldMax]
+          : max;
     }
     return attribute;
   };
