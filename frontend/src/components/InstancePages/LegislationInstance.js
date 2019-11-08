@@ -85,7 +85,7 @@ class LegislationInstance extends Component {
     }
     if (this.state.districts.district == null) {
       state_district = this.state.districts.state;
-      leg_dis_url = "";
+      leg_dis_url = "/Districts/filter?state=" + state_district;
     }
     else {
       state_district = this.state.districts.state + ' ' + this.state.districts.district;
