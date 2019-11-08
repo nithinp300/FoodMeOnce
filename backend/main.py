@@ -147,7 +147,7 @@ def district(id=""):
         + id
     )
     data3 = con.execute(
-        "SELECT m.id, m.full_name FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND CAST(d.congressional_district AS INT) = CAST(m.district AS INT) WHERE d.id = "
+        "SELECT m.id, m.full_name, m.party FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND CAST(d.congressional_district AS INT) = CAST(m.district AS INT) WHERE d.id = "
         + id
     )
     data = {}
