@@ -88,7 +88,7 @@ async grabIssues(){
 
 async grabCommits(){
   var page = 0
-  while(page < 4){
+  while(page < 5){
   page+=1
   fetch("https://gitlab.com/api/v4/projects/14463226/repository/commits?per_page=100&page=" + page)
       .then(res => res.json())
