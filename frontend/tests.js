@@ -140,3 +140,150 @@ describe("Legislation Instance test", function() {
     });
   });
 });
+
+describe("Searched Districts test", function() {
+  let querystring = {
+    pathname: "/Districts/search",
+    search: "?page=1&attribute=texas"
+  };
+
+  it("Searched Districts don't have any data at first render", function() {
+    const root = shallow(<Districts location={querystring} />);
+    assert.equal(root.state("districts").length, 0);
+  });
+
+  it("Searched Districts load correctly from api", function(done) {
+    const root = shallow(<Districts location={querystring} />);
+    waitUntil(() => root.state("districts").length > 0).then(() => {
+      assert.equal(root.state("districts").length, 8);
+      assert.equal(root.state("districts")[0].id, "363");
+      done();
+    });
+  });
+});
+
+describe("Sorted Districts test", function() {
+  let querystring = {
+    pathname: "/Districts/sort",
+    search: "?page=1&attribute=population&order=ASC"
+  };
+
+  it("Sorted Districts don't have any data at first render", function() {
+    const root = shallow(<Districts location={querystring} />);
+    assert.equal(root.state("districts").length, 0);
+  });
+
+  it("Sorted Districts load correctly from api", function(done) {
+    const root = shallow(<Districts location={querystring} />);
+    waitUntil(() => root.state("districts").length > 0).then(() => {
+      assert.equal(root.state("districts").length, 8);
+      assert.equal(root.state("districts")[0].id, "345");
+      done();
+    });
+  });
+});
+
+describe("Filtered Districts test", function() {
+  let querystring = {
+    pathname: "/Districts/filter",
+    search: "?state=Washington"
+  };
+
+  it("Filtered Districts don't have any data at first render", function() {
+    const root = shallow(<Districts location={querystring} />);
+    assert.equal(root.state("districts").length, 0);
+  });
+
+  it("Filtered Districts load correctly from api", function(done) {
+    const root = shallow(<Districts location={querystring} />);
+    waitUntil(() => root.state("districts").length > 0).then(() => {
+      assert.equal(root.state("districts").length, 8);
+      assert.equal(root.state("districts")[0].id, "415");
+      done();
+    });
+  });
+});
+
+describe("Searched Representatives test", function() {
+  let querystring = {
+    pathname: "/Representatives/search",
+    search: "?attribute=adam"
+  };
+
+  it("Searched Representatives don't have any data at first render", function() {
+    const root = shallow(<Representatives location={querystring} />);
+    assert.equal(root.state("representatives").length, 0);
+  });
+
+  it("Searched Representatives load correctly from api", function(done) {
+    const root = shallow(<Representatives location={querystring} />);
+    waitUntil(() => root.state("representatives").length > 0).then(() => {
+      assert.equal(root.state("representatives").length, 5);
+      assert.equal(root.state("representatives")[0].id, "S001150");
+      done();
+    });
+  });
+});
+
+describe("Sorted Representatives test", function() {
+  let querystring = {
+    pathname: "/Representatives/sort",
+    search: "?page=1&attribute=seniority&order=DESC"
+  };
+
+  it("Sorted Representatives don't have any data at first render", function() {
+    const root = shallow(<Representatives location={querystring} />);
+    assert.equal(root.state("representatives").length, 0);
+  });
+
+  it("Sorted Representatives load correctly from api", function(done) {
+    const root = shallow(<Representatives location={querystring} />);
+    waitUntil(() => root.state("representatives").length > 0).then(() => {
+      assert.equal(root.state("representatives").length, 8);
+      assert.equal(root.state("representatives")[0].id, "Y000033");
+      done();
+    });
+  });
+});
+
+describe("Searched Legislations test", function() {
+  let querystring = {
+    pathname: "/Legislations/search",
+    search: "?attribute=healthy"
+  };
+
+  it("Searched Legislations don't have any data at first render", function() {
+    const root = shallow(<Legislations location={querystring} />);
+    assert.equal(root.state("legislations").length, 0);
+  });
+
+  it("Searched Legislations load correctly from api", function(done) {
+    const root = shallow(<Legislations location={querystring} />);
+    waitUntil(() => root.state("legislations").length > 0).then(() => {
+      assert.equal(root.state("legislations").length, 6);
+      assert.equal(root.state("legislations")[0].id, "56");
+      done();
+    });
+  });
+});
+
+describe("Sorted Legislations test", function() {
+  let querystring = {
+    pathname: "/Legislations/sort",
+    search: "?page=1&attribute=introduced_date&order=ASC"
+  };
+
+  it("Sorted Legislations don't have any data at first render", function() {
+    const root = shallow(<Legislations location={querystring} />);
+    assert.equal(root.state("legislations").length, 0);
+  });
+
+  it("Sorted Legislations load correctly from api", function(done) {
+    const root = shallow(<Legislations location={querystring} />);
+    waitUntil(() => root.state("legislations").length > 0).then(() => {
+      assert.equal(root.state("legislations").length, 8);
+      assert.equal(root.state("legislations")[0].id, "82");
+      done();
+    });
+  });
+});
