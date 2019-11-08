@@ -17,8 +17,8 @@ class DistrictSortFilter extends Component {
   handleSortSubmit = e => {
     e.preventDefault();
     const attribute = this.state.sort.name;
-    const name = attribute.split('-')[0];
-    const order = attribute.split('-')[1];
+    const name = attribute.split("-")[0];
+    const order = attribute.split("-")[1];
     const url = `/Districts/sort?attribute=${name}&order=${order}`;
     window.location = url;
   };
@@ -38,7 +38,7 @@ class DistrictSortFilter extends Component {
       "populationMin",
       "populationMax"
     );
-    const median_income = this.getFilteringAttributes(
+    const mean_income = this.getFilteringAttributes(
       "medianIncomeMin",
       "medianIncomeMax"
     );
@@ -57,13 +57,13 @@ class DistrictSortFilter extends Component {
       }
       url += "population=" + population;
     }
-    if (median_income) {
+    if (mean_income) {
       if (firstAttribute) {
         firstAttribute = false;
       } else {
         url += "&";
       }
-      url += "median_income=" + median_income;
+      url += "mean_income=" + mean_income;
     }
     if (median_age) {
       if (firstAttribute) {
@@ -114,14 +114,16 @@ class DistrictSortFilter extends Component {
           <div className="d-flex flex-column sort pr-5 flex-fill">
             <h5 className="ml-2">Sort By</h5>
             <form className="ml-3 mb-3" onSubmit={this.handleSortSubmit}>
-              <div> Population: {" "}
+              <div>
+                {" "}
+                Population:{" "}
                 <input
                   type="radio"
                   name="population-ASC"
                   checked={this.state.sort.name === "population-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="population-DESC"
@@ -130,14 +132,15 @@ class DistrictSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <div>Median Income: {" "}
+              <div>
+                Median Income:{" "}
                 <input
                   type="radio"
                   name="mean_income-ASC"
                   checked={this.state.sort.name === "mean_income-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="mean_income-DESC"
@@ -146,14 +149,15 @@ class DistrictSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <div>Average Age: {" "}
+              <div>
+                Average Age:{" "}
                 <input
                   type="radio"
                   name="median_age-ASC"
                   checked={this.state.sort.name === "median_age-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="median_age-DESC"
@@ -162,14 +166,15 @@ class DistrictSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <div>*Gender Ratio: {" "}
+              <div>
+                *Gender Ratio:{" "}
                 <input
                   type="radio"
                   name="gender_ratio-ASC"
                   checked={this.state.sort.name === "gender_ratio-ASC"}
                   onChange={this.handleSort}
                 />{" "}
-                Ascending {" "}
+                Ascending{" "}
                 <input
                   type="radio"
                   name="gender_ratio-DESC"
@@ -178,7 +183,11 @@ class DistrictSortFilter extends Component {
                 />{" "}
                 Descending
               </div>
-              <p><i><sub>*Number of male births to 1 female birth</sub></i></p>
+              <p>
+                <i>
+                  <sub>*Number of male births to 1 female birth</sub>
+                </i>
+              </p>
 
               <div className="d-flex justify-content-end">
                 <button className="btn btn-primary">Apply</button>
