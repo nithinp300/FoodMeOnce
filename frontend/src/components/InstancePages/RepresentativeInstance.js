@@ -46,7 +46,7 @@ class RepresentativeInstance extends React.Component {
     if (sponsor_party === "D") {
       return "Democrat";
     }
-    return "Republican";
+    return sponsor_party;
   };
 
   render() {

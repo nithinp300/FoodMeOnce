@@ -38,7 +38,7 @@ class Representatives extends Component {
     if (sponsor_party === "D") {
       return "Democrat";
     }
-    return "Republican";
+    return sponsor_party;
   };
   state = {
     collapse: true,

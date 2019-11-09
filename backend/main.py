@@ -428,6 +428,7 @@ def filteredLegislations():
         sponsor_party = request.args.get("sponsor_party")
         bill_type = request.args.get("bill_type")
         sponsor_name = request.args.get("sponsor_name")
+        sponsor_name = sponsor_name.lower()
         status = request.args.get("status")
         
         filteringPhrase = ""
@@ -459,7 +460,7 @@ def filteredLegislations():
         if sponsor_name is not None:
             if filteringPhrase != "" :
                 filteringPhrase += " and "
-            filteringPhrase += f"sponsor_name like '%%{sponsor_name}%%'"
+            filteringPhrase += f"LOWER(sponsor_name) like '%%{sponsor_name}%%'"
         if filteringPhrase != "":
             filteringPhrase = "WHERE " + filteringPhrase
 

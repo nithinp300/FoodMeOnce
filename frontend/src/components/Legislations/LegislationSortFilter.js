@@ -294,8 +294,8 @@ class LegislationSortFilter extends Component {
                   onChange={this.handleFilter}
                 >
                   <option>Choose...</option>
-                  <option value="D">Democratic</option>
-                  <option value="R">Republican</option>
+                  <option value="Democratic">Democratic</option>
+                  <option value="Republican">Republican</option>
                 </select>
               </div>
               <div className="input-group input-group-sm">

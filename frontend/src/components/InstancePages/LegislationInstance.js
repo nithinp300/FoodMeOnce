@@ -57,7 +57,7 @@ class LegislationInstance extends Component {
     if (sponsor_party === "D") {
       return "Democratic";
     }
-    return "Republican";
+    return sponsor_party;
   };
 
   getImage = billType => {

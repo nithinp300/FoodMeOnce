@@ -6,6 +6,7 @@ import Pages from "../Pages";
 import "./css/Legislations.css";
 
 class Legislations extends Component {
+
   getStatus = enacted => {
     if (enacted != null) {
       return "Enacted";
@@ -31,7 +32,7 @@ class Legislations extends Component {
     if (sponsor_party === "D") {
       return "Democratic";
     }
-    return "Republican";
+    return sponsor_party;
   };
 
   state = {

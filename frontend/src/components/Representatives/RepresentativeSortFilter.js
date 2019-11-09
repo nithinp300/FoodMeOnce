@@ -268,8 +268,9 @@ class representativeSortFilter extends Component {
                   onChange={this.handleFilter}
                 >
                   <option>Choose...</option>
-                  <option value="D">Democratic</option>
-                  <option value="R">Republican</option>
+                  <option value="Democratic">Democratic</option>
+                  <option value="Republican">Republican</option>
+                  <option value="Independent">Independent</option>
                 </select>
               </div>
               <State handleFilter={this.handleFilter} />
