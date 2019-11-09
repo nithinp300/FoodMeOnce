@@ -23,7 +23,7 @@ class AboutUs extends React.Component{
     var Gyuwon = [0,0,30]
     var Shubhendra = [0,0,6]
     var Brian = [0,0,0]
-    var Nithin = [0,0,6]
+    var Nithin = [0,0,24]
     var totalIssues = 0
     var totalCommits = 0
     var closedIssues = 0
@@ -93,7 +93,7 @@ async grabCommits(){
   fetch("https://gitlab.com/api/v4/projects/14463226/repository/commits?per_page=100&page=" + page)
       .then(res => res.json())
       .then(res => {
-        
+
         res.forEach(commit => {
           this.state.totalCommits += 1
           switch (commit.committer_name){
