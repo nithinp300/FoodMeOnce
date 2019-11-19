@@ -467,6 +467,18 @@
         ["xpath=//div[7]/button", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "a1800568-4b21-4fb0-8eaa-d3875baa87ce",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.legislation-desc:nth-child(1) > span",
+      "targets": [
+        ["css=.legislation-desc:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='leg_inst']/div/span", "xpath:idRelative"],
+        ["xpath=//a/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Agriculture Improvement Act of 2018')]", "xpath:innerText"]
+      ],
+      "value": "30000"
     }]
   }, {
     "id": "f49f1232-5876-419f-88a9-a1c8f4f9678f",
@@ -591,6 +603,30 @@
         ["xpath=//div[2]/form/div[5]/button", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "f58d3c5d-60dd-40e2-b4f2-b302defeeb69",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='rep_inst']/div/h5/span", "xpath:idRelative"],
+        ["xpath=//h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Adriano Espaillat')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "61fe991b-e5a6-4cc2-ab77-c68ea5ab5d61",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span",
+      "targets": [
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=(//div[@id='rep_inst']/div/h5/span)[2]", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Alan Lowenthal')]", "xpath:innerText"]
+      ],
+      "value": ""
     }]
   }, {
     "id": "5785e820-9e1b-485b-a180-2c20e490588b",
@@ -618,16 +654,16 @@
       ],
       "value": ""
     }, {
-      "id": "82e5d041-a0d5-4eab-b352-38dfff4b7854",
+      "id": "bd885941-afe0-416f-aa73-a413d0e3314b",
       "comment": "",
       "command": "click",
-      "target": "name=state",
+      "target": "name=date_of_birth-DESC",
       "targets": [
-        ["name=state", "name"],
-        ["css=div:nth-child(4) > input", "css:finder"],
-        ["xpath=//input[@name='state']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/div/div/div[2]/div/form/div[4]/input", "xpath:idRelative"],
-        ["xpath=//div[4]/input", "xpath:position"]
+        ["name=date_of_birth-DESC", "name"],
+        ["css=div:nth-child(1) > input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='date_of_birth-DESC']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -646,24 +682,24 @@
       "id": "9c5f8919-6f8e-4733-ba50-fa288ad3ecd5",
       "comment": "",
       "command": "waitForElementPresent",
-      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span",
       "targets": [
-        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
-        ["xpath=(//div[@id='rep_inst']/div/h5/span)[2]", "xpath:idRelative"],
-        ["xpath=//a[2]/div/div/h5/span", "xpath:position"],
-        ["xpath=//span[contains(.,'Robert Aderholt')]", "xpath:innerText"]
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='rep_inst']/div/h5/span", "xpath:idRelative"],
+        ["xpath=//h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Alexandria Ocasio-Cortez')]", "xpath:innerText"]
       ],
       "value": "30000"
     }, {
       "id": "08b8d48a-2b59-4c09-b001-8313db241cad",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span",
+      "target": "css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span",
       "targets": [
-        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(1) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
-        ["xpath=//div[@id='rep_inst']/div/h5/span", "xpath:idRelative"],
-        ["xpath=//h5/span", "xpath:position"],
-        ["xpath=//span[contains(.,'Gary Palmer')]", "xpath:innerText"]
+        ["css=.representatives-container:nth-child(2) > .button-container:nth-child(2) > #rep_inst .card-title:nth-child(1) > span", "css:finder"],
+        ["xpath=(//div[@id='rep_inst']/div/h5/span)[2]", "xpath:idRelative"],
+        ["xpath=//a[2]/div/div/h5/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Abby Finkenauer')]", "xpath:innerText"]
       ],
       "value": ""
     }]

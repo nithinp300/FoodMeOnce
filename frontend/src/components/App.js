@@ -5,6 +5,7 @@ import Representatives from "./Representatives";
 import Legislation from "./Legislations";
 import SplashPage from "./SplashPage";
 import AboutUs from "./AboutUs";
+import Visualizations from "./Visualizations"
 import DistrictInstance from "./InstancePages/DistrictInstance";
 import RepresentativeInstance from "./InstancePages/RepresentativeInstance";
 import LegislationInstance from "./InstancePages/LegislationInstance";
@@ -54,6 +55,7 @@ class App extends Component {
               <Nav.Link href="/Representatives">Representatives</Nav.Link>
               <Nav.Link href="/Legislations">Legislation</Nav.Link>
               <Nav.Link href="/About Us">About Us</Nav.Link>
+              <Nav.Link href="/Visualizations">Visualizations</Nav.Link>
             </Nav>
             <form
               className="form-inline my-2 my-lg-0"
@@ -97,6 +99,7 @@ class App extends Component {
             <Route path="/Legislations" component={Legislation} />
             <Route path="/search" component={SearchPage} />
             <Route path="/About Us" component={AboutUs} />
+            <Route path="/Visualizations" component={Visualizations}/>
             <Route path="/error" component={ErrorPage} />
             <Redirect to="/error" />
           </Switch>
