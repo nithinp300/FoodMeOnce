@@ -61,8 +61,8 @@ def db_session(engine):
 
 def extract_json(data_json, api_number):
     print("extract_json\n")
-    if api_number in (0, 4):
-        return json_normalize(data_json, "members")
+    # if api_number in (0, 4):
+    #     return json_normalize(data_json, "members")
     df = json_normalize(data_json, "bills")
     df_2 = df["cosponsors_by_party"].apply(pd.Series)
     df["cosponsors_by_party_R"] = df_2["R"]
@@ -134,17 +134,17 @@ def load_data(schema, table, conn, data, engine):
 
 if __name__ == "__main__":
     apis = apis.apis
-    table_names = ["house_representatives", "legislations", "senators"]
+    table_names = ["new_legislations"]
     db_objects = pgadminconnect()
     for api_counter in range(0, len(apis)):
         df = API_response(apis[api_counter], api_counter)
         print(df.head(3))
+        print(df.shape)
         # if api_counter == 0:
         #     load_data('staging', table_names[0], db_objects[0], df, db_objects[1])
         #     # print('staging', table_names[0], db_objects[0], df.shape, db_objects[1])
-        # elif api_counter == len(apis)-1:
-        #     load_data('staging', table_names[2], db_objects[0], df, db_objects[1])
-        #     # print('staging', table_names[2], db_objects[0], df.shape, db_objects[1])
+        load_data('staging', table_names[0], db_objects[0], df, db_objects[1])
+        # print('staging', table_names[0], db_objects[0], df.shape, db_objects[1])
         # else:
         #     load_data('staging', table_names[1], db_objects[0], df, db_objects[1])
         #     # print('staging', table_names[1], db_objects[0], df.shape, db_objects[1])
