@@ -7,18 +7,18 @@ import * as d3 from 'd3';
 class LegislationHistogram extends React.Component {
 
 componentDidMount() {
-        const data = [ 2, 4, 2, 6, 8 ]
-        this.drawBarChart(data)
+        const data = this.props.data;
+        this.drawBarChart(data);
     }
     drawBarChart(data)  {
-  const canvasHeight = 400
-const canvasWidth = 600
-const scale = 20
+  const canvasHeight = this.props.height;
+const canvasWidth = this.props.width;
+const scale = this.props.scale;
   const svgCanvas = d3.select(this.refs.canvas)
     .append("svg")
     .attr("width", canvasWidth)
     .attr("height", canvasHeight)
-    .style("border", "1px solid black")
+    .style("border", "1px solid black");
 svgCanvas.selectAll("rect")
     .data(data).enter()
         .append("rect")
@@ -26,13 +26,13 @@ svgCanvas.selectAll("rect")
         .attr("height", (datapoint) => datapoint * scale)
         .attr("fill", "orange")
         .attr("x", (datapoint, iteration) => iteration * 45)
-        .attr("y", (datapoint) => canvasHeight - datapoint * scale)
+        .attr("y", (datapoint) => canvasHeight - datapoint * scale);
       svgCanvas.selectAll("text")
     .data(data).enter()
         .append("text")
         .attr("x", (dataPoint, i) => i * 45 + 10)
         .attr("y", (dataPoint, i) => canvasHeight - dataPoint * scale - 10)
-        .text(dataPoint => dataPoint)
+        .text(dataPoint => "State")
 }
     render() { return <div ref="canvas"></div> }
 }
