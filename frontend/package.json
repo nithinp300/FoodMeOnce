@@ -17,7 +17,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
     "react-table": "^6.10.3",
-    "react-twitter-widgets": "^1.7.1"
+    "react-twitter-widgets": "^1.7.1",
+    "topojson": "^3.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
