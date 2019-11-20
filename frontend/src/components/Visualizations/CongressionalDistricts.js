@@ -1,74 +1,82 @@
-// import react
-import * as React from 'react';
-// be sure to import d3 - run npm install --save d3 first!
-import * as d3 from 'd3';
-// also import topojson so we work with topologically clean geographic files
-// this will improve performance and reduce load time
-// npm install --save topojson
-import * as topojson from 'topojson'
-// also import lodash
-import * as _ from 'lodash';
-// and import a custom component called State
-// we'll get to this a bit later
-// import State from './State';
+import React, { Component } from 'react';
+import * as d3 from "d3";
+import states from "./states"
+import axios from 'axios';
 
-class CongressionalDistricts extends React.Component {
+class CongressionalDistricts extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoaded: false,
+      items: null
+    };
+    this.drawChart = this.drawChart.bind(this);
+  }
 
-//   constructor() {
-//     super()
-//     this.state = { us: [] }
-//     this.generateStatePath = this.generateStatePath.bind(this)
-//   }
-  
-//   componentDidMount() {
-//     // send off a request for the topojson data
-//     d3.json("https://d3js.org/us-10m.v1.json", (error, us) => {
-//       if (error) throw error;
-      
-//       // store the data in state
-//       this.setState({
-//         us
-//       })
-      
-//       // I prefer to use Redux for state management - if you're taking
-//       // that approach this would be a good place to dispatch an action, i.e.
-//       //this.props.dispatch(actions.sendAPIDataToReducer({ us }))
-//     })
-//   }
-  
-//   // let's define a method for rendering paths for each state
-//   generateStatePath(geoPath, data) {
-//     const generate = () => {
-//       let states = _.map(data, (feature, i) => {
-        
-//         // generate the SVG path from the geometry
-//         let path = geoPath(feature);
-//         return <State path={path} key={i} />
-//       })
-//       return states;
-//     }
-    
-//     let statePaths = generate()
-//     return statePaths;
-//   }
-  
+  drawChart() {
+    function tooltipHtml(n, d){
+      var htmlTable =  "<h4>"+n+"</h4><table>";
+      htmlTable +="<tr><td><b>Total</b></td><td><b>"+(d.total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"</b></td></tr></table>";
+      return htmlTable;
+    }
+
+   
+    var sampleData = {};
+
+    ["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC",  
+    "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA",  
+    "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE",  
+    "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC",  
+    "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"].forEach(function(d){
+
+        var sum = 0
+
+        sampleData[d]={total: sum, emissionsCollection: 0,
+            color:d3.interpolate("#98F198 ", "#6B0000")(sum/123456789)};
+      });
+
+    states.draw("#statesvgem", sampleData, tooltipHtml);
+
+    d3.select(window.frameElement).style("height", "600px");
+  }
+
+
+  getEmissionsData(){
+    let statecounts = {"AK": [0], "AL": [0], "AR": [0], "AZ": [0], "CA": [0], "CO": [0], "CT": [0], "DC": [0],  
+    "DE": [0], "FL": [0], "GA": [0], "HI": [0], "IA": [0], "ID": [0], "IL": [0], "IN": [0], "KS": [0], "KY": [0], "LA": [0],  
+    "MA": [0], "MD": [0], "ME": [0], "MI": [0], "MN": [0], "MO": [0], "MS": [0], "MT": [0], "NC": [0], "ND": [0], "NE": [0],  
+    "NH": [0], "NJ": [0], "NM": [0], "NV": [0], "NY": [0], "OH": [0], "OK": [0], "OR": [0], "PA": [0], "RI": [0], "SC": [0],  
+    "SD": [0], "TN": [0], "TX": [0], "UT": [0], "VA": [0], "VT": [0], "WA": [0], "WI": [0], "WV": [0], "WY": [0]};
+
+    // axios.get('https://api.engageclimatechange.world/states').then(response => {
+    //   let states = response.data.objects
+    //   for (var statesKey in states) {
+    //     let emissions = states[statesKey].emissions;
+    //     for (var emissionsKey in emissions) {
+    //       let yearData = emissions[emissionsKey]
+    //       statecounts[yearData.state][0] += parseInt(yearData.data)
+    //     }
+    //   }
+
+    this.setState({isLoaded: true, items: statecounts});
+    // });
+    return statecounts;
+  }
+
+  componentDidMount() {
+    this.getEmissionsData();
+  }
+
   render() {
-    
-    // // create a geographic path renderer
-    // let geoPath = d3.geoPath()
-    // let data = this.state.us // or, the reference to the data in the reducer, whichever you are using
-    
-    // // call the generateStatePaths method
-    // let statePaths = this.generateStatePaths(geoPath, data)
-    
+    if(this.state.isLoaded){
+      this.drawChart();
+    }
     return (
-        // <svg id='map-container'>
-        //     <g id='states-container'>
-        //         {statePaths}
-        //     </g>
-        // </svg>
-        <p> CongressionalDistricts</p>
-    ); 
+          <div>
+          <div width="100" height="100" id="tooltip"></div>
+          <svg id="statesvgem" width="960" height="600" style={{marginTop: '0%'}}></svg>
+      </div>
+    );
   }
 }
 
