@@ -16,7 +16,7 @@ class CongressionalDistricts extends Component {
   drawChart() {
     function tooltipHtml(n, d){
       var htmlTable =  "<h4>"+n+"</h4><table>";
-      htmlTable +="<tr><td><b>Total</b></td><td><b>"+(d.total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"</b></td></tr></table>";
+      htmlTable +="<tr><td><b>Total</b></td><td><b>"+ 0 +"</b></td></tr></table>";
       return htmlTable;
     }
 
