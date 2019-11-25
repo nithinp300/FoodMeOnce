@@ -79,13 +79,13 @@ def districts():
         page = 1
     if numLimit is None:
         numLimit = 8
-    actualPage = (int(page) - 1) * numLimit
+    actualPage = (int(page) - 1) * int(numLimit)
     data = con.execute(
-        f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) order by d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
+        f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) order by d.state, d.congressional_district LIMIT {numLimit} OFFSET {str(actualPage)}"
     )
     pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
     for row in pages:
-        pages = ceil(int(row["pages"]) / numLimit)
+        pages = ceil(int(row["pages"]) / int(numLimit))
     resultData = [dict(r) for r in data]
     metaData = {"currentPage": page, "numPages": pages}
     return jsonify({"data": resultData, "metaData": metaData})
@@ -99,15 +99,15 @@ def representatives():
         page = 1
     if numLimit is None:
         numLimit = 8
-    actualPage = (int(page) - 1) * numLimit
+    actualPage = (int(page) - 1) * int(numLimit)
     data = con.execute(
-        f"SELECT * FROM application.members ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}"
+        f"SELECT * FROM application.members ORDER BY application.members.full_name LIMIT {numLimit} OFFSET {actualPage}"
     )
     pages = con.execute(
         "SELECT COUNT(*) AS pages FROM application.members"
     )
     for row in pages:
-        pages = ceil(int(row["pages"]) / numLimit)
+        pages = ceil(int(row["pages"]) / int(numLimit))
     resultData = [dict(r) for r in data]
     metaData = {"currentPage": page, "numPages": pages}
     return jsonify({"data": resultData, "metaData": metaData})
@@ -120,15 +120,15 @@ def legislations():
         page = 1
     if numLimit is None:
         numLimit = 8
-    actualPage = (int(page) - 1) * numLimit
+    actualPage = (int(page) - 1) * int(numLimit)
     data = con.execute(
-        f"SELECT * FROM application.legislations  order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
+        f"SELECT * FROM application.legislations  order by application.legislations.short_title LIMIT {numLimit} OFFSET {str(actualPage)}"
     )
     pages = con.execute(
         "SELECT COUNT(*) AS pages FROM application.legislations"
     )
     for row in pages:
-        pages = ceil(int(row["pages"]) / numLimit)
+        pages = ceil(int(row["pages"]) / int(numLimit))
     resultData = [dict(r) for r in data]
     metaData = {"currentPage": page, "numPages": pages}
     return jsonify({"data": resultData, "metaData": metaData})
@@ -236,13 +236,13 @@ def sortedDistricts():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
+        actualPage = (int(page) - 1) * int(numLimit)
         data = con.execute(
-            f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) order by d.{attribute} {order} LIMIT 8 OFFSET {str(actualPage)}"
+            f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) order by d.{attribute} {order} LIMIT {numLimit} OFFSET {str(actualPage)}"
         )
         pages = con.execute("SELECT COUNT(*) AS pages FROM application.districts")
         for row in pages:
-            pages = ceil(int(row["pages"]) / numLimit)
+            pages = ceil(int(row["pages"]) / int(numLimit))
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
         return jsonify({"data": resultData, "metaData": metaData, "sorted": attribute + "-" + order})
@@ -265,15 +265,15 @@ def sortedRepresentatives():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
+        actualPage = (int(page) - 1) * int(numLimit)
         data = con.execute(
-            f"SELECT * FROM application.members ORDER BY application.members.{attribute} {order} LIMIT 8 OFFSET {actualPage}"
+            f"SELECT * FROM application.members ORDER BY application.members.{attribute} {order} LIMIT {numLimit} OFFSET {actualPage}"
         )
         pages = con.execute(
             "SELECT COUNT(*) AS pages FROM application.members"
         )
         for row in pages:
-            pages = ceil(int(row["pages"]) / numLimit)
+            pages = ceil(int(row["pages"]) / int(numLimit))
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
         return jsonify({"data": resultData, "metaData": metaData, "sorted": attribute + "-" + order})
@@ -296,15 +296,15 @@ def sortedLegislations():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
+        actualPage = (int(page) - 1) * int(numLimit)
         data = con.execute(
-            f"SELECT * FROM application.legislations  order by application.legislations.{attribute} {order} LIMIT 8 OFFSET {str(actualPage)}"
+            f"SELECT * FROM application.legislations  order by application.legislations.{attribute} {order} LIMIT {numLimit} OFFSET {str(actualPage)}"
         )
         pages = con.execute(
             "SELECT COUNT(*) AS pages FROM application.legislations"
         )
         for row in pages:
-            pages = ceil(int(row["pages"]) / numLimit)
+            pages = ceil(int(row["pages"]) / int(numLimit))
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
         return jsonify({"data": resultData, "metaData": metaData, "sorted": attribute + "-" + order})
@@ -354,12 +354,12 @@ def filteredDistricts():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
-        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) {filteringPhrase} order by d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
+        actualPage = (int(page) - 1) * int(numLimit)
+        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) {filteringPhrase} order by d.state, d.congressional_district LIMIT {numLimit} OFFSET {str(actualPage)}"
         data = con.execute(query)
         pages = con.execute(f"SELECT COUNT(d.*) AS pages FROM (SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) {filteringPhrase} order by d.state, d.congressional_district) AS d")
         for row in pages:
-            pages = ceil(int(row["pages"]) / numLimit)
+            pages = ceil(int(row["pages"]) / int(numLimit))
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
         return jsonify({"data": resultData, "metaData": metaData})
@@ -404,12 +404,12 @@ def filteredRepresentatives():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
-        data = con.execute(f"SELECT * FROM application.members {filteringPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}")
+        actualPage = (int(page) - 1) * int(numLimit)
+        data = con.execute(f"SELECT * FROM application.members {filteringPhrase} ORDER BY application.members.full_name LIMIT {numLimit} OFFSET {actualPage}")
         pages = con.execute(f"SELECT COUNT(m.*) AS pages FROM (SELECT * FROM application.members {filteringPhrase} ORDER BY application.members.full_name) AS m")
         print("done here")
         for row in pages:
-            pages = ceil(int(row["pages"]) / numLimit)
+            pages = ceil(int(row["pages"]) / int(numLimit))
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
         return jsonify({"data": resultData, "metaData": metaData})
@@ -468,13 +468,13 @@ def filteredLegislations():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
-        query = f"SELECT * FROM application.legislations {filteringPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
+        actualPage = (int(page) - 1) * int(numLimit)
+        query = f"SELECT * FROM application.legislations {filteringPhrase} order by application.legislations.short_title LIMIT {numLimit} OFFSET {str(actualPage)}"
         print(query)
         data = con.execute(query)
         pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations  {filteringPhrase} order by application.legislations.short_title) AS l")
         for row in pages:
-            pages = ceil(int(row["pages"]) / numLimit)
+            pages = ceil(int(row["pages"]) / int(numLimit))
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
         return jsonify({"data": resultData, "metaData": metaData})
@@ -506,13 +506,13 @@ def searchDistricts():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
-        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase} ORDER BY d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
+        actualPage = (int(page) - 1) * int(numLimit)
+        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase} ORDER BY d.state, d.congressional_district LIMIT {numLimit} OFFSET {str(actualPage)}"
         data = con.execute(query)
         pageQuery = f"SELECT COUNT(d.*) AS pages FROM (SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase}) AS d"
         pages = con.execute(pageQuery)
         for row in pages:
-            pages = ceil(int(row["pages"]) / numLimit)
+            pages = ceil(int(row["pages"]) / int(numLimit))
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
         return jsonify({"data": resultData, "metaData": metaData})
@@ -545,12 +545,12 @@ def searchRepresentatives():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
-        query = f"SELECT * FROM application.members WHERE {searchPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}"
+        actualPage = (int(page) - 1) * int(numLimit)
+        query = f"SELECT * FROM application.members WHERE {searchPhrase} ORDER BY application.members.full_name LIMIT {numLimit} OFFSET {actualPage}"
         data = con.execute(query)
         pages = con.execute(f"SELECT COUNT(m.*) AS pages FROM (SELECT * FROM application.members WHERE {searchPhrase}) AS m")
         for row in pages:
-            pages = ceil(int(row["pages"]) / numLimit)
+            pages = ceil(int(row["pages"]) / int(numLimit))
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
         return jsonify({"data": resultData, "metaData": metaData})
@@ -581,12 +581,12 @@ def searchLegislations():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
-        query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
+        actualPage = (int(page) - 1) * int(numLimit)
+        query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT {numLimit} OFFSET {str(actualPage)}"
         data = con.execute(query)
         pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title) AS l")
         for row in pages:
-            pages = ceil(int(row["pages"]) / numLimit)
+            pages = ceil(int(row["pages"]) / int(numLimit))
         resultData = [dict(r) for r in data]
         metaData = {"currentPage": page, "numPages": pages}
         return jsonify({"data": resultData, "metaData": metaData})
@@ -617,7 +617,7 @@ def searchEntire():
             page = 1
         if numLimit is None:
             numLimit = 8
-        actualPage = (int(page) - 1) * numLimit
+        actualPage = (int(page) - 1) * int(numLimit)
         numPages = 0
 
         searchPhrase = ""
@@ -628,11 +628,11 @@ def searchEntire():
         searchPhrase = generatePhrase(searchPhrase, "lower(CAST(median_age as VARCHAR(11))) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(m.full_name) LIKE", attributes)
         
-        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase} ORDER BY d.state, d.congressional_district LIMIT 8 OFFSET {str(actualPage)}"
+        query = f"SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase} ORDER BY d.state, d.congressional_district LIMIT {numLimit} OFFSET {str(actualPage)}"
         data = con.execute(query)
         pages = con.execute(f"SELECT COUNT(d.*) AS pages FROM (SELECT d.*, m.full_name  FROM application.districts AS d JOIN application.members AS m ON d.state = m.state AND cast(d.congressional_district as INTEGER) = cast(m.district as INTEGER) WHERE {searchPhrase}) AS d")
         for row in pages:
-            numPages = max(numPages, ceil(int(row["pages"]) / numLimit))
+            numPages = max(numPages, ceil(int(row["pages"]) / int(numLimit)))
         districts = [dict(r) for r in data]
 
         searchPhrase = ""
@@ -644,11 +644,11 @@ def searchEntire():
         searchPhrase = generatePhrase(searchPhrase, "lower(title) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(CAST(district as VARCHAR(4))) LIKE", attributes)
 
-        query = f"SELECT * FROM application.members WHERE {searchPhrase} ORDER BY application.members.full_name LIMIT 8 OFFSET {actualPage}"
+        query = f"SELECT * FROM application.members WHERE {searchPhrase} ORDER BY application.members.full_name LIMIT {numLimit} OFFSET {actualPage}"
         data = con.execute(query)
         pages = con.execute(f"SELECT COUNT(m.*) AS pages FROM (SELECT * FROM application.members WHERE {searchPhrase}) AS m")
         for row in pages:
-            numPages = max(numPages, ceil(int(row["pages"]) / numLimit))
+            numPages = max(numPages, ceil(int(row["pages"]) / int(numLimit)))
         representatives = [dict(r) for r in data]
 
         searchPhrase = ""
@@ -657,11 +657,11 @@ def searchEntire():
         searchPhrase = generatePhrase(searchPhrase, "lower(sponsor_party) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(bill_type) LIKE", attributes)
         searchPhrase = generatePhrase(searchPhrase, "lower(sponsor_name) LIKE", attributes)
-        query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT 8 OFFSET {str(actualPage)}"
+        query = f"SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title LIMIT {numLimit} OFFSET {str(actualPage)}"
         data = con.execute(query)
         pages = con.execute(f"SELECT COUNT(l.*) AS pages FROM (SELECT * FROM application.legislations WHERE {searchPhrase} order by application.legislations.short_title) AS l")
         for row in pages:
-            numPages = max(numPages, ceil(int(row["pages"]) / numLimit))
+            numPages = max(numPages, ceil(int(row["pages"]) / int(numLimit)))
         legislations = [dict(r) for r in data]
         
         return jsonify({"districts": districts, "representatives": representatives, "legislations": legislations, "currentPage": page, "numPages": numPages})
