@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as d3 from "d3";
-import states from "./states"
+import districts from "./districts"
 import axios from 'axios';
 
 class CongressionalDistricts extends Component {
@@ -35,7 +35,7 @@ class CongressionalDistricts extends Component {
             color:d3.interpolate("#98F198 ", "#6B0000")(sum/123456789)};
       });
 
-    states.draw("#statesvgem", sampleData, tooltipHtml);
+    districts.draw("#statesvgem", sampleData, tooltipHtml);
 
     d3.select(window.frameElement).style("height", "600px");
   }
