@@ -74,7 +74,7 @@ class CongressionalDistricts extends Component {
     return (
           <div>
           <div width="100" height="100" id="tooltip"></div>
-          <svg id="statesvgem" width="960" height="600" style={{marginTop: '0%'}}></svg>
+          <svg id="statesvgem" width="1500" height="1500" style={{marginTop: '0%'}}></svg>
       </div>
     );
   }
