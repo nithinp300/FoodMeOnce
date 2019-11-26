@@ -16,8 +16,9 @@ class RepresentativesBubbleChart extends React.Component {
           let legislation = legislations[i];
           let name = legislation["sponsor_name"];
           let party = legislation["sponsor_party"];
+          let state = legislation["sponsor_state"];
           if (dict[name] == null) {
-            dict[name] = { Name: name, Count: 0, Party: party };
+            dict[name] = { Name: name, Count: 0, Party: party, State: state };
           }
           dict[name]["Count"] += 1;
         }
@@ -64,7 +65,7 @@ class RepresentativesBubbleChart extends React.Component {
       });
 
     node.append("title").text(function(d) {
-      return d.data.Name + ": " + d.data.Count;
+      return d.data.Name + " (" + d.data.State + ")" + ": " + d.data.Count;
     });
 
     node

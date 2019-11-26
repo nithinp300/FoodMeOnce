@@ -77,7 +77,6 @@ class Visualizations extends React.Component {
           scale={this.state.scale}
         />)}
           </div>
-
       </div>
     );
   }

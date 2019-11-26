@@ -54,8 +54,8 @@ class App extends Component {
               </Nav.Link>
               <Nav.Link href="/Representatives">Representatives</Nav.Link>
               <Nav.Link href="/Legislations">Legislation</Nav.Link>
-              <Nav.Link href="/About Us">About Us</Nav.Link>
               <Nav.Link href="/Visualizations">Visualizations</Nav.Link>
+              <Nav.Link href="/About Us">About Us</Nav.Link>
             </Nav>
             <form
               className="form-inline my-2 my-lg-0"
