@@ -440,8 +440,12 @@ var districtShapes=[
         // {id:"Dividing_line",n:"Dividing Lines",     d:"M 551.04183, 754.875 L 551.04183, 669.71875 L 393.63558, 578.875 L 240.38558, 578.875 L 240.38558, 529.625 L 182.66683, 496.3125 L -20.39567, 496.3125 M -20.39567, 496.3125 L -20.39567, 496.3125 z M 360.66683, 745.84375 L 360.66683, 664.28125 L 296.54183, 638.8125 L 296.54183, 579.95679"}
 ];
 var districts = {};
-
+var globData = {};
 districts.draw = function(id, data, toolTip) {
+
+    globData = data
+    // console.log("DATA")
+    // console.log(globData)
     d3.select(id).selectAll(".state")
         .data(districtShapes).enter().append("path").attr("class", "state").attr("d", function(d) {
             return d.d;
@@ -458,8 +462,15 @@ districts.draw = function(id, data, toolTip) {
 
     function mouseOver(d) {
         d3.select("#tooltip").transition().duration(200).style("opacity", .9);
+        var temp = d.id.slice(0,2) + d.id.slice(3);
+        if(d.id.slice(3) === "AL"){
+            temp = temp.slice(0,2) + "00"
+        }
 
-        d3.select("#tooltip").html(toolTip(d.n,1))
+        // console.log(globData)
+        console.log(globData[temp])
+
+        d3.select("#tooltip").html(toolTip(d.n,globData[temp]))
             .style("left", (d3.event.pageX) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
     }

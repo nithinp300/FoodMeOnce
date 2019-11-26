@@ -20,7 +20,7 @@ class CongressionalDistricts extends Component {
     function tooltipHtml(n, d) {
       var htmlTable = "<h4>" + n + "</h4><table>";
       htmlTable +=
-        "<tr><td><b>SNAP/Poverty: </b></td><td><b>" + 0 + "</b></td></tr></table>";
+        "<tr><td><b>SNAP/Poverty: </b></td><td><b>" + d.SNAP + "</b></td></tr></table>";
       return htmlTable;
     }
 
@@ -469,7 +469,6 @@ if(this.state.dataReady) {
           SNAP: data.get(d.slice(0,2)).get(d.slice(2,4)),
           color: d3.interpolate("#98F198 ", "#6B0000")(SNAP)
         };
-        console.log(mapData[d])
       });
   }
 
