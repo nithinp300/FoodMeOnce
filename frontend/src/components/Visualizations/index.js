@@ -17,7 +17,7 @@ class Visualizations extends React.Component {
   render() {
     return (
       <div>
-        <p>Visualizations</p>
+        <h1 className="text-center mt-2">Visualizations</h1>
         <CongressionalDistricts />
         <RepresentativesBubbleChart />
         <LegislationHistogram

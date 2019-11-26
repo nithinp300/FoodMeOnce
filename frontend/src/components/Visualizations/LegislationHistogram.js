@@ -1,44 +1,116 @@
 // import react
 import * as React from "react";
 // be sure to import d3 - run npm install --save d3 first!
-import * as d3 from "d3";
+// import * as d3 from "d3";
+import { scaleBand, scaleLinear } from "d3-scale";
+import Axes from "./Axes";
+import Bars from "./Bars";
 
 class LegislationHistogram extends React.Component {
+  state = {
+    loaded: false,
+    xScale: scaleBand(),
+    yScale: scaleLinear(),
+    data: [
+      {
+        state: "AK",
+        count: 12
+      },
+      {
+        state: "DL",
+        count: 5
+      },
+      {
+        state: "TX",
+        count: 6
+      },
+      {
+        state: "CA",
+        count: 6
+      },
+      {
+        state: "WA",
+        count: 9
+      },
+      {
+        state: "OH",
+        count: 10
+      }
+    ]
+  };
   componentDidMount() {
-    const data = this.props.data;
-    this.drawBarChart(data);
+    fetch("https://api.foodmeonce.me/Legislations?limit=500")
+      .then(res => res.json())
+      .then(res => res.data)
+      .then(data => {
+        const map = new Map();
+        data.forEach(each => {
+          if (map.has(each.sponsor_state)) {
+            map.set(each.sponsor_state, map.get(each.sponsor_state) + 1);
+          } else {
+            map.set(each.sponsor_state, 1);
+          }
+        });
+        const parsedData = [];
+        map.forEach((value, key, map) => {
+          parsedData.push({
+            state: key,
+            count: value
+          });
+        });
+        this.setState({
+          data: [...parsedData],
+          loaded: true
+        });
+      });
   }
-  drawBarChart(data) {
-    const canvasHeight = this.props.height;
-    const canvasWidth = this.props.width;
-    const scale = this.props.scale;
-    const svgCanvas = d3
-      .select(this.refs.canvas)
-      .append("svg")
-      .attr("width", canvasWidth)
-      .attr("height", canvasHeight)
-      .style("border", "1px solid black");
-    svgCanvas
-      .selectAll("rect")
-      .data(data)
-      .enter()
-      .append("rect")
-      .attr("width", 40)
-      .attr("height", datapoint => datapoint * scale)
-      .attr("fill", "orange")
-      .attr("x", (datapoint, iteration) => iteration * 45)
-      .attr("y", datapoint => canvasHeight - datapoint * scale);
-    svgCanvas
-      .selectAll("text")
-      .data(data)
-      .enter()
-      .append("text")
-      .attr("x", (dataPoint, i) => i * 45 + 10)
-      .attr("y", (dataPoint, i) => canvasHeight - dataPoint * scale - 10)
-      .text(dataPoint => "State");
-  }
+
   render() {
-    return <div className="text-center" ref="canvas"></div>;
+    if (!this.state.loaded) {
+      return <p className="text-center">Graph rendering...</p>;
+    }
+    const margins = { top: 50, right: 20, bottom: 100, left: 60 };
+
+    const svgDimensions = { width: 800, height: 500 };
+
+    const maxValue = Math.max(...this.state.data.map(d => d.count));
+
+    // scaleBand type
+    const xScale = this.state.xScale
+      .padding(0.5)
+      // scaleBand domain should be an array of specific values
+      // in our case, we want to use movie titles
+      .domain(this.state.data.map(d => d.state))
+      .range([margins.left, svgDimensions.width - margins.right]);
+
+    // scaleLinear type
+    const yScale = this.state.yScale
+      // scaleLinear domain required at least two values, min and max
+      .domain([0, maxValue])
+      .range([svgDimensions.height - margins.bottom, margins.top]);
+
+    return (
+      <svg
+        style={{ display: "block", margin: "auto" }}
+        width={svgDimensions.width}
+        height={svgDimensions.height}
+      >
+        <Axes
+          scales={{ xScale, yScale }}
+          margins={margins}
+          svgDimensions={svgDimensions}
+        />
+        <Bars
+          scales={{ xScale, yScale }}
+          margins={margins}
+          data={this.state.data}
+          maxValue={maxValue}
+          svgDimensions={svgDimensions}
+        />
+      </svg>
+    );
+
+    // return <div className="text-center" ref="canvas"></div>;
   }
 }
 

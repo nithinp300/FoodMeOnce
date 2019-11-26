@@ -444,8 +444,6 @@ var globData = {};
 districts.draw = function(id, data, toolTip) {
 
     globData = data
-    // console.log("DATA")
-    // console.log(globData)
     d3.select(id).selectAll(".state")
         .data(districtShapes).enter().append("path").attr("class", "state").attr("d", function(d) {
             return d.d;
@@ -466,9 +464,6 @@ districts.draw = function(id, data, toolTip) {
         if(d.id.slice(3) === "AL"){
             temp = temp.slice(0,2) + "00"
         }
-
-        // console.log(globData)
-        console.log(globData[temp])
 
         d3.select("#tooltip").html(toolTip(d.n,globData[temp]))
             .style("left", (d3.event.pageX) + "px")

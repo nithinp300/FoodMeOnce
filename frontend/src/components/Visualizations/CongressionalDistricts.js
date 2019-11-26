@@ -548,7 +548,6 @@ class CongressionalDistricts extends Component {
     fetch("https://api.foodmeonce.me/Districts?limit=439")
       .then(res => res.json())
       .then(res => {
-        console.log("res", res.data);
         res.data.forEach(cd => {
           const snap = parseFloat(cd.snap_rate);
           const poverty = parseFloat(cd.poverty_rate);
@@ -563,7 +562,6 @@ class CongressionalDistricts extends Component {
             data.set(cd.state_abbreviation, cdMap);
           }
         });
-        console.log(data);
         this.setState({ dataReady: true, data: data });
       });
   }
@@ -573,7 +571,7 @@ class CongressionalDistricts extends Component {
       this.drawChart();
     }
     return (
-      <div>
+      <div className="text-center">
         <div width="100" height="100" id="tooltip"></div>
         <svg
           id="statesvgem"
