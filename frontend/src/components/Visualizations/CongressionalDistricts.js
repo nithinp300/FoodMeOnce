@@ -475,7 +475,7 @@ class CongressionalDistricts extends Component {
 
       mapData[d] = {
         SNAP,
-        color: d3.interpolate("#98F198 ", "#6B0000")(SNAP)
+        color: d3.interpolate("#AF0000 ", "#28F209")(SNAP)
       };
     });
 

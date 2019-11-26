@@ -450,7 +450,15 @@ districts.draw = function(id, data, toolTip) {
         })
         .style("fill", function(d) {
             var abv = (d.id)
-            return 0x03fc07;
+            var temp = d.id.slice(0,2) + d.id.slice(3);
+            if(d.id.slice(3) === "AL"){
+            temp = temp.slice(0,2) + "00"
+            }
+            console.log("INFORMATION")
+            console.log(data[temp].color)
+            console.log(temp)
+            console.log("End")
+            return data[temp].color;
         })
         .on("mouseover", mouseOver).on("mouseout", mouseOut);
 
