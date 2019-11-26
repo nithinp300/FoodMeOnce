@@ -17,9 +17,12 @@ class Visualizations extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="text-center mt-2">Visualizations</h1>
+        <h1 className="text-center mt-2">Snap to Poverty Map of Congressional Districts</h1>
+        
         <CongressionalDistricts />
+        <h1 className="text-center mt-2">Legislation Per Congressmen</h1>
         <RepresentativesBubbleChart />
+        <h1 className="text-center mt-2">Legislations raised by state</h1>
         <LegislationHistogram
           data={this.state.data}
           width={this.state.width}
