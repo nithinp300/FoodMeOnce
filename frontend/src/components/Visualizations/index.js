@@ -13,13 +13,21 @@ class Visualizations extends React.Component {
     scale: 20
   };
 
+    handleCollapse = () => {
+    this.setState(prevState => ({
+      collapse: !prevState.collapse
+    }));
+  };
+
   componentDidMount() {}
 
   render() {
     return (
       <div>
         <h1 className="text-center mt-2">Congressional District SNAP/Poverty Ratio Heat Map</h1>
-        <CongressionalDistricts />
+
+              <CongressionalDistricts/>
+
         <h1 className="text-center mt-2">Legislation by Representative Bubble Chart</h1>
         <RepresentativesBubbleChart />
         <h1 className="text-center mt-2">Legislations by State Histogram</h1>
