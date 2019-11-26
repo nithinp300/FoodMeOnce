@@ -1,7 +1,4 @@
-// import react
 import * as React from "react";
-// be sure to import d3 - run npm install --save d3 first!
-// import * as d3 from "d3";
 import { scaleBand, scaleLinear } from "d3-scale";
 import Axes from "./Axes";
 import Bars from "./Bars";
@@ -11,32 +8,7 @@ class LegislationHistogram extends React.Component {
     loaded: false,
     xScale: scaleBand(),
     yScale: scaleLinear(),
-    data: [
-      {
-        state: "AK",
-        count: 12
-      },
-      {
-        state: "DL",
-        count: 5
-      },
-      {
-        state: "TX",
-        count: 6
-      },
-      {
-        state: "CA",
-        count: 6
-      },
-      {
-        state: "WA",
-        count: 9
-      },
-      {
-        state: "OH",
-        count: 10
-      }
-    ]
+    data: []
   };
   componentDidMount() {
     fetch("https://api.foodmeonce.me/Legislations?limit=500")
@@ -109,8 +81,6 @@ class LegislationHistogram extends React.Component {
         />
       </svg>
     );
-
-    // return <div className="text-center" ref="canvas"></div>;
   }
 }
 
