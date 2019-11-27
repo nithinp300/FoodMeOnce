@@ -55,7 +55,7 @@ class TestDBloader(TestCase):
     # test api urls
     def test_api_urls(self):
         num_urls = len(apis)
-        self.assertEquals(num_urls, 5)
+        self.assertEquals(num_urls, 4)
 
     # test state abbreviation hashes
     def test_state_abbreviations(self):
