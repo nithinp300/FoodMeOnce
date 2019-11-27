@@ -98,7 +98,7 @@ class RepresentativesBubbleChart extends React.Component {
 
     node
       .append("text")
-      .attr("dy", "1.3em")
+      .attr("dy", "2.4em")
       .style("text-anchor", "middle")
       .text(function(d) {
         return d.data.Count;
@@ -109,6 +109,19 @@ class RepresentativesBubbleChart extends React.Component {
       })
       .attr("fill", "white");
 
+      node
+        .append("text")
+        .attr("dy", "1.3em")
+        .style("text-anchor", "middle")
+        .text(function(d) {
+          return d.data.State;
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", function(d) {
+          return d.r / 6;
+        })
+        .attr("fill", "white");
+        
     d3.select(this.frameElement).style("height", diameter + "px");
   }
 
