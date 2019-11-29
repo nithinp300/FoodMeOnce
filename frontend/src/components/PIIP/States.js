@@ -71,9 +71,13 @@ states.draw = function(id, data, toolTip) {
     }
 
     function mouseOver(d) {
+        console.log("D Data")
+        // console.log(data)
+        // console.log(d)
+        // console.log(data[d.id])
         d3.select("#tooltip").transition().duration(200).style("opacity", .9);
 
-        d3.select("#tooltip").html(toolTip(d.n, data[d.id]))
+        d3.select("#tooltip").html(toolTip(d.n, data[d.id].num))
             .style("left", (d3.event.pageX) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
     }

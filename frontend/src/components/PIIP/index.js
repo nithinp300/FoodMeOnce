@@ -36,7 +36,17 @@ class PIIP extends React.Component {
   render() {
     return (
       <div>
-        <p> PIIP Visualizations</p>
+        <h1 className="text-center mt-2">US Map of State Recreation Diversity</h1>
+          <div className="sorting-container">
+            <button
+              className="ml-2 btn btn-secondary"
+              onClick={this.handleCollapse_1}
+            >
+              {this.state.collapse_1 ? "-" : "+"}
+            </button>
+              {this.state.collapse_1 && (
+            <PIIP_USMAP/>)}
+          </div>
       </div>
     );
   }
