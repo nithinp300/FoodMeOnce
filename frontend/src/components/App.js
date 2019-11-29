@@ -11,6 +11,7 @@ import RepresentativeInstance from "./InstancePages/RepresentativeInstance";
 import LegislationInstance from "./InstancePages/LegislationInstance";
 import ErrorPage from "./Error";
 import SearchPage from "./Search";
+import PIIP from "./PIIP"
 //import logo from "././images";
 import { Navbar, Nav } from "react-bootstrap";
 
@@ -54,7 +55,8 @@ class App extends Component {
               </Nav.Link>
               <Nav.Link href="/Representatives">Representatives</Nav.Link>
               <Nav.Link href="/Legislations">Legislation</Nav.Link>
-              <Nav.Link href="/Visualizations">Visualizations</Nav.Link>
+              <Nav.Link href="/Visualizations/Ours">Our Visualizations</Nav.Link>
+              <Nav.Link href="/Visualizations/Customer"> Customer Team Visualizations</Nav.Link>
               <Nav.Link href="/About Us">About Us</Nav.Link>
             </Nav>
             <form
@@ -99,7 +101,8 @@ class App extends Component {
             <Route path="/Legislations" component={Legislation} />
             <Route path="/search" component={SearchPage} />
             <Route path="/About Us" component={AboutUs} />
-            <Route path="/Visualizations" component={Visualizations}/>
+            <Route exact path="/Visualizations/Ours" component={Visualizations}/>
+            <Route exact path="/Visualizations/Customer" component={PIIP}/>
             <Route path="/error" component={ErrorPage} />
             <Redirect to="/error" />
           </Switch>
