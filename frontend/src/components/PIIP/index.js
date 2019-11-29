@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styling from "./css/styling.css";
 import * as d3 from "d3";
 
 import PIIP_USMAP from "./PIIP_USMAP";

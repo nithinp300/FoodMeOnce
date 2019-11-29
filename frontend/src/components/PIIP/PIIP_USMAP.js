@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as d3 from "d3";
 import states from "./States";
 import axios from "axios";
-
+import "./css/CongressionalDistricts.css";
 
 class PIIP_USMAP extends Component {
   constructor(props) {

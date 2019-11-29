@@ -38,7 +38,6 @@ class Visualizations extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="welcome"> Welcome to the Visualizations for Food Me Once, to see the Visualizations of our Customer team Put It in Park click <a> here</a></h1>
         <h1 className="text-center mt-2">Congressional District SNAP/Poverty Ratio Heat Map</h1>
           <div className="sorting-container">
             <button
