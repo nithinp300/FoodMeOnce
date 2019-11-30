@@ -3,6 +3,7 @@ import styling from "./css/styling.css";
 import * as d3 from "d3";
 
 import PIIP_USMAP from "./PIIP_USMAP";
+import ParksHistogram from "./ParksHistogram";
 
 class PIIP extends React.Component {
   state = {
@@ -46,6 +47,22 @@ class PIIP extends React.Component {
             </button>
               {this.state.collapse_1 && (
             <PIIP_USMAP/>)}
+          </div>
+                <h1 className="text-center mt-2">Parks by State Histogram</h1>
+                    <div className="sorting-container">
+            <button
+              className="ml-2 btn btn-secondary"
+              onClick={this.handleCollapse_3}
+            >
+              {this.state.collapse_3 ? "-" : "+"}
+            </button>
+              {this.state.collapse_3 && (
+                    <ParksHistogram
+          data={this.state.data}
+          width={this.state.width}
+          height={this.state.height}
+          scale={this.state.scale}
+        />)}
           </div>
       </div>
     );
