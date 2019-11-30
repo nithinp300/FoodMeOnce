@@ -1,7 +1,11 @@
 h1 {
     font-size: medium;
-    font-weight: normal;
+    font-weight: bold;
     font-family: Cambria;
     padding-bottom: 15px;
     padding-top: 15px;
+}
+
+ParksHistogram {
+    padding-left: 105px;
 }

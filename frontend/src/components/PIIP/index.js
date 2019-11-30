@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styling from "./css/styling.css";
+import formatting from "./css/formatting.css";
 import * as d3 from "d3";
 
 import PIIP_USMAP from "./PIIP_USMAP";
@@ -37,7 +37,7 @@ class PIIP extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="text-center mt-2">US Map of State Recreation Diversity</h1>
+        <h1 className="text-center mt-2">States Recreation Heat Map</h1>
           <div className="sorting-container">
             <button
               className="ml-2 btn btn-secondary"
