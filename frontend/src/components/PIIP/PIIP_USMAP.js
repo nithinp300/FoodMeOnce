@@ -252,14 +252,14 @@ class PIIP_USMAP extends Component {
       case "New-Mexico": return"NM"
       case "Nevada": return"NV"
       case "New-York": return "NY"
-      case "Ohia": return"OH"
+      case "Ohio": return"OH"
       case "Oklahoma": return"OK"
       case "Oregon": return"OR"
       case "Pennsylvania": return"PA"
       case "Rhode-Island": return"RI"
       case "South-Carolina": return"SC"
       case "South-Dakota": return"SD"
-      case "Tenessee": return"TN"
+      case "Tennessee": return"TN"
       case "Utah": return"UT"
       case "Virginia": return"VA"
       case "Vermont": return"VT"
@@ -276,17 +276,19 @@ class PIIP_USMAP extends Component {
       .then(res => res.json())
       .then(res => {
         res.objects.forEach(cd => {
-          cd.activities.split(",").forEach( (rec) => {
-            // if(!stateActivites[stateToAbr(cd.location)].contains(rec)) {
-            //   stateValues[stateToAbr(cd.location)] = Number(stateValues[stateToAbr(cd.location)]) + 1
-            //   stateActivites[stateToAbr(cd.location)].append(rec)
-            // }
-            if(stateActivites[stateToAbr(cd.location)] != undefined && !stateActivites[stateToAbr(cd.location)].includes(rec)) {
-            stateActivites[stateToAbr(cd.location)] += rec
-            stateValues[stateToAbr(cd.location)] = Number(stateValues[stateToAbr(cd.location)]) + 1
-            }
-          })
-          data.set(stateToAbr(cd.location), stateValues[stateToAbr(cd.location)])
+          cd.location.split(",").forEach( (loc => {
+            console.log("Location")
+            console.log(stateToAbr(loc))
+            console.log(loc)
+            cd.activities.split(",").forEach( (rec) => {
+              if(stateActivites[stateToAbr(loc)] != undefined && !stateActivites[stateToAbr(loc)].includes(rec)) {
+              stateActivites[stateToAbr(loc)] += rec
+              stateValues[stateToAbr(loc)] = Number(stateValues[stateToAbr(loc)]) + 1
+              }
+            })
+            data.set(stateToAbr(loc), stateValues[stateToAbr(loc)])
+          }))
+    
         })
         
         this.setState({ dataReady: true, data: data });
