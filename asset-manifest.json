@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/foodmeonce/static/css/main.b7c5c66e.chunk.css",
+    "main.js": "/foodmeonce/static/js/main.e71e3522.chunk.js",
+    "main.js.map": "/foodmeonce/static/js/main.e71e3522.chunk.js.map",
+    "runtime-main.js": "/foodmeonce/static/js/runtime-main.d7e63892.js",
+    "runtime-main.js.map": "/foodmeonce/static/js/runtime-main.d7e63892.js.map",
+    "static/css/2.0624914a.chunk.css": "/foodmeonce/static/css/2.0624914a.chunk.css",
+    "static/js/2.9b8a3bb6.chunk.js": "/foodmeonce/static/js/2.9b8a3bb6.chunk.js",
+    "static/js/2.9b8a3bb6.chunk.js.map": "/foodmeonce/static/js/2.9b8a3bb6.chunk.js.map",
+    "index.html": "/foodmeonce/index.html",
+    "precache-manifest.ffb0617bc63c43fda0e61338db772e34.js": "/foodmeonce/precache-manifest.ffb0617bc63c43fda0e61338db772e34.js",
+    "service-worker.js": "/foodmeonce/service-worker.js",
+    "static/css/2.0624914a.chunk.css.map": "/foodmeonce/static/css/2.0624914a.chunk.css.map",
+    "static/css/main.b7c5c66e.chunk.css.map": "/foodmeonce/static/css/main.b7c5c66e.chunk.css.map",
+    "static/media/Chris_profile.jpg": "/foodmeonce/static/media/Chris_profile.d5abd9a7.jpg",
+    "static/media/Gyuwon_profile.jpg": "/foodmeonce/static/media/Gyuwon_profile.72492206.jpg",
+    "static/media/Nithin_profile.jpg": "/foodmeonce/static/media/Nithin_profile.767d8027.jpg",
+    "static/media/Shub_profile.jpg": "/foodmeonce/static/media/Shub_profile.adfe2974.jpg",
+    "static/media/brian_profile.png": "/foodmeonce/static/media/brian_profile.d696126e.png",
+    "static/media/citySlide.jpg": "/foodmeonce/static/media/citySlide.3e43f62f.jpg",
+    "static/media/congress.png": "/foodmeonce/static/media/congress.f63a5998.png",
+    "static/media/congressSlide.jpg": "/foodmeonce/static/media/congressSlide.c2f39d81.jpg",
+    "static/media/cornField.png": "/foodmeonce/static/media/cornField.34264079.png",
+    "static/media/fightSlide2.png": "/foodmeonce/static/media/fightSlide2.724ed807.png",
+    "static/media/healthy_food.png": "/foodmeonce/static/media/healthy_food.bfdef134.png",
+    "static/media/librarySlide.jpg": "/foodmeonce/static/media/librarySlide.936f5b1b.jpg",
+    "static/media/unhealthy_food.png": "/foodmeonce/static/media/unhealthy_food.9a462cfb.png",
+    "static/media/us_hor.png": "/foodmeonce/static/media/us_hor.82cc86c0.png",
+    "static/media/us_sen.png": "/foodmeonce/static/media/us_sen.0e518afd.png",
+    "static/media/welcome_banner.png": "/foodmeonce/static/media/welcome_banner.69251af4.png"
+  }
+}
